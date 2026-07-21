@@ -1,0 +1,38 @@
+---
+doc: infra/cloudflare
+updated: 2026-07-21
+status: live, wrangler auth good as of 2026-07-20
+---
+
+# Cloudflare — Allternit
+
+## Account
+
+- Account `7cd19487307235aedc039d3a64ad7039` (`allternitpbc@gmail.com`).
+- Zone id for allternit.com: `5ebf34ee08d574ea107bbeb83395723a`.
+- wrangler 4.x is OAuth-authed on this Mac (token in `~/Library/Preferences/.wrangler/config/default.toml`). Scopes include `pages:write` + `zone:read` but **not** `dns_records:edit` — DNS changes need the dashboard or a separately scoped API token.
+- Cloudflare Email Routing enabled on the zone 2026-07-21 (safe — `allternit.com` had zero prior MX records); destination `allternitpbc@gmail.com` auto-verified since it's the account's own login email. Used by the Stripe booking-webhook Worker (see `stripe.md`) to notify on new bookings.
+
+## Pages projects (real names — the checked-in deploy script had stale ones until fixed 2026-07-20)
+
+| Project | Domain | Source |
+|---|---|---|
+| `allternit` | allternit.com, www.allternit.com | `Allternit-websites/projects/www.allternit.com/source/app` |
+| `allternit-learning-labs` | labs.allternit.com | `Allternit-websites/projects/labs.allternit.com/source` |
+| `allternit-services` | services.allternit.com | `Allternit-websites/projects/services.allternit.com/source` |
+| `ai-allternit` | — | — |
+| `allternit-platform` | — | — |
+| `allternit-docs` | — | — |
+| `gizziio` | — | — |
+| `gizzi-code-docs` | — | — |
+| `install-allternit` | — | — |
+
+`www.allternit.com` was dead (no DNS record) until 2026-07-20 — fixed by adding it as a custom domain on project `allternit` via API plus a proxied CNAME `www → allternit.pages.dev`. Confirmed live with a valid cert.
+
+## Deploy
+
+- Fix the deploy script's project-name/path mismatches before trusting it blindly — `Allternit-websites/projects/deploy-labs-and-main.sh` was stale as of 2026-07-20 (referenced `../allternit-platform` and cloudflared that don't match the real layout); verify current script state before running.
+- `services.allternit.com` is plain HTML/CSS/vanilla JS with no build step — deploys directly from `source/`.
+- The Electron desktop app's platform surface is a **static export** copied by `scripts/prepare-platform-static.cjs` from `surfaces/ai.allternit.com` in the main workspace repo (`../allternit-workspace/allternit`) — see `deploy-runbook.md`.
+
+Related: [[stripe.md]], [[deploy-runbook.md]].
