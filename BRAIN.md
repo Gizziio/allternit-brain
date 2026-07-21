@@ -15,6 +15,7 @@ The agent-readable operator's manual for Allternit LLC. This sits **beside** `Al
 - [infra/cloudflare.md](infra/cloudflare.md) — account, zone, Pages project names, DNS/email routing.
 - [infra/deploy-runbook.md](infra/deploy-runbook.md) — Electron desktop + iOS build pipelines and toolchain pins (in the untouched `allternit-workspace` repo).
 - [infra/model-routing.md](infra/model-routing.md) — the A:// tier policy, executable via `allternit-ops`'s `model_route` tool. Only applies to spawned subagents/autonomous agents, not the running interactive session.
+- [infra/site-monitoring.md](infra/site-monitoring.md) — the two independent monitoring legs (cloud/Claude + local/launchd, deliberately vendor-redundant), the launchd-vs-Desktop-TCC gotcha, and why kimi+local-model wasn't used for this specific leg.
 
 ## Clients (hot state — update every cycle)
 
