@@ -19,6 +19,10 @@ The agent-readable operator's manual for Allternit LLC. This sits **beside** `Al
 
 - [clients/swyft-market.md](clients/swyft-market.md) — reference/first engagement, SOW-2026-001.
 
+## Delegation (the self-improving loop)
+
+- [delegation-runbook.md](delegation-runbook.md) — what to inline into agent-orchestrator task specs when delegating Allternit business work to an external CLI agent, and how learned facts flow back into this brain.
+
 ## Strategy (pointers only, not duplicated)
 
 - [strategy/INDEX.md](strategy/INDEX.md) — entity strategy, deep scope/roadmap, brand naming, Minds mythology, consolidated future-development docs.
