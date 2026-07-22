@@ -31,7 +31,7 @@ status: live, wrangler auth good as of 2026-07-20
 
 ## Deploy
 
-- Fix the deploy script's project-name/path mismatches before trusting it blindly — `Allternit-websites/projects/deploy-labs-and-main.sh` was stale as of 2026-07-20 (referenced `../allternit-platform` and cloudflared that don't match the real layout); verify current script state before running.
+- `Allternit-websites/projects/deploy-labs-and-main.sh` deploys `labs.allternit.com`, `www.allternit.com`, and `services.allternit.com` in one run. Verify current script state before running.
 - `services.allternit.com` is plain HTML/CSS/vanilla JS with no build step — deploys directly from `source/`.
 - The Electron desktop app's platform surface is a **static export** copied by `scripts/prepare-platform-static.cjs` from `surfaces/ai.allternit.com` in the main workspace repo (`../allternit-workspace/allternit`) — see `deploy-runbook.md`.
 
