@@ -6,7 +6,7 @@ status: v1 policy, one tier deliberately unbacked
 
 # Model routing
 
-Executable version of Allternit's A:// tier strategy lives at `Allternit Ops/model-routing.json`, queryable via the `model_route` MCP tool. Source strategy doc: `strategy/INDEX.md` → the entity/naming docs' A://H/C/Fe/Boson/Hadron competitor-tier mapping.
+Executable version of Allternit's A:// tier strategy lives at `Allternit Brain/Ops/model-routing.json`, queryable via the `model_route` MCP tool. Source strategy doc: `strategy/INDEX.md` → the entity/naming docs' A://H/C/Fe/Boson/Hadron competitor-tier mapping.
 
 **Important scope limit:** this only fires for (a) subagents explicitly spawned via the Agent tool on Allternit's behalf, and (b) Phase 6 autonomous agents at spawn time. It does **not** and cannot change which model an already-running interactive Claude Code session uses — a skill is a prompt, not a model switch. Don't expect `/invoice` or `/quote` to "route" themselves; they run on whatever model the human's session is already on.
 

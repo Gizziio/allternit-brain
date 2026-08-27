@@ -1,0 +1,49 @@
+{
+  "_comment": "Executable version of Allternit's A:// tier mapping (Allternit-platform-future-development / workspace strategy docs' ALLTERNIT_MODEL_TIER_COMPETITOR_MAPPING.md). Only fires for (a) subagents explicitly spawned via the Agent tool on Allternit's behalf, and (b) Phase 6 autonomous agents at spawn time — a running interactive Claude Code session stays on whatever model the user picked; a skill/prompt cannot switch it mid-session.",
+  "updated": "2026-07-21",
+  "tiers": {
+    "A://H": {
+      "role": "Fast edge, simple tasks, retrieval, summaries, classification",
+      "concrete_backend": "claude-haiku-4-5-20251001",
+      "agent_tool_alias": "haiku"
+    },
+    "A://C": {
+      "role": "Everyday reasoning, coding, workflows, routine client execution",
+      "concrete_backend": "claude-sonnet-5",
+      "agent_tool_alias": "sonnet"
+    },
+    "A://Fe": {
+      "role": "Deep reasoning, system design, judgment calls, novel/high-stakes scoping",
+      "concrete_backend": "claude-fable-5",
+      "agent_tool_alias": "fable",
+      "note": "Mapped to Fable 5 (the current most-capable generally-available Claude model) rather than Opus 4.8, per this session's system context describing Fable 5 as superseding Opus in the current lineup. Re-check this pairing if the model lineup changes."
+    },
+    "A://Boson": {
+      "role": "Creative, memory, education, long-form synthesis",
+      "concrete_backend": "claude-fable-5",
+      "agent_tool_alias": "fable",
+      "note": "Same backend as A://Fe for now — Allternit's strategy docs describe Boson as a distinct creative/long-context class, but there is no separate concrete model to route to yet."
+    },
+    "A://Hadron": {
+      "role": "Guardrails, audit, policy enforcement sidecar",
+      "concrete_backend": null,
+      "agent_tool_alias": null,
+      "note": "NOT YET BACKED. No dedicated safety/guardrail model or classifier exists in this stack today. Do not route real guardrail decisions here until this is filled in — flag rather than silently falling back to a general-purpose model for a safety-critical check."
+    }
+  },
+  "task_classes": {
+    "classification": { "tier": "A://H", "example": "tag an inbound lead, sort a support message" },
+    "draft_generation": { "tier": "A://H", "example": "first-pass summary, simple template fill" },
+    "client_coding_work": { "tier": "A://C", "example": "routine Tier A/B catalog deliverable, standard workflow build" },
+    "quote_routine": { "tier": "A://C", "example": "quote a request that matches a known catalog line or bundle directly" },
+    "architecture_or_novel_judgment": { "tier": "A://Fe", "example": "system design, a Tier C audit's scoping judgment, a pricing edge case with no catalog match" },
+    "quote_tier_c_scoping": { "tier": "A://Fe", "example": "deciding what the paid discovery phase should cover before any number is given" },
+    "creative_or_long_form": { "tier": "A://Boson", "example": "brand narrative, long-form content, Register 2 voice work" },
+    "cad_design": { "tier": "A://Fe", "example": "mechanical CAD modeling, PCB layout, assembly design — requires spatial reasoning and multi-constraint problem solving" },
+    "cad_simulation": { "tier": "A://Fe", "example": "CFD thermal analysis, FEM structural validation, MuJoCo joint/sensor config — physics reasoning" },
+    "cad_render": { "tier": "A://C", "example": "Blender product render, material application, lighting/camera setup — routine visual work" },
+    "cad_export": { "tier": "A://C", "example": "STEP/STL/Gerber/G-code export, DRC/ERC checks — deterministic validation" },
+    "cad_quoting": { "tier": "A://C", "example": "JLCPCB component pricing, BOM lookup, print-time estimation — retrieval + arithmetic" },
+    "guardrail_check": { "tier": "A://Hadron", "example": "NOT YET BACKED — see A://Hadron note; do not silently downgrade this to another tier" }
+  }
+}
