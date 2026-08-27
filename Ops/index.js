@@ -37,6 +37,14 @@ const TEMPLATE_ROOT = path.join(CLIENT_OPS_ROOT, 'business_ops_kit');
 const REVENUE_OPS_ROOT = path.join(LLC_ROOT, '08 Revenue Operations');
 const SEND_INVOICE_PY = path.join(REVENUE_OPS_ROOT, 'send_invoice.py');
 const WEBSITES_ROOT = path.join(ALLTERNIT_ROOT, 'Allternit Websites');
+const MARKETING_WEB_ASSETS_ROOT = path.join(
+  ALLTERNIT_ROOT,
+  'Marketing',
+  'Production',
+  'Website Assets'
+);
+const AUDIT_MEDIA_SCRIPT = path.join(WEBSITES_ROOT, 'Scripts', 'audit-media.js');
+const SYNC_MEDIA_SCRIPT = path.join(MARKETING_WEB_ASSETS_ROOT, 'scripts', 'sync-to-sites.js');
 const MODEL_ROUTING_PATH = path.join(ALLTERNIT_ROOT, 'Allternit Brain', 'Ops', 'model-routing.json');
 
 // Known Cloudflare Pages projects — from Allternit Brain/infra/cloudflare.md.
@@ -269,6 +277,24 @@ const TOOLS = [
       required: ['source', 'updates'],
     },
   },
+  {
+    name: 'media_audit',
+    description:
+      'Run the website media audit: scan each Allternit Websites/Projects/<site>/source/ folder for images and references, write Scripts/media-audit.json, and return a human-readable summary.',
+    inputSchema: { type: 'object', properties: {}, required: [] },
+  },
+  {
+    name: 'media_sync',
+    description:
+      'Copy approved website media outputs (Marketing/Production/Website Assets/outputs/approved/<site>/...) into the matching Allternit Websites/Projects/<site>/source/ folders. Defaults to a dry run; pass confirm:true to actually copy files.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        confirm: { type: 'boolean', description: 'Set true to actually copy files. Omit or false to preview what would be copied.' },
+      },
+      required: [],
+    },
+  },
 ];
 
 server.setRequestHandler(ListToolsRequestSchema, async () => ({ tools: TOOLS }));
@@ -488,6 +514,22 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         return textResult(
           `[DRAFT SAVED — not applied]\n\nWrote ${filepath}\nReview with apply-brain-updates.js or pass confirm:true to apply immediately.`
         );
+      }
+
+      case 'media_audit': {
+        const { stdout, stderr } = await execFileAsync('node', [AUDIT_MEDIA_SCRIPT]);
+        return textResult(stdout + (stderr ? '\n' + stderr : ''));
+      }
+
+      case 'media_sync': {
+        const confirmed = args.confirm === true;
+        const cliArgs = [SYNC_MEDIA_SCRIPT];
+        if (!confirmed) cliArgs.push('--dry-run');
+        const { stdout, stderr } = await execFileAsync('node', cliArgs);
+        const prefix = confirmed
+          ? '[MEDIA SYNCED]\n\n'
+          : '[DRY RUN — nothing was copied. Pass confirm:true to actually sync.]\n\n';
+        return textResult(prefix + stdout + (stderr ? '\n' + stderr : ''));
       }
 
       default:

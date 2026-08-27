@@ -23,6 +23,8 @@ MCP gateway for Allternit LLC business operations. Lives inside `Allternit Brain
 | `client_new_folder_skeleton` | Creates `Allternit LLC/06 Client Ops And Contracts/<Client>/` and copies business-ops-kit templates in, named per the kickoff playbook's convention | local file writes only — never touches Stripe or sends anything; those steps stay manual per the playbook |
 | `brain_audit` | Run `scripts/audit-brain.js` and return the report | read-only |
 | `brain_update_draft` | Submit a structured brain update. Without `confirm:true` it writes to `.incoming/` for review; with `confirm:true` it applies immediately | local file writes to `Allternit Brain/` |
+| `media_audit` | Run the website media audit (`Allternit Websites/Scripts/audit-media.js`) and return the summary | read-only; writes `Allternit Websites/Scripts/media-audit.json` |
+| `media_sync` | Copy approved website media outputs into site source folders | dry-run by default; needs `confirm:true` to actually copy files |
 
 ## Setup
 
@@ -91,6 +93,33 @@ node "/Users/joe/Desktop/Allternit/Allternit Brain/Ops/scripts/apply-brain-updat
 ```
 
 Agents can submit updates through the `brain_update_draft` MCP tool; humans review the `.incoming/` files before applying.
+
+## Website media pipeline
+
+The website media pipeline is intentionally front-and-center so approved assets move from generation → review → site folders without manual copying:
+
+| Step | Location | Agent trigger |
+|---|---|---|
+| Generate images / video prompts | `Marketing/Production/Website Assets/prompts/` | human + image-generation tooling |
+| Track status | `Marketing/Production/Website Assets/tracker.md` | `parse-prompts-v2.js` |
+| Approve outputs | `Marketing/Production/Website Assets/outputs/approved/<site>/...` | human review |
+| Sync into sites | `Allternit Websites/Projects/<site>/source/...` | `media_sync` MCP tool |
+| Audit on-disk media | `Allternit Websites/Scripts/media-audit.json` | `media_audit` MCP tool |
+
+Run the pipeline from the shell:
+
+```bash
+# Audit what each site currently has
+node "/Users/joe/Desktop/Allternit/Allternit Websites/Scripts/audit-media.js"
+
+# Preview what approved media would be copied
+node "/Users/joe/Desktop/Allternit/Marketing/Production/Website Assets/scripts/sync-to-sites.js" --dry-run
+
+# Actually copy approved media into site folders
+node "/Users/joe/Desktop/Allternit/Marketing/Production/Website Assets/scripts/sync-to-sites.js"
+```
+
+Or invoke through the MCP server via `media_audit` and `media_sync`.
 
 ## Design notes
 
