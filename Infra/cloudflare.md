@@ -1,10 +1,12 @@
 ---
 doc: infra/cloudflare
-updated: 2026-07-21
-status: live, wrangler auth good as of 2026-07-20
+updated: 2026-08-27
+status: active
 ---
 
 # Cloudflare — Allternit
+
+**Status note:** Live account; wrangler auth good as of 2026-07-20.
 
 ## Account
 

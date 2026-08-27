@@ -1,7 +1,7 @@
 ---
 doc: clients/swyft-market
-updated: 2026-07-21
-status: hot — update each billing cycle
+updated: 2026-08-27
+status: active
 ---
 
 # Swyft Market, Inc. — current state

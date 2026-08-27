@@ -1,10 +1,12 @@
 ---
 doc: offer
-updated: 2026-07-21
-status: draft — pricing floors verified against STRIPE_CATALOG.md (2026-07-20); Build/Retrofit/Run/Husks pricing is case-by-case, not yet productized
+updated: 2026-08-27
+status: active
 ---
 
 # What Allternit sells
+
+**Status note:** Pricing floors verified against `STRIPE_CATALOG.md` (2026-07-20). Build/Retrofit/Run/Husks pricing is case-by-case, not yet productized.
 
 Full authoritative pricing lives in `Allternit LLC/03 Product And Service Scope/ALLTERNIT_FULL_AI_ASSISTED_SERVICE_CATALOG.md` (38 productized services, category tables with starter ranges) and `Allternit LLC/08 Revenue Operations/STRIPE_CATALOG.md` (live Stripe products/payment links — floors of the catalog ranges). This doc is the *logic* for how to sell them, not a duplicate of the price tables — always read the source for current numbers.
 

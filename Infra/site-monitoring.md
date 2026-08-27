@@ -1,10 +1,12 @@
 ---
 doc: infra/site-monitoring
-updated: 2026-07-21
-status: two independent legs live
+updated: 2026-08-27
+status: active
 ---
 
 # Site monitoring — two independent legs
+
+**Status note:** Two independent monitoring legs are live.
 
 Built deliberately redundant across vendors after Eoj flagged that relying solely on a Claude subscription/Anthropic cloud infra for business monitoring is a single point of failure.
 

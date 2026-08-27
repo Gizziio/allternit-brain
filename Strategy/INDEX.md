@@ -1,10 +1,12 @@
 ---
 doc: strategy/index
-updated: 2026-07-21
-status: pointers only — no content duplicated here, per the brain's own rule
+updated: 2026-08-27
+status: active
 ---
 
 # Strategy documents — pointers, not copies
+
+**Status note:** Pointers only — no content duplicated here, per the brain's own rule.
 
 These are long-form planning docs, not day-to-day operating knowledge — read them in place rather than expecting a summary here, since they're long and change independently of the brain.
 

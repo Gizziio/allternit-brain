@@ -1,10 +1,12 @@
 ---
 doc: voice
-updated: 2026-07-21
-status: draft — distilled from the phone script, the Swyft SOW, the catalog's guardrail language, and the Minds mythology doc. No formal brand-voice guide exists yet (ironically, "brand voice guide from approved examples" is itself a catalog product — practice what we sell).
+updated: 2026-08-27
+status: active
 ---
 
 # How Allternit talks
+
+**Status note:** Distilled from the phone script, the Swyft SOW, the catalog's guardrail language, and the Minds mythology doc. No formal brand-voice guide exists yet (ironically, "brand voice guide from approved examples" is itself a catalog product — practice what we sell).
 
 There are **two registers**. Using the wrong one in the wrong place is the main failure mode to avoid.
 

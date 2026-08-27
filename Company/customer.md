@@ -1,10 +1,12 @@
 ---
 doc: customer
-updated: 2026-07-21
-status: draft — inferred from the catalog, kickoff playbook, and one reference engagement (Swyft Market). No formal customer research exists yet; correct this as real signal comes in.
+updated: 2026-08-27
+status: draft
 ---
 
 # Who Allternit sells to
+
+**Status note:** Inferred from the catalog, kickoff playbook, and one reference engagement (Swyft Market). No formal customer research exists yet; correct this as real signal comes in.
 
 ## Ideal customer profile (as evidenced, not aspirational)
 

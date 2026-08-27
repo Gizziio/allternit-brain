@@ -1,12 +1,12 @@
 ---
 doc: infra
-updated: 2026-07-27
+updated: 2026-08-27
 status: active
 ---
 
 # Payroll & state tax registrations (infra record)
 
-*Updated 2026-07-27.*
+*Updated 2026-08-27. Original registration dates remain 2026-07-27.*
 
 - **QuickBooks payroll: live 2026-07-27.** Joe enrolled as W-2 owner-employee (S-corp, election effective 07/09/2026). Direct deposit → his personal Citibank. Payroll funding/tax impound → Wells Fargo business checking. Pay schedule per signup kit (bi-weekly).
 - **Stripe payouts → Wells Fargo business checking** (confirmed 2026-07-27).

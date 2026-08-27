@@ -1,10 +1,12 @@
 ---
 doc: infra/deploy-runbook
-updated: 2026-07-21
-status: reflects this Mac's toolchain state as of 2026-07-19/20 — verify before relying on version pins
+updated: 2026-08-27
+status: active
 ---
 
 # Build & deploy runbook — platform surfaces
+
+**Status note:** Reflects this Mac's toolchain state as of 2026-07-19/20 — verify version pins before relying on them.
 
 Websites (Cloudflare Pages) are covered in `cloudflare.md`. This doc covers the Electron desktop app and iOS app, which live in the untouched `allternit-workspace` repo (`~/Desktop/allternit-workspace/allternit`), not under the `Allternit/` brain root.
 

@@ -1,10 +1,12 @@
 ---
 doc: infra/stripe
-updated: 2026-07-24
-status: live account, one open blocker (see top)
+updated: 2026-08-27
+status: active
 ---
 
 # Stripe — Allternit LLC
+
+**Status note:** Live account. One open blocker noted below; verify `charges_enabled` before relying on checkout.
 
 **EIN (per Eoj, 2026-07-24): 42-3788518** for Allternit LLC — the IRS 101 name-conflict block is resolved.
 

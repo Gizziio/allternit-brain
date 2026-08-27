@@ -1,10 +1,12 @@
 ---
 doc: delegation-runbook
-updated: 2026-07-21
-status: how to run the self-improving loop through agent-orchestrator delegations
+updated: 2026-08-27
+status: active
 ---
 
 # Delegating Allternit business work to an external CLI agent
+
+**Status note:** How to run the self-improving loop through `agent-orchestrator` delegations.
 
 Eoj's global instruction: delegating to another CLI agent (kimi/codex/agy/claude) always goes through the `agent-orchestrator` skill, never inline. That skill's Phase 1 is explicit: the executor **may not read outside its own workspace** — it never sees `~/Desktop/Allternit/CLAUDE.md`, `Allternit Brain/`, or this file directly. So the harness has to travel *inside* the task spec doc the orchestrator writes, and lessons have to travel back out through the required NOTES file. This doc is the concrete protocol for both directions, specific to Allternit business-ops delegation (not a change to `agent-orchestrator` itself, which stays general-purpose).
 

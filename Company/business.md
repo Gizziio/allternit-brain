@@ -1,10 +1,12 @@
 ---
 doc: business
-updated: 2026-07-21
-status: draft — reflects source docs as of 2026-07-20/21; review before agents rely on it
+updated: 2026-08-27
+status: active
 ---
 
 # What Allternit is
+
+**Review note:** This doc reflects source docs as of 2026-07-20/21 and was migrated to active status 2026-08-27. Re-verify entity status and naming before treating any single fact as permanent.
 
 Allternit is registered as **Allternit LLC** (Minnesota, NAICS 541511 — Custom Computer Programming Services; **EIN 42-3788518**, issued 2026-07-24). It operates under the master brand **Allternit** and is building toward a larger structure: **Allternit, PBC** (Delaware) as parent — confirmed per Eoj 2026-07-24: the PBC is the parent, and when formed the MN LLC becomes its subsidiary with IP assigned up — with **Allternit Labs, Inc.** as a manufacturing/robotics subsidiary. Today, Allternit LLC is the live, invoicing entity. Corporate site: allternit.com. Contact: hello@ / sales@ / support@ / legal@allternit.com.
 

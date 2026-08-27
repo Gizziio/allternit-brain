@@ -1,10 +1,12 @@
 ---
 doc: infra/model-routing
-updated: 2026-07-21
-status: v1 policy, one tier deliberately unbacked
+updated: 2026-08-27
+status: active
 ---
 
 # Model routing
+
+**Status note:** v1 policy; the Hadron guardrail tier is deliberately unbacked.
 
 Executable version of Allternit's A:// tier strategy lives at `Allternit Brain/Ops/model-routing.json`, queryable via the `model_route` MCP tool. Source strategy doc: `strategy/INDEX.md` → the entity/naming docs' A://H/C/Fe/Boson/Hadron competitor-tier mapping.
 
