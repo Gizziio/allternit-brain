@@ -24,6 +24,6 @@ Websites (Cloudflare Pages) are covered in `cloudflare.md`. This doc covers the 
 - Clerk production publishable key wired via `project.yml` build setting (same `pk_live` as the web `.env.production`).
 - **This machine cannot rebuild the Rust backend** (`cmd/allternit-api`) — no Rust toolchain at all. The `target/debug/allternit-api` binary is a stale prebuilt artifact; confirmed its `/api/v1/models` route serves the SPA HTML shell instead of real JSON (other v1 routes work fine). Fix requires installing Rust and rebuilding, or a fresher binary.
 - Local dev gateway: `127.0.0.1:8013`. Chat only round-trips with that gateway up or a paired cloud runtime.
-- Brand assets root: `~/Desktop/Allternit/Allternit-assets/01_brand/` (path updated after the 2026-07-20 reorg — logos/matrix, mascot/gizzi).
+- Brand assets root: `~/Desktop/Allternit/Allternit Assets/01_brand/` (path updated after the 2026-07-20 reorg — logos/matrix, mascot/gizzi).
 
 Related: [[cloudflare.md]], [[stripe.md]].

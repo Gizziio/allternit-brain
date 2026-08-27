@@ -1,12 +1,14 @@
 ---
 doc: infra/stripe
-updated: 2026-07-21
+updated: 2026-07-24
 status: live account, one open blocker (see top)
 ---
 
 # Stripe — Allternit LLC
 
-**⚠ OPEN BLOCKER (as of 2026-07-21):** `charges_enabled` is still `false` (`requirements.pending_verification` on company/person address fields) despite Eoj having received an earlier verification email. **Nothing can actually be purchased until this flips.** Check the Stripe dashboard for a stuck-verification banner before assuming any checkout flow works. Re-verify this status before relying on it — check `charges_enabled` live rather than trusting this note if it's more than a few days old.
+**EIN (per Eoj, 2026-07-24): 42-3788518** for Allternit LLC — the IRS 101 name-conflict block is resolved.
+
+**STATUS UPDATE (per `02 Financials And Funding/ALLTERNIT_BUSINESS_CREDIT_PLAN.md`, 2026-07-26): Stripe is approved to accept payments** (approved under the 2688 Rice St mailing address). Verify `charges_enabled` live before relying on it, but the verification blocker appears cleared. Note from the credit plan: if Stripe ever re-verifies and asks for a physical operating address, answer with Penn Ave N — never represent Rice St as a physical office.
 
 ## Account
 
@@ -15,7 +17,7 @@ status: live account, one open blocker (see top)
 
 ## Catalog
 
-- 38 products, "starting at" floors of the service-catalog ranges. Canonical reference with all product IDs and payment links: `Allternit LLC/08_Revenue_Operations/STRIPE_CATALOG.md`.
+- 38 products, "starting at" floors of the service-catalog ranges. Canonical reference with all product IDs and payment links: `Allternit LLC/08 Revenue Operations/STRIPE_CATALOG.md`.
 - Each product carries the Allternit matrix-logo image via a public `raw.githubusercontent.com` URL from `Gizziio/allternit-assets` — **that GitHub repo must stay public** or every product image breaks.
 - Payment links are card-only (`payment_method_types[0]=card`) — required while other payment methods were inactive; links keep working once more methods activate, no need to recreate them.
 - Custom-quoted work (Tier C, Build/Retrofit/Husks) is invoiced ad hoc — no Stripe product needed.
@@ -28,13 +30,13 @@ status: live account, one open blocker (see top)
 
 ## Invoicing
 
-- Programmatic invoicing script: `Allternit LLC/08_Revenue_Operations/send_invoice.py`. Supports itemized `--lines billing.csv` (rows `hours,description`, one line item each — mirrors client progress reports) or `--hours N`; flags `--customer/--rate/--sow/--period/--dry-run`. Reads the key from the Keychain entry above; customer-level custom fields and footer auto-inherit onto every invoice.
+- Programmatic invoicing script: `Allternit LLC/08 Revenue Operations/send_invoice.py`. Supports itemized `--lines billing.csv` (rows `hours,description`, one line item each — mirrors client progress reports) or `--hours N`; flags `--customer/--rate/--sow/--period/--dry-run`. Reads the key from the Keychain entry above; customer-level custom fields and footer auto-inherit onto every invoice.
 - Reference customer: **swyft market, Inc.** `cus_UvHgnkG4t4T0KA` (invoice prefix SWYFT, late-fee footer). Reusable Net-15 draft invoice `in_1TvR7BANxEzOvVEHwGICeSQw` at $60/hr for SOW-2026-001 Phase 2 — Eoj edits quantity to hours and sends each cycle. Custom fields: "Governing SOW: SOW-2026-001", "Attention: Brianni Manuel, CEO".
-- New-client sequence (NDA → intake → SOW → Stripe customer+deposit → folder skeleton → time log → cycle billing) is fully documented in `Allternit LLC/06_Client_Ops_and_Contracts/00_New_Client_Kickoff_Playbook.md`.
+- New-client sequence (NDA → intake → SOW → Stripe customer+deposit → folder skeleton → time log → cycle billing) is fully documented in `Allternit LLC/06 Client Ops And Contracts/00_New_Client_Kickoff_Playbook.md`.
 
 ## Booking automation (services.allternit.com, live 2026-07-21)
 
-All 41 Stripe payment links redirect to `/thank-you.html` after checkout. A Cloudflare Worker `allternit-services-hooks` (source in `Allternit-websites/projects/services.allternit.com/worker/`, D1 database `allternit-services-bookings`) receives the `checkout.session.completed` webhook, **auto-creates/updates a Stripe Customer with no human approval step**, logs the booking to D1, and emails `allternitpbc@gmail.com` via Cloudflare Email Routing.
+All 41 Stripe payment links redirect to `/thank-you.html` after checkout. A Cloudflare Worker `allternit-services-hooks` (source in `Allternit Websites/Projects/services.allternit.com/worker/`, D1 database `allternit-services-bookings`) receives the `checkout.session.completed` webhook, **auto-creates/updates a Stripe Customer with no human approval step**, logs the booking to D1, and emails `allternitpbc@gmail.com` via Cloudflare Email Routing.
 
 **Customer creation policy (2026-07-22):** the Worker no longer creates or updates Stripe Customers. If Stripe's own checkout flow creates a Customer object, the Worker records the id for reference only. New Stripe Customers are created manually by the human during the kickoff-playbook steps, not by automation. Deployed version: `c53142b6-40dc-4ec9-bd7d-8d50f789ee45`.
 

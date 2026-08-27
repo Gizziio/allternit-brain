@@ -16,4 +16,4 @@ status: hot — update each billing cycle
 
 **Support tier:** customer elected a recurring support subscription starting 30 days post-launch (see the SOW for tier/price — not duplicated here).
 
-**Status as of last update:** this is the reference/first engagement — the kickoff playbook itself was written from this relationship. Update this file each billing cycle with hours billed and phase status; the underlying time log and full SOW stay in `Allternit LLC/06_Client_Ops_and_Contracts/Swyft_Market/`.
+**Status as of last update:** this is the reference/first engagement — the kickoff playbook itself was written from this relationship. Update this file each billing cycle with hours billed and phase status; the underlying time log and full SOW stay in `Allternit LLC/06 Client Ops And Contracts/Swyft_Market/`.

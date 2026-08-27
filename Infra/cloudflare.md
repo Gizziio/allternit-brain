@@ -17,9 +17,9 @@ status: live, wrangler auth good as of 2026-07-20
 
 | Project | Domain | Source |
 |---|---|---|
-| `allternit` | allternit.com, www.allternit.com | `Allternit-websites/projects/www.allternit.com/source/app` |
-| `allternit-learning-labs` | labs.allternit.com | `Allternit-websites/projects/labs.allternit.com/source` |
-| `allternit-services` | services.allternit.com | `Allternit-websites/projects/services.allternit.com/source` |
+| `allternit` | allternit.com, www.allternit.com | `Allternit Websites/Projects/www.allternit.com/source/app` |
+| `allternit-learning-labs` | labs.allternit.com | `Allternit Websites/Projects/labs.allternit.com/source` |
+| `allternit-services` | services.allternit.com | `Allternit Websites/Projects/services.allternit.com/source` |
 | `ai-allternit` | — | — |
 | `allternit-platform` | — | — |
 | `allternit-docs` | — | — |
@@ -31,7 +31,7 @@ status: live, wrangler auth good as of 2026-07-20
 
 ## Deploy
 
-- `Allternit-websites/projects/deploy-labs-and-main.sh` deploys `labs.allternit.com`, `www.allternit.com`, and `services.allternit.com` in one run. The script was fixed 2026-07-22 to use an absolute `SCRIPT_DIR` so the second and third `cd` commands don't break after the first `cd`.
+- `Allternit Websites/Projects/deploy-labs-and-main.sh` deploys `labs.allternit.com`, `www.allternit.com`, and `services.allternit.com` in one run. The script was fixed 2026-07-22 to use an absolute `SCRIPT_DIR` so the second and third `cd` commands don't break after the first `cd`.
 - All three sites were deployed 2026-07-22:
   - `labs.allternit.com` → project `allternit-learning-labs`
   - `www.allternit.com` → project `allternit`

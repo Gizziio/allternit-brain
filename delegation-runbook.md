@@ -6,7 +6,7 @@ status: how to run the self-improving loop through agent-orchestrator delegation
 
 # Delegating Allternit business work to an external CLI agent
 
-Eoj's global instruction: delegating to another CLI agent (kimi/codex/agy/claude) always goes through the `agent-orchestrator` skill, never inline. That skill's Phase 1 is explicit: the executor **may not read outside its own workspace** — it never sees `~/Desktop/Allternit/CLAUDE.md`, `allternit-brain/`, or this file directly. So the harness has to travel *inside* the task spec doc the orchestrator writes, and lessons have to travel back out through the required NOTES file. This doc is the concrete protocol for both directions, specific to Allternit business-ops delegation (not a change to `agent-orchestrator` itself, which stays general-purpose).
+Eoj's global instruction: delegating to another CLI agent (kimi/codex/agy/claude) always goes through the `agent-orchestrator` skill, never inline. That skill's Phase 1 is explicit: the executor **may not read outside its own workspace** — it never sees `~/Desktop/Allternit/CLAUDE.md`, `Allternit Brain/`, or this file directly. So the harness has to travel *inside* the task spec doc the orchestrator writes, and lessons have to travel back out through the required NOTES file. This doc is the concrete protocol for both directions, specific to Allternit business-ops delegation (not a change to `agent-orchestrator` itself, which stays general-purpose).
 
 ## Outbound: what to inline into the task spec
 
@@ -26,7 +26,7 @@ Add one required section to every Allternit-related task spec's deliverable sent
 
 > Also include a `brain_updates:` list in the NOTES.md frontmatter — any fact learned during the task that the brain doesn't already have (a new client detail, a pricing edge case, a voice/tone correction, an infra gotcha). Empty list if nothing new.
 
-During Phase 5 review (mandatory per `agent-orchestrator` — never accept the notes file at face value), fold any non-empty `brain_updates` into the right `allternit-brain/` doc yourself before considering the phase closed. This is what makes the loop actually self-improving rather than one-directional — without this step, delegated work either repeats mistakes the brain could have prevented, or discovers things that evaporate at session end.
+During Phase 5 review (mandatory per `agent-orchestrator` — never accept the notes file at face value), fold any non-empty `brain_updates` into the right `Allternit Brain/` doc yourself before considering the phase closed. This is what makes the loop actually self-improving rather than one-directional — without this step, delegated work either repeats mistakes the brain could have prevented, or discovers things that evaporate at session end.
 
 ## Why not just point the executor at the brain repo
 

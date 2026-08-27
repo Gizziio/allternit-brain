@@ -6,7 +6,7 @@ status: draft — pricing floors verified against STRIPE_CATALOG.md (2026-07-20)
 
 # What Allternit sells
 
-Full authoritative pricing lives in `Allternit LLC/03_Product_and_Service_Scope/ALLTERNIT_FULL_AI_ASSISTED_SERVICE_CATALOG.md` (38 productized services, category tables with starter ranges) and `Allternit LLC/08_Revenue_Operations/STRIPE_CATALOG.md` (live Stripe products/payment links — floors of the catalog ranges). This doc is the *logic* for how to sell them, not a duplicate of the price tables — always read the source for current numbers.
+Full authoritative pricing lives in `Allternit LLC/03 Product And Service Scope/ALLTERNIT_FULL_AI_ASSISTED_SERVICE_CATALOG.md` (38 productized services, category tables with starter ranges) and `Allternit LLC/08 Revenue Operations/STRIPE_CATALOG.md` (live Stripe products/payment links — floors of the catalog ranges). This doc is the *logic* for how to sell them, not a duplicate of the price tables — always read the source for current numbers.
 
 ## The three-tier sales model (this is the actual decision rule — apply it before quoting anything)
 
@@ -40,7 +40,7 @@ Full authoritative pricing lives in `Allternit LLC/03_Product_and_Service_Scope/
 
 ## Proof
 
-- Reference client: **Swyft Market, Inc.** (Delaware C-corp) — codebase audit → website services → ongoing build work, SOW-2026-001. The kickoff playbook itself is built from this engagement as the reference implementation.
+- First engagement: **Swyft Market, Inc.** (Delaware C-corp) — codebase audit → website services → build work, SOW-2026-001 (~$1.5K fixed scope, completing). The kickoff playbook was drafted from this engagement — useful as process proof, but it's a normal small client, not a strategic pillar; proof should come from accumulating engagements, not one account.
 - Live Stripe catalog: 38 products, card-only payment links (verified 2026-07-20), each carrying the Allternit matrix-logo brand image.
 
 ## Claims to avoid (hard rules, enforced across every catalog category — not optional style guidance)
