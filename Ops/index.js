@@ -245,6 +245,30 @@ const TOOLS = [
       required: ['client_name'],
     },
   },
+  {
+    name: 'brain_audit',
+    description:
+      'Run the Allternit Brain audit ritual: scan brain markdown docs for required YAML frontmatter, flag stale docs (>30 days), missing frontmatter, and invalid statuses. Returns a structured report.',
+    inputSchema: { type: 'object', properties: {}, required: [] },
+  },
+  {
+    name: 'brain_update_draft',
+    description:
+      'Submit a structured update to the Allternit Brain. Writes the update to Allternit Brain/.incoming/ for review; pass confirm:true to apply it immediately. Use this when an agent finishes work and learns something that should go into the brain.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        source: { type: 'string', description: 'Where this update came from, e.g. agent name / session / repo.' },
+        updates: {
+          type: 'array',
+          description: 'List of update operations. Each update has doc (relative path in Allternit Brain), action (append|ensure-section|replace-field|create-or-replace), content, and optional section/field_regex/template.',
+          items: { type: 'object' },
+        },
+        confirm: { type: 'boolean', description: 'Set true to apply immediately. Omit or false to write to .incoming/ for review.' },
+      },
+      required: ['source', 'updates'],
+    },
+  },
 ];
 
 server.setRequestHandler(ListToolsRequestSchema, async () => ({ tools: TOOLS }));
@@ -426,6 +450,43 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         return textResult(
           `Created ${clientDir}\nCopied templates:\n` + created.map((f) => '- ' + f).join('\n') +
             '\n\nNext steps (manual, per the kickoff playbook): NDA if data comes up, walk the intake form live with the client, draft the SOW from Phase-1 findings, create the Stripe customer, then start the time log.'
+        );
+      }
+
+      case 'brain_audit': {
+        const auditScript = path.join(BRAIN_ROOT, 'Ops', 'scripts', 'audit-brain.js');
+        const { stdout, stderr } = await execFileAsync('node', [auditScript]);
+        return textResult(stdout + (stderr ? '\n' + stderr : ''));
+      }
+
+      case 'brain_update_draft': {
+        const incomingDir = path.join(BRAIN_ROOT, '.incoming');
+        fs.mkdirSync(incomingDir, { recursive: true });
+        const updateFile = {
+          source: args.source,
+          date: new Date().toISOString().slice(0, 10),
+          auto_apply: args.confirm === true,
+          updates: args.updates,
+        };
+
+        if (args.confirm === true) {
+          const tmpFile = path.join(incomingDir, `mcp-${Date.now()}.json`);
+          fs.writeFileSync(tmpFile, JSON.stringify(updateFile, null, 2));
+          try {
+            const applyScript = path.join(BRAIN_ROOT, 'Ops', 'scripts', 'apply-brain-updates.js');
+            const { stdout, stderr } = await execFileAsync('node', [applyScript, '--file', tmpFile]);
+            return textResult('[APPLIED]\n\n' + stdout + (stderr ? '\n' + stderr : ''));
+          } catch (err) {
+            // apply-brain-updates exits 1 on errors but still prints JSON; surface it.
+            return { content: [{ type: 'text', text: `Error applying update:\n${err.stdout || err.message}` }], isError: true };
+          }
+        }
+
+        const filename = `draft-${Date.now()}.json`;
+        const filepath = path.join(incomingDir, filename);
+        fs.writeFileSync(filepath, JSON.stringify(updateFile, null, 2));
+        return textResult(
+          `[DRAFT SAVED — not applied]\n\nWrote ${filepath}\nReview with apply-brain-updates.js or pass confirm:true to apply immediately.`
         );
       }
 

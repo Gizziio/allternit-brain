@@ -1,0 +1,119 @@
+{
+  "source": "watch-brain.js repo scanner",
+  "date": "2026-08-27",
+  "auto_apply": false,
+  "updates": [
+    {
+      "doc": "Surfaces/INDEX.md",
+      "action": "ensure-section",
+      "section": "## Current surfaces",
+      "content": "- **compute.allternit.com** — source: `Allternit Websites/Projects/compute.allternit.com`",
+      "reason": "Discovered website project compute.allternit.com"
+    },
+    {
+      "doc": "Surfaces/INDEX.md",
+      "action": "ensure-section",
+      "section": "## Current surfaces",
+      "content": "- **docs.allternit.com** — source: `Allternit Websites/Projects/docs.allternit.com`",
+      "reason": "Discovered website project docs.allternit.com"
+    },
+    {
+      "doc": "Surfaces/INDEX.md",
+      "action": "ensure-section",
+      "section": "## Current surfaces",
+      "content": "- **docs.gizziio.com** — source: `Allternit Websites/Projects/docs.gizziio.com`",
+      "reason": "Discovered website project docs.gizziio.com"
+    },
+    {
+      "doc": "Surfaces/INDEX.md",
+      "action": "ensure-section",
+      "section": "## Current surfaces",
+      "content": "- **install.allternit.com** — source: `Allternit Websites/Projects/install.allternit.com`",
+      "reason": "Discovered website project install.allternit.com"
+    },
+    {
+      "doc": "Surfaces/INDEX.md",
+      "action": "ensure-section",
+      "section": "## Current surfaces",
+      "content": "- **install.gizziio.com** — source: `Allternit Websites/Projects/install.gizziio.com`",
+      "reason": "Discovered website project install.gizziio.com"
+    },
+    {
+      "doc": "Surfaces/INDEX.md",
+      "action": "ensure-section",
+      "section": "## Current surfaces",
+      "content": "- **labs.allternit.com** — source: `Allternit Websites/Projects/labs.allternit.com`",
+      "reason": "Discovered website project labs.allternit.com"
+    },
+    {
+      "doc": "Surfaces/INDEX.md",
+      "action": "ensure-section",
+      "section": "## Current surfaces",
+      "content": "- **manufacturing.allternit.com** — source: `Allternit Websites/Projects/manufacturing.allternit.com`",
+      "reason": "Discovered website project manufacturing.allternit.com"
+    },
+    {
+      "doc": "Surfaces/INDEX.md",
+      "action": "ensure-section",
+      "section": "## Current surfaces",
+      "content": "- **platform.allternit.com** — source: `Allternit Websites/Projects/platform.allternit.com`",
+      "reason": "Discovered website project platform.allternit.com"
+    },
+    {
+      "doc": "Surfaces/INDEX.md",
+      "action": "ensure-section",
+      "section": "## Current surfaces",
+      "content": "- **robotics.allternit.com** — source: `Allternit Websites/Projects/robotics.allternit.com`",
+      "reason": "Discovered website project robotics.allternit.com"
+    },
+    {
+      "doc": "Surfaces/INDEX.md",
+      "action": "ensure-section",
+      "section": "## Current surfaces",
+      "content": "- **services.allternit.com** — source: `Allternit Websites/Projects/services.allternit.com`",
+      "reason": "Discovered website project services.allternit.com"
+    },
+    {
+      "doc": "Surfaces/INDEX.md",
+      "action": "ensure-section",
+      "section": "## Current surfaces",
+      "content": "- **spaces.allternit.com** — source: `Allternit Websites/Projects/spaces.allternit.com`",
+      "reason": "Discovered website project spaces.allternit.com"
+    },
+    {
+      "doc": "Surfaces/INDEX.md",
+      "action": "ensure-section",
+      "section": "## Current surfaces",
+      "content": "- **www.allternit.com** — source: `Allternit Websites/Projects/www.allternit.com`",
+      "reason": "Discovered website project www.allternit.com"
+    },
+    {
+      "doc": "Products/Compute/INDEX.md",
+      "action": "ensure-section",
+      "section": "## Related surfaces",
+      "content": "- Public surface: [compute.allternit.com](../../../Surfaces/INDEX.md)",
+      "reason": "Discovered compute.allternit.com site"
+    },
+    {
+      "doc": "Products/Manufacturing/INDEX.md",
+      "action": "ensure-section",
+      "section": "## Related surfaces",
+      "content": "- Public surface: [manufacturing.allternit.com](../../../Surfaces/INDEX.md)",
+      "reason": "Discovered manufacturing.allternit.com site"
+    },
+    {
+      "doc": "Products/Robotics/INDEX.md",
+      "action": "ensure-section",
+      "section": "## Related surfaces",
+      "content": "- Public surface: [robotics.allternit.com](../../../Surfaces/INDEX.md)",
+      "reason": "Discovered robotics.allternit.com site"
+    },
+    {
+      "doc": "Products/Spaces/INDEX.md",
+      "action": "ensure-section",
+      "section": "## Related surfaces",
+      "content": "- Public surface: [spaces.allternit.com](../../../Surfaces/INDEX.md)",
+      "reason": "Discovered spaces.allternit.com site"
+    }
+  ]
+}

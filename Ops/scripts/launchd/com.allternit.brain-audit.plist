@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.allternit.brain-audit</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/opt/homebrew/bin/node</string>
+    <string>/Users/joe/Desktop/Allternit/Allternit Brain/Ops/scripts/audit-brain.js</string>
+  </array>
+
+  <!-- Run nightly at 06:17 local time. -->
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key>
+    <integer>6</integer>
+    <key>Minute</key>
+    <integer>17</integer>
+  </dict>
+
+  <key>StandardOutPath</key>
+  <string>/Users/joe/Desktop/Allternit/Allternit Brain/Ops/scripts/launchd/brain-audit.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/joe/Desktop/Allternit/Allternit Brain/Ops/scripts/launchd/brain-audit.error.log</string>
+
+  <key>RunAtLoad</key>
+  <false/>
+</dict>
+</plist>

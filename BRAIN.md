@@ -62,3 +62,21 @@ Start from a template in [`Templates/`](Templates/):
 - Long-form planning that isn't day-to-day operating knowledge → a pointer in `strategy/INDEX.md`, not a new brain doc.
 
 Every doc must keep the YAML frontmatter (`doc:`, `updated:`, `status:`) current. Run the audit ritual (`Ops/scripts/audit-brain.js`) to flag stale or missing frontmatter.
+
+## Automatic pipeline
+
+The brain stays current through a small set of scripts and hooks:
+
+1. **Repo watcher** — `Ops/scripts/watch-brain.js` scans `Allternit Websites/` and `Allternit LLC/06 Client Ops And Contracts/` for new sites, clients, images, and prompts. Run it manually or via the `brain_update_draft` MCP tool.
+2. **Update engine** — `Ops/scripts/apply-brain-updates.js` applies structured update files from `.incoming/`. Review with `--dry-run`, then apply.
+3. **Agent hook** — Any agent can submit an update through the `brain_update_draft` MCP tool. Without `confirm:true` it writes to `.incoming/` for review; with `confirm:true` it applies immediately.
+4. **Git hooks** — `Ops/scripts/install-hooks.js` installs `post-commit` hooks in `Allternit Websites/` and `Allternit Brain/`. After a Websites commit, the watcher generates brain-update suggestions. After a Brain commit, the audit runs.
+5. **Nightly audit** — `Ops/scripts/launchd/com.allternit.brain-audit.plist` runs `audit-brain.js` every morning. Install with `Ops/scripts/launchd/install.sh`.
+
+To regenerate suggestions now:
+
+```bash
+node "/Users/joe/Desktop/Allternit/Allternit Brain/Ops/scripts/watch-brain.js" --write
+node "/Users/joe/Desktop/Allternit/Allternit Brain/Ops/scripts/apply-brain-updates.js" --dry-run
+node "/Users/joe/Desktop/Allternit/Allternit Brain/Ops/scripts/apply-brain-updates.js"
+```

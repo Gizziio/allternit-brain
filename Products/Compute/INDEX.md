@@ -22,6 +22,7 @@ R&D.
 
 ## Related surfaces
 
+- Public surface: [compute.allternit.com](../../../Surfaces/INDEX.md)
 - [](../../Surfaces/INDEX.md)
 
 ## Source of truth
