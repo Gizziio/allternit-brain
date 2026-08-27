@@ -6,16 +6,19 @@ status: active
 
 # Products
 
-Division-level product lines for Allternit. Each folder is a living index for that division. R&D work stays separate per division until it is ready to converge on a shared surface or platform release.
+Shipping and in-development product lines that make up the Allternit offering. Products are built by the divisions and delivered through the surfaces.
 
-## Divisions
+## Product lines
 
-- [Compute](Compute/INDEX.md) — compute infrastructure and hardware-software interfaces.
-- [Manufacturing](Manufacturing/INDEX.md) — manufacturing systems, tooling, and process automation.
-- [Robotics](Robotics/INDEX.md) — robotic systems and autonomy.
-- [Spaces](Spaces/INDEX.md) — physical spaces, environments, and installations.
+- [Platform](Platform.md) — the Allternit platform: agent workspace, allternit-api, gizzi-code, and the web export.
+- [Desktop](Desktop.md) — the Electron desktop app (desktop-first BYOC architecture).
+- [SDK](SDK.md) — developer SDK and integration tools.
+- [Gizzi](Gizzi.md) — Gizzi Code terminal server and related tooling.
+- [OS](OS.md) — future on-chip play (Allternit OS).
 
-## Relationship to surfaces
+## Relationship to divisions and surfaces
 
-Products feed the platform and public surfaces documented in [`../Surfaces/INDEX.md`](../Surfaces/INDEX.md). Website work for a division should be tracked in both places: product state here, public presentation there.
+- Divisions ([`../Divisions/INDEX.md`](../Divisions/INDEX.md)) do R&D and feed capabilities into products.
+- Products are experienced through [Surfaces](../Surfaces/INDEX.md) (websites, apps, docs, installers).
+- The authoritative service catalog lives in `Allternit LLC/03 Product And Service Scope/ALLTERNIT_FULL_AI_ASSISTED_SERVICE_CATALOG.md`.
 

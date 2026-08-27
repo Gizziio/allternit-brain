@@ -15,6 +15,22 @@ The agent-readable operator's manual for Allternit LLC. This sits **beside** `Al
 - [offer.md](company/offer.md) — pricing logic, tier system, bundles, proof, claims to avoid.
 - [voice.md](company/voice.md) — the two speaking registers, phrase bank, what never to sound like.
 
+## Real World (authoritative records — pointers only)
+
+- [Real World/INDEX.md](Real%20World/INDEX.md) — index into `Allternit LLC/` formation, financials, contracts, service catalog, action pack, and company plan.
+
+## Divisions (company R&D lines)
+
+- [Divisions/INDEX.md](Divisions/INDEX.md) — Compute, Manufacturing, Robotics, Spaces.
+
+## Products (shipping and in-development product lines)
+
+- [Products/INDEX.md](Products/INDEX.md) — Allternit Platform, Desktop, SDK, Gizzi Code, Allternit OS.
+
+## Surfaces (websites, apps, docs, installers)
+
+- [Surfaces/INDEX.md](Surfaces/INDEX.md) — public-facing and internal surfaces, image and media pipeline.
+
 ## Infra (how things actually run)
 
 - [infra/stripe.md](infra/stripe.md) — account state, keys, invoicing, the booking-automation pipeline. **Has an open blocker — check `charges_enabled` before assuming checkout works.**
@@ -55,9 +71,11 @@ The full operating loop, built 2026-07-24/26: read `CLAUDE.md` (tree rules) → 
 Start from a template in [`Templates/`](Templates/):
 
 - New distilled knowledge (a belief, a rule, a fact every agent should start from) → copy `Templates/company.md` to `company/<name>.md`.
+- New real-world record pointer → copy `Templates/real-world.md` to `Real World/<name>.md`.
+- New division R&D line → copy `Templates/division.md` to `Divisions/<Name>/INDEX.md`.
+- New product line → copy `Templates/product.md` to `Products/<Name>.md` or `Products/<Name>/INDEX.md`.
 - New infra fact (a key location, an account id, a runbook step) → copy `Templates/infra.md` to `infra/<name>.md`.
 - New client → copy `Templates/client.md` to `clients/<name>.md`; contracts/SOWs/time-logs stay in `Allternit LLC/06 Client Ops And Contracts/<Client>/`.
-- New product / division line → copy `Templates/product.md` to `Products/<Name>/INDEX.md`.
 - New surface (website, app, docs site) → copy `Templates/surface.md` to `Surfaces/<Name>.md`.
 - Long-form planning that isn't day-to-day operating knowledge → a pointer in `strategy/INDEX.md`, not a new brain doc.
 

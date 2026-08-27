@@ -1,5 +1,5 @@
 ---
-doc: product
+doc: division
 updated: 2026-08-27
 status: draft
 ---
@@ -8,7 +8,7 @@ status: draft
 
 ## What it is
 
-Allternit's robotics division: robotic systems, autonomy, and embodied agents.
+Allternit's robotics division: robotic systems, autonomy, and simulations.
 
 ## Current phase
 
@@ -22,11 +22,14 @@ R&D.
 
 ## Related surfaces
 
-- Public surface: [robotics.allternit.com](../../../Surfaces/INDEX.md)
-- [](../../Surfaces/INDEX.md)
+- Public surface: [robotics.allternit.com](../../Surfaces/INDEX.md)
+
+## Related products
+
+- [Allternit Platform](../Products/INDEX.md)
 
 ## Source of truth
 
-- Engineering repo:
+- Division workspace: `Allternit LLC/07 Research And Robotics/` and `Research/Robotics Simulations/`
 - Public site:
 

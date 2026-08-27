@@ -1,5 +1,5 @@
 ---
-doc: product
+doc: division
 updated: 2026-08-27
 status: draft
 ---
@@ -22,11 +22,14 @@ R&D.
 
 ## Related surfaces
 
-- Public surface: [spaces.allternit.com](../../../Surfaces/INDEX.md)
-- [](../../Surfaces/INDEX.md)
+- Public surface: [spaces.allternit.com](../../Surfaces/INDEX.md)
+
+## Related products
+
+- [Allternit Platform](../Products/INDEX.md)
 
 ## Source of truth
 
-- Engineering repo:
+- Division workspace: `Research/` and division surfaces
 - Public site:
 

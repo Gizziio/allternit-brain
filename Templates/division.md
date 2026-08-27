@@ -1,16 +1,12 @@
 ---
-doc: product
+doc: division
 updated: YYYY-MM-DD
 status: draft
 ---
 
-# Product Name
+# Division Name
 
-## What it is (one paragraph)
-
-## Division / owner
-
-- [](../Divisions/INDEX.md)
+## What it is
 
 ## Current phase
 
@@ -18,12 +14,16 @@ status: draft
 
 ## Key open questions
 
+## Related products
+
+- [](../Products/INDEX.md)
+
 ## Related surfaces
 
 - [](../Surfaces/INDEX.md)
 
 ## Source of truth
 
-- Engineering repo:
-- Website / public docs:
+- Division workspace:
+- Public site:
 

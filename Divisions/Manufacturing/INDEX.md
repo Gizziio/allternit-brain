@@ -1,5 +1,5 @@
 ---
-doc: product
+doc: division
 updated: 2026-08-27
 status: draft
 ---
@@ -8,7 +8,7 @@ status: draft
 
 ## What it is
 
-Allternit's manufacturing division: systems, tooling, and automation for producing physical and digital goods at scale.
+Allternit's manufacturing division: systems, tooling, process automation, CAD, and the real-estate platform.
 
 ## Current phase
 
@@ -22,11 +22,14 @@ R&D.
 
 ## Related surfaces
 
-- Public surface: [manufacturing.allternit.com](../../../Surfaces/INDEX.md)
-- [](../../Surfaces/INDEX.md)
+- Public surface: [manufacturing.allternit.com](../../Surfaces/INDEX.md)
+
+## Related products
+
+- [Allternit Platform](../Products/INDEX.md)
 
 ## Source of truth
 
-- Engineering repo:
+- Division workspace: `Allternit Manufacturing/`
 - Public site:
 

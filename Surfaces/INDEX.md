@@ -6,7 +6,7 @@ status: active
 
 # Surfaces
 
-Public-facing and internal surfaces for Allternit: websites, apps, docs, and any other place a user interacts with the brand or product.
+Public-facing and internal surfaces for Allternit: websites, apps, docs, installers, and any other place a user interacts with the brand or product. The authoritative source for website projects is `Allternit Websites/Projects/`; images and generated media prompts should live with each site's source, not scattered across `additional/` folders. See `Allternit Websites/README.md` for the deploy mapping.
 
 ## Current surfaces
 
@@ -22,9 +22,6 @@ Public-facing and internal surfaces for Allternit: websites, apps, docs, and any
 - **docs.gizziio.com** — source: `Allternit Websites/Projects/docs.gizziio.com`
 - **docs.allternit.com** — source: `Allternit Websites/Projects/docs.allternit.com`
 - **compute.allternit.com** — source: `Allternit Websites/Projects/compute.allternit.com`
-- `Allternit Websites/` — root repo for public division sites.
-  - Images and generated media prompts should live with each site's source, not scattered across `additional/` folders.
-  - See `Allternit Websites/README.md` for the deploy mapping.
 
 ## Image and media pipeline
 
@@ -34,6 +31,7 @@ Public-facing and internal surfaces for Allternit: websites, apps, docs, and any
 
 ## Related brain docs
 
-- [](../Products/INDEX.md)
-- [](../infra/cloudflare.md)
+- [Divisions](../Divisions/INDEX.md)
+- [Products](../Products/INDEX.md)
+- [infra/cloudflare.md](../infra/cloudflare.md)
 

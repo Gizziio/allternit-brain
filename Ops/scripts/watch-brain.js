@@ -27,10 +27,10 @@ const CLIENT_OPS_ROOT = path.join(ALLTERNIT_ROOT, 'Allternit LLC', '06 Client Op
 const PROJECTS_ROOT = path.join(WEBSITES_ROOT, 'Projects');
 
 const DIVISION_SITES = {
-  compute: { product: 'Products/Compute/INDEX.md', label: 'Allternit Compute' },
-  manufacturing: { product: 'Products/Manufacturing/INDEX.md', label: 'Allternit Manufacturing' },
-  robotics: { product: 'Products/Robotics/INDEX.md', label: 'Allternit Robotics' },
-  spaces: { product: 'Products/Spaces/INDEX.md', label: 'Allternit Spaces' },
+  compute: { division: 'Divisions/Compute/INDEX.md', label: 'Allternit Compute' },
+  manufacturing: { division: 'Divisions/Manufacturing/INDEX.md', label: 'Allternit Manufacturing' },
+  robotics: { division: 'Divisions/Robotics/INDEX.md', label: 'Allternit Robotics' },
+  spaces: { division: 'Divisions/Spaces/INDEX.md', label: 'Allternit Spaces' },
 };
 
 function today() {
@@ -127,11 +127,11 @@ function buildUpdate() {
     const divisionSite = sites.find((s) => s.folder === `${division}.allternit.com`);
     if (!divisionSite) continue;
 
-    const productDoc = info.product;
-    const publicSurfaceLine = `- Public surface: [${division}.allternit.com](../../../Surfaces/INDEX.md)`;
-    if (!fileContains(path.join(BRAIN_ROOT, productDoc), publicSurfaceLine)) {
+    const divisionDoc = info.division;
+    const publicSurfaceLine = `- Public surface: [${division}.allternit.com](../../Surfaces/INDEX.md)`;
+    if (!fileContains(path.join(BRAIN_ROOT, divisionDoc), publicSurfaceLine)) {
       updates.push({
-        doc: productDoc,
+        doc: divisionDoc,
         action: 'ensure-section',
         section: '## Related surfaces',
         content: publicSurfaceLine,
