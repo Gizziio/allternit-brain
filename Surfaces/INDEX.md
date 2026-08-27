@@ -42,9 +42,10 @@ Source of truth for prompts and outputs: `Marketing/Production/Website Assets/`.
 
 1. **Generate** — use prompts in `Marketing/Production/Website Assets/image-prompts/` and `video-prompts/`.
 2. **Approve** — move outputs from `outputs/pending/` to `outputs/approved/<site>/`.
-3. **Sync** — run `node Marketing/Production/Website Assets/scripts/sync-to-sites.js` to copy approved outputs into `Allternit Websites/Projects/<site>/source/`.
-4. **Reference** — update the site's HTML/JS/CSS to use the new asset.
-5. **Deploy** — use `allternit-ops` `cloudflare_deploy_pages` or the GitHub Actions workflow.
+3. **Sync** — run `node Marketing/Production/Website Assets/scripts/sync-to-sites.js` to copy approved outputs into `Allternit Websites/Projects/<site>/source/`. Agents can also trigger this through `allternit-ops` `media_sync` (dry-run by default; pass `confirm:true` to copy).
+4. **Audit** — run `node Allternit Websites/Scripts/audit-media.js` or use `allternit-ops` `media_audit` to see what each site has on disk vs. what it references.
+5. **Reference** — update the site's HTML/JS/CSS to use the new asset.
+6. **Deploy** — use `allternit-ops` `cloudflare_deploy_pages` or the GitHub Actions workflow.
 
 Research assets that pre-date the pipeline live in `Allternit Assets/Research/visual-assets/`; match them to prompts and copy them through the approved outputs step instead of dropping them randomly into site folders.
 
