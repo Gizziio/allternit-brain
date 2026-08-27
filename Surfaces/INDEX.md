@@ -1,6 +1,6 @@
 ---
 doc: surface
-updated: 2026-08-27
+updated: 2026-08-28
 status: active
 ---
 
@@ -48,6 +48,16 @@ Source of truth for prompts and outputs: `Marketing/Production/Website Assets/`.
 6. **Deploy** — use `allternit-ops` `cloudflare_deploy_pages` or the GitHub Actions workflow.
 
 Research assets that pre-date the pipeline live in `Allternit Assets/Research/visual-assets/`; match them to prompts and copy them through the approved outputs step instead of dropping them randomly into site folders.
+
+## Brand assets and design tokens
+
+Canonical brand assets live in `Allternit Assets/` (now its own tracked repo). Agents should read the inventory before generating new marketing or website assets:
+
+- `Allternit Assets/Brand/README.md` — full brand inventory, status table, and generation briefs for missing wordmarks, favicons, social cards, and app icons.
+- `Allternit Assets/Docs/design-tokens.md` — canonical color, spacing, and typography tokens.
+- `Allternit Assets/Index/AGENT_RULES.md` — hard rules for handling typography and prototype fonts.
+
+When a new brand asset is approved, copy it into `Allternit Assets/Brand/` first, then flow it through the media pipeline above.
 
 ## Related brain docs
 
