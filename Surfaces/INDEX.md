@@ -25,9 +25,28 @@ Public-facing and internal surfaces for Allternit: websites, apps, docs, install
 
 ## Image and media pipeline
 
-1. Generated images go into the relevant site's `public/` or `src/assets/` folder.
-2. Video / motion prompts for those images are stored next to the images they reference (`<image-name>.prompt.md` or in a `prompts/` folder).
-3. Ops can deploy a site via the `allternit-ops` MCP tool `cloudflare_deploy_pages`.
+Source of truth for prompts and outputs: `Marketing/Production/Website Assets/`. Front-and-center tracker: `Marketing/Production/Website Assets/tracker.md`.
+
+| Site | Prompt sections | Images on disk | Status |
+|---|---|---|---|
+| compute.allternit.com | 19 | 248 | assets staged, sparse source refs |
+| manufacturing.allternit.com | 56 | 170 | assets staged, sparse source refs |
+| robotics.allternit.com | 17 | 198 | assets staged, sparse source refs |
+| spaces.allternit.com | 21 | 255 | assets staged, sparse source refs |
+| labs.allternit.com | 4 | 41 | in progress |
+| platform.allternit.com | 3+ | 62 | needs generation |
+| www.allternit.com | — | 116 | discovery feed live |
+| services.allternit.com | — | 64 | live booking site |
+
+### Workflow
+
+1. **Generate** — use prompts in `Marketing/Production/Website Assets/image-prompts/` and `video-prompts/`.
+2. **Approve** — move outputs from `outputs/pending/` to `outputs/approved/<site>/`.
+3. **Sync** — run `node Marketing/Production/Website Assets/scripts/sync-to-sites.js` to copy approved outputs into `Allternit Websites/Projects/<site>/source/`.
+4. **Reference** — update the site's HTML/JS/CSS to use the new asset.
+5. **Deploy** — use `allternit-ops` `cloudflare_deploy_pages` or the GitHub Actions workflow.
+
+Research assets that pre-date the pipeline live in `Allternit Assets/Research/visual-assets/`; match them to prompts and copy them through the approved outputs step instead of dropping them randomly into site folders.
 
 ## Related brain docs
 
