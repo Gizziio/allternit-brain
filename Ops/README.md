@@ -31,18 +31,39 @@ npm install
 
 Requires: `python3` (for `stripe_send_invoice`), the Stripe key in the macOS Keychain (`security find-generic-password -s stripe-allternit -w`, fallback env var `STRIPE_KEY`), and network access to `api.stripe.com`. Cloudflare tools shell out to `npx wrangler`, which resolves an already-OAuth-authed `wrangler` — no separate credential needed on this Mac.
 
-## Register with Claude Code
+## Register with your agent
 
-Registered:
+This MCP server should be available to whichever agent is driving. Register it in each tool you use.
+
+### Claude Code
 
 ```bash
 claude mcp add allternit-ops node "/Users/joe/Desktop/Allternit/Allternit Brain/Ops/index.js"
+claude mcp list
 ```
 
-Verify:
+### Kimi Code CLI
+
+Add to `~/.kimi-code/mcp.json`:
+
+```json
+{
+  "mcpServers": {
+    "allternit-ops": {
+      "command": "node",
+      "args": ["/Users/joe/Desktop/Allternit/Allternit Brain/Ops/index.js"]
+    }
+  }
+}
+```
+
+Then start a new Kimi session and run `/mcp` to confirm connection. In prompt mode, `kimi -p "/mcp"` will list the available `mcp__allternit-ops__*` tools.
+
+### Codex CLI
 
 ```bash
-claude mcp list
+codex mcp add allternit-ops -- node "/Users/joe/Desktop/Allternit/Allternit Brain/Ops/index.js"
+codex mcp list
 ```
 
 ## Known gap (2026-07-21)
