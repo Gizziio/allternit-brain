@@ -1,3 +1,9 @@
+---
+doc: infra
+updated: 2026-07-27
+status: active
+---
+
 # Payroll & state tax registrations (infra record)
 
 *Updated 2026-07-27.*

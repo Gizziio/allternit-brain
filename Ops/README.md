@@ -1,3 +1,9 @@
+---
+doc: ops
+updated: 2026-08-27
+status: active
+---
+
 # Allternit Brain — Ops Gateway
 
 MCP gateway for Allternit LLC business operations. Lives inside `Allternit Brain/Ops/` so agents can read brain knowledge and act on it through one system. Stdio MCP server — every business-ops skill, delegated CLI agent (kimi/codex/agy), and future autonomous agent should go through this instead of touching Stripe keys, wrangler, or the brain directly.
@@ -27,17 +33,16 @@ Requires: `python3` (for `stripe_send_invoice`), the Stripe key in the macOS Key
 
 ## Register with Claude Code
 
-Add to Claude Code's MCP config (`claude mcp add` or the relevant `.mcp.json`/settings entry):
+Registered:
 
-```json
-{
-  "mcpServers": {
-    "allternit-ops": {
-      "command": "node",
-      "args": ["/Users/joe/Desktop/Allternit/Allternit Brain/Ops/index.js"]
-    }
-  }
-}
+```bash
+claude mcp add allternit-ops node "/Users/joe/Desktop/Allternit/Allternit Brain/Ops/index.js"
+```
+
+Verify:
+
+```bash
+claude mcp list
 ```
 
 ## Known gap (2026-07-21)

@@ -1,3 +1,9 @@
+---
+doc: index
+updated: 2026-08-27
+status: active
+---
+
 # Allternit Brain
 
 The agent-readable operator's manual for Allternit LLC. This sits **beside** `Allternit LLC/` (never wraps it) — that folder stays the authoritative filing cabinet of real-world records (contracts, financials, formation docs). This brain holds distilled operating knowledge, an index with pointers into that filing cabinet, and hot per-client state. Read this file first; follow the pointers for anything that needs the source.
@@ -46,7 +52,13 @@ The full operating loop, built 2026-07-24/26: read `CLAUDE.md` (tree rules) → 
 
 ## How to add to this brain
 
-- New distilled knowledge (a belief, a rule, a fact every agent should start from) → `company/`.
-- New infra fact (a key location, an account id, a runbook step) → `infra/`.
-- New client → `clients/<name>.md`, hot state only; contracts/SOWs/time-logs stay in `Allternit LLC/06 Client Ops And Contracts/<Client>/`.
+Start from a template in [`Templates/`](Templates/):
+
+- New distilled knowledge (a belief, a rule, a fact every agent should start from) → copy `Templates/company.md` to `company/<name>.md`.
+- New infra fact (a key location, an account id, a runbook step) → copy `Templates/infra.md` to `infra/<name>.md`.
+- New client → copy `Templates/client.md` to `clients/<name>.md`; contracts/SOWs/time-logs stay in `Allternit LLC/06 Client Ops And Contracts/<Client>/`.
+- New product / division line → copy `Templates/product.md` to `Products/<Name>/INDEX.md`.
+- New surface (website, app, docs site) → copy `Templates/surface.md` to `Surfaces/<Name>.md`.
 - Long-form planning that isn't day-to-day operating knowledge → a pointer in `strategy/INDEX.md`, not a new brain doc.
+
+Every doc must keep the YAML frontmatter (`doc:`, `updated:`, `status:`) current. Run the audit ritual (`Ops/scripts/audit-brain.js`) to flag stale or missing frontmatter.

@@ -56,6 +56,7 @@ const KNOWN_PAGES_PROJECTS = [
 // Client-folder templates, in the numbered order the kickoff playbook expects
 // (see 06 Client Ops And Contracts/00_New_Client_Kickoff_Playbook.md, Step 3's
 // naming convention: "<Client>/04_Client_Intake_<Client>.md").
+// If a matching .docx file exists next to the .md source, it is copied too.
 const CLIENT_TEMPLATES = [
   { file: '01_Master_Services_Agreement.md', label: 'Master_Services_Agreement' },
   { file: '02_Statement_of_Work_Template.md', label: 'Statement_of_Work' },
@@ -405,12 +406,22 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         fs.mkdirSync(clientDir, { recursive: true });
         const created = [];
         for (const tpl of CLIENT_TEMPLATES) {
-          const src = path.join(TEMPLATE_ROOT, tpl.file);
-          if (!fs.existsSync(src)) continue;
           const numPrefix = tpl.file.match(/^(\d+)_/)?.[1] || '00';
-          const destName = `${numPrefix}_${tpl.label}_${clientName}.md`;
-          fs.copyFileSync(src, path.join(clientDir, destName));
-          created.push(destName);
+          const baseName = `${numPrefix}_${tpl.label}_${clientName}`;
+
+          const mdSrc = path.join(TEMPLATE_ROOT, tpl.file);
+          if (fs.existsSync(mdSrc)) {
+            const mdDest = `${baseName}.md`;
+            fs.copyFileSync(mdSrc, path.join(clientDir, mdDest));
+            created.push(mdDest);
+          }
+
+          const docxSrc = path.join(TEMPLATE_ROOT, tpl.file.replace(/\.md$/, '.docx'));
+          if (fs.existsSync(docxSrc)) {
+            const docxDest = `${baseName}.docx`;
+            fs.copyFileSync(docxSrc, path.join(clientDir, docxDest));
+            created.push(docxDest);
+          }
         }
         return textResult(
           `Created ${clientDir}\nCopied templates:\n` + created.map((f) => '- ' + f).join('\n') +
