@@ -15,6 +15,10 @@ Operating divisions of Allternit LLC. Each division has its own R&D workspace at
 - [Robotics](Robotics/INDEX.md) — robotic systems, autonomy, and simulations.
 - [Spaces](Spaces/INDEX.md) — physical spaces, environments, and installations.
 
+## Division convergence
+
+See [CONVERGENCE.md](CONVERGENCE.md) for how Compute, Manufacturing, Robotics, and Spaces hand off work to each other.
+
 ## Relationship to products and surfaces
 
 Divisions feed the [Products](../Products/INDEX.md) (the Allternit platform, desktop app, SDK, etc.) and the public [Surfaces](../Surfaces/INDEX.md) (websites, apps, docs). Track division R&D state here, product/platform state in `Products/`, and public-facing presentation in `Surfaces/`.
