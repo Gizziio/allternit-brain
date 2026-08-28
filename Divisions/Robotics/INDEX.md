@@ -43,7 +43,7 @@ R&D.
 
 ## Related products
 
-- [Allternit Platform](../Products/Platform.md)
+- [Allternit Platform](../../Products/Platform.md)
 - [Allternit Compute](../Compute/INDEX.md)
 - [Allternit Manufacturing](../Manufacturing/INDEX.md)
 

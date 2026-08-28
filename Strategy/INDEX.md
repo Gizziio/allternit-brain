@@ -1,6 +1,6 @@
 ---
 doc: strategy/index
-updated: 2026-08-27
+updated: 2026-08-28
 status: active
 ---
 
@@ -20,5 +20,17 @@ These are long-form planning docs, not day-to-day operating knowledge — read t
 - **Mandate radar:** `Allternit LLC/04 Go To Market And Marketing/ALLTERNIT_MANDATE_RADAR.md` — the sourced register of compliance mandates by vertical (food packaging, privacy/cyber/AI, professional sectors, tax/employment/MN), ranked against the Lane 4 three-filter test. Re-verify before client-facing use; review quarterly.
 - **Platform surfaces spec:** `Allternit LLC/03 Product And Service Scope/ALLTERNIT_PLATFORM_SURFACES_SPEC.md` — functional definitions of the Allternit platform's two surfaces (builder = workbench; admin = tenants/billing/audit/fleet control room), with MVP cuts and repo grounding.
 - **Consolidated future-development planning docs:** `Allternit Platform Future Development/` — workflow-blueprints (A2R-naming removed, renamed 2026-07-20), remote-dispatch-plan, and two loose strategy MDs (SLATE_AUDIT, bonsai-webgpu-runtime-spec).
+
+## Future development pointers
+
+- [bonsai-webgpu-runtime-spec-README](../../Allternit%20Platform%20Future%20Development/bonsai-webgpu-runtime-spec-README.md)
+- [Workflow Blueprints testing TESTING-STRATEGY](../../Allternit%20Platform%20Future%20Development/Workflow%20Blueprints/testing/TESTING-STRATEGY.md)
+- [Workflow Blueprints implementation P0-IMPLEMENTATION-GUIDE](../../Allternit%20Platform%20Future%20Development/Workflow%20Blueprints/implementation/P0-IMPLEMENTATION-GUIDE.md)
+- [Workflow Blueprints README](../../Allternit%20Platform%20Future%20Development/Workflow%20Blueprints/README.md)
+- [SLATE AUDIT AND ALLTERNIT PLAN](../../Allternit%20Platform%20Future%20Development/SLATE_AUDIT_AND_ALLTERNIT_PLAN.md)
+- [Remote Dispatch Plan ALLTERNIT REMOTE DISPATCH PLAN](../../Allternit%20Platform%20Future%20Development/Remote%20Dispatch%20Plan/ALLTERNIT_REMOTE_DISPATCH_PLAN.md)
+- [GENOFFICE INTEGRATION PLAN](../../Allternit%20Platform%20Future%20Development/GENOFFICE_INTEGRATION_PLAN.md)
+- [GENOFFICE COHERENT ARCHITECTURE](../../Allternit%20Platform%20Future%20Development/GENOFFICE_COHERENT_ARCHITECTURE.md)
+_Individual docs from `Allternit Platform Future Development/` are linked below as they are discovered._
 
 Related: [[../company/business.md]] summarizes the load-bearing facts from these into current operating knowledge.

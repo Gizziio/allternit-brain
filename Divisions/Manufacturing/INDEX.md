@@ -58,8 +58,8 @@ Division boundary rule: if a doc is about **how to physically make something**, 
 
 ## Related products
 
-- [Allternit Platform](../Products/Platform.md) — the software layer that will eventually orchestrate the manufacturing cloud
-- [Allternit OS](../Products/OS.md) — future on-chip play
+- [Allternit Platform](../../Products/Platform.md) — the software layer that will eventually orchestrate the manufacturing cloud
+- [Allternit OS](../../Products/OS.md) — future on-chip play
 
 ## Source of truth
 

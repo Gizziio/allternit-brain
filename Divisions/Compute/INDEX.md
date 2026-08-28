@@ -49,8 +49,8 @@ Division boundary rule: if a doc is about **what to build and why**, it lives in
 
 ## Related products
 
-- [Allternit Platform](../Products/Platform.md) — the agent workspace and SDK that consume compute leases
-- [Allternit OS](../Products/OS.md) — future on-chip play
+- [Allternit Platform](../../Products/Platform.md) — the agent workspace and SDK that consume compute leases
+- [Allternit OS](../../Products/OS.md) — future on-chip play
 
 ## Source of truth
 

@@ -14,7 +14,7 @@ status: draft
 
 ## Related brain docs
 
-- [](../company/business.md)
+- [business.md](../company/business.md)
 
 ## Source of truth (read in place, never duplicate)
 

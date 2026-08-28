@@ -25,6 +25,10 @@ const INCOMING_ROOT = path.join(BRAIN_ROOT, '.incoming');
 const WEBSITES_ROOT = path.join(ALLTERNIT_ROOT, 'Allternit Websites');
 const CLIENT_OPS_ROOT = path.join(ALLTERNIT_ROOT, 'Allternit LLC', '06 Client Ops And Contracts');
 const PROJECTS_ROOT = path.join(WEBSITES_ROOT, 'Projects');
+const COMPUTE_ROOT = path.join(ALLTERNIT_ROOT, 'Allternit Compute');
+const MANUFACTURING_ROOT = path.join(ALLTERNIT_ROOT, 'Allternit Manufacturing');
+const PLATFORM_FUTURE_ROOT = path.join(ALLTERNIT_ROOT, 'Allternit Platform Future Development');
+const MARKETING_ASSETS_ROOT = path.join(ALLTERNIT_ROOT, 'Marketing', 'Production', 'Website Assets');
 
 const DIVISION_SITES = {
   compute: { division: 'Divisions/Compute/INDEX.md', label: 'Allternit Compute' },
@@ -101,6 +105,59 @@ function discoverMediaPrompts(siteFolder) {
   return prompts;
 }
 
+function listMarkdownFiles(rootDir) {
+  if (!fs.existsSync(rootDir)) return [];
+  const files = [];
+  function walk(dir) {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory() && !entry.name.startsWith('.') && entry.name !== 'node_modules' && entry.name !== 'Source Materials') {
+        walk(full);
+      } else if (entry.name.endsWith('.md')) {
+        files.push(full);
+      }
+    }
+  }
+  walk(rootDir);
+  return files;
+}
+
+function discoverComputeSpecs() {
+  const specs = [];
+  for (const file of listMarkdownFiles(COMPUTE_ROOT)) {
+    const rel = path.relative(COMPUTE_ROOT, file);
+    specs.push(rel);
+  }
+  return specs;
+}
+
+function discoverManufacturingSpecs() {
+  const specs = [];
+  const specsDir = path.join(MANUFACTURING_ROOT, 'Specifications');
+  for (const file of listMarkdownFiles(specsDir)) {
+    const rel = path.relative(specsDir, file);
+    specs.push(rel);
+  }
+  return specs;
+}
+
+function discoverPlatformFutureDocs() {
+  const docs = [];
+  for (const file of listMarkdownFiles(PLATFORM_FUTURE_ROOT)) {
+    const rel = path.relative(PLATFORM_FUTURE_ROOT, file);
+    docs.push(rel);
+  }
+  return docs;
+}
+
+function discoverMarketingCampaigns() {
+  const releasesDir = path.join(ALLTERNIT_ROOT, 'Marketing', 'Releases');
+  if (!fs.existsSync(releasesDir)) return [];
+  return listDirs(releasesDir)
+    .filter((d) => /^\d{4}-\d{2}-\d{2}-/.test(d))
+    .map((d) => ({ folder: d }));
+}
+
 function buildUpdate() {
   const updates = [];
   const sites = discoverWebsites();
@@ -167,6 +224,67 @@ function buildUpdate() {
         section: '## Image and media pipeline',
         content: `${marker}\n\n- Prompts: ${prompts.map((p) => `\`${p}\``).join(', ')}`,
         reason: `Discovered media prompts in ${site.folder}`,
+      });
+    }
+  }
+
+  // Division workspaces: ensure project docs exist and index Compute/Manufacturing specs
+  const computeSpecs = discoverComputeSpecs();
+  if (computeSpecs.length > 0) {
+    const marker = '- Allternit Compute workspace specs';
+    if (!fileContains(path.join(BRAIN_ROOT, 'Projects/INDEX.md'), marker)) {
+      updates.push({
+        doc: 'Projects/INDEX.md',
+        action: 'ensure-section',
+        section: '## Active projects',
+        content: `${marker}: [Allternit Compute](../Divisions/Compute/INDEX.md)`,
+        reason: 'Discovered Allternit Compute workspace',
+      });
+    }
+  }
+
+  const mfgSpecs = discoverManufacturingSpecs();
+  if (mfgSpecs.length > 0) {
+    const marker = '- Allternit Manufacturing workspace specs';
+    if (!fileContains(path.join(BRAIN_ROOT, 'Projects/INDEX.md'), marker)) {
+      updates.push({
+        doc: 'Projects/INDEX.md',
+        action: 'ensure-section',
+        section: '## Active projects',
+        content: `${marker}: [Allternit Manufacturing](../Divisions/Manufacturing/INDEX.md)`,
+        reason: 'Discovered Allternit Manufacturing workspace',
+      });
+    }
+  }
+
+  // Platform Future Development: suggest strategy pointers
+  const platformDocs = discoverPlatformFutureDocs();
+  for (const doc of platformDocs) {
+    const title = doc.replace(/\.md$/, '').replace(/[_/]/g, ' ');
+    const encodedDoc = doc.replace(/ /g, '%20');
+    const marker = `- [${title}](`;
+    if (!fileContains(path.join(BRAIN_ROOT, 'Strategy/INDEX.md'), marker)) {
+      updates.push({
+        doc: 'Strategy/INDEX.md',
+        action: 'ensure-section',
+        section: '## Future development pointers',
+        content: `${marker}../../Allternit%20Platform%20Future%20Development/${encodedDoc})`,
+        reason: `Discovered platform future doc ${doc}`,
+      });
+    }
+  }
+
+  // Marketing campaigns: track pending releases
+  const campaigns = discoverMarketingCampaigns();
+  for (const campaign of campaigns) {
+    const marker = `- **${campaign.folder}**`;
+    if (!fileContains(path.join(BRAIN_ROOT, 'Dashboard/Campaigns.md'), marker)) {
+      updates.push({
+        doc: 'Dashboard/Campaigns.md',
+        action: 'ensure-section',
+        section: '## Queued',
+        content: `${marker} — pending asset generation`,
+        reason: `Discovered marketing campaign ${campaign.folder}`,
       });
     }
   }
