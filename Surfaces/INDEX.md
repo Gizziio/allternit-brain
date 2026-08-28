@@ -10,6 +10,7 @@ Public-facing and internal surfaces for Allternit: websites, apps, docs, install
 
 ## Current surfaces
 
+- **try.allternit.com** — source: `Allternit Websites/Projects/try.allternit.com`
 - **www.allternit.com** — source: `Allternit Websites/Projects/www.allternit.com`
 - **spaces.allternit.com** — source: `Allternit Websites/Projects/spaces.allternit.com`
 - **services.allternit.com** — source: `Allternit Websites/Projects/services.allternit.com`
