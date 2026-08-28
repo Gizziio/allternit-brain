@@ -7,8 +7,9 @@
 
   <key>ProgramArguments</key>
   <array>
-    <string>/opt/homebrew/bin/node</string>
-    <string>/Users/joe/Desktop/Allternit/Allternit Brain/Ops/scripts/audit-brain.js</string>
+    <string>/usr/bin/python3</string>
+    <string>/Users/joe/Desktop/Allternit/Allternit Brain/scripts/brain-pipeline.py</string>
+    <string>--write</string>
   </array>
 
   <!-- Run nightly at 06:17 local time. -->
@@ -21,9 +22,9 @@
   </dict>
 
   <key>StandardOutPath</key>
-  <string>/Users/joe/Desktop/Allternit/Allternit Brain/Ops/scripts/launchd/brain-audit.log</string>
+  <string>/Users/joe/.allternit/logs/brain-audit.log</string>
   <key>StandardErrorPath</key>
-  <string>/Users/joe/Desktop/Allternit/Allternit Brain/Ops/scripts/launchd/brain-audit.error.log</string>
+  <string>/Users/joe/.allternit/logs/brain-audit.error.log</string>
 
   <key>RunAtLoad</key>
   <false/>

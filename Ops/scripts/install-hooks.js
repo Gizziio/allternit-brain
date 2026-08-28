@@ -24,6 +24,16 @@ const HOOK_TARGETS = [
     targetName: 'post-commit',
   },
   {
+    repo: path.join(ALLTERNIT_ROOT, 'Allternit Compute'),
+    hook: 'post-commit-websites',
+    targetName: 'post-commit',
+  },
+  {
+    repo: path.join(ALLTERNIT_ROOT, 'Allternit Manufacturing'),
+    hook: 'post-commit-websites',
+    targetName: 'post-commit',
+  },
+  {
     repo: path.join(ALLTERNIT_ROOT, 'Allternit Brain'),
     hook: 'post-commit-brain',
     targetName: 'post-commit',

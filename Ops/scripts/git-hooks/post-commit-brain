@@ -9,3 +9,9 @@ node "$BRAIN_OPS/audit-brain.js" >/dev/null 2>&1 || {
   echo "⚠️  Brain audit found issues. Run:"
   echo "  node \"$BRAIN_OPS/audit-brain.js\""
 }
+
+node "$BRAIN_OPS/validate-links.js" >/dev/null 2>&1 || {
+  echo ""
+  echo "🔗 Brain link validation found broken relative links. Run:"
+  echo "  node \"$BRAIN_OPS/validate-links.js\""
+}
