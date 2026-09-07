@@ -1,6 +1,6 @@
 ---
 doc: product
-updated: 2026-08-27
+updated: 2026-09-07
 status: active
 ---
 
@@ -15,6 +15,7 @@ Shipping and in-development product lines that make up the Allternit offering. P
 - [SDK](SDK.md) — developer SDK and integration tools.
 - [Gizzi](Gizzi.md) — Gizzi Code terminal server and related tooling.
 - [OS](OS.md) — future on-chip play (Allternit OS).
+- [Provider Routing](ProviderRouting.md) — Allternit Cloud provider routing (Hermes-style, per-model overrides); v1 passthrough design.
 
 ## Relationship to divisions and surfaces
 
