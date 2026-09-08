@@ -1,7 +1,7 @@
 ---
 doc: product
-updated: 2026-09-07
-status: draft
+updated: 2026-09-08
+status: active
 ---
 
 # Provider Routing
@@ -17,7 +17,9 @@ Provider routing gives Allternit Cloud customers fine-grained control over *whic
 
 ## Current phase
 
-- R&D (design locked 2026-09-07; no code yet)
+- **v1 implemented and merged (PR #132, Gizziio/allternit-platform, 2026-09-08)** — V133 migration (`agent_cloud_routes` + `provider_route_overrides`), `provider_routing.rs` resolution/failover/pin with admin `GET`/`PUT /api/v1/gateway/provider-routing`, proxy injection with per-failover-attempt re-resolution, and a gizzi-code session pin path (`PromptInput.provider` → message metadata → `@ai-sdk/openai-compatible` injection). Verified: cargo 658 pass (9/9 routing module), gizzi 109 session tests, tsc clean, live admin API round-trip. No wire-level e2e yet — first live provider traffic in production is the confirmation.
+- Deferred follow-ups: BYO-subscription keys, Ops gateway `model_route` MCP extension, Agent Hub UI pins, ACI → Hermes `config.yaml` bridge.
+- Design locked 2026-09-07.
 
 ## How it works
 
@@ -73,5 +75,5 @@ Per-model entries override flat values for that model only; unset keys fall thro
 
 ## Source of truth
 
-- Engineering repo: TBD (allternit-api workspace)
+- Engineering repo: Gizziio/allternit-platform — plan at `spec/provider-routing/plan.md`, merged to main via PR #132 (merge 9c3a8a134); ledger attestation `agent-ledger/summaries/2026-09-08-0841-11f1b5c8-kimi-provider-routing.md`
 - Reference behavior: [Hermes Agent provider routing docs](https://hermes-agent.nousresearch.com/docs/user-guide/features/provider-routing)
