@@ -43,7 +43,7 @@ What it distributes, and from where:
 |---|---|---|
 | Skills (10 ops skills) | `~/Desktop/Allternit/.claude/skills/` | `~/.claude/skills`, `~/.codex/skills`, `~/.kimi-code/skills`, `~/.grok/skills`, `~/.cursor/skills`, `~/.gizzi/skills` |
 | Rules (business rules, review gates) | `~/Desktop/Allternit/CLAUDE.md` | `~/.claude/CLAUDE.md`, `~/.codex/AGENTS.md`, `~/.kimi-code/AGENTS.md`, `~/.cursor/rules/allternit.mdc` |
-| MCP registration | this server | Claude settings, Codex config.toml, Kimi mcp.json, Grok config.toml, Cursor mcp.json, Gizzi gizzi.json |
+| MCP registration | this server | Claude settings, Codex config.toml, Kimi mcp.json, Grok config.toml, Cursor mcp.json, Gizzi gizzi.json (`~/.config/gizzi-code/`) |
 
 Guarantees:
 
