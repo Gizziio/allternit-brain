@@ -5,7 +5,8 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "harness-sync": "node harness-sync.js"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.24.0"

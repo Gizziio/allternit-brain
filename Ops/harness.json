@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "source": {
+    "skillsDir": "/Users/joe/Desktop/Allternit/.claude/skills",
+    "rulesFile": "/Users/joe/Desktop/Allternit/CLAUDE.md",
+    "mcpServer": {
+      "name": "allternit-ops",
+      "command": "node",
+      "args": ["/Users/joe/Desktop/Allternit/Allternit Brain/Ops/index.js"]
+    }
+  },
+  "tools": {
+    "claude": {
+      "skillsDir": "~/.claude/skills",
+      "rulesFile": "~/.claude/CLAUDE.md",
+      "rulesFrontmatter": null,
+      "mcp": { "kind": "json", "path": "~/.claude/settings.json", "serversKey": "mcpServers" }
+    },
+    "codex": {
+      "skillsDir": "~/.codex/skills",
+      "rulesFile": "~/.codex/AGENTS.md",
+      "rulesFrontmatter": null,
+      "mcp": { "kind": "toml-block", "path": "~/.codex/config.toml", "section": "mcp_servers.allternit-ops" }
+    },
+    "kimi": {
+      "skillsDir": "~/.kimi-code/skills",
+      "rulesFile": "~/.kimi-code/AGENTS.md",
+      "rulesFrontmatter": null,
+      "mcp": { "kind": "json", "path": "~/.kimi-code/mcp.json", "serversKey": "mcpServers" }
+    },
+    "grok": {
+      "skillsDir": "~/.grok/skills",
+      "rulesFile": null,
+      "rulesFrontmatter": null,
+      "mcp": {
+        "kind": "cli",
+        "bin": "grok",
+        "addArgs": ["mcp", "add", "allternit-ops", "-s", "user", "--", "node", "/Users/joe/Desktop/Allternit/Allternit Brain/Ops/index.js"],
+        "removeArgs": ["mcp", "remove", "allternit-ops"],
+        "configPath": "~/.grok/config.toml",
+        "section": "mcp_servers.allternit-ops"
+      }
+    },
+    "cursor": {
+      "skillsDir": "~/.cursor/skills",
+      "rulesFile": "~/.cursor/rules/allternit.mdc",
+      "rulesFrontmatter": "description: Allternit ops harness rules\nglobs: \nalwaysApply: true",
+      "mcp": { "kind": "json", "path": "~/.cursor/mcp.json", "serversKey": "mcpServers" }
+    },
+    "gizzi": {
+      "skillsDir": "~/.gizzi/skills",
+      "rulesFile": null,
+      "rulesFrontmatter": null,
+      "mcp": { "kind": "json", "path": "~/.config/gizzi/gizzi.json", "serversKey": "mcp" }
+    }
+  }
+}

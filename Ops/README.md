@@ -1,6 +1,6 @@
 ---
 doc: ops
-updated: 2026-08-27
+updated: 2026-09-08
 status: active
 ---
 
@@ -25,6 +25,33 @@ MCP gateway for Allternit LLC business operations. Lives inside `Allternit Brain
 | `brain_update_draft` | Submit a structured brain update. Without `confirm:true` it writes to `.incoming/` for review; with `confirm:true` it applies immediately | local file writes to `Allternit Brain/` |
 | `media_audit` | Run the website media audit (`Allternit Websites/Scripts/audit-media.js`) and return the summary | read-only; writes `Allternit Websites/Scripts/media-audit.json` |
 | `media_sync` | Copy approved website media outputs into site source folders | dry-run by default; needs `confirm:true` to actually copy files |
+
+## Harness sync
+
+`harness-sync.js` fans the ops harness out to every AI CLI tool on the machine, so skills, rules, and this MCP registration live in one canonical place instead of being copied per tool. It implements the same pattern as [Tencent's teamai-cli](https://github.com/Tencent/teamai-cli) (one shared harness, pulled into every agent) without vendoring it.
+
+```bash
+node harness-sync.js status            # per-tool coverage table
+node harness-sync.js sync --dry-run    # preview what would change
+node harness-sync.js sync              # apply
+node harness-sync.js uninstall         # remove only harness-managed resources
+```
+
+What it distributes, and from where:
+
+| Resource | Source of truth | Targets |
+|---|---|---|
+| Skills (10 ops skills) | `~/Desktop/Allternit/.claude/skills/` | `~/.claude/skills`, `~/.codex/skills`, `~/.kimi-code/skills`, `~/.grok/skills`, `~/.cursor/skills`, `~/.gizzi/skills` |
+| Rules (business rules, review gates) | `~/Desktop/Allternit/CLAUDE.md` | `~/.claude/CLAUDE.md`, `~/.codex/AGENTS.md`, `~/.kimi-code/AGENTS.md`, `~/.cursor/rules/allternit.mdc` |
+| MCP registration | this server | Claude settings, Codex config.toml, Kimi mcp.json, Grok config.toml, Cursor mcp.json, Gizzi gizzi.json |
+
+Guarantees:
+
+- Each target skills dir gets a `.allternit-harness.json` manifest (skill names + content hashes). `status`, update, and `uninstall` only ever touch skills listed there — your other tools' personal skills are never affected.
+- Rules are written as a marker-delimited block (`<!-- allternit-harness:start/end -->`) upserted into existing instruction files; the rest of those files is preserved, and pre-existing configs are backed up to `<file>.bak-harness` before each write.
+- MCP upserts are idempotent per tool config format (JSON merge, TOML block replace, or the tool's native CLI — `grok mcp add` for Grok).
+
+Brain stays the knowledge plane: `harness-sync` distributes skills/rules/MCP only. It does not duplicate `brain_search`, the `.incoming/` review path, or session-sync.
 
 ## Setup
 

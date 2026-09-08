@@ -1,6 +1,6 @@
 ---
 doc: agents
-updated: 2026-08-28
+updated: 2026-09-08
 status: active
 ---
 
@@ -79,6 +79,10 @@ make session-end
 ```
 
 This reads `Dashboard/Now.md` into context and writes learned facts + decisions back to the vault.
+
+## Cross-agent harness
+
+The ops harness (skills, rules, allternit-ops MCP registration) is distributed to every AI CLI tool by `Ops/harness-sync.js`. After adding or renaming an ops skill, run `node Ops/harness-sync.js status` to check coverage and `node Ops/harness-sync.js sync` to fan it out. See `Ops/README.md` "Harness sync".
 
 ## Model routing
 
