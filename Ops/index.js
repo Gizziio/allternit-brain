@@ -118,6 +118,37 @@ function textResult(text) {
   return { content: [{ type: 'text', text }] };
 }
 
+/**
+ * Minimal JSON fetch against the allternit-api gateway admin API. Returns
+ * { ok, status, body }. Never throws on HTTP error statuses — callers decide
+ * how to surface them.
+ */
+async function gatewayRequest(gatewayUrl, gatewayToken, method, pathSuffix, body) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 10_000);
+  try {
+    const res = await fetch(new URL(pathSuffix, gatewayUrl).toString(), {
+      method,
+      signal: controller.signal,
+      headers: {
+        'content-type': 'application/json',
+        ...(gatewayToken ? { authorization: `Bearer ${gatewayToken}` } : {}),
+      },
+      body: body === undefined ? undefined : JSON.stringify(body),
+    });
+    const text = await res.text();
+    let parsed = null;
+    try {
+      parsed = JSON.parse(text);
+    } catch {
+      parsed = text;
+    }
+    return { ok: res.ok, status: res.status, body: parsed };
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
 function resolveInsideBrain(relPath) {
   const resolved = path.resolve(BRAIN_ROOT, relPath);
   if (!resolved.startsWith(BRAIN_ROOT + path.sep) && resolved !== BRAIN_ROOT) {
@@ -228,7 +259,7 @@ const TOOLS = [
   {
     name: 'model_route',
     description:
-      "Look up which model tier/backend to use for a task class, per model-routing.json (Allternit's A:// tier policy). Only meaningful when explicitly spawning a subagent or an autonomous agent — an already-running interactive session stays on its own model.",
+      "Look up which model tier/backend to use for a task class, per model-routing.json (Allternit's A:// tier policy). Only meaningful when explicitly spawning a subagent or an autonomous agent — an already-running interactive session stays on its own model. Optionally also queries the live LLM gateway provider-routing policy: pass `model` to ask which provider serves that model under current policy, or `policy` to preview (dry-run) / apply (with confirm:true) a provider-routing policy via the gateway admin API.",
     inputSchema: {
       type: 'object',
       properties: {
@@ -236,6 +267,31 @@ const TOOLS = [
           type: 'string',
           description:
             'One of: classification, draft_generation, client_coding_work, quote_routine, architecture_or_novel_judgment, quote_tier_c_scoping, creative_or_long_form, guardrail_check. Omit to list all task classes.',
+        },
+        model: {
+          type: 'string',
+          description:
+            'Optional. A model id (e.g. "claude-fable-5.1" or "anthropic/claude-fable-5.1") to resolve against the live gateway provider-routing policy — answers which provider(s) serve it under current policy.',
+        },
+        gateway_url: {
+          type: 'string',
+          description:
+            'Base URL of the allternit-api gateway for provider-routing queries. Default: ALLTERNIT_GATEWAY_URL env or http://127.0.0.1:8013.',
+        },
+        gateway_token: {
+          type: 'string',
+          description:
+            'Bearer token for the gateway admin API (Clerk JWT or dev token). Default: ALLTERNIT_GATEWAY_TOKEN env. Required for policy/resolve queries; without it only the A:// tier answer is returned.',
+        },
+        policy: {
+          type: 'object',
+          description:
+            'Optional provider-routing policy object (Hermes shape: sort/only/ignore/order/require_parameters/data_collection + models map). Without confirm:true this is a dry run — the tool only reports what would be PUT. With confirm:true it is applied via PUT /api/v1/gateway/provider-routing.',
+        },
+        confirm: {
+          type: 'boolean',
+          description:
+            'Required true to actually PUT a policy to the gateway admin API. Omit or false to dry-run only.',
         },
       },
       required: [],
@@ -418,30 +474,71 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 
       case 'model_route': {
         const policy = JSON.parse(fs.readFileSync(MODEL_ROUTING_PATH, 'utf8'));
+        const answer = {};
         if (!args.task_class) {
-          return textResult(JSON.stringify(Object.keys(policy.task_classes), null, 2));
+          answer.task_classes = Object.keys(policy.task_classes);
+        } else {
+          const classInfo = policy.task_classes[args.task_class];
+          if (!classInfo) {
+            throw new Error(
+              `Unknown task_class "${args.task_class}". Known: ${Object.keys(policy.task_classes).join(', ')}`
+            );
+          }
+          const tier = policy.tiers[classInfo.tier];
+          answer.task_class = args.task_class;
+          answer.allternit_tier = classInfo.tier;
+          answer.tier_role = tier.role;
+          answer.concrete_backend = tier.concrete_backend;
+          answer.agent_tool_alias = tier.agent_tool_alias;
+          answer.note = tier.note || null;
         }
-        const classInfo = policy.task_classes[args.task_class];
-        if (!classInfo) {
-          throw new Error(
-            `Unknown task_class "${args.task_class}". Known: ${Object.keys(policy.task_classes).join(', ')}`
-          );
+
+        // ── Live gateway provider-routing extension ──────────────────────
+        // The A:// tier policy says *which model*; the gateway policy says
+        // *which provider serves it*. Both compose into one answer.
+        const gatewayUrl = (args.gateway_url || process.env.ALLTERNIT_GATEWAY_URL || 'http://127.0.0.1:8013').replace(/\/$/, '');
+        const gatewayToken = args.gateway_token || process.env.ALLTERNIT_GATEWAY_TOKEN || null;
+
+        if (args.policy !== undefined || args.model) {
+          if (!gatewayToken) {
+            answer.gateway_note =
+              'No gateway token (arg gateway_token or ALLTERNIT_GATEWAY_TOKEN) — skipped live provider-routing query.';
+          } else {
+            try {
+              if (args.policy !== undefined) {
+                if (typeof args.policy !== 'object' || args.policy === null || Array.isArray(args.policy)) {
+                  throw new Error('`policy` must be a provider-routing policy object.');
+                }
+                if (!args.confirm) {
+                  answer.gateway_policy_dry_run = {
+                    would_put_to: `${gatewayUrl}/api/v1/gateway/provider-routing`,
+                    policy: args.policy,
+                    note: 'Dry run only. Re-run with confirm: true to apply.',
+                  };
+                } else {
+                  const put = await gatewayRequest(gatewayUrl, gatewayToken, 'PUT', '/api/v1/gateway/provider-routing', args.policy);
+                  answer.gateway_policy_put = { status: put.status, body: put.body };
+                  if (!put.ok) {
+                    throw new Error(`Gateway rejected the policy (HTTP ${put.status}): ${JSON.stringify(put.body)}`);
+                  }
+                }
+              }
+              if (args.model) {
+                const resolveModel = typeof args.model === 'string' ? args.model.trim() : '';
+                if (!resolveModel) throw new Error('`model` must be a non-empty string.');
+                const resolved = await gatewayRequest(gatewayUrl, gatewayToken, 'POST', '/api/v1/gateway/provider-routing/resolve', { model: resolveModel });
+                if (!resolved.ok) {
+                  throw new Error(`Gateway resolve failed (HTTP ${resolved.status}): ${JSON.stringify(resolved.body)}`);
+                }
+                answer.gateway_resolve = resolved.body;
+              }
+            } catch (err) {
+              answer.gateway_error = err instanceof Error ? err.message : String(err);
+            }
+          }
         }
-        const tier = policy.tiers[classInfo.tier];
-        return textResult(
-          JSON.stringify(
-            {
-              task_class: args.task_class,
-              allternit_tier: classInfo.tier,
-              tier_role: tier.role,
-              concrete_backend: tier.concrete_backend,
-              agent_tool_alias: tier.agent_tool_alias,
-              note: tier.note || null,
-            },
-            null,
-            2
-          )
-        );
+
+        return textResult(JSON.stringify(answer, null, 2));
       }
 
       case 'client_new_folder_skeleton': {
