@@ -18,7 +18,7 @@ Provider routing gives Allternit Cloud customers fine-grained control over *whic
 ## Current phase
 
 - **v1 implemented and merged (PR #132, Gizziio/allternit-platform, 2026-09-08)** — V133 migration (`agent_cloud_routes` + `provider_route_overrides`), `provider_routing.rs` resolution/failover/pin with admin `GET`/`PUT /api/v1/gateway/provider-routing`, proxy injection with per-failover-attempt re-resolution, and a gizzi-code session pin path (`PromptInput.provider` → message metadata → `@ai-sdk/openai-compatible` injection). Verified: cargo 658 pass (9/9 routing module), gizzi 109 session tests, tsc clean, live admin API round-trip. No wire-level e2e yet — first live provider traffic in production is the confirmation.
-- Deferred follow-ups: BYO-subscription keys, Ops gateway `model_route` MCP extension, Agent Hub UI pins, ACI → Hermes `config.yaml` bridge.
+- **v1.1 follow-ups shipped (PR #150, Gizziio/allternit-platform, 2026-09-08):** BYO-subscription keys (per-user `user_route_credentials`, V134 — proxy attaches the customer's key when the resolved provider matches, strips on failover, zero-cost metering), Ops gateway `model_route` MCP extension (model/gateway_url/gateway_token/policy/confirm args over resolve + Hermes export; lives in this repo's `Ops/index.js`, commit efc437c), Agent Hub UI pins (`agent.config.providerRouting` bot pin + per-session `metadata.providerRouting` override, null = inherit), ACI → Hermes `config.yaml` export bridge (desktop IPC merges top-level `provider_routing:` block, backup to `config.yaml.allternit-bak`). Attestation: `agent-ledger/summaries/2026-09-08-prov-followups-kimi-provider-routing-followups.md`.
 - Design locked 2026-09-07.
 
 ## How it works
