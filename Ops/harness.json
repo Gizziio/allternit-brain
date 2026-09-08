@@ -51,7 +51,7 @@
       "skillsDir": "~/.gizzi/skills",
       "rulesFile": null,
       "rulesFrontmatter": null,
-      "mcp": { "kind": "json", "path": "~/.config/gizzi/gizzi.json", "serversKey": "mcp" }
+      "mcp": { "kind": "json", "path": "~/.config/gizzi/gizzi.json", "serversKey": "mcp", "commandArray": true }
     }
   }
 }

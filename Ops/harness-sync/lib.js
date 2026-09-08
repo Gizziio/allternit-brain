@@ -297,42 +297,44 @@ export function tomlMcpRemove(file, section, dryRun) {
   return [{ kind: 'remove', detail: section }]
 }
 
-export function jsonMcpStatus(file, serversKey, name, server) {
-  const obj = readJson(file)
-  if (!obj || typeof obj !== 'object') return 'missing'
-  const cur = obj[serversKey] && obj[serversKey][name]
-  if (!cur) return 'missing'
-  return cur.command === server.command && JSON.stringify(cur.args) === JSON.stringify(server.args)
-    ? 'ok'
-    : 'broken'
+function mcpEntry(cfg, server) {
+  return cfg.commandArray
+    ? { type: 'local', command: [server.command, ...server.args] }
+    : { command: server.command, args: server.args }
 }
 
-export function jsonMcpSync(file, serversKey, name, server, dryRun) {
-  const st = jsonMcpStatus(file, serversKey, name, server)
-  const entry = { command: server.command, args: server.args }
-  if (st === 'ok') {
-    const obj = readJson(file)
-    const cur = obj[serversKey][name]
-    if (Object.keys(cur).sort().join() === Object.keys(entry).sort().join()) return [{ kind: 'unchanged' }]
-    if (dryRun) return [{ kind: 'would-fix', detail: expand(file) }]
-    obj[serversKey][name] = entry
-    writeJson(file, obj)
-    return [{ kind: 'fix', detail: expand(file) }]
-  }
+function mcpEntryMatches(cfg, cur, server) {
+  if (!cur || typeof cur !== 'object') return false
+  const expected = mcpEntry(cfg, server)
+  return JSON.stringify(cur) === JSON.stringify(expected)
+}
+
+export function jsonMcpStatus(file, cfg, name, server) {
+  const obj = readJson(file)
+  if (!obj || typeof obj !== 'object') return 'missing'
+  const cur = obj[cfg.serversKey] && obj[cfg.serversKey][name]
+  if (!cur) return 'missing'
+  return mcpEntryMatches(cfg, cur, server) ? 'ok' : 'broken'
+}
+
+export function jsonMcpSync(file, cfg, name, server, dryRun) {
+  const st = jsonMcpStatus(file, cfg, name, server)
+  const entry = mcpEntry(cfg, server)
+  if (st === 'ok') return [{ kind: 'unchanged' }]
   const kind = st === 'missing' ? 'add' : 'fix'
   if (dryRun) return [{ kind: `would-${kind}`, detail: expand(file) }]
   const obj = readJson(file) || {}
-  obj[serversKey] = obj[serversKey] || {}
-  obj[serversKey][name] = entry
+  obj[cfg.serversKey] = obj[cfg.serversKey] || {}
+  obj[cfg.serversKey][name] = entry
   writeJson(file, obj)
   return [{ kind, detail: expand(file) }]
 }
 
-export function jsonMcpRemove(file, serversKey, name, dryRun) {
+export function jsonMcpRemove(file, cfg, name, dryRun) {
   const obj = readJson(file)
-  if (!obj || !obj[serversKey] || !obj[serversKey][name]) return [{ kind: 'nothing', detail: 'no entry' }]
+  if (!obj || !obj[cfg.serversKey] || !obj[cfg.serversKey][name]) return [{ kind: 'nothing', detail: 'no entry' }]
   if (dryRun) return [{ kind: 'would-remove', detail: name }]
-  delete obj[serversKey][name]
+  delete obj[cfg.serversKey][name]
   writeJson(file, obj)
   return [{ kind: 'remove', detail: name }]
 }

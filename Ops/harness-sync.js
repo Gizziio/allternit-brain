@@ -61,7 +61,7 @@ function tools() {
 
 function mcpStatus(cfg) {
   const m = cfg.mcp
-  if (m.kind === 'json') return jsonMcpStatus(m.path, m.serversKey, server.name, server)
+  if (m.kind === 'json') return jsonMcpStatus(m.path, m, server.name, server)
   if (m.kind === 'toml-block') return tomlMcpStatus(m.path, m.section, server)
   if (m.kind === 'cli') return cliMcpStatus(m.configPath, m.section, server)
   return 'unknown'
@@ -69,7 +69,7 @@ function mcpStatus(cfg) {
 
 function mcpSync(cfg, dry) {
   const m = cfg.mcp
-  if (m.kind === 'json') return jsonMcpSync(m.path, m.serversKey, server.name, server, dry)
+  if (m.kind === 'json') return jsonMcpSync(m.path, m, server.name, server, dry)
   if (m.kind === 'toml-block') return tomlMcpSync(m.path, m.section, server, dry)
   if (m.kind === 'cli') {
     if (mcpStatus(cfg) === 'ok') return [{ kind: 'unchanged' }]
@@ -80,7 +80,7 @@ function mcpSync(cfg, dry) {
 
 function mcpRemove(cfg, dry) {
   const m = cfg.mcp
-  if (m.kind === 'json') return jsonMcpRemove(m.path, m.serversKey, server.name, dry)
+  if (m.kind === 'json') return jsonMcpRemove(m.path, m, server.name, dry)
   if (m.kind === 'toml-block') return tomlMcpRemove(m.path, m.section, dry)
   if (m.kind === 'cli') return cliMcpRemove(m.bin, m.removeArgs, dry)
   return [{ kind: 'unknown' }]
