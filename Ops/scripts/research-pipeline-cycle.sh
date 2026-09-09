@@ -87,6 +87,13 @@ report() { # append a line to today's cycle section
 }
 
 finish_report() { # stamp the section header and append to today's sweep report
+  if [[ ! -f "$SWEEP_REPORT" ]]; then
+    # the sweep writer normally creates this with frontmatter, but the cycle
+    # can run first — keep the audit clean either way
+    {
+      printf -- '---\ndoc: project\nupdated: %s\nstatus: active\n---\n' "$TODAY"
+    } > "$SWEEP_REPORT"
+  fi
   {
     printf '\n## Cycle %s\n\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
     cat "$CYCLE_SECTION"
@@ -302,15 +309,18 @@ RULES
 }
 
 with_timeout() { # $1 secs; rest = command — kills on deadline, returns cmd rc
+  # The killer must EXEC sleep (not run it as a child): a subshell killed while
+  # its sleep runs orphans the sleep, which keeps holding the caller's capture
+  # pipe and hangs "$(…)" for the full timeout. exec makes killer pid == sleep.
   local secs=$1
   shift
   "$@" &
-  local pid=$! killer
-  ( sleep "$secs"; kill "$pid" >/dev/null 2>&1 || true ) &
+  local pid=$! killer rc=0
+  ( exec sleep "$secs" ) >/dev/null 2>&1 &
   killer=$!
-  local rc=0
   wait "$pid" 2>/dev/null || rc=$?
-  kill "$killer" >/dev/null 2>&1 || true
+  kill "$pid" >/dev/null 2>&1 || true    # no-op when finished; stops strays on timeout
+  kill "$killer" >/dev/null 2>&1 || true # killer IS the sleep — no orphans
   wait "$killer" 2>/dev/null || true
   return $rc
 }
@@ -427,7 +437,7 @@ extract_brain_updates() { # $1 notes abs path, $2 slug → writes .incoming draf
     const path = require("path");
     const notes = process.env.NOTES_PATH;
     const slug = process.env.SLUG;
-    if (!fs.existsSync(notes)) { console.log("no NOTES file; no brain_updates extracted"); return; }
+    if (!fs.existsSync(notes)) { console.log("no NOTES file; no brain_updates extracted"); process.exit(0); }
     const text = fs.readFileSync(notes, "utf8");
     const m = text.match(/^---\n([\s\S]*?)\n---/);
     let raw = null;
@@ -440,7 +450,7 @@ extract_brain_updates() { # $1 notes abs path, $2 slug → writes .incoming draf
         raw = end >= 0 ? rest.slice(0, end + 1) : rest;
       }
     }
-    if (raw == null) { console.log("no brain_updates in NOTES frontmatter"); return; }
+    if (raw == null) { console.log("no brain_updates in NOTES frontmatter"); process.exit(0); }
     const out = path.join(process.env.OUT_DIR, `research-${slug}-brain-updates.json`);
     fs.writeFileSync(out, JSON.stringify({
       slug,
