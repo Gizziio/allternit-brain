@@ -1,6 +1,6 @@
 ---
 doc: project
-updated: 2026-09-08
+updated: 2026-09-09
 status: draft
 ---
 
@@ -65,6 +65,8 @@ Naming (human, 2026-09-08): binary and product are **`ao`** — no new brand. De
 - **P3 — Fabric node (own spec):** runtime-device pairing, QR, proxy node, PWA session pickup; protocol spike first (Clerk auth is the riskiest piece).
 - **P4 — Harness sync port (own spec):** `ao harness` in Rust on the existing `harness.json`; JS retired after byte-parity dry-run.
 - **P5 — Visibility + peers (own spec):** "who needs you" panel (agent states + Rails peers + blocked notifications); revisits `rq-20260908-005`.
+- **P6 — UHP execution layer (own spec):** Docker-free fork of HarnessRouter CE (`rq-20260909-004`, decision fork_reskin 2026-09-09 human redirect); ao-supervised Python gateway+runner sidecar; UHP conformance suite as parity gate; provider routing stays in the Allternit gateway. Evidence: plan doc §2.6. **Does not change P0 scope.**
+- **P7 — Harness auto-install + onboarding (own spec):** `ao harness install <tool>` from HR's first-run installer; license-gated per tool; feeds P4 sync + native-sessions pickup. **Does not change P0 scope.**
 
 ## Gate checklist
 

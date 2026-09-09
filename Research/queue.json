@@ -1401,9 +1401,9 @@
       "note": "Human-authored spec (Eoj, 2026-09-09) \u2014 atomic Create Bot: Identity + Instructions + persistent Computer Cloud + Tools; closes the join Nick's Codex+Orgo demo exposed",
       "title": "bot-identity-computer",
       "category": "agent-tooling",
-      "status": "approved",
+      "status": "landed",
       "spec": "Research/specs/bot-identity-computer.md",
-      "repo": null,
+      "repo": "Gizziio/allternit-platform",
       "worktree": null,
       "branch": null,
       "history": [
@@ -1429,6 +1429,12 @@
           "event": "approved",
           "by": "kimi-code session (Eoj)",
           "note": "Human gate approved (Eoj, 2026-09-09). Phase 1: atomic Create Bot (Identity + Instructions + persistent Computer Cloud + Tools), reusing vmOperator / provisionBotDesktop / /api/v1/computers. No Orgo. Constraints: no Orgo MCP, no Docker-required path, no paid deps, no pricing/billing, no fleet provisioning (Phase 2), brain updates drafts only, no confirm:true deploys. Outcome: PR + ledger attestation per AGENTS.md ritual."
+        },
+        {
+          "ts": "2026-09-09T01:30:00Z",
+          "event": "landed",
+          "by": "kimi-code session (Eoj)",
+          "note": "PR #190 merged (merge SHA d61530a3d); ledger attestation bdb42a476 on main; worktree session/50d4cec6 cleaned"
         }
       ],
       "li_id": null,
@@ -1451,7 +1457,7 @@
       "worktree": null,
       "branch": null,
       "li_id": null,
-      "decision": "reverse_engineer",
+      "decision": "fork_reskin",
       "constraints_ok": true,
       "paid_or_signup": false,
       "docker_required": false,
@@ -1469,6 +1475,12 @@
           "event": "decided",
           "by": "kimi-interactive",
           "note": "reverse_engineer: adopt UHP (unifiedharnessprotocol.org, open versioned HTTP contract w/ OpenAPI 3.1 + conformance suite) as the canonical harness-router contract; implement natively in AllternitOS Layer-3 harness router + ao execution substrate. Upstream as-is is Docker-only (hard veto) so thin_adapter/fork of the container is out; fork_reskin conflicts with ao Rust direction (rq-20260908-028, decided 2026-09-08). Fills baseline gap: agent-native API surface (Responses-compatible turns, streaming, cancel, idempotency, session checkpoints). NOT ported: provider/key management \u2014 Allternit gateway + A:// tier policy already own routing. Complements ao (orchestration brain + interactive steering stays), Fabric (session pickup stays), Brain (knowledge plane stays)."
+        },
+        {
+          "ts": "2026-09-09T07:10:00.000Z",
+          "event": "redirected",
+          "by": "human-via-kimi-interactive",
+          "note": "reverse_engineer -> fork_reskin (human redirect 2026-09-09): fork HarnessRouter CE and strip the Docker packaging. Docker is only the appliance layer (bundling + per-session-user isolation); gateway+runner are plain Python loopback servers, UI is Next.js. New scope folded INLINE into the ao v3 plan as P6 (UHP execution layer, Docker-free fork supervised by the ao binary) + P7 (harness auto-install/onboarding from HR first-run installer). Not in the Rust binary (Python cannot embed); ao supervises gateway+runner as loopback child processes. Provider/key routing stays in the Allternit gateway \u2014 HR connection-policy machinery not ported. See Products/AgentOrchestratorRuntime.md \u00a72.6, P6, P7."
         }
       ]
     }
