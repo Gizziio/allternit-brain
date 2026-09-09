@@ -1,6 +1,6 @@
 ---
 doc: project
-updated: 2026-09-08
+updated: 2026-09-09
 status: active
 ---
 
@@ -29,3 +29,5 @@ status: active
 ## Delta log
 
 - 2026-09-08 — rq-20260908-028 / herdr v0.9.0: full baseline written; decision thin_adapter (ao stays brain, herdr optional transport layer); see `Research/specs/herdr-v090-adapter.md`
+- 2026-09-08 — human pivot: thin_adapter archived → **fork_reskin** (`Research/specs/allternit-runtime-fork.md`); one Allternit-branded Rust binary absorbs the runtime + ao semantics + Fabric node + harness sync + visibility; phases 2–6 each gate separately
+- 2026-09-09 — rq-20260909-004 / HarnessRouter CE: decision **reverse_engineer** — adopt UHP (Unified Harness Protocol, open versioned HTTP contract) as the canonical harness-router API; closes the "no agent-native API surface" gap below ao / in AllternitOS Layer 3. Upstream container is Docker-gated (veto) so no thin_adapter/fork; provider routing stays in the Allternit gateway (not ported). Complements, does not replace, the ao v3 fork.

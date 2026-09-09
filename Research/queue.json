@@ -362,7 +362,7 @@
     {
       "id": "rq-20260908-006",
       "url": "https://grokbot.dev",
-      "note": "li-20260908-003 — Overwatch — Grok Bot VM cleanup & backup",
+      "note": "li-20260908-003 \u2014 Overwatch \u2014 Grok Bot VM cleanup & backup",
       "title": "Overwatch (grokbot.dev)",
       "category": "devops",
       "status": "researched",
@@ -400,7 +400,7 @@
     {
       "id": "rq-20260908-007",
       "url": "https://github.com/FlashML-org/FreeToken",
-      "note": "li-20260908-004 — FreeToken — local datacenter-scale model serving",
+      "note": "li-20260908-004 \u2014 FreeToken \u2014 local datacenter-scale model serving",
       "title": "FreeToken",
       "category": "local-ml",
       "status": "researched",
@@ -438,7 +438,7 @@
     {
       "id": "rq-20260908-008",
       "url": "https://github.com/moorcheh-ai/memanto",
-      "note": "li-20260908-005 — memanto — memory for AI agents",
+      "note": "li-20260908-005 \u2014 memanto \u2014 memory for AI agents",
       "title": "memanto",
       "category": "agent-tooling",
       "status": "researched",
@@ -476,7 +476,7 @@
     {
       "id": "rq-20260908-009",
       "url": "https://github.com/sandbox-quantum/switch",
-      "note": "li-20260908-009 — Switch — Slack/Teams/Discord agent connector",
+      "note": "li-20260908-009 \u2014 Switch \u2014 Slack/Teams/Discord agent connector",
       "title": "switch",
       "category": "agent-tooling",
       "status": "watch",
@@ -549,7 +549,7 @@
     {
       "id": "rq-20260908-010",
       "url": "https://github.com/0xSero/local-ai-registry",
-      "note": "li-20260908-011 — local-ai-registry — hardware/models/recipes catalog",
+      "note": "li-20260908-011 \u2014 local-ai-registry \u2014 hardware/models/recipes catalog",
       "title": "local-ai-registry",
       "category": "local-ml",
       "status": "researched",
@@ -587,7 +587,7 @@
     {
       "id": "rq-20260908-011",
       "url": "https://github.com/deeplethe/utopia",
-      "note": "li-20260908-014 — Utopia — open-source enterprise world model",
+      "note": "li-20260908-014 \u2014 Utopia \u2014 open-source enterprise world model",
       "title": "utopia",
       "category": "agent-tooling",
       "status": "researched",
@@ -625,7 +625,7 @@
     {
       "id": "rq-20260908-012",
       "url": "https://github.com/vercel-labs/agent-browser",
-      "note": "li-20260908-015 — agent-browser — Vercel Labs browser CLI for agents",
+      "note": "li-20260908-015 \u2014 agent-browser \u2014 Vercel Labs browser CLI for agents",
       "title": "agent-browser",
       "category": "agent-tooling",
       "status": "spec_ready",
@@ -685,7 +685,7 @@
     {
       "id": "rq-20260908-013",
       "url": "https://github.com/iii-hq/iii",
-      "note": "li-20260908-017 — iii — compose, extend, observe services in real-time",
+      "note": "li-20260908-017 \u2014 iii \u2014 compose, extend, observe services in real-time",
       "title": "iii",
       "category": "agent-tooling",
       "status": "researched",
@@ -723,7 +723,7 @@
     {
       "id": "rq-20260908-014",
       "url": "https://github.com/xhluca/open-agent-view",
-      "note": "li-20260908-019 — open-agent-view — open Agent View for any harness",
+      "note": "li-20260908-019 \u2014 open-agent-view \u2014 open Agent View for any harness",
       "title": "open-agent-view",
       "category": "agent-tooling",
       "status": "researched",
@@ -761,7 +761,7 @@
     {
       "id": "rq-20260908-015",
       "url": "https://github.com/fayazara/cloudflare-computer-example",
-      "note": "li-20260908-024 — cloudflare-computer-example — agent computer demo",
+      "note": "li-20260908-024 \u2014 cloudflare-computer-example \u2014 agent computer demo",
       "title": "cloudflare-computer-example",
       "category": "agent-tooling",
       "status": "researched",
@@ -799,8 +799,8 @@
     {
       "id": "rq-20260908-016",
       "url": "https://blog.cloudflare.com",
-      "note": "li-20260908-025 — Cloudflare Computer — agent needs a computer, not a container",
-      "title": "Cloudflare blog — agent needs a computer",
+      "note": "li-20260908-025 \u2014 Cloudflare Computer \u2014 agent needs a computer, not a container",
+      "title": "Cloudflare blog \u2014 agent needs a computer",
       "category": "agent-tooling",
       "status": "researched",
       "spec": null,
@@ -837,7 +837,7 @@
     {
       "id": "rq-20260908-017",
       "url": "https://github.com/garrytan/gstack",
-      "note": "li-20260908-026 — gstack — Garry Tan Claude Code multi-role toolkit",
+      "note": "li-20260908-026 \u2014 gstack \u2014 Garry Tan Claude Code multi-role toolkit",
       "title": "gstack",
       "category": "agent-tooling",
       "status": "researched",
@@ -875,7 +875,7 @@
     {
       "id": "rq-20260908-018",
       "url": "https://github.com/techjanitor/botmaker",
-      "note": "li-20260908-027 — botmaker — techjanitor bot construction",
+      "note": "li-20260908-027 \u2014 botmaker \u2014 techjanitor bot construction",
       "title": "botmaker",
       "category": "agent-tooling",
       "status": "researched",
@@ -913,7 +913,7 @@
     {
       "id": "rq-20260908-019",
       "url": "https://github.com/sentrux/sentrux",
-      "note": "li-20260908-030 — sentrux — real-time architectural sensor for agents",
+      "note": "li-20260908-030 \u2014 sentrux \u2014 real-time architectural sensor for agents",
       "title": "sentrux",
       "category": "agent-tooling",
       "status": "researched",
@@ -951,7 +951,7 @@
     {
       "id": "rq-20260908-020",
       "url": "https://github.com/AgriciDaniel/claude-ads",
-      "note": "li-20260908-031 — claude-ads — Claude-first paid-media ops skill",
+      "note": "li-20260908-031 \u2014 claude-ads \u2014 Claude-first paid-media ops skill",
       "title": "claude-ads",
       "category": "marketing",
       "status": "researched",
@@ -989,7 +989,7 @@
     {
       "id": "rq-20260908-021",
       "url": "https://github.com/nowork-studio/notfair-plugin",
-      "note": "li-20260908-032 — notfair-plugin — SEO, GEO, marketing skills for agents",
+      "note": "li-20260908-032 \u2014 notfair-plugin \u2014 SEO, GEO, marketing skills for agents",
       "title": "notfair-plugin",
       "category": "marketing",
       "status": "researched",
@@ -1027,7 +1027,7 @@
     {
       "id": "rq-20260908-022",
       "url": "https://github.com/mksglu/context-mode",
-      "note": "li-20260908-033 — context-mode — context window optimization for coding agents",
+      "note": "li-20260908-033 \u2014 context-mode \u2014 context window optimization for coding agents",
       "title": "context-mode",
       "category": "agent-tooling",
       "status": "researched",
@@ -1065,7 +1065,7 @@
     {
       "id": "rq-20260908-023",
       "url": "https://github.com/browser-act/skills",
-      "note": "li-20260908-035 — browser-act skills — agent browser automation CLI",
+      "note": "li-20260908-035 \u2014 browser-act skills \u2014 agent browser automation CLI",
       "title": "browser-act skills",
       "category": "agent-tooling",
       "status": "researched",
@@ -1103,7 +1103,7 @@
     {
       "id": "rq-20260908-024",
       "url": "https://github.com/humanlayer/skills",
-      "note": "li-20260908-043 — humanlayer show-me skill",
+      "note": "li-20260908-043 \u2014 humanlayer show-me skill",
       "title": "humanlayer show-me skill",
       "category": "agent-tooling",
       "status": "researched",
@@ -1141,7 +1141,7 @@
     {
       "id": "rq-20260908-025",
       "url": "https://github.com/headroomlabs-ai/headroom",
-      "note": "li-20260908-045 — headroom — headroomlabs-ai",
+      "note": "li-20260908-045 \u2014 headroom \u2014 headroomlabs-ai",
       "title": "headroom",
       "category": "agent-tooling",
       "status": "researched",
@@ -1179,7 +1179,7 @@
     {
       "id": "rq-20260908-026",
       "url": "https://github.com/sololabstr/uisight",
-      "note": "li-20260908-046 — uisight — UI insight tooling",
+      "note": "li-20260908-046 \u2014 uisight \u2014 UI insight tooling",
       "title": "uisight",
       "category": "agent-tooling",
       "status": "researched",
@@ -1217,7 +1217,7 @@
     {
       "id": "rq-20260908-027",
       "url": "https://github.com/microsoft/tgrep",
-      "note": "li-20260908-047 — tgrep — microsoft",
+      "note": "li-20260908-047 \u2014 tgrep \u2014 microsoft",
       "title": "tgrep",
       "category": "devops",
       "status": "researched",
@@ -1255,14 +1255,14 @@
     {
       "id": "rq-20260908-028",
       "url": "https://github.com/herdrdev/herdr/releases/tag/v0.9.0",
-      "note": "li-20260908-051 — Herdr v0.9.0 release",
+      "note": "li-20260908-051 \u2014 Herdr v0.9.0 release",
       "title": "herdr v0.9.0",
       "category": "marketing",
-      "status": "spec_ready",
-      "spec": "Research/specs/herdr-v090-adapter.md",
+      "status": "executing",
+      "spec": "Research/specs/allternit-runtime-fork.md",
       "repo": null,
-      "worktree": null,
-      "branch": null,
+      "worktree": "/Users/joe/Desktop/allternit-workspace/allternit-ao-allternit-runtime-fork",
+      "branch": "ao/allternit-runtime-fork",
       "history": [
         {
           "ts": "2026-09-08T20:18:40.525Z",
@@ -1294,15 +1294,183 @@
           "by": "kimi-interactive",
           "spec": "Research/specs/herdr-v090-adapter.md",
           "note": "single kimi draft (dual review skipped in interactive run); human gate next"
+        },
+        {
+          "ts": "2026-09-09T00:33:32.722992Z",
+          "event": "decision_changed",
+          "by": "human-direction",
+          "decision": "fork_reskin",
+          "note": "human pivot: absorb+rebrand herdr into allternit-workspace as one Rust binary (ao + fabric transport + machine mgmt + harness sync + visibility); thin_adapter spec archived"
+        },
+        {
+          "ts": "2026-09-09T00:33:32.722992Z",
+          "event": "spec_ready",
+          "by": "kimi-interactive",
+          "spec": "Research/specs/allternit-runtime-fork.md",
+          "note": "product plan + Phase 1 handoff; phases 2-6 each get own named spec at gate; human gate next"
+        },
+        {
+          "ts": "2026-09-09T00:44:57.018221Z",
+          "event": "plan_deepened",
+          "by": "kimi-interactive",
+          "note": "human: keep ao name (no rebrand). Deep plan written Products/AgentOrchestratorRuntime.md: engine crate (internal name herdr) + one ao binary, contract parity mapped from ao scripts + herdr module map + fabric protocol + harness schema; phases P0-P5 each with own gate"
+        },
+        {
+          "ts": "2026-09-09T00:53:30.587407Z",
+          "event": "scope_update",
+          "by": "kimi-interactive",
+          "note": "native sessions (gizzi-code v2.0.7, shipped 2026-09-06) added to plan as session substrate component; docs gaps + production verification (gizzi-code CLI + Allternit Desktop) delegated to coder agent; feeds P3 fabric pickup and P5 visibility"
+        },
+        {
+          "ts": "2026-09-09T00:54:36.222514Z",
+          "event": "approved",
+          "by": "human",
+          "note": "explicit approval \"Approve allternit-runtime-fork\"; crate home decided: infrastructure/executor/ao-engine/; P0 execute via agent-orchestrator"
+        },
+        {
+          "ts": "2026-09-09T01:01:50.148159Z",
+          "event": "executing",
+          "by": "kimi-interactive",
+          "note": "claude executor blocked on expired login (human chose switch); respawned same worktree with kimi --yolo; task sent; ao-watch armed on P0 NOTES sentinel"
         }
       ],
       "li_id": "li-20260908-051",
+      "decision": "fork_reskin",
+      "constraints_ok": true,
+      "paid_or_signup": false,
+      "docker_required": false,
+      "baseline_ref": "Research/baselines/agent-orchestration.md",
+      "area": "agent-orchestration"
+    },
+    {
+      "id": "rq-20260909-001",
+      "url": "https://github.com/ai-sdlc-framework/ai-sdlc",
+      "note": "\u2014 AI-SDLC: spec-driven decision engine + autonomous orchestrator (DoR gate, worktree dispatch, cross-harness review w/ DSSE attestation, operator TUI). Apache-2.0, no Docker/signup for core path. Verdict at research time: watch + adopt ideas (reviewer-harness independence, decision-steward gate report, checkpoint/quarantine) rather than adopt/fork \u2014 repo-task-shaped, v1alpha1, heavy monorepo; our link\u2192business pipeline keeps its own engine. Possible pilot: repo-native engineering tasks inside allternit-platform.",
+      "title": null,
+      "category": null,
+      "status": "inbox",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "li_id": null,
+      "decision": null,
+      "constraints_ok": null,
+      "paid_or_signup": null,
+      "docker_required": null,
+      "baseline_ref": null,
+      "area": null,
+      "history": [
+        {
+          "ts": "2026-09-09T02:11:12.699Z",
+          "event": "ingested",
+          "by": "dropfile"
+        }
+      ]
+    },
+    {
+      "id": "rq-20260909-002",
+      "url": "https://github.com/google/artemis",
+      "note": "li-20260908-052 \u2014 google/artemis Android NL automation MCP",
+      "title": "google/artemis \u2014 Android NL automation (MCP)",
+      "category": "agent-tooling",
+      "status": "inbox",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "li_id": "li-20260908-052",
+      "decision": null,
+      "constraints_ok": null,
+      "paid_or_signup": null,
+      "docker_required": null,
+      "baseline_ref": null,
+      "area": null,
+      "history": [
+        {
+          "ts": "2026-09-09T02:11:12.699Z",
+          "event": "ingested",
+          "by": "dropfile",
+          "li_id": "li-20260908-052"
+        }
+      ]
+    },
+    {
+      "id": "rq-20260909-003",
+      "url": "https://x.com/nickvasiles/status/2097392151953117355",
+      "note": "Human-authored spec (Eoj, 2026-09-09) \u2014 atomic Create Bot: Identity + Instructions + persistent Computer Cloud + Tools; closes the join Nick's Codex+Orgo demo exposed",
+      "title": "bot-identity-computer",
+      "category": "agent-tooling",
+      "status": "approved",
+      "spec": "Research/specs/bot-identity-computer.md",
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-09T00:00:00Z",
+          "event": "ingested",
+          "by": "manual"
+        },
+        {
+          "ts": "2026-09-09T00:00:00Z",
+          "event": "researched",
+          "by": "manual",
+          "note": "research in Products/ComputerUsePackaging.md Gap 5 + Nick Vasile Codex/Orgo demo links"
+        },
+        {
+          "ts": "2026-09-09T00:00:00Z",
+          "event": "spec_ready",
+          "by": "manual",
+          "note": "spec authored directly at Research/specs/bot-identity-computer.md; queue item registered retroactively for gate tracking"
+        },
+        {
+          "ts": "2026-09-09T05:49:48.403Z",
+          "event": "approved",
+          "by": "kimi-code session (Eoj)",
+          "note": "Human gate approved (Eoj, 2026-09-09). Phase 1: atomic Create Bot (Identity + Instructions + persistent Computer Cloud + Tools), reusing vmOperator / provisionBotDesktop / /api/v1/computers. No Orgo. Constraints: no Orgo MCP, no Docker-required path, no paid deps, no pricing/billing, no fleet provisioning (Phase 2), brain updates drafts only, no confirm:true deploys. Outcome: PR + ledger attestation per AGENTS.md ritual."
+        }
+      ],
+      "li_id": null,
       "decision": "thin_adapter",
       "constraints_ok": true,
       "paid_or_signup": false,
       "docker_required": false,
       "baseline_ref": "Research/baselines/agent-orchestration.md",
       "area": "agent-orchestration"
+    },
+    {
+      "id": "rq-20260909-004",
+      "url": "https://github.com/HarnessRouter/harnessrouter",
+      "note": "Self-hosted multi-harness runner: one Docker container running Claude Code, Codex, Gemini CLI, etc. behind an OpenAI Responses-compatible API (Unified Harness Protocol) with a web console. Joe: \"must implement in Allternit \u2014 a layer above harnesses\" \u2014 candidate to sit above agent-orchestrator / brain selection / cross-harness session pickup.",
+      "title": "HarnessRouter CE / UHP harness router",
+      "category": "allternit",
+      "status": "researched",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "li_id": null,
+      "decision": "reverse_engineer",
+      "constraints_ok": true,
+      "paid_or_signup": false,
+      "docker_required": false,
+      "baseline_ref": "Research/baselines/agent-orchestration.md",
+      "area": "agent-orchestration",
+      "history": [
+        {
+          "ts": "2026-09-09T06:23:38.639Z",
+          "event": "ingested",
+          "by": "mcp",
+          "source": "kimi interactive session 2026-09-09"
+        },
+        {
+          "ts": "2026-09-09T06:45:00.000Z",
+          "event": "decided",
+          "by": "kimi-interactive",
+          "note": "reverse_engineer: adopt UHP (unifiedharnessprotocol.org, open versioned HTTP contract w/ OpenAPI 3.1 + conformance suite) as the canonical harness-router contract; implement natively in AllternitOS Layer-3 harness router + ao execution substrate. Upstream as-is is Docker-only (hard veto) so thin_adapter/fork of the container is out; fork_reskin conflicts with ao Rust direction (rq-20260908-028, decided 2026-09-08). Fills baseline gap: agent-native API surface (Responses-compatible turns, streaming, cancel, idempotency, session checkpoints). NOT ported: provider/key management \u2014 Allternit gateway + A:// tier policy already own routing. Complements ao (orchestration brain + interactive steering stays), Fabric (session pickup stays), Brain (knowledge plane stays)."
+        }
+      ]
     }
   ]
 }
