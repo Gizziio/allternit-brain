@@ -126,6 +126,20 @@ function main() {
 
   lines.push('', `_${items.length} item(s): ${STATUS_ORDER.filter((s) => counts[s]).map((s) => `${s} ${counts[s]}`).join(', ')}._`, '');
 
+  const gateItems = items.filter((item) => item.status === 'spec_ready');
+  if (gateItems.length > 0) {
+    lines.push('## Approvals', '');
+    lines.push('Each `spec_ready` item needs explicit human approval before an executor is spawned. Three equivalent paths:');
+    for (const item of gateItems) {
+      const slug = path.basename(String(item.spec || '')).replace(/\.md$/i, '') || item.id;
+      lines.push(`- \`${slug}\``);
+      lines.push(`  - MCP: \`research_approve\` with slug \`${slug}\``);
+      lines.push(`  - CLI: \`node Ops/scripts/research-approve.js ${slug}\``);
+      lines.push(`  - File: drop \`Research/gate/approvals/${slug}.approve\` and run \`node Ops/scripts/research-approve.js --consume-all\``);
+    }
+    lines.push('');
+  }
+
   fs.mkdirSync(path.dirname(outPath), { recursive: true });
   fs.writeFileSync(outPath, lines.join('\n'));
 

@@ -52,6 +52,16 @@ Agents must record `paid_or_signup`, `docker_required`, and `constraints_ok` on 
 
 **Mechanical** weekday launchd (`com.allternit.research-pipeline-sweep`, 09:05 Mon–Fri) runs export→ingest→integrity→dashboard only — it does **not** run agent stages. Agent pre-gate (stages **1–7 prep**) is interactive `/research-pipeline` or opt-in multi-harness `AGENT_SWEEP=1` (`AGENT_SWEEP_HARNESS=auto|grok|kimi|claude|dual`; auto→dual when grok+kimi on PATH) on the sweep script; those runs **always stop at the human gate**. Deprecated compat: `CLAUDE_CODE_SWEEP=1` → AGENT_SWEEP + harness=claude. Never spawn an executor without explicit approval of the **named spec slug**.
 
+### Production autonomy (2026-09-08 design)
+
+Full detail lives in the `research-pipeline` skill ("Production autonomy" section). Summary:
+
+- **Single config** `Ops/config/research-pipeline.json` drives everything; `autonomy.mode: "shadow"` ships as default (cycle reports, never spawns), `"active"` lands PRs unattended within caps (`execute_max_per_day`, `execute_max_concurrent`, `tier_ceiling: "A://C"`).
+- **launchd is the only scheduler**: mechanical 09:05 weekdays, agent-sweep daily 21:37 (stages 1–7 prep, capped), cycle every 30 min 07:00–22:00 (consume approvals → execute → review → land → notify). VPS mirror units ship at `Ops/deploy/vps/systemd/` (not activated).
+- **Approval paths**: `research_approve` MCP tool · `node Ops/scripts/research-approve.js <slug>` (Grok Bot / any terminal) · `Research/gate/approvals/<slug>.approve` file drop. Slug-level, validated, idempotent.
+- **Park boundary**: money/Stripe, client comms, and deploy-confirm steps are never auto-executed — they park (`status: parked`) with a notification. Standing harness gates are never overridden.
+- **Kill switch**: `Research/gate/HALT` file (cycle no-ops while present). Notifications via `Ops/scripts/notify.sh` (macOS banner + `Research/gate/notifications.log` + rails mail share).
+
 ---
 
 ## 1. Ingest

@@ -1,0 +1,14 @@
+{
+  "autonomy": {
+    "mode": "shadow",
+    "harness": "auto",
+    "sweep_max_items": 3,
+    "execute_max_per_day": 3,
+    "execute_max_concurrent": 1,
+    "tier_ceiling": "A://C",
+    "review_sendback_limit": 1,
+    "execution_timeout_minutes": 90
+  },
+  "schedule": { "mechanical": "09:05", "agent_sweep": "21:37" },
+  "notify": { "macos": true, "rails_mail": true }
+}

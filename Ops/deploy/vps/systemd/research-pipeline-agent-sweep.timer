@@ -1,0 +1,11 @@
+[Unit]
+Description=Allternit Brain research pipeline agent sweep timer (21:37 daily)
+
+[Timer]
+# Daily at 21:37 local, matching com.allternit.research-pipeline-agent-sweep.plist.
+OnCalendar=*-*-* 21:37:00
+Persistent=true
+Unit=research-pipeline-agent-sweep.service
+
+[Install]
+WantedBy=timers.target

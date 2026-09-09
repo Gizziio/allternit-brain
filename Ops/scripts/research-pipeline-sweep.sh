@@ -7,17 +7,28 @@
 #
 # Env:
 #   AGENT_SWEEP=1              Optional. Enable multi-harness agent advancement
-#                              (default OFF so launchd stays safe/cheap).
+#                              (explicit opt-in; takes precedence over config).
 #   AGENT_SWEEP_HARNESS=auto|grok|kimi|claude|dual
 #                              Default **auto**: prefer whichever of grok/kimi/claude
 #                              is on PATH; if both grok+kimi exist, use **dual**;
 #                              else first available among grok, kimi, claude.
-#   AGENT_SWEEP_N              Max items for optional agent advancement (default 3).
+#                              Overrides config autonomy.harness when set.
+#   AGENT_SWEEP_N              Max items for optional agent advancement.
+#                              Overrides config autonomy.sweep_max_items when set.
 #   CLAUDE_CODE_SWEEP=1        Deprecated compat alias → AGENT_SWEEP=1 + harness=claude
 #                              (still honored). Prefer AGENT_SWEEP_*.
 #   CLAUDE_CODE_SWEEP_N        Deprecated compat alias for AGENT_SWEEP_N when using
 #                              the CLAUDE_CODE_SWEEP=1 path.
 #   BRAIN_ROOT                 Override brain root (default: derived from script path).
+#
+# Config (Ops/config/research-pipeline.json, read via Ops/scripts/lib/pipeline-config.js):
+#   autonomy.mode off|shadow|active — drives the agent hook when AGENT_SWEEP is unset.
+#     off    Agent hook disabled (historical launchd-safe default).
+#     shadow Agent stages SKIPPED — pre-gate agent stages spend harness tokens,
+#            and shadow mode is observe-only. Report notes "shadow: agent stages skipped".
+#     active Agent stages run (harness + sweep_max_items from config) whenever
+#            inbox/researched items lack baseline/decision/spec.
+#   Missing/broken config degrades to the historical default (off).
 #
 # Usage:
 #   bash Ops/scripts/research-pipeline-sweep.sh
@@ -67,9 +78,68 @@ if [[ "${CLAUDE_CODE_SWEEP:-0}" == "1" ]]; then
 fi
 
 AGENT_NOTE="skipped (AGENT_SWEEP not set; launchd default)"
-AGENT_SWEEP_ENABLED="${AGENT_SWEEP:-0}"
-AGENT_HARNESS="${AGENT_SWEEP_HARNESS:-auto}"
-N="${AGENT_SWEEP_N:-3}"
+
+# --- Config-driven agent hook ---
+# Precedence: AGENT_SWEEP* env vars (explicit) > Ops/config/research-pipeline.json.
+# Config mode "shadow" skips agent stages entirely (pre-gate agent stages spend
+# harness tokens; shadow is observe-only). Config mode "active" enables them
+# when inbox/researched items lack baseline/decision/spec. Missing config or
+# mode "off" keeps the historical launchd-safe default (OFF).
+CFG_MODE="off"
+CFG_HARNESS="auto"
+CFG_N=3
+CFG_LINE="$("$NODE" -e '
+const root = process.argv[1];
+try {
+  const cfg = require(root + "/Ops/scripts/lib/pipeline-config.js").loadConfig(root);
+  const a = (cfg && cfg.autonomy) || {};
+  const mode = ["off", "shadow", "active"].includes(a.mode) ? a.mode : "off";
+  const harness = ["auto", "grok", "kimi", "claude", "dual"].includes(a.harness) ? a.harness : "auto";
+  const n = Number.isFinite(+a.sweep_max_items) && +a.sweep_max_items > 0 ? Math.floor(+a.sweep_max_items) : 3;
+  console.log(`${mode} ${harness} ${n}`);
+} catch (e) {
+  console.log("off auto 3");
+}
+' "$BRAIN_ROOT" 2>/dev/null || printf 'off auto 3')"
+read -r CFG_MODE CFG_HARNESS CFG_N <<< "$CFG_LINE"
+
+# inbox/researched items lacking baseline_ref/decision/spec → agent stages have work
+NEEDS_AGENT=0
+if [[ -f "$QUEUE" ]]; then
+  NEEDS_AGENT="$("$NODE" -e '
+    let q; try { q = JSON.parse(require("fs").readFileSync(process.argv[1], "utf8")); } catch (e) { q = {}; }
+    const items = q.items || [];
+    const need = items.some(it => ["inbox", "researched"].includes(it.status)
+      && (!it.baseline_ref || !it.decision || !it.spec));
+    console.log(need ? "1" : "0");
+  ' "$QUEUE" 2>/dev/null || printf '0')"
+fi
+
+if [[ -n "${AGENT_SWEEP:-}" ]]; then
+  # explicit env override wins over config
+  AGENT_SWEEP_ENABLED="$AGENT_SWEEP"
+elif [[ "$CFG_MODE" == "active" && "$NEEDS_AGENT" == "1" ]]; then
+  AGENT_SWEEP_ENABLED=1
+else
+  AGENT_SWEEP_ENABLED=0
+fi
+
+AGENT_HARNESS="${AGENT_SWEEP_HARNESS:-$CFG_HARNESS}"
+N="${AGENT_SWEEP_N:-$CFG_N}"
+
+if [[ "$AGENT_SWEEP_ENABLED" != "1" ]]; then
+  case "$CFG_MODE" in
+    shadow)
+      AGENT_NOTE="shadow: agent stages skipped (autonomy.mode=shadow; pre-gate agent stages spend harness tokens)"
+      ;;
+    active)
+      AGENT_NOTE="skipped (config mode=active but no inbox/researched items need baseline/decision/spec)"
+      ;;
+    *)
+      AGENT_NOTE="skipped (AGENT_SWEEP not set; launchd default)"
+      ;;
+  esac
+fi
 
 has_cmd() { command -v "$1" >/dev/null 2>&1; }
 
@@ -330,7 +400,17 @@ lines += [
     "- Prefer interactive `/research-pipeline` for agent stages unless you knowingly enable AGENT_SWEEP.",
     "",
 ]
+# Autonomy cycles (research-pipeline-cycle.sh) append "## Cycle" sections during
+# the day; preserve any existing ones across this rewrite.
+existing_text = report_path.read_text(encoding="utf-8") if report_path.exists() else ""
+cycle_tail = ""
+if "## Cycle" in existing_text:
+    cycle_tail = existing_text[existing_text.index("## Cycle"):].rstrip()
+
 report_path.write_text("\n".join(lines), encoding="utf-8")
+if cycle_tail:
+    with report_path.open("a", encoding="utf-8") as fh:
+        fh.write("\n\n" + cycle_tail + "\n")
 
 inbox_n = counts.get("inbox", 0)
 researched_n = counts.get("researched", 0)

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.allternit.research-pipeline-agent-sweep</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>/Users/joe/Desktop/Allternit/Allternit Brain/Ops/scripts/research-pipeline-sweep.sh</string>
+  </array>
+
+  <!-- Daily at 21:37 local (America/Chicago on Joe's Mac).
+       Config (Ops/config/research-pipeline.json autonomy.mode) drives the
+       agent stages: off → mechanical only; shadow → agent stages skipped;
+       active → pre-gate advancement via config harness/sweep_max_items.
+       AGENT_SWEEP* env vars remain manual overrides. -->
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key>
+    <integer>21</integer>
+    <key>Minute</key>
+    <integer>37</integer>
+  </dict>
+
+  <key>StandardOutPath</key>
+  <string>/Users/joe/.allternit/logs/research-pipeline-agent-sweep.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/joe/.allternit/logs/research-pipeline-agent-sweep.error.log</string>
+
+  <key>RunAtLoad</key>
+  <false/>
+
+  <!-- PATH so node / homebrew tools resolve under launchd -->
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key>
+    <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin</string>
+  </dict>
+</dict>
+</plist>

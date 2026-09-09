@@ -1,0 +1,13 @@
+[Unit]
+Description=Allternit Brain research pipeline agent sweep (pre-gate stages)
+# VPS mirror of com.allternit.research-pipeline-agent-sweep.plist (daily 21:37 local).
+# SHIPPED, NOT ACTIVATED — copy into /etc/systemd/system/ and `daemon-reload`
+# only after the VPS leg is verified. Keep autonomy.mode=shadow until then.
+
+[Service]
+Type=oneshot
+# PLACEHOLDER: adjust user and paths on the VPS.
+User=joe
+WorkingDirectory=/opt/allternit/brain
+Environment=BRAIN_ROOT=/opt/allternit/brain
+ExecStart=/bin/bash /opt/allternit/brain/Ops/scripts/research-pipeline-sweep.sh

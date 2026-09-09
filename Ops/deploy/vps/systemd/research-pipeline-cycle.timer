@@ -1,0 +1,12 @@
+[Unit]
+Description=Allternit Brain research pipeline autonomy cycle timer (every 30 min)
+
+[Timer]
+# Every 30 min, matching com.allternit.research-pipeline-cycle.plist
+# (StartInterval 1800). The service self-no-ops outside 07:00–22:00 local.
+OnCalendar=*-*-* *:0/30:00
+Persistent=true
+Unit=research-pipeline-cycle.service
+
+[Install]
+WantedBy=timers.target

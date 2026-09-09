@@ -25,8 +25,10 @@ import { promisify } from 'util';
 import fs from 'fs';
 import path from 'path';
 import os from 'os';
+import { createRequire } from 'module';
 
 const execFileAsync = promisify(execFile);
+const require = createRequire(import.meta.url);
 
 const HOME = os.homedir();
 const ALLTERNIT_ROOT = path.join(HOME, 'Desktop', 'Allternit');
@@ -370,6 +372,20 @@ const TOOLS = [
     },
   },
   {
+    name: 'research_approve',
+    description:
+      'Approve a spec_ready research-pipeline queue item (the human gate): sets its status to "approved" and appends a history event. Idempotent — re-approving returns already-approved. Uses the same lib as Ops/scripts/research-approve.js.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        slug: { type: 'string', description: 'Queue item slug — the spec basename without .md (e.g. "app-store-connect-cli"), or the item id.' },
+        note: { type: 'string', description: 'Optional free-text note recorded in the item history.' },
+        source: { type: 'string', description: 'Optional origin recorded as "by" in the history event (default "mcp").' },
+      },
+      required: ['slug'],
+    },
+  },
+  {
     name: 'media_audit',
     description:
       'Run the website media audit: scan each Allternit Websites/Projects/<site>/source/ folder for images and references, write Scripts/media-audit.json, and return a human-readable summary.',
@@ -668,6 +684,29 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         fs.writeFileSync(filepath, JSON.stringify(draft, null, 2));
         return textResult(
           `[QUEUED FOR INGEST]\n\nWrote ${filepath}\nThe next ingest-research.js sweep will add it to Research/queue.json as status "inbox" (deduped by normalized URL).`
+        );
+      }
+
+      case 'research_approve': {
+        const lib = require(path.join(
+          BRAIN_ROOT,
+          'Ops',
+          'scripts',
+          'lib',
+          'research-approve-lib.js'
+        ));
+        const result = lib.approve(BRAIN_ROOT, args.slug, {
+          note: args.note || null,
+          by: args.source || 'mcp',
+        });
+        if (!result.ok) {
+          throw new Error(`Approval rejected for "${args.slug}": ${result.reason}`);
+        }
+        const item = result.item;
+        return textResult(
+          result.reason === 'already-approved'
+            ? `[ALREADY APPROVED]\n\n${item.id}  status=${item.status}  spec=${item.spec}`
+            : `[APPROVED]\n\n${item.id}  status=${item.status}  spec=${item.spec}\nExecutor may be spawned for this item.`
         );
       }
 
