@@ -45,10 +45,16 @@ import agyDriver from './harness-sync/drivers/agy.js'
 import opencodeDriver from './harness-sync/drivers/opencode.js'
 import antigravityDriver from './harness-sync/drivers/antigravity.js'
 import qwenDriver from './harness-sync/drivers/qwen.js'
+import codebuddyDriver from './harness-sync/drivers/codebuddy.js'
+import workbuddyDriver from './harness-sync/drivers/workbuddy.js'
+import openclawDriver from './harness-sync/drivers/openclaw.js'
+import hermesDriver from './harness-sync/drivers/hermes.js'
+import dshDriver from './harness-sync/drivers/dsh.js'
+import qoderDriver from './harness-sync/drivers/qoder.js'
 
 const OPS_DIR = path.dirname(fileURLToPath(import.meta.url))
 const manifest = JSON.parse(fs.readFileSync(path.join(OPS_DIR, 'harness.json'), 'utf8'))
-const drivers = [claudeDriver, codexDriver, kimiDriver, grokDriver, cursorDriver, gizziDriver, agyDriver, opencodeDriver, antigravityDriver, qwenDriver]
+const drivers = [claudeDriver, codexDriver, kimiDriver, grokDriver, cursorDriver, gizziDriver, agyDriver, opencodeDriver, antigravityDriver, qwenDriver, codebuddyDriver, workbuddyDriver, openclawDriver, hermesDriver, dshDriver, qoderDriver]
 const server = manifest.source.mcpServer
 
 const args = process.argv.slice(2)
@@ -106,17 +112,26 @@ function describe(a) {
   return bits.join(' ')
 }
 
+function absentSkipsSync(driver, cfg) {
+  return !driver.installed() && !cfg.syncWhenAbsent
+}
+
 function cmdStatus() {
   console.log(`Harness source: ${manifest.source.skillsDir} (${listSkills(manifest.source.skillsDir).length} skills), rules: ${manifest.source.rulesFile}`)
   console.log(`MCP server: ${server.name} → ${server.command} ${server.args[0]}`)
   console.log('')
-  const rows = tools().map(({ driver, cfg }) => ({
-    tool: driver.label,
-    installed: driver.installed() ? 'yes' : 'no',
-    skills: cfg.skillsDir ? skillsStatus(manifest.source.skillsDir, cfg.skillsDir, cfg.skillsFormat || 'dir') : 'n/a',
-    mcp: cfg.mcp ? mcpStatus(cfg) : 'n/a',
-    rules: cfg.rulesFile ? rulesBlockStatus(cfg.rulesFile) : 'n/a',
-  }))
+  const rows = tools().map(({ driver, cfg }) => {
+    if (absentSkipsSync(driver, cfg)) {
+      return { tool: driver.label, installed: 'no', skills: 'skipped', mcp: 'skipped', rules: 'skipped' }
+    }
+    return {
+      tool: driver.label,
+      installed: 'yes',
+      skills: cfg.skillsDir ? skillsStatus(manifest.source.skillsDir, cfg.skillsDir, cfg.skillsFormat || 'dir') : 'n/a',
+      mcp: cfg.mcp ? mcpStatus(cfg) : 'n/a',
+      rules: cfg.rulesFile ? rulesBlockStatus(cfg.rulesFile) : 'n/a',
+    }
+  })
   const w = {
     tool: Math.max(...rows.map(r => r.tool.length), 4),
     installed: 9,
@@ -138,7 +153,11 @@ function cmdSync() {
   let total = 0
   for (const { driver, cfg } of tools()) {
     console.log(`\n== ${driver.label} ==`)
-    if (!driver.installed()) console.log('   (tool not detected on this machine — writing config anyway)')
+    if (absentSkipsSync(driver, cfg)) {
+      console.log('   not installed (skipped) — install the tool and re-run sync to pick it up')
+      continue
+    }
+    if (!driver.installed()) console.log('   (tool not detected on this machine — writing config anyway: syncWhenAbsent)')
     if (cfg.skillsDir) {
       for (const a of syncSkills(manifest.source.skillsDir, cfg.skillsDir, dryRun, cfg.skillsFormat || 'dir')) {
         console.log(`   skills: ${describe(a)}`)

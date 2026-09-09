@@ -325,9 +325,10 @@ export function tomlMcpRemove(file, section, dryRun) {
 }
 
 function mcpEntry(cfg, server) {
-  return cfg.commandArray
-    ? { type: 'local', command: [server.command, ...server.args] }
-    : { command: server.command, args: server.args }
+  if (cfg.commandArray) return { type: 'local', command: [server.command, ...server.args] }
+  const e = { command: server.command, args: server.args }
+  if (cfg.entryType) e.type = cfg.entryType
+  return e
 }
 
 function arrEqual(a, b) {

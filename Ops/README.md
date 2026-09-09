@@ -23,12 +23,14 @@ MCP gateway for Allternit LLC business operations. Lives inside `Allternit Brain
 | `client_new_folder_skeleton` | Creates `Allternit LLC/06 Client Ops And Contracts/<Client>/` and copies business-ops-kit templates in, named per the kickoff playbook's convention | local file writes only — never touches Stripe or sends anything; those steps stay manual per the playbook |
 | `brain_audit` | Run `scripts/audit-brain.js` and return the report | read-only |
 | `brain_update_draft` | Submit a structured brain update. Without `confirm:true` it writes to `.incoming/` for review; with `confirm:true` it applies immediately | local file writes to `Allternit Brain/` |
+| `research_ingest` | Queue a link into the research pipeline (writes a draft under `Research/.incoming/`, picked up by the next `ingest-research.js` sweep) | local file writes only; deduped, never executes anything |
+| `research_approve` | Approve a named spec at the human gate (slug must be `spec_ready`); consumed by the pipeline cycle, which then executes it per config | transitions queue status `spec_ready` → `approved`; the actual execution spend is governed by `Ops/config/research-pipeline.json` caps |
 | `media_audit` | Run the website media audit (`Allternit Websites/Scripts/audit-media.js`) and return the summary | read-only; writes `Allternit Websites/Scripts/media-audit.json` |
 | `media_sync` | Copy approved website media outputs into site source folders | dry-run by default; needs `confirm:true` to actually copy files |
 
 ## Harness sync
 
-`harness-sync.js` fans the ops harness out to every AI CLI tool on the machine, so skills, rules, and this MCP registration live in one canonical place instead of being copied per tool. It implements the same pattern as [Tencent's teamai-cli](https://github.com/Tencent/teamai-cli) (one shared harness, pulled into every agent) without vendoring it.
+`harness-sync.js` fans the ops harness out to every AI CLI tool in the teamai class — installed or not — so skills, rules, and this MCP registration live in one canonical place instead of being copied per tool. It implements the same pattern as [Tencent's teamai-cli](https://github.com/Tencent/teamai-cli) (one shared harness, pulled into every agent) without vendoring it, and uses teamai's verified per-tool conventions (`src/types.ts` toolPaths, `src/resources/mcp-format.ts`) for agents not present on this machine.
 
 ```bash
 node harness-sync.js status            # per-tool coverage table
@@ -45,28 +47,42 @@ What it distributes, and from where:
 | Rules (business rules, review gates) | `~/Desktop/Allternit/CLAUDE.md` | `~/.claude/CLAUDE.md`, `~/.codex/AGENTS.md`, `~/.kimi-code/AGENTS.md`, `~/.cursor/rules/allternit.mdc` |
 | MCP registration | this server | Claude settings, Codex config.toml, Kimi mcp.json, Grok config.toml, Cursor mcp.json, Gizzi gizzi.json (`~/.config/gizzi-code/`), agy (`agy mcp add` → `~/.gemini/config/mcp_config.json`), OpenCode (`opencode mcp add` → `~/.config/opencode/opencode.jsonc`), Qwen (`qwen mcp add -s user` → `~/.qwen/settings.json`) |
 
-Coverage by tool:
+Coverage by tool — installed on this machine (synced now):
 
-| Tool | Skills | Rules | MCP |
-|---|---|---|---|
-| Claude Code | ✓ | ✓ | native config JSON |
-| Codex CLI | ✓ | ✓ | TOML block |
-| Kimi Code CLI | ✓ | ✓ | native config JSON |
-| Grok CLI | ✓ | — | native CLI (`grok mcp add`) |
-| Cursor | ✓ | ✓ (`.mdc`) | native config JSON |
-| Gizzi Code | ✓ | — | native config JSON (`{type, command[]}` shape) |
-| agy | — (no skills convention) | — | native CLI (`agy mcp add`) |
-| OpenCode | ✓ | — | native CLI (`opencode mcp add`, needs `--` before command) |
-| Antigravity IDE | ✓ | — | — (MCP lives in the IDE UI, no stable file) |
-| Qwen Code | ✓ | — | native CLI (`qwen mcp add -s user`) |
-| aider | — | — | skipped: no skills or file-based MCP concept |
+| Tool | Skills | Rules | MCP | Convention confidence |
+|---|---|---|---|---|
+| Claude Code | ✓ | ✓ | native config JSON | teamai + verified-live |
+| Codex CLI | ✓ | ✓ | TOML block | teamai + verified-live |
+| Kimi Code CLI | ✓ | ✓ | native config JSON | verified-live |
+| Grok CLI | ✓ | — | native CLI (`grok mcp add`) | verified-live |
+| Cursor | ✓ | ✓ (`.mdc`) | native config JSON | teamai + verified-live |
+| Gizzi Code | ✓ | — | native config JSON (`{type, command[]}` shape) | verified-live |
+| agy | — (no skills convention) | — | native CLI (`agy mcp add`) | verified-live |
+| OpenCode | ✓ | — | native CLI (`opencode mcp add`, needs `--` before command) | teamai + verified-live |
+| Antigravity IDE | ✓ | — | — (MCP lives in the IDE UI, no stable file) | inferred (platform crate) |
+| Qwen Code | ✓ | — | native CLI (`qwen mcp add -s user`) | teamai + verified-live |
+
+Supported when installed (skipped until the tool appears on the machine — `sync` picks them up automatically; `syncWhenAbsent` is false for all of these):
+
+| Tool | Skills | Rules | MCP | Convention confidence |
+|---|---|---|---|---|
+| CodeBuddy | `~/.codebuddy/skills` | `~/.codebuddy/CODEBUDDY.md` | `~/.codebuddy/mcp.json` (`mcpServers`) | teamai (MCP schema from teamai source, not live-tested) |
+| WorkBuddy | `~/.workbuddy/skills` | — | `~/.workbuddy/mcp.json` (`mcpServers`) | teamai (same caveat) |
+| OpenClaw | `~/.openclaw/skills` | `~/.openclaw/workspace/AGENTS.md` | — (no stable file) | teamai |
+| Hermes | `~/.hermes/skills` | — | — (no MCP path in teamai source) | teamai |
+| DeepSeek Harness | `~/.dsh/skills` | — | — (no MCP path in teamai source) | teamai |
+| Qoder | `~/.qoder/skills` | — (`~/.qoder/rules` is a rules *directory*, not a single file) | `~/.qoder/settings.json` (`mcpServers`, claude-family `{type: "stdio", command, args}` shape) | teamai (MCP schema from teamai source, not live-tested) |
+| aider | — | — | skipped: no skills or file-based MCP concept (teamai lists `~/.aider/skills` but aider itself has no skills mechanism) | — |
+
+"teamai" confidence = path/schema taken from Tencent/teamai-cli source (`src/types.ts` toolPaths — their comment: "MCP paths are only set for tools whose config location has been verified" — and `src/resources/mcp-format.ts`). "verified-live" = confirmed against the real tool on this machine. Per-tool sources are recorded in each entry's `_convention` field in `harness.json`.
 
 Guarantees:
 
 - Each target skills dir gets a `.allternit-harness.json` manifest (skill names + content hashes). `status`, update, and `uninstall` only ever touch skills listed there — your other tools' personal skills are never affected.
 - Rules are written as a marker-delimited block (`<!-- allternit-harness:start/end -->`) upserted into existing instruction files; the rest of those files is preserved, and pre-existing configs are backed up to `<file>.bak-harness` before each write.
 - MCP upserts are idempotent per tool config format (JSON merge, TOML block replace, or the tool's native CLI — `grok mcp add`, `agy mcp add`, `opencode mcp add`, `qwen mcp add`). Native-CLI tools are status-checked against the config file they actually write (`configFormat: json` in `harness.json`), and matching tolerates extra keys the tool adds itself (e.g. agy's `disabled: false`).
-- Skills supports two layouts: `dir` (default — `<name>/SKILL.md`) and `flat` (`skillsFormat: "flat"` — one `<name>.md` per skill). No current tool uses flat, but the engine supports it.
+- The registry is not limited to installed CLIs: it covers the full teamai-class agent universe. Tools absent from the machine show `installed: no` in `status` and are skipped by `sync`/`uninstall` (nothing written) unless their entry sets `syncWhenAbsent: true` — currently only Cursor (config-only install here). Install a skipped tool later and the next `sync` picks it up automatically.
+- Skills supports two layouts: `dir` (default — `<name>/SKILL.md`) and `flat` (`skillsFormat: "flat"` — one `<name>.md` per skill). No current tool needs flat, but the engine supports it.
 
 Brain stays the knowledge plane: `harness-sync` distributes skills/rules/MCP only. It does not duplicate `brain_search`, the `.incoming/` review path, or session-sync.
 
