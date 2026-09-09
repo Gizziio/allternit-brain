@@ -1,6 +1,6 @@
 {
   "autonomy": {
-    "mode": "shadow",
+    "mode": "active",
     "harness": "auto",
     "sweep_max_items": 3,
     "execute_max_per_day": 3,
