@@ -25,7 +25,7 @@ The `ao` binary (built on the P0-vendored herdr engine) implements `ao spawn|sen
 
 ## Division / owner
 
-- [Platform / Surfaces](../Divisions/INDEX.md)
+- [Platform / Surfaces](../../Divisions/INDEX.md)
 
 ## Integrate decision
 

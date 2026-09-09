@@ -31,7 +31,7 @@ Allternit owns an Allternit-branded agent runtime shipped as **one Rust binary n
 
 ## Division / owner
 
-- [Platform / Surfaces](../Divisions/INDEX.md)
+- [Platform / Surfaces](../../Divisions/INDEX.md)
 
 ## Integrate decision
 
