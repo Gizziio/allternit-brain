@@ -41,15 +41,32 @@ What it distributes, and from where:
 
 | Resource | Source of truth | Targets |
 |---|---|---|
-| Skills (10 ops skills) | `~/Desktop/Allternit/.claude/skills/` | `~/.claude/skills`, `~/.codex/skills`, `~/.kimi-code/skills`, `~/.grok/skills`, `~/.cursor/skills`, `~/.gizzi/skills` |
+| Skills (17 ops skills) | `~/Desktop/Allternit/.claude/skills/` | `~/.claude/skills`, `~/.codex/skills`, `~/.kimi-code/skills`, `~/.grok/skills`, `~/.cursor/skills`, `~/.gizzi/skills`, `~/.config/opencode/skills`, `~/.gemini/antigravity/skills`, `~/.qwen/skills` |
 | Rules (business rules, review gates) | `~/Desktop/Allternit/CLAUDE.md` | `~/.claude/CLAUDE.md`, `~/.codex/AGENTS.md`, `~/.kimi-code/AGENTS.md`, `~/.cursor/rules/allternit.mdc` |
-| MCP registration | this server | Claude settings, Codex config.toml, Kimi mcp.json, Grok config.toml, Cursor mcp.json, Gizzi gizzi.json (`~/.config/gizzi-code/`) |
+| MCP registration | this server | Claude settings, Codex config.toml, Kimi mcp.json, Grok config.toml, Cursor mcp.json, Gizzi gizzi.json (`~/.config/gizzi-code/`), agy (`agy mcp add` → `~/.gemini/config/mcp_config.json`), OpenCode (`opencode mcp add` → `~/.config/opencode/opencode.jsonc`), Qwen (`qwen mcp add -s user` → `~/.qwen/settings.json`) |
+
+Coverage by tool:
+
+| Tool | Skills | Rules | MCP |
+|---|---|---|---|
+| Claude Code | ✓ | ✓ | native config JSON |
+| Codex CLI | ✓ | ✓ | TOML block |
+| Kimi Code CLI | ✓ | ✓ | native config JSON |
+| Grok CLI | ✓ | — | native CLI (`grok mcp add`) |
+| Cursor | ✓ | ✓ (`.mdc`) | native config JSON |
+| Gizzi Code | ✓ | — | native config JSON (`{type, command[]}` shape) |
+| agy | — (no skills convention) | — | native CLI (`agy mcp add`) |
+| OpenCode | ✓ | — | native CLI (`opencode mcp add`, needs `--` before command) |
+| Antigravity IDE | ✓ | — | — (MCP lives in the IDE UI, no stable file) |
+| Qwen Code | ✓ | — | native CLI (`qwen mcp add -s user`) |
+| aider | — | — | skipped: no skills or file-based MCP concept |
 
 Guarantees:
 
 - Each target skills dir gets a `.allternit-harness.json` manifest (skill names + content hashes). `status`, update, and `uninstall` only ever touch skills listed there — your other tools' personal skills are never affected.
 - Rules are written as a marker-delimited block (`<!-- allternit-harness:start/end -->`) upserted into existing instruction files; the rest of those files is preserved, and pre-existing configs are backed up to `<file>.bak-harness` before each write.
-- MCP upserts are idempotent per tool config format (JSON merge, TOML block replace, or the tool's native CLI — `grok mcp add` for Grok).
+- MCP upserts are idempotent per tool config format (JSON merge, TOML block replace, or the tool's native CLI — `grok mcp add`, `agy mcp add`, `opencode mcp add`, `qwen mcp add`). Native-CLI tools are status-checked against the config file they actually write (`configFormat: json` in `harness.json`), and matching tolerates extra keys the tool adds itself (e.g. agy's `disabled: false`).
+- Skills supports two layouts: `dir` (default — `<name>/SKILL.md`) and `flat` (`skillsFormat: "flat"` — one `<name>.md` per skill). No current tool uses flat, but the engine supports it.
 
 Brain stays the knowledge plane: `harness-sync` distributes skills/rules/MCP only. It does not duplicate `brain_search`, the `.incoming/` review path, or session-sync.
 

@@ -52,6 +52,61 @@
       "rulesFile": null,
       "rulesFrontmatter": null,
       "mcp": { "kind": "json", "path": "~/.config/gizzi-code/gizzi.json", "serversKey": "mcp", "commandArray": true }
+    },
+    "agy": {
+      "skillsDir": null,
+      "rulesFile": null,
+      "mcp": {
+        "kind": "cli",
+        "bin": "agy",
+        "addArgs": ["mcp", "add", "allternit-ops", "node", "/Users/joe/Desktop/Allternit/Allternit Brain/Ops/index.js"],
+        "removeArgs": ["mcp", "remove", "allternit-ops"],
+        "configPath": "~/.gemini/config/mcp_config.json",
+        "configFormat": "json",
+        "serversKey": "mcpServers"
+      }
+    },
+    "opencode": {
+      "skillsDir": "~/.config/opencode/skills",
+      "rulesFile": null,
+      "mcp": {
+        "kind": "cli",
+        "bin": "opencode",
+        "addArgs": ["mcp", "add", "allternit-ops", "--", "node", "/Users/joe/Desktop/Allternit/Allternit Brain/Ops/index.js"],
+        "removeArgs": null,
+        "configPath": "~/.config/opencode/opencode.jsonc",
+        "configFormat": "json",
+        "serversKey": "mcp",
+        "commandArray": true
+      }
+    },
+    "antigravity": {
+      "skillsDir": "~/.gemini/antigravity/skills",
+      "rulesFile": null,
+      "mcp": null
+    },
+    "qwen": {
+      "skillsDir": "~/.qwen/skills",
+      "rulesFile": null,
+      "mcp": {
+        "kind": "cli",
+        "bin": "qwen",
+        "addArgs": ["mcp", "add", "allternit-ops", "node", "/Users/joe/Desktop/Allternit/Allternit Brain/Ops/index.js", "-s", "user"],
+        "removeArgs": ["mcp", "remove", "allternit-ops", "-s", "user"],
+        "configPath": "~/.qwen/settings.json",
+        "configFormat": "json",
+        "serversKey": "mcpServers"
+      }
     }
+  },
+  "_notes": {
+    "agy": "MCP config file verified live: `agy mcp add` writes ~/.gemini/config/mcp_config.json (agy is gemini-heritage). No skills convention found (plugins only) — skills not synced.",
+    "opencode": "Skills are dir-per-skill at ~/.config/opencode/skills/<name>/SKILL.md per opencode v1.18 docs — NOT flat <name>.md as once assumed. `opencode mcp add` requires `--` before the command; CLI has no mcp remove, so uninstall edits opencode.jsonc directly.",
+    "antigravity": "MCP skipped — Antigravity IDE configures MCP in the IDE UI, not a stable file. Skills dir per platform crate convention; created on sync.",
+    "qwen": "Skills ARE supported (~/.qwen/skills personal skills, dir-per-skill) despite older assumptions; qwen mcp add -s user writes mcpServers to ~/.qwen/settings.json.",
+    "skillsFormat": "Engine supports skillsFormat 'flat' (one <name>.md per skill) in addition to default 'dir'; no current tool needs flat."
+  },
+  "_skipped": {
+    "aider": "aider has no skills concept and no file-based MCP registration (config is .aider.conf.yml flags) — nothing for harness-sync to fan out."
   }
 }

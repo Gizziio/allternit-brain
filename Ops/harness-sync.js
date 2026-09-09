@@ -8,7 +8,7 @@
 //   --tools=codex,kimi                       restrict to a subset of tools
 //
 // Source of truth (see harness.json):
-//   skills  → /Users/joe/Desktop/Allternit/.claude/skills/ (9 ops skills)
+//   skills  → /Users/joe/Desktop/Allternit/.claude/skills/ (17 ops skills)
 //   rules   → /Users/joe/Desktop/Allternit/CLAUDE.md
 //   MCP     → allternit-ops server (this directory's index.js)
 
@@ -41,10 +41,14 @@ import kimiDriver from './harness-sync/drivers/kimi.js'
 import grokDriver from './harness-sync/drivers/grok.js'
 import cursorDriver from './harness-sync/drivers/cursor.js'
 import gizziDriver from './harness-sync/drivers/gizzi.js'
+import agyDriver from './harness-sync/drivers/agy.js'
+import opencodeDriver from './harness-sync/drivers/opencode.js'
+import antigravityDriver from './harness-sync/drivers/antigravity.js'
+import qwenDriver from './harness-sync/drivers/qwen.js'
 
 const OPS_DIR = path.dirname(fileURLToPath(import.meta.url))
 const manifest = JSON.parse(fs.readFileSync(path.join(OPS_DIR, 'harness.json'), 'utf8'))
-const drivers = [claudeDriver, codexDriver, kimiDriver, grokDriver, cursorDriver, gizziDriver]
+const drivers = [claudeDriver, codexDriver, kimiDriver, grokDriver, cursorDriver, gizziDriver, agyDriver, opencodeDriver, antigravityDriver, qwenDriver]
 const server = manifest.source.mcpServer
 
 const args = process.argv.slice(2)
@@ -63,7 +67,10 @@ function mcpStatus(cfg) {
   const m = cfg.mcp
   if (m.kind === 'json') return jsonMcpStatus(m.path, m, server.name, server)
   if (m.kind === 'toml-block') return tomlMcpStatus(m.path, m.section, server)
-  if (m.kind === 'cli') return cliMcpStatus(m.configPath, m.section, server)
+  if (m.kind === 'cli') {
+    if (m.configFormat === 'json') return jsonMcpStatus(m.configPath, m, server.name, server)
+    return cliMcpStatus(m.configPath, m.section, server)
+  }
   return 'unknown'
 }
 
@@ -82,7 +89,10 @@ function mcpRemove(cfg, dry) {
   const m = cfg.mcp
   if (m.kind === 'json') return jsonMcpRemove(m.path, m, server.name, dry)
   if (m.kind === 'toml-block') return tomlMcpRemove(m.path, m.section, dry)
-  if (m.kind === 'cli') return cliMcpRemove(m.bin, m.removeArgs, dry)
+  if (m.kind === 'cli') {
+    if (m.configFormat === 'json') return jsonMcpRemove(m.configPath, m, server.name, dry)
+    return cliMcpRemove(m.bin, m.removeArgs, dry)
+  }
   return [{ kind: 'unknown' }]
 }
 
@@ -103,7 +113,7 @@ function cmdStatus() {
   const rows = tools().map(({ driver, cfg }) => ({
     tool: driver.label,
     installed: driver.installed() ? 'yes' : 'no',
-    skills: skillsStatus(manifest.source.skillsDir, cfg.skillsDir),
+    skills: cfg.skillsDir ? skillsStatus(manifest.source.skillsDir, cfg.skillsDir, cfg.skillsFormat || 'dir') : 'n/a',
     mcp: cfg.mcp ? mcpStatus(cfg) : 'n/a',
     rules: cfg.rulesFile ? rulesBlockStatus(cfg.rulesFile) : 'n/a',
   }))
@@ -129,9 +139,11 @@ function cmdSync() {
   for (const { driver, cfg } of tools()) {
     console.log(`\n== ${driver.label} ==`)
     if (!driver.installed()) console.log('   (tool not detected on this machine — writing config anyway)')
-    for (const a of syncSkills(manifest.source.skillsDir, cfg.skillsDir, dryRun)) {
-      console.log(`   skills: ${describe(a)}`)
-      total++
+    if (cfg.skillsDir) {
+      for (const a of syncSkills(manifest.source.skillsDir, cfg.skillsDir, dryRun, cfg.skillsFormat || 'dir')) {
+        console.log(`   skills: ${describe(a)}`)
+        total++
+      }
     }
     if (cfg.mcp) {
       for (const a of mcpSync(cfg, dryRun)) {
@@ -153,7 +165,7 @@ function cmdSync() {
 function cmdUninstall() {
   for (const { driver, cfg } of tools()) {
     console.log(`\n== ${driver.label} ==`)
-    for (const a of uninstallSkills(cfg.skillsDir, dryRun)) console.log(`   skills: ${describe(a)}`)
+    if (cfg.skillsDir) for (const a of uninstallSkills(cfg.skillsDir, dryRun, cfg.skillsFormat || 'dir')) console.log(`   skills: ${describe(a)}`)
     if (cfg.mcp) for (const a of mcpRemove(cfg, dryRun)) console.log(`   mcp:    ${describe(a)}`)
     if (cfg.rulesFile) for (const a of removeRulesBlock(cfg.rulesFile, dryRun, cfg.rulesFrontmatter || null)) console.log(`   rules:  ${describe(a)}`)
   }

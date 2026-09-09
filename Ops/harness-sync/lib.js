@@ -86,7 +86,19 @@ export function listSkills(srcDir) {
     .sort()
 }
 
-export function syncSkills(srcDir, targetDir, dryRun) {
+function hashFile(file) {
+  return crypto.createHash('sha256').update(fs.readFileSync(expand(file))).digest('hex')
+}
+
+function skillTarget(tdir, name, format) {
+  return format === 'flat' ? path.join(tdir, `${name}.md`) : path.join(tdir, name)
+}
+
+function skillHash(target, format) {
+  return format === 'flat' ? hashFile(target) : hashDir(target)
+}
+
+export function syncSkills(srcDir, targetDir, dryRun, format = 'dir') {
   const actions = []
   const skills = listSkills(srcDir)
   const tdir = expand(targetDir)
@@ -100,25 +112,37 @@ export function syncSkills(srcDir, targetDir, dryRun) {
 
   for (const name of skills) {
     const sSrc = path.join(expand(srcDir), name)
-    const sDst = path.join(tdir, name)
-    const hash = hashDir(sSrc)
+    const sDst = skillTarget(tdir, name, format)
+    const hash = format === 'flat' ? hashFile(path.join(sSrc, 'SKILL.md')) : hashDir(sSrc)
     next.skills[name] = hash
     if (!fs.existsSync(sDst)) {
       actions.push({ kind: dryRun ? 'would-install' : 'install', name })
-      if (!dryRun) copyDir(sSrc, sDst)
-    } else if (hashDir(sDst) !== hash) {
+      if (!dryRun) {
+        if (format === 'flat') {
+          fs.mkdirSync(tdir, { recursive: true })
+          fs.copyFileSync(path.join(sSrc, 'SKILL.md'), sDst)
+        } else copyDir(sSrc, sDst)
+      }
+    } else if (skillHash(sDst, format) !== hash) {
       actions.push({ kind: dryRun ? 'would-update' : 'update', name })
       if (!dryRun) {
-        removeDir(sDst)
-        copyDir(sSrc, sDst)
+        if (format === 'flat') fs.copyFileSync(path.join(sSrc, 'SKILL.md'), sDst)
+        else {
+          removeDir(sDst)
+          copyDir(sSrc, sDst)
+        }
       }
     }
   }
 
   for (const name of Object.keys(prev.skills || {})) {
-    if (next.skills[name] || !fs.existsSync(path.join(tdir, name))) continue
+    const dst = skillTarget(tdir, name, format)
+    if (next.skills[name] || !fs.existsSync(dst)) continue
     actions.push({ kind: dryRun ? 'would-remove' : 'remove', name, reason: 'no longer in source' })
-    if (!dryRun) removeDir(path.join(tdir, name))
+    if (!dryRun) {
+      if (format === 'flat') fs.rmSync(dst, { force: true })
+      else removeDir(dst)
+    }
   }
 
   if (!dryRun) {
@@ -128,7 +152,7 @@ export function syncSkills(srcDir, targetDir, dryRun) {
   return actions
 }
 
-export function skillsStatus(srcDir, targetDir) {
+export function skillsStatus(srcDir, targetDir, format = 'dir') {
   const skills = listSkills(srcDir)
   if (skills.length === 0) return 'no source skills'
   const tdir = expand(targetDir)
@@ -137,9 +161,9 @@ export function skillsStatus(srcDir, targetDir) {
   let drifted = []
   let missing = []
   for (const name of skills) {
-    const dst = path.join(tdir, name)
+    const dst = skillTarget(tdir, name, format)
     if (!fs.existsSync(dst)) missing.push(name)
-    else if (hashDir(dst) !== hashDir(path.join(expand(srcDir), name))) drifted.push(name)
+    else if (skillHash(dst, format) !== (format === 'flat' ? hashFile(path.join(expand(srcDir), name, 'SKILL.md')) : hashDir(path.join(expand(srcDir), name)))) drifted.push(name)
     else synced++
   }
   const parts = [`${synced}/${skills.length} synced`]
@@ -148,7 +172,7 @@ export function skillsStatus(srcDir, targetDir) {
   return parts.join(', ')
 }
 
-export function uninstallSkills(targetDir, dryRun) {
+export function uninstallSkills(targetDir, dryRun, format = 'dir') {
   const actions = []
   const tdir = expand(targetDir)
   const manifestPath = path.join(tdir, MANAGED_MANIFEST)
@@ -158,10 +182,13 @@ export function uninstallSkills(targetDir, dryRun) {
     return actions
   }
   for (const name of Object.keys(manifest.skills || {})) {
-    const dst = path.join(tdir, name)
+    const dst = skillTarget(tdir, name, format)
     if (fs.existsSync(dst)) {
       actions.push({ kind: dryRun ? 'would-remove' : 'remove', name })
-      if (!dryRun) removeDir(dst)
+      if (!dryRun) {
+        if (format === 'flat') fs.rmSync(dst, { force: true })
+        else removeDir(dst)
+      }
     }
   }
   actions.push({ kind: dryRun ? 'would-remove' : 'remove', detail: MANAGED_MANIFEST })
@@ -303,10 +330,17 @@ function mcpEntry(cfg, server) {
     : { command: server.command, args: server.args }
 }
 
+function arrEqual(a, b) {
+  return Array.isArray(a) && Array.isArray(b) && a.length === b.length && a.every((x, i) => x === b[i])
+}
+
 function mcpEntryMatches(cfg, cur, server) {
   if (!cur || typeof cur !== 'object') return false
-  const expected = mcpEntry(cfg, server)
-  return JSON.stringify(cur) === JSON.stringify(expected)
+  if (cfg.commandArray) {
+    const expected = mcpEntry(cfg, server)
+    return cur.type === expected.type && arrEqual(cur.command, expected.command)
+  }
+  return cur.command === server.command && arrEqual(cur.args, server.args)
 }
 
 export function jsonMcpStatus(file, cfg, name, server) {
