@@ -6,7 +6,7 @@ status: draft
 
 # allternit-runtime-fork — ao v3 (P0: fork hygiene)
 
-**Naming resolved (2026-09-08, human):** the product stays **agent orchestrator — `ao`**. No new brand. The herdr fork ships as an internal engine crate inside one `ao` Rust binary that replaces the current `ao-*` bash scripts. Full build plan: [`Products/AgentOrchestratorRuntime.md`](../Products/AgentOrchestratorRuntime.md) (evidence base: exact ao contract, herdr module map, Fabric protocol, harness-sync schema; phases P0–P5; upstream policy; risks).
+**Naming resolved (2026-09-08, human):** the product stays **agent orchestrator — `ao`**. No new brand. The herdr fork ships as an internal engine crate inside one `ao` Rust binary that replaces the current `ao-*` bash scripts. Full build plan: [`Products/AgentOrchestratorRuntime.md`]../../Products/AgentOrchestratorRuntime.md) (evidence base: exact ao contract, herdr module map, Fabric protocol, harness-sync schema; phases P0–P5; upstream policy; risks).
 
 ## Goal
 
@@ -44,7 +44,7 @@ Allternit owns an Allternit-branded agent runtime shipped as **one Rust binary n
 
 ## Product shape — what goes in the binary
 
-Naming (human, 2026-09-08): binary and product are **`ao`** — no new brand. Details and evidence in [`Products/AgentOrchestratorRuntime.md`](../Products/AgentOrchestratorRuntime.md).
+Naming (human, 2026-09-08): binary and product are **`ao`** — no new brand. Details and evidence in [`Products/AgentOrchestratorRuntime.md`]../../Products/AgentOrchestratorRuntime.md).
 
 | Capability | Source today | Packaged as |
 |---|---|---|
