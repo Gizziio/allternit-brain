@@ -10,7 +10,7 @@ Bookmarks harvested from Safari (2026-09-08), categorized by where they feed. On
 
 ## Pipeline
 
-Links don't just sit here — they flow: drop a link in [`.incoming/links.md`](.incoming/links.md) (or via the `research_ingest` MCP tool) → the [`/research-pipeline`](../../.claude/skills/research-pipeline/SKILL.md) skill ingests it into [`queue.json`](queue.json), researches it, and specs feature candidates in [`specs/`](specs/) → a human approves the spec → an orchestrated coding executor lands the PR and does the repo ritual. Hard gate: no executor is ever spawned without explicit approval of the named spec. State lives in `queue.json`; the human's gate view is the [Dashboard](Dashboard.md) (regenerated every sweep). Runs on demand (`/research-pipeline`) and on a daily scheduled sweep (Phases A–D only — it always stops at the gate).
+Links don't just sit here — they flow: drop a link in [`.incoming/links.md`](.incoming/links.md) (or via the `research_ingest` MCP tool) → the [`/research-pipeline`](../../.claude/skills/research-pipeline/SKILL.md) skill ingests it into [`queue.json`](queue.json), researches it, and specs feature candidates in [`specs/`](specs/) → a human approves the spec → an orchestrated coding executor lands the PR and does the repo ritual. Hard gate: no executor is ever spawned without explicit approval of the named spec. State lives in `queue.json`; the human's gate view is the [Dashboard](Dashboard.md) (regenerated every sweep). Runs on demand (`/research-pipeline`) and on launchd jobs (mechanical 09:05 weekdays, agent-sweep 21:37 daily, cycle every 30 min — see [HANDOFF](HANDOFF.md) for the production state and operating commands).
 
 ## Agent tooling & platform R&D
 
