@@ -72,20 +72,14 @@ The session-pickup substrate already exists and is the model for ao's session la
 
 Significance for this plan: native sessions prove the pick-up pattern end-to-end in production. In ao v3 the same pattern becomes the session substrate that feeds Fabric pickup (P3) and the visibility panel (P5) — the ao engine (herdr persistence + agent session restore, §2.2) supplies the live-pane half, native-source.ts the on-disk CLI session half.
 
-### 2.6 HarnessRouter CE (fork base for P6/P7 — rq-20260909-004, decision fork_reskin 2026-09-09 human redirect)
+### 2.6 HarnessRouter CE (reference implementation for the P6 Rust port — rq-20260909-004, decision reverse_engineer; language call by human 2026-09-09)
 
-[HarnessRouter CE](https://github.com/HarnessRouter/harnessrouter), Apache-2.0: one box running **ten agent harnesses** (Claude Code, Codex, Gemini CLI, Qwen, opencode, Cline, Pi, DSH, Hermes, OMP) behind a single OpenAI **Responses-compatible API** — the Unified Harness Protocol (UHP, open standard at unifiedharnessprotocol.org: OpenAPI 3.1 schemas, versioned spec, runnable conformance suite). Three components, none of them Docker-coupled at the code level:
+[HarnessRouter CE](https://github.com/HarnessRouter/harnessrouter), Apache-2.0: one box running **ten agent harnesses** (Claude Code, Codex, Gemini CLI, Qwen, opencode, Cline, Pi, DSH, Hermes, OMP) behind a single OpenAI **Responses-compatible API** — the Unified Harness Protocol (UHP, open standard at unifiedharnessprotocol.org: OpenAPI 3.1 schemas, versioned spec, runnable conformance suite). Upstream is Python (gateway, runner) + Next.js (console) + Docker (appliance packaging and per-session-user isolation only — nothing in the components is container-coupled).
 
-| Component | Stack | Role |
-|---|---|---|
-| Gateway (`gateway/`, 59 files) | Python (`app.py` + pytest suite) | UHP surface: Responses API, harness CRUD, sessions, streaming, cancellation, idempotency, SQLite backing |
-| Runner (`runner/`, 40 files) | Python (`server.py` + per-backend drivers) | One agent CLI process per session, isolated workspace dir, turn handles, checkpoint/rehydrate |
-| Console (`ui/`, 202 files) | Next.js | Web UI — **reference only for ao; not ported** (ao TUI + existing surfaces are the face) |
+**Language call (human, 2026-09-09):** we implement this in **Rust, inside the ao binary**. HR CE is vendored as the **reference implementation and parity oracle only** — its protocol docs, per-backend pytest suite, and the UHP conformance suite are run against our Rust server; no shipped Python. What does not port, we drop rather than wrap (below).
 
-**What Docker actually is in the product:** the appliance layer only — (a) bundling the three components + first-run CLI installers into one image, and (b) the isolation boundary (container starts as root solely to create a per-session Linux user that owns that session's workspace; `HR_SANDBOX_TRUST=owner` exists because on your own box the key is handed over directly). All state is SQLite + files on a volume; gateway and runner are plain loopback HTTP servers. **A Docker-free fork loses only the per-session-user hardening** — isolation degrades to workspace-dir separation, which is exactly ao's existing owner-trust model.
-
-**What we take:** UHP as the agent-native API surface (closes the "no agent-native API surface" gap in `Research/baselines/agent-orchestration.md`), the per-backend driver set (10 harnesses' turn-protocol adapters, incl. reasoning-strip / schema-normalize / token-usage handling per backend), the first-run harness auto-installer, and the conformance suite as the parity gate.
-**What we gut:** the container entrypoint + per-session-user machinery, the Next.js console, hosted-service couplings (push-to-cloud, marketplace), and the provider connection-policy/key store — **model and provider routing stay in the Allternit gateway + A:// tier policy** (`model_route`), never a second key store.
+**Ports to Rust:** the UHP surface (Responses API semantics: turns, SSE streaming, cancellation, idempotency, harness CRUD, sessions), SQLite + files backing, per-session workspace lifecycle with checkpoint/rehydrate, the **logic** of the per-backend drivers (subprocess CLI invocation, reasoning-strip / schema-normalize / token-usage handling — the CLIs are external processes, so Rust drives them as well as Python does), and the first-run auto-installer (P7).
+**Drops (do not port):** the Next.js console (ao TUI + existing surfaces are the face), the container entrypoint + per-session-user sandbox (owner-trust model instead), hosted-service couplings (push-to-cloud, marketplace), the provider connection-policy/key store — **model and provider routing stay in the Allternit gateway + A:// tier policy** (`model_route`), never a second key store — and any backend whose driver is a Python/Node relay we choose not to re-implement in the first pass (Hermes is gated anyway: license undeclared upstream).
 **License caveat carried into P7:** agent CLIs install under their own terms (Claude Code under Anthropic's terms, hermes-agent license undeclared) — per-tool explicit opt-in, same honesty HarnessRouter itself ships with.
 
 ## 3. Target architecture
@@ -108,9 +102,9 @@ Significance for this plan: native sessions prove the pick-up pattern end-to-end
                         │         ├── Rails peer registry (allternit-agent-system-rails)    │
                         │         └── Fabric node client → api.allternit.com proxy + push   │
                         │                                                                   │
-                        │  UHP execution layer (P6, §2.6 fork — Python, ao-supervised):     │
-                        │  gateway + runner as loopback child processes; per-session        │
-                        │  workspaces; harness registry = the "choose a brain" surface      │
+                        │  uhp crate (P6, §2.6 — Rust port of HarnessRouter CE): UHP        │
+                        │  Responses surface, harness registry, sessions, per-backend       │
+                        │  drivers; harness registry = the "choose a brain" surface         │
                         └───────────────────────────────────────────────────────────────────┘
 ```
 
@@ -122,7 +116,7 @@ Significance for this plan: native sessions prove the pick-up pattern end-to-end
 
 Legacy-compatible (phase-in): `ao spawn|send|watch|status|kill|doctor` with identical arguments/exit codes/stdout — the orchestrator skill and ORCHESTRATOR.md keep working unmodified. Optionally keep `ao-spawn`… symlinks → `ao spawn` for one release.
 
-New: `ao machine add|list|remove|connect` · `ao fabric pair|serve|status` · `ao harness sync|status|uninstall` · `ao harness install <tool>` (P7) · `ao serve` (P6 — start/stop/status the UHP gateway+runner sidecar) · `ao peer list|send` · `ao ui` (TUI face).
+New: `ao machine add|list|remove|connect` · `ao fabric pair|serve|status` · `ao harness sync|status|uninstall` · `ao harness install <tool>` (P7) · `ao serve` (P6 — start/stop the UHP gateway surface + health) · `ao peer list|send` · `ao ui` (TUI face).
 
 ## 5. Phases
 
@@ -150,9 +144,10 @@ Implement runtime-device pairing in the binary (register, Clerk session reuse or
 "Who needs you" panel: engine agent states (working/blocked/idle) + Rails peers + blocked-agent notifications, fed from both halves of the session substrate — live panes (engine) and picked-up CLI sessions (native-session port, §2.5); Lantern UX patterns as reference (revisits `rq-20260908-005` watch — verdict revisited with our own runtime, still no upstream plugin adoption).
 **Verify:** two concurrent ao sessions, one blocked on approval — panel surfaces it; a kimi/claude session picked up via native sessions appears alongside ao sessions.
 
-### P6 — UHP execution layer (own spec; HarnessRouter CE fork per §2.6)
-Docker-free fork of HarnessRouter CE absorbed into the ao runtime. The ao binary **supervises** the forked gateway+runner as loopback child processes (they are Python — they do not go inside the Rust binary; `ao` owns their lifecycle, config, and health via `ao serve` + `ao doctor`). Strip: container entrypoint + per-session-user machinery, Next.js console, hosted couplings, provider key store (routing delegates to the Allternit gateway + A:// policy). Keep: UHP Responses surface, harness CRUD, sessions/turns/streaming/cancel/idempotency, per-backend drivers, SQLite+files backing. **"Choose a brain" semantics land here:** a harness object (base + model + instructions + limits) is a runnable brain in a registry; picking one = choosing `harness_id` (+ model per `model_route`) at call time; UHP session ids give resumable headless sessions. Cross-harness *interactive* session pickup stays with native sessions (§2.5) + Fabric (P3) — UHP does not translate one CLI's session state into another's, and this plan does not pretend otherwise.
-**Verify:** UHP conformance suite passes at class Full against the fork (same bar upstream CE publishes); an ao-spawned task run through the UHP layer streams, cancels, and resumes identically across at least kimi + claude + codex backends.
+### P6 — UHP execution layer, Rust port (own spec; reference implementation per §2.6)
+Implement the HarnessRouter CE capability **in Rust inside the ao binary** — a new workspace crate (recommended `infrastructure/executor/uhp-gateway/`; home decided at gate), not a sidecar: UHP Responses surface (turns, SSE streaming, cancellation, idempotency), harness CRUD, sessions, per-session workspaces with checkpoint/rehydrate, SQLite+files backing, and per-backend drivers as Rust modules over subprocess CLIs. HR CE is vendored **for reference and as test oracle only** (protocol docs, per-backend pytest suite, UHP conformance suite run against our server — Apache-2.0 attribution in THIRD_PARTY_NOTICES.md). Provider/key routing delegates to the Allternit gateway + A:// policy — no second key store. **"Choose a brain" semantics land here:** a harness object (base + model + instructions + limits) is a runnable brain in a registry; picking one = choosing `harness_id` (+ model per `model_route`) at call time; UHP session ids give resumable headless sessions. Cross-harness *interactive* session pickup stays with native sessions (§2.5) + Fabric (P3).
+- **P6a — core + known backends:** UHP core plus the drivers ao already drives headless (kimi, claude, codex). **Verify:** UHP conformance suite green on the implemented surface; an ao-spawned task run through the UHP layer streams, cancels, and resumes identically across those backends; HR's pytest cases for those backends re-run against our server as the behavioral oracle.
+- **P6b — remaining backends:** gemini, qwen, opencode, cline, pi, dsh driver-by-driver, each gated on its HR pytest behavior (omp/hermes only if their relay re-implementation is justified; hermes stays license-gated). **Verify:** conformance class rises to Full; per-backend pytest parity per driver.
 
 ### P7 — Harness auto-install + onboarding (own spec)
 Port the first-run installer (entrypoint install scripts, version-pinned per backend) to `ao harness install <tool>`: one managed dir, verify-by-doctor, per-tool license gate (Anthropic-terms and license-undeclared backends require explicit opt-in). Onboarding lifecycle: install CLI → ao registers it as an executor → P4 harness-sync fans skills/rules/MCP → native-sessions adapter (gizzi 27-adapter pattern) starts picking up its session format. Surfacing inside Allternit / gizzi-code onboarding is a follow-on spec after P7 proves out locally.
@@ -177,8 +172,8 @@ herdr moves fast (0.8→0.9 in ~5 weeks). Keep fork diff = gut list + rebrand la
 | ao parity gaps break orchestrator flows | §P1 golden side-by-side test is a hard gate |
 | Fabric auth (Clerk device pairing) is the murkiest integration | P3 starts with a protocol spike before full spec |
 | Scope creep (plugins marketplace, Windows port) | Out of scope: plugin marketplace browsing, Windows server targets, Kitty graphics work |
-| Two runtimes to own (Rust engine + Python UHP fork) | P6 keeps the fork a supervised sidecar with the conformance suite as contract; absorb hot paths into Rust only if the fork proves it earns that |
-| UHP fork drift or license-carrying CLI installs | Monthly merge window like §7; P7 installer never auto-accepts non-Apache/MIT/BD-class tool terms — explicit opt-in recorded |
+| Re-implementing ten backend drivers in Rust is a large surface | Phased P6a/P6b — core + already-driven backends first; HR pytest suite per backend is the behavioral oracle, so each driver is independently gated |
+| UHP drift or license-carrying CLI installs | Monthly spec/conformance review; P7 installer never auto-accepts non-Apache/MIT/BSD-class tool terms — explicit opt-in recorded |
 
 ## 9. Open questions
 
@@ -188,4 +183,4 @@ herdr moves fast (0.8→0.9 in ~5 weeks). Keep fork diff = gut list + rebrand la
 
 ## 10. Phase-1 gate
 
-Current gate artifact: `Research/specs/allternit-runtime-fork.md` (P0). Approval verb: **approve `allternit-runtime-fork`**. P1–P5 each return to the gate as their own named slugs; **P6 (UHP execution layer) and P7 (harness auto-install) added 2026-09-09 (human redirect on `rq-20260909-004`, decision fork_reskin)** — same gate rule, each its own named slug when its phase arrives. P6/P7 do not change P0 scope.
+Current gate artifact: `Research/specs/allternit-runtime-fork.md` (P0). Approval verb: **approve `allternit-runtime-fork`**. P1–P5 each return to the gate as their own named slugs; **P6 (UHP execution layer — Rust port of HarnessRouter CE per §2.6) and P7 (harness auto-install) added 2026-09-09 (human calls on `rq-20260909-004`: adopt the capability, implement in Rust, drop what does not port)** — same gate rule, each its own named slug when its phase arrives. P6/P7 do not change P0 scope.

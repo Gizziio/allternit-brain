@@ -1435,6 +1435,12 @@
           "event": "landed",
           "by": "kimi-code session (Eoj)",
           "note": "PR #190 merged (merge SHA d61530a3d); ledger attestation bdb42a476 on main; worktree session/50d4cec6 cleaned"
+        },
+        {
+          "ts": "2026-09-09T07:05:00Z",
+          "event": "landed",
+          "by": "kimi-code session (Eoj)",
+          "note": "Phase 2 follow-up PR #195 merged (merge SHA 95c1eafcf, commit 54731db8a); ledger attestation 9d82aa173 on main; worktree session/5c233b1c cleaned. Items: removed replaced bot-creation wizard + forge theater (CreateBotForm canonical), size presets (small/medium/large), fleet 'Provision computers' action, 'creating'-status crash fix + provisioning panel in watch/takeover."
         }
       ],
       "li_id": null,
@@ -1457,7 +1463,7 @@
       "worktree": null,
       "branch": null,
       "li_id": null,
-      "decision": "fork_reskin",
+      "decision": "reverse_engineer",
       "constraints_ok": true,
       "paid_or_signup": false,
       "docker_required": false,
@@ -1481,6 +1487,12 @@
           "event": "redirected",
           "by": "human-via-kimi-interactive",
           "note": "reverse_engineer -> fork_reskin (human redirect 2026-09-09): fork HarnessRouter CE and strip the Docker packaging. Docker is only the appliance layer (bundling + per-session-user isolation); gateway+runner are plain Python loopback servers, UI is Next.js. New scope folded INLINE into the ao v3 plan as P6 (UHP execution layer, Docker-free fork supervised by the ao binary) + P7 (harness auto-install/onboarding from HR first-run installer). Not in the Rust binary (Python cannot embed); ao supervises gateway+runner as loopback child processes. Provider/key routing stays in the Allternit gateway \u2014 HR connection-policy machinery not ported. See Products/AgentOrchestratorRuntime.md \u00a72.6, P6, P7."
+        },
+        {
+          "ts": "2026-09-09T08:05:00.000Z",
+          "event": "redirected",
+          "by": "human-via-kimi-interactive",
+          "note": "fork_reskin -> Rust native implementation (human, 2026-09-09): \"since it is python we must implement it in our rust language; the things that dont port over [drop]\". HR CE is demoted from fork base to REFERENCE IMPLEMENTATION: UHP spec + OpenAPI schemas + conformance suite + per-backend pytest suite are the parity oracle run against our Rust server. Vendored for reference/tests only, no shipped Python. P6 re-scoped: Rust UHP gateway+runner inside the ao binary (new workspace crate; home at P6 gate). Ports: Responses surface, sessions/turns/streaming/cancel/idempotency, SQLite backing, backend-driver LOGIC (subprocess CLIs), installer scripts. Drops: Next.js console, per-session-user sandbox, push-to-cloud/marketplace, Python/Node relay internals where a backend needs a re-implemented relay (Hermes license-undeclared -> gated anyway). Phasing: P6a core + the backends ao already drives headless; P6b remaining drivers against HR pytest behavior."
         }
       ]
     }
