@@ -24,7 +24,7 @@ Allternit can run its executor agents on herdr 0.9.0 as an optional transport la
 
 ## Division / owner
 
-- [Platform / Surfaces](../Divisions/INDEX.md)
+- [Platform / Surfaces](../../Divisions/INDEX.md)
 
 ## Integrate decision
 
