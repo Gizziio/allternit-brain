@@ -28,6 +28,8 @@ const DEFAULTS = {
     tier_ceiling: 'A://C',
     review_sendback_limit: 1,
     execution_timeout_minutes: 90,
+    reviewer_preference: ['codex', 'claude', 'grok'],
+    resume_max: 2,
   },
   schedule: { mechanical: '09:05', agent_sweep: '21:37' },
   notify: { macos: true, rails_mail: true },

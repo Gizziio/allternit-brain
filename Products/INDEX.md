@@ -1,6 +1,6 @@
 ---
 doc: product
-updated: 2026-09-07
+updated: 2026-09-09
 status: active
 ---
 
@@ -16,8 +16,13 @@ Shipping and in-development product lines that make up the Allternit offering. P
 - [Gizzi](Gizzi.md) — Gizzi Code terminal server and related tooling.
 - [OS](OS.md) — future on-chip play (Allternit OS).
 - [Provider Routing](ProviderRouting.md) — Allternit Cloud provider routing (Hermes-style, per-model overrides); v1 passthrough design.
+- [Agent Orchestrator Runtime](AgentOrchestratorRuntime.md) — ao v3 build plan: herdr 0.9.0 vendored as engine, one `ao` Rust binary (contract parity + machine mgmt + Fabric node + harness sync + visibility); queue `rq-20260908-028`
 
 ## Relationship to divisions and surfaces
+
+- [Computer Use Packaging](../Products/ComputerUsePackaging.md) — competitive packaging scorecard vs OpenAI/Anthropic/Browser Use, where we match or beat, and the 5 gaps to close before launch.
+
+- [Computer Use](../Products/ComputerUse.md) — computer-use control plane: audited state, industry synthesis (OpenAI/Perplexity/Anthropic/OSS), target architecture, phased roadmap
 
 - Divisions ([`../Divisions/INDEX.md`](../Divisions/INDEX.md)) do R&D and feed capabilities into products.
 - Products are experienced through [Surfaces](../Surfaces/INDEX.md) (websites, apps, docs, installers).

@@ -10,6 +10,8 @@ Public-facing and internal surfaces for Allternit: websites, apps, docs, install
 
 ## Current surfaces
 
+- **Brain Viewer (local, draft)** — read-only UI over this vault. Spec: [BrainViewer.md](BrainViewer.md). Not public. Not a second editor.
+
 - **try.allternit.com** — source: `Allternit Websites/Projects/try.allternit.com`
 - **www.allternit.com** — source: `Allternit Websites/Projects/www.allternit.com`
 - **spaces.allternit.com** — source: `Allternit Websites/Projects/spaces.allternit.com`

@@ -25,7 +25,9 @@ Compute designs ──────┐
 Manufacturing produces ──► Robotics runs autonomy on ──► Spaces installs and experiences
         │                         │                           │
         └─────────────────────────┴───────────────────────────┘
-              All served by Allternit Platform (software layer)
+              All served by AllternitOS (canonical OS substrate)
+                      ▲
+        Allternit Platform / Cloud / division surfaces (product layer)
 ```
 
 ## Concrete convergence rules
@@ -55,9 +57,13 @@ Manufacturing produces ──► Robotics runs autonomy on ──► Spaces inst
    - Spaces defines power, cooling, networking, and physical housing requirements.
    - Handoff artifacts: compute appliance specs → rack/pod integration specs.
 
-6. **Platform ↔ all divisions**
-   - The core platform provides the agent runtime, SDK, memory, and orchestration.
-   - Divisions expose capabilities as platform primitives (compute lease, manufacturing job, robot action, space state).
+6. **AllternitOS ↔ all divisions**
+   - AllternitOS provides the canonical node, capability, lease, workload, worker, artifact, and evidence substrate.
+   - Divisions expose their capabilities as typed AllternitOS workers/functions (compute inference, CAD operations, factory execution, robot actions, space state).
+
+7. **Platform/Cloud ↔ AllternitOS**
+   - Allternit Platform and Allternit Cloud are product surfaces that create Workloads and consume results from AllternitOS.
+   - Cloud adds commercial policy, credits, and provider optimization on top of OS resource scheduling.
 
 ## Where overlapping work should live
 
@@ -77,8 +83,14 @@ Manufacturing produces ──► Robotics runs autonomy on ──► Spaces inst
 1. What is the first joint Compute + Manufacturing prototype to build?
 2. Which Manufacturing reference robot platform should Robotics prioritize?
 3. What is the first Spaces installation concept that uses Compute + Robotics?
-4. How does the platform expose compute/manufacturing/robotics/space primitives through one API?
+4. Which division software subsystem should be packaged as an AllternitOS worker first?
+
+## Resolved convergence questions
+
+- **Where does the canonical OS live?** `/Users/joe/Desktop/AllternitOS/`
+- **Where do division execution subsystems go?** Packaged as AllternitOS v0.2 Workers in `fabric/workload/workers/`.
+- **What is the single API boundary?** AllternitOS Workload/Worker/Function/Capability/Lease semantics; surfaces consume them through product APIs.
 
 ## Updated
 
-Last aligned: 2026-08-28
+Last aligned: 2026-08-29

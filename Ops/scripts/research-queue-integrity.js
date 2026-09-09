@@ -27,6 +27,7 @@ const STATUSES_EXPECTING_SPEC = new Set([
   'approved',
   'executing',
   'pr_open',
+  'quarantined',
 ]);
 
 function argValue(args, flag, fallback) {

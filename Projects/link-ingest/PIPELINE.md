@@ -60,6 +60,7 @@ Full detail lives in the `research-pipeline` skill ("Production autonomy" sectio
 - **launchd is the only scheduler**: mechanical 09:05 weekdays, agent-sweep daily 21:37 (stages 1–7 prep, capped), cycle every 30 min 07:00–22:00 (consume approvals → execute → review → land → notify). VPS mirror units ship at `Ops/deploy/vps/systemd/` (not activated).
 - **Approval paths**: `research_approve` MCP tool · `node Ops/scripts/research-approve.js <slug>` (Grok Bot / any terminal) · `Research/gate/approvals/<slug>.approve` file drop. Slug-level, validated, idempotent.
 - **Park boundary**: money/Stripe, client comms, and deploy-confirm steps are never auto-executed — they park (`status: parked`) with a notification. Standing harness gates are never overridden.
+- **Reviewer independence + quarantine**: the review pass always runs on a different harness than the implementer when one is available; terminal failures quarantine (`status: quarantined`, worktree preserved) instead of blocking — human recovery required.
 - **Kill switch**: `Research/gate/HALT` file (cycle no-ops while present). Notifications via `Ops/scripts/notify.sh` (macOS banner + `Research/gate/notifications.log` + rails mail share).
 
 ---

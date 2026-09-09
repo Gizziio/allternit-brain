@@ -1,10 +1,14 @@
 ---
 doc: project
 updated: 2026-09-08
-status: draft
+status: archived
 ---
 
-# herdr-v090-adapter
+# herdr-v090-adapter — SUPERSEDED
+
+**Superseded by `Research/specs/allternit-runtime-fork.md`** (human-directed pivot, 2026-09-08): thin_adapter rejected in favor of `fork_reskin` — absorb herdr into the Allternit workspace and rebrand as one Rust binary. Kept for the constraint audit and rationale trail. Queue item: `rq-20260908-028`.
+
+---
 
 ## Goal
 

@@ -16,6 +16,10 @@
 #     never auto-crossed).
 #   - brain_updates from executor NOTES go to .incoming/ as drafts only —
 #     never auto-applied.
+#   - Reviewer independence: the review pass runs on a DIFFERENT harness than
+#     the implementer whenever one is on PATH (autonomy.reviewer_preference).
+#   - Terminal failures QUARANTINE: worktree + tmux session are preserved for
+#     human recovery (ao-send back, or ao-kill --rm-worktree to discard).
 #
 # Env:
 #   BRAIN_ROOT                     Override brain root (default: script location).
@@ -139,7 +143,12 @@ EXEC_MAX_DAY="$(cfg_field autonomy.execute_max_per_day 2)"
 EXEC_MAX_CONC="$(cfg_field autonomy.execute_max_concurrent 1)"
 REVIEW_SEND_LIMIT="$(cfg_field autonomy.review_sendback_limit 1)"
 EXEC_TIMEOUT_MIN="$(cfg_field autonomy.execution_timeout_minutes 60)"
+RESUME_MAX="$(cfg_field autonomy.resume_max 2)"
+# reviewer_preference arrives as a JSON array (or comma-joined string) — normalize
+REVIEWER_PREF="$(cfg_field autonomy.reviewer_preference 'codex claude grok' | tr ',' ' ')"
+read -r -a REVIEWER_PREF_ARR <<< "$REVIEWER_PREF"
 case "$MODE" in off|shadow|active) ;; *) MODE="shadow";; esac
+IMPLEMENTER_HARNESS="claude"
 
 qjs() {
   BRAIN_ROOT="$BRAIN_ROOT" QUEUE="$QUEUE" "$NODE" "$QJS" "$@"
@@ -306,10 +315,20 @@ with_timeout() { # $1 secs; rest = command — kills on deadline, returns cmd rc
   return $rc
 }
 
-review_item() { # $1 worktree, $2 slug, $3 spec abs → sets REVIEW_VERDICT / REVIEW_FINDINGS
+run_reviewer() { # $1 harness, $2 prompt — runs in the caller's cwd
+  case "$1" in
+    codex)  with_timeout 600 codex exec "$2" </dev/null ;;
+    claude) with_timeout 600 claude -p "$2" --allowedTools "Read,Bash,Glob,Grep" </dev/null ;;
+    grok)   with_timeout 600 grok -p "$2" --always-approve </dev/null ;;
+    *)      return 127 ;;
+  esac
+}
+
+review_item() { # $1 worktree, $2 slug, $3 spec abs → sets REVIEW_VERDICT / REVIEW_FINDINGS / REVIEW_HARNESS
   local wt="$1" slug="$2" spec="$3"
   REVIEW_VERDICT="PASS"
   REVIEW_FINDINGS=""
+  REVIEW_HARNESS=""
   local porcelain
   porcelain="$(git -C "$wt" status --porcelain 2>/dev/null || true)"
   if [[ -z "$porcelain" ]]; then
@@ -345,13 +364,34 @@ review_item() { # $1 worktree, $2 slug, $3 spec abs → sets REVIEW_VERDICT / RE
   else
     REVIEW_FINDINGS="${REVIEW_FINDINGS}warn: NOTES file missing at $notes. "
   fi
+  # reviewer harness: pick the first preference entry that is on PATH and
+  # differs from the implementer — same-harness review is a collusion blind spot
+  local want
+  for want in "${REVIEWER_PREF_ARR[@]}"; do
+    if [[ "$want" != "$IMPLEMENTER_HARNESS" ]] && has_cmd "$want"; then
+      REVIEW_HARNESS="$want"
+      break
+    fi
+  done
+  if [[ -z "$REVIEW_HARNESS" ]]; then
+    if has_cmd "$IMPLEMENTER_HARNESS"; then
+      REVIEW_HARNESS="$IMPLEMENTER_HARNESS"
+      report "  - WARNING: same-harness review (no alternate harness on PATH); implementer=$IMPLEMENTER_HARNESS"
+      REVIEW_FINDINGS="${REVIEW_FINDINGS}WARNING: same-harness review (no alternate harness on PATH). "
+    fi
+  fi
   # headless reviewer agent (best effort; scripted gates above are authoritative)
-  if has_cmd claude; then
+  if [[ -n "$REVIEW_HARNESS" ]]; then
     local rprompt rout rverdict rrc=0 acceptance_txt goal_txt
+    # mandated independence line — kept in a variable because a literal
+    # apostrophe inside this $(… <<EOF) heredoc breaks bash 3.2 tokenization
+    local independ_line="You are the independent reviewer. The implementing agent was a different harness. Verify claims against the actual diff; do not assume the implementer's NOTES are truthful."
     acceptance_txt="$(awk -v pat='Acceptance criteria' '/^## /{h=substr($0,4);insec=(h~pat)?1:0;next} insec{print}' "$spec")"
     goal_txt="$(awk -v pat='^(/)?goal|^Goal' '/^## /{h=substr($0,4);insec=(h~pat)?1:0;next} insec{print}' "$spec")"
     rprompt="$(cat <<REVIEW_EOF
-You are a strict reviewer for research execution "$slug" in the repo at your current working directory (a scratch git worktree).
+$independ_line
+
+You are reviewing research execution "$slug" in the repo at your current working directory (a scratch git worktree).
 
 ## Acceptance criteria from the approved spec
 $acceptance_txt
@@ -367,16 +407,16 @@ Steps:
 Output format: the FIRST line must be exactly PASS or FAIL. Then a short findings list (one per line). Any unmet acceptance criterion → FAIL.
 REVIEW_EOF
 )"
-    rout="$( (cd "$wt" && with_timeout 600 claude -p "$rprompt" --allowedTools "Read,Bash,Glob,Grep" </dev/null) 2>&1 )" || rrc=$?
+    rout="$( (cd "$wt" && run_reviewer "$REVIEW_HARNESS" "$rprompt") 2>&1 )" || rrc=$?
     rverdict="$(printf '%s\n' "$rout" | grep -m1 -E '^(PASS|FAIL)\b' || true)"
     if [[ "$rverdict" == "FAIL" ]]; then
       REVIEW_VERDICT="FAIL"
-      REVIEW_FINDINGS="${REVIEW_FINDINGS}reviewer: $(printf '%s\n' "$rout" | head -20 | tr '\n' ' '). "
+      REVIEW_FINDINGS="${REVIEW_FINDINGS}reviewer($REVIEW_HARNESS): $(printf '%s\n' "$rout" | head -20 | tr '\n' ' '). "
     elif [[ "$rverdict" != "PASS" ]]; then
-      REVIEW_FINDINGS="${REVIEW_FINDINGS}warn: reviewer gave no PASS/FAIL marker (rc=$rrc); scripted gates only. "
+      REVIEW_FINDINGS="${REVIEW_FINDINGS}warn: reviewer($REVIEW_HARNESS) gave no PASS/FAIL marker (rc=$rrc); scripted gates only. "
     fi
   else
-    REVIEW_FINDINGS="${REVIEW_FINDINGS}warn: claude CLI not on PATH; scripted gates only. "
+    REVIEW_FINDINGS="${REVIEW_FINDINGS}warn: no reviewer harness on PATH; scripted gates only. "
   fi
 }
 
@@ -411,6 +451,50 @@ extract_brain_updates() { # $1 notes abs path, $2 slug → writes .incoming draf
     }, null, 2) + "\n");
     console.log(`brain_updates drafted to ${out} (NOT auto-applied)`);
   '
+}
+
+watch_with_resume() { # $1 id, $2 slug, $3 worktree → sets WATCH_OUT/WATCH_RC; on rc=4 (TIMEOUT)
+                      # re-arms ao-watch up to RESUME_MAX times (session/worktree
+                      # preserved, NO new instructions sent); each resume → history event
+  local id="$1" slug="$2" wt="$3"
+  local resumes=0
+  set +e
+  WATCH_OUT="$(ao-watch "$slug" "$wt/$SENTINELFILE" $(( EXEC_TIMEOUT_MIN * 60 )) 20 2>&1)"
+  WATCH_RC=$?
+  set -e
+  while [[ "$WATCH_RC" -eq 4 && "$resumes" -lt "$RESUME_MAX" ]]; do
+    resumes=$((resumes + 1))
+    qjs event "$id" resume "note=watch TIMEOUT; resume $resumes/$RESUME_MAX (session+worktree preserved, no new instructions)"
+    report "- $id $slug: watch TIMEOUT — resume $resumes/$RESUME_MAX (re-armed, checkpoint state may be in the session)"
+    set +e
+    WATCH_OUT="$(ao-watch "$slug" "$wt/$SENTINELFILE" $(( EXEC_TIMEOUT_MIN * 60 )) 20 2>&1)"
+    WATCH_RC=$?
+    set -e
+  done
+}
+
+quarantine_item() { # $1 worktree, $2 slug, $3 id, $4 reason — terminal failure:
+                    # preserve everything, report findings + NOTES excerpt, notify
+  local wt="$1" slug="$2" id="$3" reason="$4"
+  local notes="$wt/docs/research-${slug}-NOTES.md"
+  report "- $id $slug: QUARANTINED — $reason"
+  report "  - worktree preserved: $wt (branch ao/$slug, tmux session ao-$slug)"
+  report "  - inspect: tmux attach -t ao-$slug | git -C $wt diff"
+  report "  - recovery is manual: send back via ao-send, or discard via ao-kill $slug --rm-worktree"
+  {
+    printf -- '\n### Quarantine: %s (%s) — %s\n\n' "$slug" "$id" "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+    printf -- '- reason: %s\n' "$reason"
+    printf -- '- worktree: `%s` (preserved)\n' "$wt"
+    printf -- '- inspect: `tmux attach -t ao-%s` or `git -C %s diff`\n' "$slug" "$wt"
+    printf -- '- recovery: human sends findings back via `ao-send %s "..."`, or discards with `ao-kill %s --rm-worktree`\n' "$slug" "$slug"
+    if [[ -f "$notes" ]]; then
+      printf -- '- last NOTES excerpt:\n\n```\n'
+      head -40 "$notes"
+      printf -- '```\n'
+    fi
+  } >> "$SWEEP_REPORT"
+  qjs event "$id" quarantined status=quarantined "worktree=$wt" "note=$reason"
+  notify "research-pipeline QUARANTINED $slug" "worktree: $wt — inspect: tmux attach -t ao-$slug or git -C $wt diff; recovery manual: ao-send back or ao-kill $slug --rm-worktree"
 }
 
 land_item() { # $1 worktree, $2 slug, $3 id, $4 repo root
@@ -525,20 +609,24 @@ while IFS= read -r LINE; do
     report "- $ID $SLUG: blocked (ao-spawn failed)"
     continue
   fi
-  read -r _SESSION WTDIR _LOGFILE <<< "$SPAWN_OUT"
+  # ao-spawn's final line is "<session> <workdir> <logfile>", but newer git
+  # prints "Preparing worktree…" chatter on stderr ahead of it — match the
+  # session-prefixed line rather than assuming it comes first.
+  SPAWN_LINE="$(printf '%s\n' "$SPAWN_OUT" | grep -E "^ao-${SLUG} " | tail -1 || true)"
+  if [[ -z "$SPAWN_LINE" ]]; then
+    qjs event "$ID" blocked status=blocked "note=ao-spawn gave no session line: $(printf '%s' "$SPAWN_OUT" | tail -1)"
+    report "- $ID $SLUG: blocked (ao-spawn output unparsable)"
+    continue
+  fi
+  read -r _SESSION WTDIR _LOGFILE <<< "$SPAWN_LINE"
 
   write_task_files "$WTDIR" "$SLUG" "$SPEC_ABS" "$REPO_ROOT"
   qjs event "$ID" spawned status=executing "worktree=$WTDIR" "branch=ao/$SLUG"
   notify "research pipeline: executing $SLUG" "$ID in $(basename "$WTDIR")"
 
-  set +e
-  WATCH_OUT="$(ao-watch "$SLUG" "$WTDIR/$SENTINELFILE" $(( EXEC_TIMEOUT_MIN * 60 )) 20 2>&1)"
-  WATCH_RC=$?
-  set -e
-  if [[ $WATCH_RC -ne 0 ]]; then
-    qjs event "$ID" blocked status=blocked "note=watch: $WATCH_OUT"
-    report "- $ID $SLUG: blocked ($WATCH_OUT)"
-    notify "research pipeline: blocked $SLUG" "$WATCH_OUT"
+  watch_with_resume "$ID" "$SLUG" "$WTDIR"
+  if [[ "$WATCH_RC" -ne 0 ]]; then
+    quarantine_item "$WTDIR" "$SLUG" "$ID" "watch: $WATCH_OUT"
     continue
   fi
   report "- $ID $SLUG: executor finished; reviewing"
@@ -547,16 +635,14 @@ while IFS= read -r LINE; do
   while true; do
     review_item "$WTDIR" "$SLUG" "$SPEC_ABS"
     if [[ "$REVIEW_VERDICT" == "PASS" ]]; then
-      qjs event "$ID" pr_open status=pr_open
-      report "- $ID $SLUG: review PASS → pr_open"
+      qjs event "$ID" pr_open status=pr_open "reviewer=$REVIEW_HARNESS"
+      report "- $ID $SLUG: review PASS (reviewer: $REVIEW_HARNESS) → pr_open"
       land_item "$WTDIR" "$SLUG" "$ID" "$REPO_ROOT"
       break
     fi
-    report "- $ID $SLUG: review FAIL: $REVIEW_FINDINGS"
+    report "- $ID $SLUG: review FAIL (reviewer: $REVIEW_HARNESS): $REVIEW_FINDINGS"
     if (( RETRIES >= REVIEW_SEND_LIMIT )); then
-      qjs event "$ID" blocked status=blocked "note=review failed after $RETRIES retries: $REVIEW_FINDINGS"
-      report "- $ID $SLUG: blocked (review failed; findings above)"
-      notify "research pipeline: blocked $SLUG" "review FAIL: $REVIEW_FINDINGS"
+      quarantine_item "$WTDIR" "$SLUG" "$ID" "review failed after $RETRIES send-back(s): $REVIEW_FINDINGS"
       break
     fi
     RETRIES=$((RETRIES + 1))
@@ -567,19 +653,13 @@ while IFS= read -r LINE; do
     SEND_RC=$?
     set -e
     if [[ $SEND_RC -ne 0 ]]; then
-      qjs event "$ID" blocked status=blocked "note=review failed; retry send failed (session gone): $REVIEW_FINDINGS"
-      report "- $ID $SLUG: blocked (review FAIL; ao-send could not reach session)"
-      notify "research pipeline: blocked $SLUG" "review FAIL; retry undeliverable"
+      quarantine_item "$WTDIR" "$SLUG" "$ID" "review failed; retry send-back could not reach session (pane dead?): $REVIEW_FINDINGS"
       break
     fi
     report "- $ID $SLUG: findings sent back (retry $RETRIES/$REVIEW_SEND_LIMIT); re-watching"
-    set +e
-    WATCH_OUT="$(ao-watch "$SLUG" "$WTDIR/$SENTINELFILE" $(( EXEC_TIMEOUT_MIN * 60 )) 20 2>&1)"
-    WATCH_RC=$?
-    set -e
-    if [[ $WATCH_RC -ne 0 ]]; then
-      qjs event "$ID" blocked status=blocked "note=retry watch: $WATCH_OUT"
-      report "- $ID $SLUG: blocked (retry watch: $WATCH_OUT)"
+    watch_with_resume "$ID" "$SLUG" "$WTDIR"
+    if [[ "$WATCH_RC" -ne 0 ]]; then
+      quarantine_item "$WTDIR" "$SLUG" "$ID" "retry watch: $WATCH_OUT"
       break
     fi
   done

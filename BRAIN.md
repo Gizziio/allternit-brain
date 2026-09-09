@@ -1,6 +1,6 @@
 ---
 doc: index
-updated: 2026-08-27
+updated: 2026-09-08
 status: active
 ---
 
@@ -42,6 +42,7 @@ The agent-readable operator's manual for Allternit LLC. This sits **beside** `Al
 ## Clients (hot state — update every cycle)
 
 - [clients/swyft-market.md](clients/swyft-market.md) — first engagement, SOW-2026-001 (~$1.5K fixed scope, completing; a normal client, not a strategic pillar — per Eoj 2026-07-25).
+- [clients/rendered-abstractions.md](clients/rendered-abstractions.md) — AJ Sahukar / Rendered Abstractions website finish-and-launch; SOW-2026-002 draft, Phase 1 audit $510, no Stripe customer yet (2026-09-08).
 
 ## The living tracker
 

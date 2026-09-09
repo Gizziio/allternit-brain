@@ -27,6 +27,13 @@ R&D. Master plan and CAD/tooling specs exist; no production floor is operational
 - **Allternit Spaces** — manufactured environments that house compute and robotics
 - **Public surface** — content and visuals for manufacturing.allternit.com
 
+## What lives in AllternitOS (not owned by Manufacturing)
+
+- **Allternit CAD OS** — the unified polyglot CAD/CAM/CAE worker is being packaged as an AllternitOS v0.2 Worker (`wrk_allternit_cad_v1`) in `AllternitOS/fabric/workload/workers/`.
+- **Allternit Engineering / Real Estate Platform** — scan-to-BIM/MEP/render capabilities are being packaged as an AllternitOS v0.2 Worker (`wrk_allternit_engineering_v1`).
+- **Factory execution worker** — future print-farm/production control will be an AllternitOS Worker that emits `Receipt` and `UsageEvent` records.
+- **Digital thread / project state** — canonical project state becomes `Memory`, `Checkpoint`, and `Artifact` objects in AllternitOS.
+
 ## What it does not own
 
 - **Compute architecture or software** — that lives in Allternit Compute
@@ -65,6 +72,7 @@ Division boundary rule: if a doc is about **how to physically make something**, 
 
 - Division workspace: `Allternit Manufacturing/`
 - Start here: `Allternit Manufacturing/Specifications/ALLTERNIT_MANUFACTURING_MASTER_PLAN.md`
-- CAD/tooling: `Allternit Manufacturing/Allternit Cad/`
-- Real-estate platform: `Allternit Manufacturing/Real Estate Platform/`
+- CAD/tooling design source: `Allternit Manufacturing/Allternit Cad/`
+- Real-estate platform design source: `Allternit Manufacturing/Real Estate Platform/`
+- Division integration spec: `AllternitOS/ALLTERNITOS_DIVISION_INTEGRATION_SPEC.md`
 - Public site: `Allternit Websites/Projects/manufacturing.allternit.com/`

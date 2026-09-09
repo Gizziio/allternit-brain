@@ -70,7 +70,7 @@ Feeds `Allternit LLC/04 Go To Market And Marketing/` and the Marketing media pip
 | [claude-ads](https://github.com/AgriciDaniel/claude-ads) | Paid-media ops skill across 12 ad platforms → GTM ops |
 | [notfair-plugin](https://github.com/nowork-studio/notfair-plugin) | SEO/GEO/marketing skills for agents → GTM ops |
 | [herdr-lantern](https://github.com/aigorahub/herdr-lantern) | Herdr plugin surfacing "who needs you" → overlaps the lead-intake-agent skill → **watch** (`rq-20260908-005`, UX patterns only) |
-| [herdr v0.9.0](https://github.com/herdrdev/herdr/releases/tag/v0.9.0) | Multi-machine SSH agent management + pane state detection, Apache-2.0 local binary → **thin_adapter** under ao (`rq-20260908-028`, spec `Research/specs/herdr-v090-adapter.md`) |
+| [herdr v0.9.0](https://github.com/herdrdev/herdr/releases/tag/v0.9.0) | Multi-machine SSH agent management + pane state detection, Apache-2.0 local binary → **fork_reskin** (`rq-20260908-028`): one Allternit-branded Rust binary — runtime + ao + Fabric node + harness sync + visibility; spec `Research/specs/allternit-runtime-fork.md` |
 | [ComfyUI-Ref2VA-VSA](https://github.com/Kablex/ComfyUI-Ref2VA-VSA) | ComfyUI reference-to-video node → media pipeline |
 | [cinematique](https://vvsvs.pro/cinematique) | 150+ copy-ready cinematic prompts for AI video → media prompt library |
 | [open-media (Shot Composer)](https://github.com/Anujatk1999/open-media) | Browser 3D shot previsualizer exporting AI-video prompts → media pipeline |

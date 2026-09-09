@@ -30,6 +30,7 @@ const NEXT_ACTION = {
   approved: 'ready to spawn executor',
   executing: 'executor running',
   pr_open: 'review PR',
+  quarantined: 'quarantined — human recovery required',
   landed: 'done',
   watch: 'watchlist only',
   rejected: '—',
@@ -41,12 +42,41 @@ const STATUS_ORDER = [
   'approved',
   'executing',
   'pr_open',
+  'quarantined',
   'inbox',
   'researched',
   'landed',
   'watch',
   'rejected',
 ];
+
+// Decision-steward inputs for a gate item: the queue decision field plus the
+// spec's "## Open questions" bullets (verbatim, capped). Read failures skip.
+function decisionsNeeded(item) {
+  const out = [];
+  if (item.decision) out.push(`decision: ${item.decision}`);
+  if (item.spec) {
+    try {
+      const abs = path.isAbsolute(item.spec)
+        ? item.spec
+        : path.join(BRAIN_ROOT, item.spec);
+      const text = fs.readFileSync(abs, 'utf8');
+      const m = text.match(/^## Open questions$([\s\S]*?)(?=^## |\n*$(?![\s\S]))/m);
+      if (m) {
+        const bullets = m[1]
+          .split('\n')
+          .map((l) => l.trim())
+          .filter((l) => l.startsWith('- '))
+          .map((l) => l.slice(2))
+          .slice(0, 4);
+        out.push(...bullets);
+      }
+    } catch (e) {
+      // unreadable spec — fall through with whatever we have
+    }
+  }
+  return out;
+}
 
 function argValue(args, flag, fallback) {
   const idx = args.indexOf(flag);
@@ -136,6 +166,13 @@ function main() {
       lines.push(`  - MCP: \`research_approve\` with slug \`${slug}\``);
       lines.push(`  - CLI: \`node Ops/scripts/research-approve.js ${slug}\``);
       lines.push(`  - File: drop \`Research/gate/approvals/${slug}.approve\` and run \`node Ops/scripts/research-approve.js --consume-all\``);
+      const decisions = decisionsNeeded(item);
+      if (decisions.length > 0) {
+        lines.push('  - Decisions needed:');
+        for (const d of decisions) lines.push(`    - ${d}`);
+      } else {
+        lines.push('  - Decisions needed: no open questions recorded');
+      }
     }
     lines.push('');
   }

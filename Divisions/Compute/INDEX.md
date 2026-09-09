@@ -1,6 +1,6 @@
 ---
 doc: division
-updated: 2026-08-28
+updated: 2026-09-07
 status: draft
 ---
 
@@ -8,9 +8,9 @@ status: draft
 
 ## What it is
 
-Allternit's compute division designs the **software-defined AI computer**: hardware appliances, the Fabric Runtime, and the substrate that turns heterogeneous silicon into one inference fabric.
+Allternit's compute division designs the **software-defined AI computer**: hardware appliances, compute capability classes, and the product requirements that turn heterogeneous silicon into one inference fabric.
 
-It is the **design authority** for Allternit's physical compute layer — what gets built, how it connects, and how agents request capacity from it.
+It is the **design authority** for Allternit's physical compute layer — what gets built, how it connects, and how agents request capacity from it. The canonical software substrate that orchestrates this hardware is **AllternitOS**; Compute's standalone Python Fabric Runtime is being normalized into AllternitOS Layer 2 inference workers.
 
 ## Current phase
 
@@ -19,10 +19,18 @@ R&D. Core documentation and software scaffold exist; no hardware prototype has b
 ## What it owns
 
 - **Product architecture** — Compute Box family (Mini, Pro, Hybrid, Mobile, Edge, Rack), 20 product families
-- **Fabric Runtime** — discovery, topology graph, workload compiler, scheduler, OpenAI-compatible API
 - **Hardware catalog** — validated BOMs, combination matrix, chassis/cooling direction
-- **Software substrate** — OS design, inference runtimes, phone-agent harness
+- **Compute capability classes** — definitions of GPU/NPU/CPU/memory/network capabilities that AllternitOS schedules against
+- **Inference runtime requirements** — which backends (vLLM, llama.cpp, MLX, EXO, etc.) must be supported and how
+- **Phone-agent harness requirements** — what edge/phone capabilities need to be exposed
 - **Public surface** — content and visuals for compute.allternit.com
+
+## What lives in AllternitOS (not owned by Compute)
+
+- **Fabric Runtime** — canonical Layer 2 runtime, scheduler, topology, and adapters live in `/Users/joe/Desktop/AllternitOS/fabric/execution/runtime/`.
+- **Node capability schema** — canonical `NodeCapabilityRecord` lives in `AllternitOS/contracts/fabric-os/`.
+- **Control plane** — node enrollment, heartbeat, capability directory, and lease authority live in `AllternitOS/fabric/os/control-plane/`.
+- **OS substrate** — the headless host distribution and node agent are canonical AllternitOS Layer 1 concerns.
 
 ## What it does not own
 
@@ -54,8 +62,11 @@ Division boundary rule: if a doc is about **what to build and why**, it lives in
 
 ## Source of truth
 
+- Browser capability mapping (browser-act): [BROWSER_CAPABILITY.md](BROWSER_CAPABILITY.md)
 - Division workspace: `Allternit Compute/`
 - Start here: `Allternit Compute/Content/ALLTERNIT_COMPUTE_ONE_PAGER.md`
 - Product family: `Allternit Compute/Products/ALLTERNIT_COMPUTE_20_PRODUCT_FAMILIES.md`
-- Fabric Runtime: `Allternit Compute/Software/ALLTERNIT_COMPUTE_FABRIC_RUNTIME_v0.1.md`
+- Fabric Runtime design source: `Allternit Compute/Software/ALLTERNIT_COMPUTE_FABRIC_RUNTIME_v0.1.md`
+- Canonical OS integration: `AllternitOS/ALLTERNITOS_PYTHON_FABRIC_RUNTIME_DONOR_HANDOFF.md`
+- Division integration spec: `AllternitOS/ALLTERNITOS_DIVISION_INTEGRATION_SPEC.md`
 - Public site: `Allternit Websites/Projects/compute.allternit.com/`

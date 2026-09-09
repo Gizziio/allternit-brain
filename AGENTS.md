@@ -80,10 +80,6 @@ make session-end
 
 This reads `Dashboard/Now.md` into context and writes learned facts + decisions back to the vault.
 
-## Cross-agent harness
-
-The ops harness (skills, rules, allternit-ops MCP registration) is distributed to every AI CLI tool by `Ops/harness-sync.js`. After adding or renaming an ops skill, run `node Ops/harness-sync.js status` to check coverage and `node Ops/harness-sync.js sync` to fan it out. See `Ops/README.md` "Harness sync".
-
 ## Model routing
 
 When spawning a subagent or autonomous worker, check `model-routing.json` via the `model_route` MCP tool. Do not guess which model to use.
@@ -102,3 +98,19 @@ When spawning a subagent or autonomous worker, check `model-routing.json` via th
 - Do not commit secrets, `.env` files, or Stripe keys.
 - Do not re-litigate standing facts in `company/business.md` without human approval.
 - Do not leave new docs unlinked from an `INDEX.md`.
+
+## GPT-Image-2 production prompts (marketing / series stills)
+
+Deterministic prompt library for ChatGPT Plus image gen (not the upstream website / APIMart).
+
+| Item | Path / skill |
+|------|----------------|
+| Agent contract | Box: `/home/box/agent-data/libraries/gpt-image-2-production/AGENTS.md` |
+| Library | Box: `/home/box/agent-data/libraries/gpt-image-2-production/` |
+| Upstream clone | Box: `/home/box/agent-data/libraries/awesome-gpt-image-2` |
+| Skill | `allternit-gpt-image-prompt-layer` |
+| Generate | `chatgpt-images-in-the-grok-bot-browser` |
+| Clay identity | `character-lock-on-higgsfield` |
+
+**Rules:** follow `AGENTS.md` exactly (gates → classify → variant → case → fill → pitfalls → prompt record → ChatGPT). Never generate the Allternit wordmark in-model; stamp after. Do not use third-party image backends unless the human named them.
+
