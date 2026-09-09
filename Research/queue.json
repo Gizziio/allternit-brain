@@ -1493,8 +1493,57 @@
           "event": "redirected",
           "by": "human-via-kimi-interactive",
           "note": "fork_reskin -> Rust native implementation (human, 2026-09-09): \"since it is python we must implement it in our rust language; the things that dont port over [drop]\". HR CE is demoted from fork base to REFERENCE IMPLEMENTATION: UHP spec + OpenAPI schemas + conformance suite + per-backend pytest suite are the parity oracle run against our Rust server. Vendored for reference/tests only, no shipped Python. P6 re-scoped: Rust UHP gateway+runner inside the ao binary (new workspace crate; home at P6 gate). Ports: Responses surface, sessions/turns/streaming/cancel/idempotency, SQLite backing, backend-driver LOGIC (subprocess CLIs), installer scripts. Drops: Next.js console, per-session-user sandbox, push-to-cloud/marketplace, Python/Node relay internals where a backend needs a re-implemented relay (Hermes license-undeclared -> gated anyway). Phasing: P6a core + the backends ao already drives headless; P6b remaining drivers against HR pytest behavior."
+        },
+        {
+          "ts": "2026-09-09T08:35:00.000Z",
+          "event": "scope-refined",
+          "by": "human-via-kimi-interactive",
+          "note": "UI + assets + credential-model refinements (human 2026-09-09): (1) HR console UX patterns PORT as design reference \u2014 system-harness catalog cards + per-harness live telemetry (turn stream, commands, files, tokens, cost) feed ao TUI face (P2) + visibility panel (P5); console code itself still dropped. (2) ui/public/logos/* (11 brain marks) harvested to \"Allternit Assets/Brand/Third-Party/harness-brains/\" with provenance README \u2014 these are the brains actual icons for choose-a-brain surfaces. (3) Credential model corrected: NOT \"no second key store\" \u2014 two legitimate homes per human: native authed CLI runtimes (user logins/subs) + Allternit cloud credentials on the platform plan (platform.allternit.com) via the Allternit gateway; UHP layer owns no keys, only HR per-backend broker machinery dropped."
         }
       ]
+    },
+    {
+      "id": "rq-20260909-004",
+      "url": "https://docs.orgo.ai/introduction",
+      "note": "Human-directed strategy (Eoj, 2026-09-09): absorb Orgo \u2014 reimplement its full cloud-computer capability matrix as our internal Cloud Computer on Incus/Tart; spec authored directly",
+      "title": "cloud-computer-orgo-parity",
+      "category": "agent-tooling",
+      "status": "spec_ready",
+      "spec": "Research/specs/cloud-computer-orgo-parity.md",
+      "repo": "Gizziio/allternit-platform",
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-09T07:20:00Z",
+          "event": "ingested",
+          "by": "kimi-code session (Eoj)"
+        },
+        {
+          "ts": "2026-09-09T07:20:00Z",
+          "event": "researched",
+          "by": "kimi-code session (Eoj)",
+          "note": "Orgo docs (introduction/api-reference/migrate) + codebase capability audit: 30-row matrix, gaps = arbitrary-owner create, create-time specs, resize, clone, PTY/events/proxy, templates-as-code, MCP/CLI, warm pool"
+        },
+        {
+          "ts": "2026-09-09T07:20:00Z",
+          "event": "spec_ready",
+          "by": "kimi-code session (Eoj)",
+          "note": "spec authored directly at Research/specs/cloud-computer-orgo-parity.md; 5 phases, human gate each; awaiting approval"
+        },
+        {
+          "ts": "2026-09-09T08:35:00.000Z",
+          "event": "scope-refined",
+          "by": "human-via-kimi-interactive",
+          "note": "UI + assets + credential-model refinements (human 2026-09-09): (1) HR console UX patterns PORT as design reference \u2014 system-harness catalog cards + per-harness live telemetry (turn stream, commands, files, tokens, cost) feed ao TUI face (P2) + visibility panel (P5); console code itself still dropped. (2) ui/public/logos/* (11 brain marks) harvested to \"Allternit Assets/Brand/Third-Party/harness-brains/\" with provenance README \u2014 these are the brains actual icons for choose-a-brain surfaces. (3) Credential model corrected: NOT \"no second key store\" \u2014 two legitimate homes per human: native authed CLI runtimes (user logins/subs) + Allternit cloud credentials on the platform plan (platform.allternit.com) via the Allternit gateway; UHP layer owns no keys, only HR per-backend broker machinery dropped."
+        }
+      ],
+      "li_id": null,
+      "decision": "reverse_engineer",
+      "constraints_ok": true,
+      "paid_or_signup": false,
+      "docker_required": false,
+      "baseline_ref": "Research/baselines/agent-orchestration.md"
     }
   ]
 }
