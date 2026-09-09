@@ -11,3 +11,4 @@ Human approval surface for the research pipeline. Nothing here executes anything
 - `HALT` — kill switch. If this file exists, all pipeline advancement stops; remove it to resume.
 - `approvals/` — drop a file named `<slug>.approve` (optional one-line note as its content) to approve that queue item. `Ops/scripts/research-approve.js --consume-all` applies every dropped file and moves it to `approvals/applied/<slug>.<ts>.approve`.
 - `notifications.log` — append-only log of pipeline notifications (one ISO-timestamped line per event). Never edit or truncate.
+- [`grok-bot-recipe.md`](grok-bot-recipe.md) — the paste-able Grok Bot instruction that lets Eoj approve slugs from chat (via local-exec → `Ops/scripts/bot-approve.sh`, an allowlist-of-one wrapper). Same commands are what a future Allternit bot calls via the open-connector API.
