@@ -77,7 +77,7 @@ Verify executors before ever flipping active: `~/.local/bin/ao-doctor` (expect e
 3. **Broken symlink** `~/.local/bin/ao-consult` (no counterpart in the current agent-orchestrator scripts dir).
 4. **VPS leg** — units shipped at `Ops/deploy/vps/systemd/`; activation needs the brain repo cloned on the VPS, node + harness CLIs, and a decision about whether execution moves or stays Mac-bound (default: stay Mac-bound; VPS runs pre-gate only).
 5. **Grok Bot approval path** — interim: Eoj tells Grok Bot to run `research-approve.js <slug>` in a terminal. A proper bot bridge (Slack/Discord via `sandbox-quantum/switch`, already in the research queue as `watch`) is future work.
-6. **ai-sdlc** (https://github.com/ai-sdlc-framework/ai-sdlc) is queued as `watch`; the three adopted ideas shipped in `b810b97`. A possible pilot inside `allternit-platform` for repo-native tasks was noted but not started.
+6. **ai-sdlc** (https://github.com/ai-sdlc-framework/ai-sdlc) is queued as `watch`; the three adopted ideas shipped in `b810b97`. A possible pilot inside `allternit-platform` for repo-native tasks was noted but **deferred by Eoj 2026-09-09** — revisit when a repo-native engineering task shows up.
 7. **Instagram-private-graph** and the **DesignCode course** were deliberately excluded from the vault (personal, not Allternit).
 
 ## If you pick this up
