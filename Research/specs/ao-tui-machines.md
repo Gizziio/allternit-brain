@@ -33,7 +33,7 @@ reconnect-on-drop already exist in the vendored crate.
 
 ## Division / owner
 
-- [Platform / Surfaces](../Divisions/INDEX.md)
+- [Platform / Surfaces](../../Divisions/INDEX.md)
 
 ## Integrate decision
 
