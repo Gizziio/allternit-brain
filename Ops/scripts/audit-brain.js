@@ -28,7 +28,7 @@ const VALID_STATUSES = ['draft', 'active', 'completing', 'paused', 'archived', '
 function walkMarkdownFiles(dir) {
   const results = [];
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-    if (entry.name === '.git' || entry.name === 'node_modules') continue;
+    if (entry.name === '.git' || entry.name === 'node_modules' || entry.name === '.incoming') continue;
     const full = path.join(dir, entry.name);
     if (entry.isDirectory()) {
       results.push(...walkMarkdownFiles(full));

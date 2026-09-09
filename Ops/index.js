@@ -119,6 +119,28 @@ function textResult(text) {
 }
 
 /**
+ * Normalize a research-pipeline URL the same way the ingest script does:
+ * lowercase host, strip trailing slash, strip utm_-prefixed and fbclid query
+ * params. Returns null for anything that is not an http(s) URL.
+ */
+function normalizeResearchUrl(raw) {
+  let parsed;
+  try {
+    parsed = new URL(raw);
+  } catch {
+    return null;
+  }
+  if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:') return null;
+  parsed.hostname = parsed.hostname.toLowerCase();
+  for (const key of [...parsed.searchParams.keys()]) {
+    if (key.startsWith('utm_') || key === 'fbclid') parsed.searchParams.delete(key);
+  }
+  let out = parsed.toString();
+  if (parsed.search === '') out = out.replace(/\/$/, '');
+  return out;
+}
+
+/**
  * Minimal JSON fetch against the allternit-api gateway admin API. Returns
  * { ok, status, body }. Never throws on HTTP error statuses — callers decide
  * how to surface them.
@@ -331,6 +353,20 @@ const TOOLS = [
         confirm: { type: 'boolean', description: 'Set true to apply immediately. Omit or false to write to .incoming/ for review.' },
       },
       required: ['source', 'updates'],
+    },
+  },
+  {
+    name: 'research_ingest',
+    description:
+      'Queue a link into the research pipeline: writes a research_ingest draft into Research/.incoming/, which Ops/scripts/ingest-research.js picks up on the next sweep as a queue entry with status "inbox". Low blast-radius — dedupes by normalized URL, never executes anything.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        url: { type: 'string', description: 'http(s) URL to queue for research.' },
+        note: { type: 'string', description: 'Optional free-text note attached to the entry.' },
+        source: { type: 'string', description: 'Optional origin, e.g. agent name / session.' },
+      },
+      required: ['url'],
     },
   },
   {
@@ -610,6 +646,28 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         fs.writeFileSync(filepath, JSON.stringify(updateFile, null, 2));
         return textResult(
           `[DRAFT SAVED — not applied]\n\nWrote ${filepath}\nReview with apply-brain-updates.js or pass confirm:true to apply immediately.`
+        );
+      }
+
+      case 'research_ingest': {
+        const normalized = normalizeResearchUrl(args.url);
+        if (!normalized) {
+          throw new Error(`Not a valid http(s) URL: ${args.url}`);
+        }
+        const incomingDir = path.join(BRAIN_ROOT, 'Research', '.incoming');
+        fs.mkdirSync(incomingDir, { recursive: true });
+        const filename = `draft-${Date.now()}.json`;
+        const filepath = path.join(incomingDir, filename);
+        const draft = {
+          kind: 'research_ingest',
+          url: args.url,
+          note: args.note || null,
+          source: args.source || null,
+          ts: Date.now(),
+        };
+        fs.writeFileSync(filepath, JSON.stringify(draft, null, 2));
+        return textResult(
+          `[QUEUED FOR INGEST]\n\nWrote ${filepath}\nThe next ingest-research.js sweep will add it to Research/queue.json as status "inbox" (deduped by normalized URL).`
         );
       }
 

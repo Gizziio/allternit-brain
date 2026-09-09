@@ -1,0 +1,1308 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "rq-20260908-001",
+      "url": "https://dayring-for-kids.vercel.app",
+      "note": "Eoj: recreate this setup for the division sites",
+      "title": "dayring-for-kids.vercel.app",
+      "category": "surfaces",
+      "status": "spec_ready",
+      "spec": "Research/specs/division-sites-dayring.md",
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T00:00:00Z",
+          "event": "ingested",
+          "by": "manual"
+        },
+        {
+          "ts": "2026-09-08T00:00:00Z",
+          "event": "researched",
+          "by": "manual"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-028",
+          "via": "url"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "spec_cleared_missing_file",
+          "by": "desktop-pipeline-fix",
+          "old_spec": "Research/specs/division-sites-dayring.md",
+          "note": "status left researched; INDEX has knowledge note; no invented spec file"
+        },
+        {
+          "ts": "2026-09-08T21:25:21Z",
+          "event": "baseline_set",
+          "by": "desktop-multi-harness-advance",
+          "baseline_ref": "Research/baselines/division-sites.md"
+        },
+        {
+          "ts": "2026-09-08T21:25:21Z",
+          "event": "decision_set",
+          "by": "desktop-multi-harness-advance",
+          "decision": "reverse_engineer"
+        },
+        {
+          "ts": "2026-09-08T21:25:21Z",
+          "event": "dual_drafts",
+          "by": "desktop-multi-harness-advance",
+          "drafts": [
+            "division-sites-dayring--grok.md",
+            "division-sites-dayring--kimi.md",
+            "division-sites-dayring--CHERRY.md"
+          ]
+        },
+        {
+          "ts": "2026-09-08T21:25:21Z",
+          "event": "spec_ready",
+          "by": "desktop-multi-harness-advance",
+          "spec": "Research/specs/division-sites-dayring.md",
+          "note": "executor dual-pass (CLI smoke skipped/flaky); human gate next"
+        }
+      ],
+      "li_id": "li-20260908-028",
+      "decision": "reverse_engineer",
+      "constraints_ok": true,
+      "paid_or_signup": false,
+      "docker_required": false,
+      "baseline_ref": "Research/baselines/division-sites.md",
+      "area": "division-sites"
+    },
+    {
+      "id": "rq-20260908-002",
+      "url": "https://github.com/s0xDk/refactoring-ui-skill",
+      "note": "Vendor as a skill for site/UI work",
+      "title": "refactoring-ui-skill",
+      "category": "agent-tooling",
+      "status": "spec_ready",
+      "spec": "Research/specs/vendor-refactoring-ui-skill.md",
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T00:00:00Z",
+          "event": "ingested",
+          "by": "manual"
+        },
+        {
+          "ts": "2026-09-08T00:00:00Z",
+          "event": "researched",
+          "by": "manual"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-021",
+          "via": "url"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "spec_cleared_missing_file",
+          "by": "desktop-pipeline-fix",
+          "old_spec": "Research/specs/vendor-refactoring-ui-skill.md",
+          "note": "status left researched; INDEX has knowledge note; no invented spec file"
+        },
+        {
+          "ts": "2026-09-08T21:25:21Z",
+          "event": "baseline_set",
+          "by": "desktop-multi-harness-advance",
+          "baseline_ref": "Research/baselines/ui-skills.md"
+        },
+        {
+          "ts": "2026-09-08T21:25:21Z",
+          "event": "decision_set",
+          "by": "desktop-multi-harness-advance",
+          "decision": "vendor_skill"
+        },
+        {
+          "ts": "2026-09-08T21:25:21Z",
+          "event": "dual_drafts",
+          "by": "desktop-multi-harness-advance",
+          "drafts": [
+            "vendor-refactoring-ui-skill--grok.md",
+            "vendor-refactoring-ui-skill--kimi.md",
+            "vendor-refactoring-ui-skill--CHERRY.md"
+          ]
+        },
+        {
+          "ts": "2026-09-08T21:25:21Z",
+          "event": "spec_ready",
+          "by": "desktop-multi-harness-advance",
+          "spec": "Research/specs/vendor-refactoring-ui-skill.md",
+          "note": "executor dual-pass (CLI smoke skipped/flaky); human gate next"
+        }
+      ],
+      "li_id": "li-20260908-021",
+      "decision": "vendor_skill",
+      "constraints_ok": true,
+      "paid_or_signup": false,
+      "docker_required": false,
+      "baseline_ref": "Research/baselines/ui-skills.md",
+      "area": "ui-skills"
+    },
+    {
+      "id": "rq-20260908-003",
+      "url": "https://github.com/kajisho5/ffmpeg-skill",
+      "note": "Vendor as a skill next to gpt-image-2-style-library",
+      "title": "ffmpeg-skill",
+      "category": "marketing",
+      "status": "spec_ready",
+      "spec": "Research/specs/vendor-ffmpeg-skill.md",
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T00:00:00Z",
+          "event": "ingested",
+          "by": "manual"
+        },
+        {
+          "ts": "2026-09-08T00:00:00Z",
+          "event": "researched",
+          "by": "manual"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-049",
+          "via": "url"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "spec_cleared_missing_file",
+          "by": "desktop-pipeline-fix",
+          "old_spec": "Research/specs/vendor-ffmpeg-skill.md",
+          "note": "status left researched; INDEX has knowledge note; no invented spec file"
+        },
+        {
+          "ts": "2026-09-08T21:25:21Z",
+          "event": "baseline_set",
+          "by": "desktop-multi-harness-advance",
+          "baseline_ref": "Research/baselines/media-skills.md"
+        },
+        {
+          "ts": "2026-09-08T21:25:21Z",
+          "event": "decision_set",
+          "by": "desktop-multi-harness-advance",
+          "decision": "vendor_skill"
+        },
+        {
+          "ts": "2026-09-08T21:25:21Z",
+          "event": "dual_drafts",
+          "by": "desktop-multi-harness-advance",
+          "drafts": [
+            "vendor-ffmpeg-skill--grok.md",
+            "vendor-ffmpeg-skill--kimi.md",
+            "vendor-ffmpeg-skill--CHERRY.md"
+          ]
+        },
+        {
+          "ts": "2026-09-08T21:25:21Z",
+          "event": "spec_ready",
+          "by": "desktop-multi-harness-advance",
+          "spec": "Research/specs/vendor-ffmpeg-skill.md",
+          "note": "executor dual-pass (CLI smoke skipped/flaky); human gate next"
+        }
+      ],
+      "li_id": "li-20260908-049",
+      "decision": "vendor_skill",
+      "constraints_ok": true,
+      "paid_or_signup": false,
+      "docker_required": false,
+      "baseline_ref": "Research/baselines/media-skills.md",
+      "area": "media-skills"
+    },
+    {
+      "id": "rq-20260908-004",
+      "url": "https://github.com/rorkai/App-Store-Connect-CLI",
+      "note": "Scriptable App Store Connect CLI; note/spec against Infra/deploy-runbook.md iOS pipeline",
+      "title": "App-Store-Connect-CLI",
+      "category": "devops",
+      "status": "spec_ready",
+      "spec": "Research/specs/app-store-connect-cli.md",
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T00:00:00Z",
+          "event": "ingested",
+          "by": "manual"
+        },
+        {
+          "ts": "2026-09-08T00:00:00Z",
+          "event": "researched",
+          "by": "manual"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-036",
+          "via": "url"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "spec_cleared_missing_file",
+          "by": "desktop-pipeline-fix",
+          "old_spec": "Research/specs/app-store-connect-cli.md",
+          "note": "status left researched; INDEX has knowledge note; no invented spec file"
+        },
+        {
+          "ts": "2026-09-08T16:35:00Z",
+          "event": "spec_ready",
+          "by": "manual"
+        },
+        {
+          "ts": "2026-09-08T21:25:21Z",
+          "event": "fields_filled",
+          "by": "desktop-multi-harness-advance",
+          "note": "baseline/decision/spec wired to on-disk spec"
+        }
+      ],
+      "li_id": "li-20260908-036",
+      "decision": "thin_adapter",
+      "constraints_ok": true,
+      "paid_or_signup": true,
+      "docker_required": false,
+      "baseline_ref": "Research/baselines/ios-release.md",
+      "area": "ios-release"
+    },
+    {
+      "id": "rq-20260908-005",
+      "url": "https://github.com/aigorahub/herdr-lantern",
+      "note": "Evaluate against existing lead-intake-agent skill (merge or replace?)",
+      "title": "herdr-lantern",
+      "category": "marketing",
+      "status": "watch",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T00:00:00Z",
+          "event": "ingested",
+          "by": "manual"
+        },
+        {
+          "ts": "2026-09-08T00:00:00Z",
+          "event": "researched",
+          "by": "manual"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-007",
+          "via": "url"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "spec_cleared_missing_file",
+          "by": "desktop-pipeline-fix",
+          "old_spec": "Research/specs/herdr-lead-intake-eval.md",
+          "note": "status left researched; INDEX has knowledge note; no invented spec file"
+        },
+        {
+          "ts": "2026-09-08T21:25:21Z",
+          "event": "baseline_set",
+          "by": "desktop-multi-harness-advance",
+          "baseline_ref": "Research/baselines/lead-intake.md"
+        },
+        {
+          "ts": "2026-09-08T21:25:21Z",
+          "event": "decision_set",
+          "by": "desktop-multi-harness-advance",
+          "decision": "watch"
+        },
+        {
+          "ts": "2026-09-08T21:25:21Z",
+          "event": "dual_drafts",
+          "by": "desktop-multi-harness-advance",
+          "drafts": [
+            "herdr-lead-intake-eval--grok.md",
+            "herdr-lead-intake-eval--kimi.md",
+            "herdr-lead-intake-eval--CHERRY.md"
+          ]
+        },
+        {
+          "ts": "2026-09-08T21:25:21Z",
+          "event": "spec_ready",
+          "by": "desktop-multi-harness-advance",
+          "spec": "Research/specs/herdr-lead-intake-eval.md",
+          "note": "executor dual-pass (CLI smoke skipped/flaky); human gate next"
+        },
+        {
+          "ts": "2026-09-08T21:27:24.824Z",
+          "event": "demoted_watch",
+          "by": "desktop-multi-harness-advance",
+          "note": "decision=watch must not carry execution spec per PIPELINE"
+        }
+      ],
+      "li_id": "li-20260908-007",
+      "decision": "watch",
+      "constraints_ok": true,
+      "paid_or_signup": false,
+      "docker_required": false,
+      "baseline_ref": "Research/baselines/lead-intake.md",
+      "area": "lead-intake"
+    },
+    {
+      "id": "rq-20260908-006",
+      "url": "https://grokbot.dev",
+      "note": "li-20260908-003 — Overwatch — Grok Bot VM cleanup & backup",
+      "title": "Overwatch (grokbot.dev)",
+      "category": "devops",
+      "status": "researched",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T20:18:40.525Z",
+          "event": "ingested",
+          "by": "dropfile"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-003"
+        },
+        {
+          "ts": "2026-09-08T16:45:00Z",
+          "event": "researched",
+          "by": "manual",
+          "note": "research already in Research/INDEX.md"
+        }
+      ],
+      "li_id": "li-20260908-003",
+      "decision": null,
+      "constraints_ok": null,
+      "paid_or_signup": null,
+      "docker_required": null,
+      "baseline_ref": null,
+      "area": null
+    },
+    {
+      "id": "rq-20260908-007",
+      "url": "https://github.com/FlashML-org/FreeToken",
+      "note": "li-20260908-004 — FreeToken — local datacenter-scale model serving",
+      "title": "FreeToken",
+      "category": "local-ml",
+      "status": "researched",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T20:18:40.525Z",
+          "event": "ingested",
+          "by": "dropfile"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-004"
+        },
+        {
+          "ts": "2026-09-08T16:45:00Z",
+          "event": "researched",
+          "by": "manual",
+          "note": "research already in Research/INDEX.md"
+        }
+      ],
+      "li_id": "li-20260908-004",
+      "decision": null,
+      "constraints_ok": null,
+      "paid_or_signup": null,
+      "docker_required": null,
+      "baseline_ref": null,
+      "area": null
+    },
+    {
+      "id": "rq-20260908-008",
+      "url": "https://github.com/moorcheh-ai/memanto",
+      "note": "li-20260908-005 — memanto — memory for AI agents",
+      "title": "memanto",
+      "category": "agent-tooling",
+      "status": "researched",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T20:18:40.525Z",
+          "event": "ingested",
+          "by": "dropfile"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-005"
+        },
+        {
+          "ts": "2026-09-08T16:45:00Z",
+          "event": "researched",
+          "by": "manual",
+          "note": "research already in Research/INDEX.md"
+        }
+      ],
+      "li_id": "li-20260908-005",
+      "decision": null,
+      "constraints_ok": null,
+      "paid_or_signup": null,
+      "docker_required": null,
+      "baseline_ref": null,
+      "area": null
+    },
+    {
+      "id": "rq-20260908-009",
+      "url": "https://github.com/sandbox-quantum/switch",
+      "note": "li-20260908-009 — Switch — Slack/Teams/Discord agent connector",
+      "title": "switch",
+      "category": "agent-tooling",
+      "status": "watch",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T20:18:40.525Z",
+          "event": "ingested",
+          "by": "dropfile"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-009"
+        },
+        {
+          "ts": "2026-09-08T16:45:00Z",
+          "event": "researched",
+          "by": "manual",
+          "note": "research already in Research/INDEX.md"
+        },
+        {
+          "ts": "2026-09-08T21:25:21Z",
+          "event": "baseline_set",
+          "by": "desktop-multi-harness-advance",
+          "baseline_ref": "Research/baselines/agent-connectors.md"
+        },
+        {
+          "ts": "2026-09-08T21:25:21Z",
+          "event": "decision_set",
+          "by": "desktop-multi-harness-advance",
+          "decision": "watch"
+        },
+        {
+          "ts": "2026-09-08T21:25:21Z",
+          "event": "dual_drafts",
+          "by": "desktop-multi-harness-advance",
+          "drafts": [
+            "switch-agent-connector--grok.md",
+            "switch-agent-connector--kimi.md",
+            "switch-agent-connector--CHERRY.md"
+          ]
+        },
+        {
+          "ts": "2026-09-08T21:25:21Z",
+          "event": "spec_ready",
+          "by": "desktop-multi-harness-advance",
+          "spec": "Research/specs/switch-agent-connector.md",
+          "note": "executor dual-pass (CLI smoke skipped/flaky); human gate next"
+        },
+        {
+          "ts": "2026-09-08T21:27:24.824Z",
+          "event": "demoted_watch",
+          "by": "desktop-multi-harness-advance",
+          "note": "decision=watch must not carry execution spec per PIPELINE"
+        }
+      ],
+      "li_id": "li-20260908-009",
+      "decision": "watch",
+      "constraints_ok": true,
+      "paid_or_signup": false,
+      "docker_required": false,
+      "baseline_ref": "Research/baselines/agent-connectors.md",
+      "area": "agent-connectors"
+    },
+    {
+      "id": "rq-20260908-010",
+      "url": "https://github.com/0xSero/local-ai-registry",
+      "note": "li-20260908-011 — local-ai-registry — hardware/models/recipes catalog",
+      "title": "local-ai-registry",
+      "category": "local-ml",
+      "status": "researched",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T20:18:40.525Z",
+          "event": "ingested",
+          "by": "dropfile"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-011"
+        },
+        {
+          "ts": "2026-09-08T16:45:00Z",
+          "event": "researched",
+          "by": "manual",
+          "note": "research already in Research/INDEX.md"
+        }
+      ],
+      "li_id": "li-20260908-011",
+      "decision": null,
+      "constraints_ok": null,
+      "paid_or_signup": null,
+      "docker_required": null,
+      "baseline_ref": null,
+      "area": null
+    },
+    {
+      "id": "rq-20260908-011",
+      "url": "https://github.com/deeplethe/utopia",
+      "note": "li-20260908-014 — Utopia — open-source enterprise world model",
+      "title": "utopia",
+      "category": "agent-tooling",
+      "status": "researched",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T20:18:40.525Z",
+          "event": "ingested",
+          "by": "dropfile"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-014"
+        },
+        {
+          "ts": "2026-09-08T16:45:00Z",
+          "event": "researched",
+          "by": "manual",
+          "note": "research already in Research/INDEX.md"
+        }
+      ],
+      "li_id": "li-20260908-014",
+      "decision": null,
+      "constraints_ok": null,
+      "paid_or_signup": null,
+      "docker_required": null,
+      "baseline_ref": null,
+      "area": null
+    },
+    {
+      "id": "rq-20260908-012",
+      "url": "https://github.com/vercel-labs/agent-browser",
+      "note": "li-20260908-015 — agent-browser — Vercel Labs browser CLI for agents",
+      "title": "agent-browser",
+      "category": "agent-tooling",
+      "status": "spec_ready",
+      "spec": "Research/specs/agent-browser-eval.md",
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T20:18:40.525Z",
+          "event": "ingested",
+          "by": "dropfile"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-015"
+        },
+        {
+          "ts": "2026-09-08T16:45:00Z",
+          "event": "researched",
+          "by": "manual",
+          "note": "research already in Research/INDEX.md"
+        },
+        {
+          "ts": "2026-09-08T21:27:24.824Z",
+          "event": "baseline_set",
+          "by": "desktop-multi-harness-advance"
+        },
+        {
+          "ts": "2026-09-08T21:27:24.824Z",
+          "event": "decision_set",
+          "by": "desktop-multi-harness-advance",
+          "decision": "thin_adapter"
+        },
+        {
+          "ts": "2026-09-08T21:27:24.824Z",
+          "event": "dual_drafts",
+          "by": "desktop-multi-harness-advance"
+        },
+        {
+          "ts": "2026-09-08T21:27:24.824Z",
+          "event": "spec_ready",
+          "by": "desktop-multi-harness-advance",
+          "spec": "Research/specs/agent-browser-eval.md"
+        }
+      ],
+      "li_id": "li-20260908-015",
+      "decision": "thin_adapter",
+      "constraints_ok": true,
+      "paid_or_signup": false,
+      "docker_required": false,
+      "baseline_ref": "Research/baselines/browser-automation.md",
+      "area": "browser-automation"
+    },
+    {
+      "id": "rq-20260908-013",
+      "url": "https://github.com/iii-hq/iii",
+      "note": "li-20260908-017 — iii — compose, extend, observe services in real-time",
+      "title": "iii",
+      "category": "agent-tooling",
+      "status": "researched",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T20:18:40.525Z",
+          "event": "ingested",
+          "by": "dropfile"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-017"
+        },
+        {
+          "ts": "2026-09-08T16:45:00Z",
+          "event": "researched",
+          "by": "manual",
+          "note": "research already in Research/INDEX.md"
+        }
+      ],
+      "li_id": "li-20260908-017",
+      "decision": null,
+      "constraints_ok": null,
+      "paid_or_signup": null,
+      "docker_required": null,
+      "baseline_ref": null,
+      "area": null
+    },
+    {
+      "id": "rq-20260908-014",
+      "url": "https://github.com/xhluca/open-agent-view",
+      "note": "li-20260908-019 — open-agent-view — open Agent View for any harness",
+      "title": "open-agent-view",
+      "category": "agent-tooling",
+      "status": "researched",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T20:18:40.525Z",
+          "event": "ingested",
+          "by": "dropfile"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-019"
+        },
+        {
+          "ts": "2026-09-08T16:45:00Z",
+          "event": "researched",
+          "by": "manual",
+          "note": "research already in Research/INDEX.md"
+        }
+      ],
+      "li_id": "li-20260908-019",
+      "decision": null,
+      "constraints_ok": null,
+      "paid_or_signup": null,
+      "docker_required": null,
+      "baseline_ref": null,
+      "area": null
+    },
+    {
+      "id": "rq-20260908-015",
+      "url": "https://github.com/fayazara/cloudflare-computer-example",
+      "note": "li-20260908-024 — cloudflare-computer-example — agent computer demo",
+      "title": "cloudflare-computer-example",
+      "category": "agent-tooling",
+      "status": "researched",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T20:18:40.525Z",
+          "event": "ingested",
+          "by": "dropfile"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-024"
+        },
+        {
+          "ts": "2026-09-08T16:45:00Z",
+          "event": "researched",
+          "by": "manual",
+          "note": "research already in Research/INDEX.md"
+        }
+      ],
+      "li_id": "li-20260908-024",
+      "decision": null,
+      "constraints_ok": null,
+      "paid_or_signup": null,
+      "docker_required": null,
+      "baseline_ref": null,
+      "area": null
+    },
+    {
+      "id": "rq-20260908-016",
+      "url": "https://blog.cloudflare.com",
+      "note": "li-20260908-025 — Cloudflare Computer — agent needs a computer, not a container",
+      "title": "Cloudflare blog — agent needs a computer",
+      "category": "agent-tooling",
+      "status": "researched",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T20:18:40.525Z",
+          "event": "ingested",
+          "by": "dropfile"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-025"
+        },
+        {
+          "ts": "2026-09-08T16:45:00Z",
+          "event": "researched",
+          "by": "manual",
+          "note": "research already in Research/INDEX.md"
+        }
+      ],
+      "li_id": "li-20260908-025",
+      "decision": null,
+      "constraints_ok": null,
+      "paid_or_signup": null,
+      "docker_required": null,
+      "baseline_ref": null,
+      "area": null
+    },
+    {
+      "id": "rq-20260908-017",
+      "url": "https://github.com/garrytan/gstack",
+      "note": "li-20260908-026 — gstack — Garry Tan Claude Code multi-role toolkit",
+      "title": "gstack",
+      "category": "agent-tooling",
+      "status": "researched",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T20:18:40.525Z",
+          "event": "ingested",
+          "by": "dropfile"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-026"
+        },
+        {
+          "ts": "2026-09-08T16:45:00Z",
+          "event": "researched",
+          "by": "manual",
+          "note": "research already in Research/INDEX.md"
+        }
+      ],
+      "li_id": "li-20260908-026",
+      "decision": null,
+      "constraints_ok": null,
+      "paid_or_signup": null,
+      "docker_required": null,
+      "baseline_ref": null,
+      "area": null
+    },
+    {
+      "id": "rq-20260908-018",
+      "url": "https://github.com/techjanitor/botmaker",
+      "note": "li-20260908-027 — botmaker — techjanitor bot construction",
+      "title": "botmaker",
+      "category": "agent-tooling",
+      "status": "researched",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T20:18:40.525Z",
+          "event": "ingested",
+          "by": "dropfile"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-027"
+        },
+        {
+          "ts": "2026-09-08T16:45:00Z",
+          "event": "researched",
+          "by": "manual",
+          "note": "research already in Research/INDEX.md"
+        }
+      ],
+      "li_id": "li-20260908-027",
+      "decision": null,
+      "constraints_ok": null,
+      "paid_or_signup": null,
+      "docker_required": null,
+      "baseline_ref": null,
+      "area": null
+    },
+    {
+      "id": "rq-20260908-019",
+      "url": "https://github.com/sentrux/sentrux",
+      "note": "li-20260908-030 — sentrux — real-time architectural sensor for agents",
+      "title": "sentrux",
+      "category": "agent-tooling",
+      "status": "researched",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T20:18:40.525Z",
+          "event": "ingested",
+          "by": "dropfile"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-030"
+        },
+        {
+          "ts": "2026-09-08T16:45:00Z",
+          "event": "researched",
+          "by": "manual",
+          "note": "research already in Research/INDEX.md"
+        }
+      ],
+      "li_id": "li-20260908-030",
+      "decision": null,
+      "constraints_ok": null,
+      "paid_or_signup": null,
+      "docker_required": null,
+      "baseline_ref": null,
+      "area": null
+    },
+    {
+      "id": "rq-20260908-020",
+      "url": "https://github.com/AgriciDaniel/claude-ads",
+      "note": "li-20260908-031 — claude-ads — Claude-first paid-media ops skill",
+      "title": "claude-ads",
+      "category": "marketing",
+      "status": "researched",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T20:18:40.525Z",
+          "event": "ingested",
+          "by": "dropfile"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-031"
+        },
+        {
+          "ts": "2026-09-08T16:45:00Z",
+          "event": "researched",
+          "by": "manual",
+          "note": "research already in Research/INDEX.md"
+        }
+      ],
+      "li_id": "li-20260908-031",
+      "decision": null,
+      "constraints_ok": null,
+      "paid_or_signup": null,
+      "docker_required": null,
+      "baseline_ref": null,
+      "area": null
+    },
+    {
+      "id": "rq-20260908-021",
+      "url": "https://github.com/nowork-studio/notfair-plugin",
+      "note": "li-20260908-032 — notfair-plugin — SEO, GEO, marketing skills for agents",
+      "title": "notfair-plugin",
+      "category": "marketing",
+      "status": "researched",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T20:18:40.525Z",
+          "event": "ingested",
+          "by": "dropfile"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-032"
+        },
+        {
+          "ts": "2026-09-08T16:45:00Z",
+          "event": "researched",
+          "by": "manual",
+          "note": "research already in Research/INDEX.md"
+        }
+      ],
+      "li_id": "li-20260908-032",
+      "decision": null,
+      "constraints_ok": null,
+      "paid_or_signup": null,
+      "docker_required": null,
+      "baseline_ref": null,
+      "area": null
+    },
+    {
+      "id": "rq-20260908-022",
+      "url": "https://github.com/mksglu/context-mode",
+      "note": "li-20260908-033 — context-mode — context window optimization for coding agents",
+      "title": "context-mode",
+      "category": "agent-tooling",
+      "status": "researched",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T20:18:40.525Z",
+          "event": "ingested",
+          "by": "dropfile"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-033"
+        },
+        {
+          "ts": "2026-09-08T16:45:00Z",
+          "event": "researched",
+          "by": "manual",
+          "note": "research already in Research/INDEX.md"
+        }
+      ],
+      "li_id": "li-20260908-033",
+      "decision": null,
+      "constraints_ok": null,
+      "paid_or_signup": null,
+      "docker_required": null,
+      "baseline_ref": null,
+      "area": null
+    },
+    {
+      "id": "rq-20260908-023",
+      "url": "https://github.com/browser-act/skills",
+      "note": "li-20260908-035 — browser-act skills — agent browser automation CLI",
+      "title": "browser-act skills",
+      "category": "agent-tooling",
+      "status": "researched",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T20:18:40.525Z",
+          "event": "ingested",
+          "by": "dropfile"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-035"
+        },
+        {
+          "ts": "2026-09-08T16:45:00Z",
+          "event": "researched",
+          "by": "manual",
+          "note": "research already in Research/INDEX.md"
+        }
+      ],
+      "li_id": "li-20260908-035",
+      "decision": null,
+      "constraints_ok": null,
+      "paid_or_signup": null,
+      "docker_required": null,
+      "baseline_ref": null,
+      "area": null
+    },
+    {
+      "id": "rq-20260908-024",
+      "url": "https://github.com/humanlayer/skills",
+      "note": "li-20260908-043 — humanlayer show-me skill",
+      "title": "humanlayer show-me skill",
+      "category": "agent-tooling",
+      "status": "researched",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T20:18:40.525Z",
+          "event": "ingested",
+          "by": "dropfile"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-043"
+        },
+        {
+          "ts": "2026-09-08T16:45:00Z",
+          "event": "researched",
+          "by": "manual",
+          "note": "research already in Research/INDEX.md"
+        }
+      ],
+      "li_id": "li-20260908-043",
+      "decision": null,
+      "constraints_ok": null,
+      "paid_or_signup": null,
+      "docker_required": null,
+      "baseline_ref": null,
+      "area": null
+    },
+    {
+      "id": "rq-20260908-025",
+      "url": "https://github.com/headroomlabs-ai/headroom",
+      "note": "li-20260908-045 — headroom — headroomlabs-ai",
+      "title": "headroom",
+      "category": "agent-tooling",
+      "status": "researched",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T20:18:40.525Z",
+          "event": "ingested",
+          "by": "dropfile"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-045"
+        },
+        {
+          "ts": "2026-09-08T16:45:00Z",
+          "event": "researched",
+          "by": "manual",
+          "note": "research already in Research/INDEX.md"
+        }
+      ],
+      "li_id": "li-20260908-045",
+      "decision": null,
+      "constraints_ok": null,
+      "paid_or_signup": null,
+      "docker_required": null,
+      "baseline_ref": null,
+      "area": null
+    },
+    {
+      "id": "rq-20260908-026",
+      "url": "https://github.com/sololabstr/uisight",
+      "note": "li-20260908-046 — uisight — UI insight tooling",
+      "title": "uisight",
+      "category": "agent-tooling",
+      "status": "researched",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T20:18:40.525Z",
+          "event": "ingested",
+          "by": "dropfile"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-046"
+        },
+        {
+          "ts": "2026-09-08T16:45:00Z",
+          "event": "researched",
+          "by": "manual",
+          "note": "research already in Research/INDEX.md"
+        }
+      ],
+      "li_id": "li-20260908-046",
+      "decision": null,
+      "constraints_ok": null,
+      "paid_or_signup": null,
+      "docker_required": null,
+      "baseline_ref": null,
+      "area": null
+    },
+    {
+      "id": "rq-20260908-027",
+      "url": "https://github.com/microsoft/tgrep",
+      "note": "li-20260908-047 — tgrep — microsoft",
+      "title": "tgrep",
+      "category": "devops",
+      "status": "researched",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T20:18:40.525Z",
+          "event": "ingested",
+          "by": "dropfile"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-047"
+        },
+        {
+          "ts": "2026-09-08T16:45:00Z",
+          "event": "researched",
+          "by": "manual",
+          "note": "research already in Research/INDEX.md"
+        }
+      ],
+      "li_id": "li-20260908-047",
+      "decision": null,
+      "constraints_ok": null,
+      "paid_or_signup": null,
+      "docker_required": null,
+      "baseline_ref": null,
+      "area": null
+    },
+    {
+      "id": "rq-20260908-028",
+      "url": "https://github.com/herdrdev/herdr/releases/tag/v0.9.0",
+      "note": "li-20260908-051 — Herdr v0.9.0 release",
+      "title": "herdr v0.9.0",
+      "category": "marketing",
+      "status": "spec_ready",
+      "spec": "Research/specs/herdr-v090-adapter.md",
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T20:18:40.525Z",
+          "event": "ingested",
+          "by": "dropfile"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-051"
+        },
+        {
+          "ts": "2026-09-08T16:45:00Z",
+          "event": "researched",
+          "by": "manual",
+          "note": "research already in Research/INDEX.md"
+        },
+        {
+          "ts": "2026-09-09T00:19:38.634336Z",
+          "event": "decision_set",
+          "by": "kimi-interactive",
+          "decision": "thin_adapter",
+          "note": "Apache-2.0 local Rust binary, no signup/Docker; ao stays orchestration brain, herdr 0.9.0 as optional pane/session transport (multi-machine SSH + state detection)"
+        },
+        {
+          "ts": "2026-09-09T00:20:56.279995Z",
+          "event": "spec_ready",
+          "by": "kimi-interactive",
+          "spec": "Research/specs/herdr-v090-adapter.md",
+          "note": "single kimi draft (dual review skipped in interactive run); human gate next"
+        }
+      ],
+      "li_id": "li-20260908-051",
+      "decision": "thin_adapter",
+      "constraints_ok": true,
+      "paid_or_signup": false,
+      "docker_required": false,
+      "baseline_ref": "Research/baselines/agent-orchestration.md",
+      "area": "agent-orchestration"
+    }
+  ]
+}

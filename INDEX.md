@@ -1,6 +1,6 @@
 ---
 doc: index
-updated: 2026-08-28
+updated: 2026-09-08
 status: active
 ---
 
@@ -31,6 +31,7 @@ Welcome. This is the agent-readable operating system for Allternit LLC.
 - [Clients/](Clients/) — hot client state
 - [Real World/](Real%20World/) — pointers to `Allternit LLC/` records
 - [Strategy/](Strategy/) — long-form planning pointers
+- [Research/](Research/) — external R&D watchlist + the link→spec→PR pipeline
 - [Projects/](Projects/) — active engineering projects
 - [Templates/](Templates/) — doc templates
 
