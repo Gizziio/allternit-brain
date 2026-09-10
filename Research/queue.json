@@ -1,1657 +1,1691 @@
 {
- "version": 1,
- "items": [
-  {
-   "id": "rq-20260908-001",
-   "url": "https://dayring-for-kids.vercel.app",
-   "note": "Eoj: recreate this setup for the division sites",
-   "title": "dayring-for-kids.vercel.app",
-   "category": "surfaces",
-   "status": "spec_ready",
-   "spec": "Research/specs/division-sites-dayring.md",
-   "repo": null,
-   "worktree": null,
-   "branch": null,
-   "history": [
+  "version": 1,
+  "items": [
     {
-     "ts": "2026-09-08T00:00:00Z",
-     "event": "ingested",
-     "by": "manual"
+      "id": "rq-20260908-001",
+      "url": "https://dayring-for-kids.vercel.app",
+      "note": "Eoj: recreate this setup for the division sites",
+      "title": "dayring-for-kids.vercel.app",
+      "category": "surfaces",
+      "status": "spec_ready",
+      "spec": "Research/specs/division-sites-dayring.md",
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T00:00:00Z",
+          "event": "ingested",
+          "by": "manual"
+        },
+        {
+          "ts": "2026-09-08T00:00:00Z",
+          "event": "researched",
+          "by": "manual"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-028",
+          "via": "url"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "spec_cleared_missing_file",
+          "by": "desktop-pipeline-fix",
+          "old_spec": "Research/specs/division-sites-dayring.md",
+          "note": "status left researched; INDEX has knowledge note; no invented spec file"
+        },
+        {
+          "ts": "2026-09-08T21:25:21Z",
+          "event": "baseline_set",
+          "by": "desktop-multi-harness-advance",
+          "baseline_ref": "Research/baselines/division-sites.md"
+        },
+        {
+          "ts": "2026-09-08T21:25:21Z",
+          "event": "decision_set",
+          "by": "desktop-multi-harness-advance",
+          "decision": "reverse_engineer"
+        },
+        {
+          "ts": "2026-09-08T21:25:21Z",
+          "event": "dual_drafts",
+          "by": "desktop-multi-harness-advance",
+          "drafts": [
+            "division-sites-dayring--grok.md",
+            "division-sites-dayring--kimi.md",
+            "division-sites-dayring--CHERRY.md"
+          ]
+        },
+        {
+          "ts": "2026-09-08T21:25:21Z",
+          "event": "spec_ready",
+          "by": "desktop-multi-harness-advance",
+          "spec": "Research/specs/division-sites-dayring.md",
+          "note": "executor dual-pass (CLI smoke skipped/flaky); human gate next"
+        }
+      ],
+      "li_id": "li-20260908-028",
+      "decision": "reverse_engineer",
+      "constraints_ok": true,
+      "paid_or_signup": false,
+      "docker_required": false,
+      "baseline_ref": "Research/baselines/division-sites.md",
+      "area": "division-sites"
     },
     {
-     "ts": "2026-09-08T00:00:00Z",
-     "event": "researched",
-     "by": "manual"
+      "id": "rq-20260908-002",
+      "url": "https://github.com/s0xDk/refactoring-ui-skill",
+      "note": "Vendor as a skill for site/UI work",
+      "title": "refactoring-ui-skill",
+      "category": "agent-tooling",
+      "status": "spec_ready",
+      "spec": "Research/specs/vendor-refactoring-ui-skill.md",
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T00:00:00Z",
+          "event": "ingested",
+          "by": "manual"
+        },
+        {
+          "ts": "2026-09-08T00:00:00Z",
+          "event": "researched",
+          "by": "manual"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-021",
+          "via": "url"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "spec_cleared_missing_file",
+          "by": "desktop-pipeline-fix",
+          "old_spec": "Research/specs/vendor-refactoring-ui-skill.md",
+          "note": "status left researched; INDEX has knowledge note; no invented spec file"
+        },
+        {
+          "ts": "2026-09-08T21:25:21Z",
+          "event": "baseline_set",
+          "by": "desktop-multi-harness-advance",
+          "baseline_ref": "Research/baselines/ui-skills.md"
+        },
+        {
+          "ts": "2026-09-08T21:25:21Z",
+          "event": "decision_set",
+          "by": "desktop-multi-harness-advance",
+          "decision": "vendor_skill"
+        },
+        {
+          "ts": "2026-09-08T21:25:21Z",
+          "event": "dual_drafts",
+          "by": "desktop-multi-harness-advance",
+          "drafts": [
+            "vendor-refactoring-ui-skill--grok.md",
+            "vendor-refactoring-ui-skill--kimi.md",
+            "vendor-refactoring-ui-skill--CHERRY.md"
+          ]
+        },
+        {
+          "ts": "2026-09-08T21:25:21Z",
+          "event": "spec_ready",
+          "by": "desktop-multi-harness-advance",
+          "spec": "Research/specs/vendor-refactoring-ui-skill.md",
+          "note": "executor dual-pass (CLI smoke skipped/flaky); human gate next"
+        }
+      ],
+      "li_id": "li-20260908-021",
+      "decision": "vendor_skill",
+      "constraints_ok": true,
+      "paid_or_signup": false,
+      "docker_required": false,
+      "baseline_ref": "Research/baselines/ui-skills.md",
+      "area": "ui-skills"
     },
     {
-     "ts": "2026-09-08T20:19:02Z",
-     "event": "li_id_set",
-     "by": "desktop-pipeline-fix",
-     "li_id": "li-20260908-028",
-     "via": "url"
+      "id": "rq-20260908-003",
+      "url": "https://github.com/kajisho5/ffmpeg-skill",
+      "note": "Vendor as a skill next to gpt-image-2-style-library",
+      "title": "ffmpeg-skill",
+      "category": "marketing",
+      "status": "spec_ready",
+      "spec": "Research/specs/vendor-ffmpeg-skill.md",
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T00:00:00Z",
+          "event": "ingested",
+          "by": "manual"
+        },
+        {
+          "ts": "2026-09-08T00:00:00Z",
+          "event": "researched",
+          "by": "manual"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-049",
+          "via": "url"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "spec_cleared_missing_file",
+          "by": "desktop-pipeline-fix",
+          "old_spec": "Research/specs/vendor-ffmpeg-skill.md",
+          "note": "status left researched; INDEX has knowledge note; no invented spec file"
+        },
+        {
+          "ts": "2026-09-08T21:25:21Z",
+          "event": "baseline_set",
+          "by": "desktop-multi-harness-advance",
+          "baseline_ref": "Research/baselines/media-skills.md"
+        },
+        {
+          "ts": "2026-09-08T21:25:21Z",
+          "event": "decision_set",
+          "by": "desktop-multi-harness-advance",
+          "decision": "vendor_skill"
+        },
+        {
+          "ts": "2026-09-08T21:25:21Z",
+          "event": "dual_drafts",
+          "by": "desktop-multi-harness-advance",
+          "drafts": [
+            "vendor-ffmpeg-skill--grok.md",
+            "vendor-ffmpeg-skill--kimi.md",
+            "vendor-ffmpeg-skill--CHERRY.md"
+          ]
+        },
+        {
+          "ts": "2026-09-08T21:25:21Z",
+          "event": "spec_ready",
+          "by": "desktop-multi-harness-advance",
+          "spec": "Research/specs/vendor-ffmpeg-skill.md",
+          "note": "executor dual-pass (CLI smoke skipped/flaky); human gate next"
+        }
+      ],
+      "li_id": "li-20260908-049",
+      "decision": "vendor_skill",
+      "constraints_ok": true,
+      "paid_or_signup": false,
+      "docker_required": false,
+      "baseline_ref": "Research/baselines/media-skills.md",
+      "area": "media-skills"
     },
     {
-     "ts": "2026-09-08T20:19:02Z",
-     "event": "spec_cleared_missing_file",
-     "by": "desktop-pipeline-fix",
-     "old_spec": "Research/specs/division-sites-dayring.md",
-     "note": "status left researched; INDEX has knowledge note; no invented spec file"
+      "id": "rq-20260908-004",
+      "url": "https://github.com/rorkai/App-Store-Connect-CLI",
+      "note": "Scriptable App Store Connect CLI; note/spec against Infra/deploy-runbook.md iOS pipeline",
+      "title": "App-Store-Connect-CLI",
+      "category": "devops",
+      "status": "spec_ready",
+      "spec": "Research/specs/app-store-connect-cli.md",
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T00:00:00Z",
+          "event": "ingested",
+          "by": "manual"
+        },
+        {
+          "ts": "2026-09-08T00:00:00Z",
+          "event": "researched",
+          "by": "manual"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-036",
+          "via": "url"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "spec_cleared_missing_file",
+          "by": "desktop-pipeline-fix",
+          "old_spec": "Research/specs/app-store-connect-cli.md",
+          "note": "status left researched; INDEX has knowledge note; no invented spec file"
+        },
+        {
+          "ts": "2026-09-08T16:35:00Z",
+          "event": "spec_ready",
+          "by": "manual"
+        },
+        {
+          "ts": "2026-09-08T21:25:21Z",
+          "event": "fields_filled",
+          "by": "desktop-multi-harness-advance",
+          "note": "baseline/decision/spec wired to on-disk spec"
+        }
+      ],
+      "li_id": "li-20260908-036",
+      "decision": "thin_adapter",
+      "constraints_ok": true,
+      "paid_or_signup": true,
+      "docker_required": false,
+      "baseline_ref": "Research/baselines/ios-release.md",
+      "area": "ios-release"
     },
     {
-     "ts": "2026-09-08T21:25:21Z",
-     "event": "baseline_set",
-     "by": "desktop-multi-harness-advance",
-     "baseline_ref": "Research/baselines/division-sites.md"
+      "id": "rq-20260908-005",
+      "url": "https://github.com/aigorahub/herdr-lantern",
+      "note": "Evaluate against existing lead-intake-agent skill (merge or replace?)",
+      "title": "herdr-lantern",
+      "category": "marketing",
+      "status": "watch",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T00:00:00Z",
+          "event": "ingested",
+          "by": "manual"
+        },
+        {
+          "ts": "2026-09-08T00:00:00Z",
+          "event": "researched",
+          "by": "manual"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-007",
+          "via": "url"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "spec_cleared_missing_file",
+          "by": "desktop-pipeline-fix",
+          "old_spec": "Research/specs/herdr-lead-intake-eval.md",
+          "note": "status left researched; INDEX has knowledge note; no invented spec file"
+        },
+        {
+          "ts": "2026-09-08T21:25:21Z",
+          "event": "baseline_set",
+          "by": "desktop-multi-harness-advance",
+          "baseline_ref": "Research/baselines/lead-intake.md"
+        },
+        {
+          "ts": "2026-09-08T21:25:21Z",
+          "event": "decision_set",
+          "by": "desktop-multi-harness-advance",
+          "decision": "watch"
+        },
+        {
+          "ts": "2026-09-08T21:25:21Z",
+          "event": "dual_drafts",
+          "by": "desktop-multi-harness-advance",
+          "drafts": [
+            "herdr-lead-intake-eval--grok.md",
+            "herdr-lead-intake-eval--kimi.md",
+            "herdr-lead-intake-eval--CHERRY.md"
+          ]
+        },
+        {
+          "ts": "2026-09-08T21:25:21Z",
+          "event": "spec_ready",
+          "by": "desktop-multi-harness-advance",
+          "spec": "Research/specs/herdr-lead-intake-eval.md",
+          "note": "executor dual-pass (CLI smoke skipped/flaky); human gate next"
+        },
+        {
+          "ts": "2026-09-08T21:27:24.824Z",
+          "event": "demoted_watch",
+          "by": "desktop-multi-harness-advance",
+          "note": "decision=watch must not carry execution spec per PIPELINE"
+        }
+      ],
+      "li_id": "li-20260908-007",
+      "decision": "watch",
+      "constraints_ok": true,
+      "paid_or_signup": false,
+      "docker_required": false,
+      "baseline_ref": "Research/baselines/lead-intake.md",
+      "area": "lead-intake"
     },
     {
-     "ts": "2026-09-08T21:25:21Z",
-     "event": "decision_set",
-     "by": "desktop-multi-harness-advance",
-     "decision": "reverse_engineer"
+      "id": "rq-20260908-006",
+      "url": "https://grokbot.dev",
+      "note": "li-20260908-003 — Overwatch — Grok Bot VM cleanup & backup",
+      "title": "Overwatch (grokbot.dev)",
+      "category": "devops",
+      "status": "researched",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T20:18:40.525Z",
+          "event": "ingested",
+          "by": "dropfile"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-003"
+        },
+        {
+          "ts": "2026-09-08T16:45:00Z",
+          "event": "researched",
+          "by": "manual",
+          "note": "research already in Research/INDEX.md"
+        }
+      ],
+      "li_id": "li-20260908-003",
+      "decision": null,
+      "constraints_ok": null,
+      "paid_or_signup": null,
+      "docker_required": null,
+      "baseline_ref": null,
+      "area": null
     },
     {
-     "ts": "2026-09-08T21:25:21Z",
-     "event": "dual_drafts",
-     "by": "desktop-multi-harness-advance",
-     "drafts": [
-      "division-sites-dayring--grok.md",
-      "division-sites-dayring--kimi.md",
-      "division-sites-dayring--CHERRY.md"
-     ]
+      "id": "rq-20260908-007",
+      "url": "https://github.com/FlashML-org/FreeToken",
+      "note": "li-20260908-004 — FreeToken — local datacenter-scale model serving",
+      "title": "FreeToken",
+      "category": "local-ml",
+      "status": "researched",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T20:18:40.525Z",
+          "event": "ingested",
+          "by": "dropfile"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-004"
+        },
+        {
+          "ts": "2026-09-08T16:45:00Z",
+          "event": "researched",
+          "by": "manual",
+          "note": "research already in Research/INDEX.md"
+        }
+      ],
+      "li_id": "li-20260908-004",
+      "decision": null,
+      "constraints_ok": null,
+      "paid_or_signup": null,
+      "docker_required": null,
+      "baseline_ref": null,
+      "area": null
     },
     {
-     "ts": "2026-09-08T21:25:21Z",
-     "event": "spec_ready",
-     "by": "desktop-multi-harness-advance",
-     "spec": "Research/specs/division-sites-dayring.md",
-     "note": "executor dual-pass (CLI smoke skipped/flaky); human gate next"
+      "id": "rq-20260908-008",
+      "url": "https://github.com/moorcheh-ai/memanto",
+      "note": "li-20260908-005 — memanto — memory for AI agents",
+      "title": "memanto",
+      "category": "agent-tooling",
+      "status": "researched",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T20:18:40.525Z",
+          "event": "ingested",
+          "by": "dropfile"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-005"
+        },
+        {
+          "ts": "2026-09-08T16:45:00Z",
+          "event": "researched",
+          "by": "manual",
+          "note": "research already in Research/INDEX.md"
+        }
+      ],
+      "li_id": "li-20260908-005",
+      "decision": null,
+      "constraints_ok": null,
+      "paid_or_signup": null,
+      "docker_required": null,
+      "baseline_ref": null,
+      "area": null
+    },
+    {
+      "id": "rq-20260908-009",
+      "url": "https://github.com/sandbox-quantum/switch",
+      "note": "li-20260908-009 — Switch — Slack/Teams/Discord agent connector",
+      "title": "switch",
+      "category": "agent-tooling",
+      "status": "watch",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T20:18:40.525Z",
+          "event": "ingested",
+          "by": "dropfile"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-009"
+        },
+        {
+          "ts": "2026-09-08T16:45:00Z",
+          "event": "researched",
+          "by": "manual",
+          "note": "research already in Research/INDEX.md"
+        },
+        {
+          "ts": "2026-09-08T21:25:21Z",
+          "event": "baseline_set",
+          "by": "desktop-multi-harness-advance",
+          "baseline_ref": "Research/baselines/agent-connectors.md"
+        },
+        {
+          "ts": "2026-09-08T21:25:21Z",
+          "event": "decision_set",
+          "by": "desktop-multi-harness-advance",
+          "decision": "watch"
+        },
+        {
+          "ts": "2026-09-08T21:25:21Z",
+          "event": "dual_drafts",
+          "by": "desktop-multi-harness-advance",
+          "drafts": [
+            "switch-agent-connector--grok.md",
+            "switch-agent-connector--kimi.md",
+            "switch-agent-connector--CHERRY.md"
+          ]
+        },
+        {
+          "ts": "2026-09-08T21:25:21Z",
+          "event": "spec_ready",
+          "by": "desktop-multi-harness-advance",
+          "spec": "Research/specs/switch-agent-connector.md",
+          "note": "executor dual-pass (CLI smoke skipped/flaky); human gate next"
+        },
+        {
+          "ts": "2026-09-08T21:27:24.824Z",
+          "event": "demoted_watch",
+          "by": "desktop-multi-harness-advance",
+          "note": "decision=watch must not carry execution spec per PIPELINE"
+        }
+      ],
+      "li_id": "li-20260908-009",
+      "decision": "watch",
+      "constraints_ok": true,
+      "paid_or_signup": false,
+      "docker_required": false,
+      "baseline_ref": "Research/baselines/agent-connectors.md",
+      "area": "agent-connectors"
+    },
+    {
+      "id": "rq-20260908-010",
+      "url": "https://github.com/0xSero/local-ai-registry",
+      "note": "li-20260908-011 — local-ai-registry — hardware/models/recipes catalog",
+      "title": "local-ai-registry",
+      "category": "local-ml",
+      "status": "researched",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T20:18:40.525Z",
+          "event": "ingested",
+          "by": "dropfile"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-011"
+        },
+        {
+          "ts": "2026-09-08T16:45:00Z",
+          "event": "researched",
+          "by": "manual",
+          "note": "research already in Research/INDEX.md"
+        }
+      ],
+      "li_id": "li-20260908-011",
+      "decision": null,
+      "constraints_ok": null,
+      "paid_or_signup": null,
+      "docker_required": null,
+      "baseline_ref": null,
+      "area": null
+    },
+    {
+      "id": "rq-20260908-011",
+      "url": "https://github.com/deeplethe/utopia",
+      "note": "li-20260908-014 — Utopia — open-source enterprise world model",
+      "title": "utopia",
+      "category": "agent-tooling",
+      "status": "researched",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T20:18:40.525Z",
+          "event": "ingested",
+          "by": "dropfile"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-014"
+        },
+        {
+          "ts": "2026-09-08T16:45:00Z",
+          "event": "researched",
+          "by": "manual",
+          "note": "research already in Research/INDEX.md"
+        }
+      ],
+      "li_id": "li-20260908-014",
+      "decision": null,
+      "constraints_ok": null,
+      "paid_or_signup": null,
+      "docker_required": null,
+      "baseline_ref": null,
+      "area": null
+    },
+    {
+      "id": "rq-20260908-012",
+      "url": "https://github.com/vercel-labs/agent-browser",
+      "note": "li-20260908-015 — agent-browser — Vercel Labs browser CLI for agents",
+      "title": "agent-browser",
+      "category": "agent-tooling",
+      "status": "spec_ready",
+      "spec": "Research/specs/agent-browser-eval.md",
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T20:18:40.525Z",
+          "event": "ingested",
+          "by": "dropfile"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-015"
+        },
+        {
+          "ts": "2026-09-08T16:45:00Z",
+          "event": "researched",
+          "by": "manual",
+          "note": "research already in Research/INDEX.md"
+        },
+        {
+          "ts": "2026-09-08T21:27:24.824Z",
+          "event": "baseline_set",
+          "by": "desktop-multi-harness-advance"
+        },
+        {
+          "ts": "2026-09-08T21:27:24.824Z",
+          "event": "decision_set",
+          "by": "desktop-multi-harness-advance",
+          "decision": "thin_adapter"
+        },
+        {
+          "ts": "2026-09-08T21:27:24.824Z",
+          "event": "dual_drafts",
+          "by": "desktop-multi-harness-advance"
+        },
+        {
+          "ts": "2026-09-08T21:27:24.824Z",
+          "event": "spec_ready",
+          "by": "desktop-multi-harness-advance",
+          "spec": "Research/specs/agent-browser-eval.md"
+        }
+      ],
+      "li_id": "li-20260908-015",
+      "decision": "thin_adapter",
+      "constraints_ok": true,
+      "paid_or_signup": false,
+      "docker_required": false,
+      "baseline_ref": "Research/baselines/browser-automation.md",
+      "area": "browser-automation"
+    },
+    {
+      "id": "rq-20260908-013",
+      "url": "https://github.com/iii-hq/iii",
+      "note": "li-20260908-017 — iii — compose, extend, observe services in real-time",
+      "title": "iii",
+      "category": "agent-tooling",
+      "status": "researched",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T20:18:40.525Z",
+          "event": "ingested",
+          "by": "dropfile"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-017"
+        },
+        {
+          "ts": "2026-09-08T16:45:00Z",
+          "event": "researched",
+          "by": "manual",
+          "note": "research already in Research/INDEX.md"
+        }
+      ],
+      "li_id": "li-20260908-017",
+      "decision": null,
+      "constraints_ok": null,
+      "paid_or_signup": null,
+      "docker_required": null,
+      "baseline_ref": null,
+      "area": null
+    },
+    {
+      "id": "rq-20260908-014",
+      "url": "https://github.com/xhluca/open-agent-view",
+      "note": "li-20260908-019 — open-agent-view — open Agent View for any harness",
+      "title": "open-agent-view",
+      "category": "agent-tooling",
+      "status": "researched",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T20:18:40.525Z",
+          "event": "ingested",
+          "by": "dropfile"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-019"
+        },
+        {
+          "ts": "2026-09-08T16:45:00Z",
+          "event": "researched",
+          "by": "manual",
+          "note": "research already in Research/INDEX.md"
+        }
+      ],
+      "li_id": "li-20260908-019",
+      "decision": null,
+      "constraints_ok": null,
+      "paid_or_signup": null,
+      "docker_required": null,
+      "baseline_ref": null,
+      "area": null
+    },
+    {
+      "id": "rq-20260908-015",
+      "url": "https://github.com/fayazara/cloudflare-computer-example",
+      "note": "li-20260908-024 — cloudflare-computer-example — agent computer demo",
+      "title": "cloudflare-computer-example",
+      "category": "agent-tooling",
+      "status": "researched",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T20:18:40.525Z",
+          "event": "ingested",
+          "by": "dropfile"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-024"
+        },
+        {
+          "ts": "2026-09-08T16:45:00Z",
+          "event": "researched",
+          "by": "manual",
+          "note": "research already in Research/INDEX.md"
+        }
+      ],
+      "li_id": "li-20260908-024",
+      "decision": null,
+      "constraints_ok": null,
+      "paid_or_signup": null,
+      "docker_required": null,
+      "baseline_ref": null,
+      "area": null
+    },
+    {
+      "id": "rq-20260908-016",
+      "url": "https://blog.cloudflare.com",
+      "note": "li-20260908-025 — Cloudflare Computer — agent needs a computer, not a container",
+      "title": "Cloudflare blog — agent needs a computer",
+      "category": "agent-tooling",
+      "status": "researched",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T20:18:40.525Z",
+          "event": "ingested",
+          "by": "dropfile"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-025"
+        },
+        {
+          "ts": "2026-09-08T16:45:00Z",
+          "event": "researched",
+          "by": "manual",
+          "note": "research already in Research/INDEX.md"
+        }
+      ],
+      "li_id": "li-20260908-025",
+      "decision": null,
+      "constraints_ok": null,
+      "paid_or_signup": null,
+      "docker_required": null,
+      "baseline_ref": null,
+      "area": null
+    },
+    {
+      "id": "rq-20260908-017",
+      "url": "https://github.com/garrytan/gstack",
+      "note": "li-20260908-026 — gstack — Garry Tan Claude Code multi-role toolkit",
+      "title": "gstack",
+      "category": "agent-tooling",
+      "status": "researched",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T20:18:40.525Z",
+          "event": "ingested",
+          "by": "dropfile"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-026"
+        },
+        {
+          "ts": "2026-09-08T16:45:00Z",
+          "event": "researched",
+          "by": "manual",
+          "note": "research already in Research/INDEX.md"
+        }
+      ],
+      "li_id": "li-20260908-026",
+      "decision": null,
+      "constraints_ok": null,
+      "paid_or_signup": null,
+      "docker_required": null,
+      "baseline_ref": null,
+      "area": null
+    },
+    {
+      "id": "rq-20260908-018",
+      "url": "https://github.com/techjanitor/botmaker",
+      "note": "li-20260908-027 — botmaker — techjanitor bot construction",
+      "title": "botmaker",
+      "category": "agent-tooling",
+      "status": "researched",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T20:18:40.525Z",
+          "event": "ingested",
+          "by": "dropfile"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-027"
+        },
+        {
+          "ts": "2026-09-08T16:45:00Z",
+          "event": "researched",
+          "by": "manual",
+          "note": "research already in Research/INDEX.md"
+        }
+      ],
+      "li_id": "li-20260908-027",
+      "decision": null,
+      "constraints_ok": null,
+      "paid_or_signup": null,
+      "docker_required": null,
+      "baseline_ref": null,
+      "area": null
+    },
+    {
+      "id": "rq-20260908-019",
+      "url": "https://github.com/sentrux/sentrux",
+      "note": "li-20260908-030 — sentrux — real-time architectural sensor for agents",
+      "title": "sentrux",
+      "category": "agent-tooling",
+      "status": "researched",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T20:18:40.525Z",
+          "event": "ingested",
+          "by": "dropfile"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-030"
+        },
+        {
+          "ts": "2026-09-08T16:45:00Z",
+          "event": "researched",
+          "by": "manual",
+          "note": "research already in Research/INDEX.md"
+        }
+      ],
+      "li_id": "li-20260908-030",
+      "decision": null,
+      "constraints_ok": null,
+      "paid_or_signup": null,
+      "docker_required": null,
+      "baseline_ref": null,
+      "area": null
+    },
+    {
+      "id": "rq-20260908-020",
+      "url": "https://github.com/AgriciDaniel/claude-ads",
+      "note": "li-20260908-031 — claude-ads — Claude-first paid-media ops skill",
+      "title": "claude-ads",
+      "category": "marketing",
+      "status": "researched",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T20:18:40.525Z",
+          "event": "ingested",
+          "by": "dropfile"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-031"
+        },
+        {
+          "ts": "2026-09-08T16:45:00Z",
+          "event": "researched",
+          "by": "manual",
+          "note": "research already in Research/INDEX.md"
+        }
+      ],
+      "li_id": "li-20260908-031",
+      "decision": null,
+      "constraints_ok": null,
+      "paid_or_signup": null,
+      "docker_required": null,
+      "baseline_ref": null,
+      "area": null
+    },
+    {
+      "id": "rq-20260908-021",
+      "url": "https://github.com/nowork-studio/notfair-plugin",
+      "note": "li-20260908-032 — notfair-plugin — SEO, GEO, marketing skills for agents",
+      "title": "notfair-plugin",
+      "category": "marketing",
+      "status": "researched",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T20:18:40.525Z",
+          "event": "ingested",
+          "by": "dropfile"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-032"
+        },
+        {
+          "ts": "2026-09-08T16:45:00Z",
+          "event": "researched",
+          "by": "manual",
+          "note": "research already in Research/INDEX.md"
+        }
+      ],
+      "li_id": "li-20260908-032",
+      "decision": null,
+      "constraints_ok": null,
+      "paid_or_signup": null,
+      "docker_required": null,
+      "baseline_ref": null,
+      "area": null
+    },
+    {
+      "id": "rq-20260908-022",
+      "url": "https://github.com/mksglu/context-mode",
+      "note": "li-20260908-033 — context-mode — context window optimization for coding agents",
+      "title": "context-mode",
+      "category": "agent-tooling",
+      "status": "researched",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T20:18:40.525Z",
+          "event": "ingested",
+          "by": "dropfile"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-033"
+        },
+        {
+          "ts": "2026-09-08T16:45:00Z",
+          "event": "researched",
+          "by": "manual",
+          "note": "research already in Research/INDEX.md"
+        }
+      ],
+      "li_id": "li-20260908-033",
+      "decision": null,
+      "constraints_ok": null,
+      "paid_or_signup": null,
+      "docker_required": null,
+      "baseline_ref": null,
+      "area": null
+    },
+    {
+      "id": "rq-20260908-023",
+      "url": "https://github.com/browser-act/skills",
+      "note": "li-20260908-035 — browser-act skills — agent browser automation CLI",
+      "title": "browser-act skills",
+      "category": "agent-tooling",
+      "status": "researched",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T20:18:40.525Z",
+          "event": "ingested",
+          "by": "dropfile"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-035"
+        },
+        {
+          "ts": "2026-09-08T16:45:00Z",
+          "event": "researched",
+          "by": "manual",
+          "note": "research already in Research/INDEX.md"
+        }
+      ],
+      "li_id": "li-20260908-035",
+      "decision": null,
+      "constraints_ok": null,
+      "paid_or_signup": null,
+      "docker_required": null,
+      "baseline_ref": null,
+      "area": null
+    },
+    {
+      "id": "rq-20260908-024",
+      "url": "https://github.com/humanlayer/skills",
+      "note": "li-20260908-043 — humanlayer show-me skill",
+      "title": "humanlayer show-me skill",
+      "category": "agent-tooling",
+      "status": "researched",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T20:18:40.525Z",
+          "event": "ingested",
+          "by": "dropfile"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-043"
+        },
+        {
+          "ts": "2026-09-08T16:45:00Z",
+          "event": "researched",
+          "by": "manual",
+          "note": "research already in Research/INDEX.md"
+        }
+      ],
+      "li_id": "li-20260908-043",
+      "decision": null,
+      "constraints_ok": null,
+      "paid_or_signup": null,
+      "docker_required": null,
+      "baseline_ref": null,
+      "area": null
+    },
+    {
+      "id": "rq-20260908-025",
+      "url": "https://github.com/headroomlabs-ai/headroom",
+      "note": "li-20260908-045 — headroom — headroomlabs-ai",
+      "title": "headroom",
+      "category": "agent-tooling",
+      "status": "researched",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T20:18:40.525Z",
+          "event": "ingested",
+          "by": "dropfile"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-045"
+        },
+        {
+          "ts": "2026-09-08T16:45:00Z",
+          "event": "researched",
+          "by": "manual",
+          "note": "research already in Research/INDEX.md"
+        }
+      ],
+      "li_id": "li-20260908-045",
+      "decision": null,
+      "constraints_ok": null,
+      "paid_or_signup": null,
+      "docker_required": null,
+      "baseline_ref": null,
+      "area": null
+    },
+    {
+      "id": "rq-20260908-026",
+      "url": "https://github.com/sololabstr/uisight",
+      "note": "li-20260908-046 — uisight — UI insight tooling",
+      "title": "uisight",
+      "category": "agent-tooling",
+      "status": "researched",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T20:18:40.525Z",
+          "event": "ingested",
+          "by": "dropfile"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-046"
+        },
+        {
+          "ts": "2026-09-08T16:45:00Z",
+          "event": "researched",
+          "by": "manual",
+          "note": "research already in Research/INDEX.md"
+        }
+      ],
+      "li_id": "li-20260908-046",
+      "decision": null,
+      "constraints_ok": null,
+      "paid_or_signup": null,
+      "docker_required": null,
+      "baseline_ref": null,
+      "area": null
+    },
+    {
+      "id": "rq-20260908-027",
+      "url": "https://github.com/microsoft/tgrep",
+      "note": "li-20260908-047 — tgrep — microsoft",
+      "title": "tgrep",
+      "category": "devops",
+      "status": "researched",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-08T20:18:40.525Z",
+          "event": "ingested",
+          "by": "dropfile"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-047"
+        },
+        {
+          "ts": "2026-09-08T16:45:00Z",
+          "event": "researched",
+          "by": "manual",
+          "note": "research already in Research/INDEX.md"
+        }
+      ],
+      "li_id": "li-20260908-047",
+      "decision": null,
+      "constraints_ok": null,
+      "paid_or_signup": null,
+      "docker_required": null,
+      "baseline_ref": null,
+      "area": null
+    },
+    {
+      "id": "rq-20260908-028",
+      "url": "https://github.com/herdrdev/herdr/releases/tag/v0.9.0",
+      "note": "li-20260908-051 — Herdr v0.9.0 release",
+      "title": "herdr v0.9.0",
+      "category": "marketing",
+      "status": "landed",
+      "spec": "Research/specs/allternit-runtime-fork.md",
+      "repo": null,
+      "worktree": "/Users/joe/Desktop/allternit-workspace/allternit-ao-allternit-runtime-fork",
+      "branch": "ao/allternit-runtime-fork",
+      "history": [
+        {
+          "ts": "2026-09-08T20:18:40.525Z",
+          "event": "ingested",
+          "by": "dropfile"
+        },
+        {
+          "ts": "2026-09-08T20:19:02Z",
+          "event": "li_id_set",
+          "by": "desktop-pipeline-fix",
+          "li_id": "li-20260908-051"
+        },
+        {
+          "ts": "2026-09-08T16:45:00Z",
+          "event": "researched",
+          "by": "manual",
+          "note": "research already in Research/INDEX.md"
+        },
+        {
+          "ts": "2026-09-09T00:19:38.634336Z",
+          "event": "decision_set",
+          "by": "kimi-interactive",
+          "decision": "thin_adapter",
+          "note": "Apache-2.0 local Rust binary, no signup/Docker; ao stays orchestration brain, herdr 0.9.0 as optional pane/session transport (multi-machine SSH + state detection)"
+        },
+        {
+          "ts": "2026-09-09T00:20:56.279995Z",
+          "event": "spec_ready",
+          "by": "kimi-interactive",
+          "spec": "Research/specs/herdr-v090-adapter.md",
+          "note": "single kimi draft (dual review skipped in interactive run); human gate next"
+        },
+        {
+          "ts": "2026-09-09T00:33:32.722992Z",
+          "event": "decision_changed",
+          "by": "human-direction",
+          "decision": "fork_reskin",
+          "note": "human pivot: absorb+rebrand herdr into allternit-workspace as one Rust binary (ao + fabric transport + machine mgmt + harness sync + visibility); thin_adapter spec archived"
+        },
+        {
+          "ts": "2026-09-09T00:33:32.722992Z",
+          "event": "spec_ready",
+          "by": "kimi-interactive",
+          "spec": "Research/specs/allternit-runtime-fork.md",
+          "note": "product plan + Phase 1 handoff; phases 2-6 each get own named spec at gate; human gate next"
+        },
+        {
+          "ts": "2026-09-09T00:44:57.018221Z",
+          "event": "plan_deepened",
+          "by": "kimi-interactive",
+          "note": "human: keep ao name (no rebrand). Deep plan written Products/AgentOrchestratorRuntime.md: engine crate (internal name herdr) + one ao binary, contract parity mapped from ao scripts + herdr module map + fabric protocol + harness schema; phases P0-P5 each with own gate"
+        },
+        {
+          "ts": "2026-09-09T00:53:30.587407Z",
+          "event": "scope_update",
+          "by": "kimi-interactive",
+          "note": "native sessions (gizzi-code v2.0.7, shipped 2026-09-06) added to plan as session substrate component; docs gaps + production verification (gizzi-code CLI + Allternit Desktop) delegated to coder agent; feeds P3 fabric pickup and P5 visibility"
+        },
+        {
+          "ts": "2026-09-09T00:54:36.222514Z",
+          "event": "approved",
+          "by": "human",
+          "note": "explicit approval \"Approve allternit-runtime-fork\"; crate home decided: infrastructure/executor/ao-engine/; P0 execute via agent-orchestrator"
+        },
+        {
+          "ts": "2026-09-09T01:01:50.148159Z",
+          "event": "executing",
+          "by": "kimi-interactive",
+          "note": "claude executor blocked on expired login (human chose switch); respawned same worktree with kimi --yolo; task sent; ao-watch armed on P0 NOTES sentinel"
+        },
+        {
+          "ts": "2026-09-09T12:35:00Z",
+          "event": "landed",
+          "by": "orchestrator",
+          "detail": "P0 PR #198 merged (0e923fe3): herdr v0.9.0 vendored as infrastructure/executor/ao-engine, herdr.dev gutted, ao binary builds, review verified gut+notices+wiring only"
+        },
+        {
+          "ts": "2026-09-09T15:55:00Z",
+          "event": "landed",
+          "by": "orchestrator",
+          "detail": "P1 PR #205 merged (aa8a6a6993): ao-core six subcommands with golden side-by-side parity (59/62 stable on orchestrator reruns; 3 failures = one documented instant-exit timing race, follow-up pending). P0+P1 both landed on this queue item."
+        },
+        {
+          "ts": "2026-09-09T17:15:00Z",
+          "event": "landed",
+          "by": "orchestrator",
+          "detail": "P2 PR #215 merged (6c65b4ee0): ao TUI rebrand + machine connect + Allternit DEFAULT_CONFIG + real Mac/Linux pilot (vps: add, combined list, 22s reconnect, machine connect proof). P0+P1+P2 landed."
+        },
+        {
+          "ts": "2026-09-10T07:25:00Z",
+          "event": "landed",
+          "by": "ao-v3-p3-land-ritual",
+          "note": "PR #229 merged (503d99223e) — ao fabric pair|serve|status; live proof seed@ runtime rt_af9d675b04b2 picked up in PWA. Gate PARTIAL: 3 platform follow-ups filed (PWA /api base, proxy 401, agent-sessions sync caller)."
+        },
+        {
+          "ts": "2026-09-10T14:05:00Z",
+          "event": "p4_landed",
+          "by": "ao-v3-p4-land-ritual",
+          "note": "P4 harness sync port merged: PR #250 (847331b12f). ao harness status|sync|uninstall|describe, byte-parity 21/21 across all 16 manifest tools (orchestrator re-verified incl. live HOME smokes). harness-sync.js retired (docs/status only, files kept)."
+        },
+        {
+          "ts": "2026-09-10T15:15:00Z",
+          "event": "p3_enum_followup",
+          "by": "ao-orchestrator-main",
+          "note": "PR #220 merged — cloud-api accepts runtimeType \"ao\" in pairing enum (checks green; CF Pages failure pre-existing on main, Vercel rate-limit noise). Production cloud-api redeploy still pending (deploy gate = human go-ahead); until then pair with --runtime-type desktop."
+        },
+        {
+          "ts": "2026-09-10T15:45:00Z",
+          "event": "p3_e2e_clerk_test",
+          "by": "ao-orchestrator-main",
+          "note": "Full PWA e2e under dedicated test account: Clerk user clerk-test@news.allternit.com CREATED (iRedMail mailbox + hosted sign-up, org 'Clerk Test'); ao fabric pair approved in platform UI (rt_0955ea413f57475, runtime-type desktop until enum redeploy); serve+relay live; PWA renders node online 1/1 with capabilities. BLOCKER at last hop: POST /api/v1/runtime-devices/:id/proxy -> 405 (platform) — production cloud-api predates the P3 proxy route; needs deploy-contabo.sh redeploy (human gate). Evidence in ~/.agent-orchestrator/evidence/ao-fabric-verify/."
+        },
+        {
+          "ts": "2026-09-10T17:05:00Z",
+          "event": "p5_landed",
+          "by": "ao-v3-p5-land-ritual",
+          "note": "P5 visibility+peers merged: PR #256 (c197fba5ad5). Who-needs-you panel (prefix+shift+v): engine agents + native-session catalog port (27-harness table, 16 walkers, fingerprint parity) + Rails peers, waiting-on-you list, join-key correlation, ao visibility|peer list|send. Hard gate PASSED: two panes one server, blocked surfaced + cleared on approve; bare kimi external row no dup. Orchestrator review caught+fixed real regression: visibility default prefix+v collided with split_vertical (12 reload_config failures) -> prefix+shift+v. detect::manifest full-suite flake pre-existing (SIGPIPE env). Evidence ~/.agent-orchestrator/evidence/ao-visibility-peers/."
+        },
+        {
+          "ts": "2026-09-10T17:21:43Z",
+          "event": "p3_lasthop_landed",
+          "by": "kimi-interactive",
+          "note": "P3 fabric last hop closed: relay forwarded tunneled requests to default 8014 (Desktop open-connector sidecar) instead of the serve shim port; fix PR #258 merged a4bfbc527; live-verified 200 on /proxy relay end-to-end (evidence ~/.agent-orchestrator/evidence/ao-fabric-verify/proxy-fixed.json)"
+        },
+        {
+          "ts": "2026-09-10T20:03:42Z",
+          "event": "p7_landed",
+          "by": "kimi-interactive",
+          "note": "PR #260 merged 40e18cc5e — ao harness install: version-pinned license-gated installs (16-tool manifest license tags, --accept-terms gate with pin re-flag, managed dir ~/.ao/harness, doctor harness section exit 3); orchestrator re-verified on committed state (harness 50/50, ao:: 93/93, ao_parity 62/0, live claude gate refusal); evidence ~/.agent-orchestrator/evidence/ao-harness-install/"
+        }
+      ],
+      "li_id": "li-20260908-051",
+      "decision": "fork_reskin",
+      "constraints_ok": true,
+      "paid_or_signup": false,
+      "docker_required": false,
+      "baseline_ref": "Research/baselines/agent-orchestration.md",
+      "area": "agent-orchestration"
+    },
+    {
+      "id": "rq-20260909-001",
+      "url": "https://github.com/ai-sdlc-framework/ai-sdlc",
+      "note": "— AI-SDLC: spec-driven decision engine + autonomous orchestrator (DoR gate, worktree dispatch, cross-harness review w/ DSSE attestation, operator TUI). Apache-2.0, no Docker/signup for core path. Verdict at research time: watch + adopt ideas (reviewer-harness independence, decision-steward gate report, checkpoint/quarantine) rather than adopt/fork — repo-task-shaped, v1alpha1, heavy monorepo; our link→business pipeline keeps its own engine. Possible pilot: repo-native engineering tasks inside allternit-platform.",
+      "title": null,
+      "category": null,
+      "status": "inbox",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "li_id": null,
+      "decision": null,
+      "constraints_ok": null,
+      "paid_or_signup": null,
+      "docker_required": null,
+      "baseline_ref": null,
+      "area": null,
+      "history": [
+        {
+          "ts": "2026-09-09T02:11:12.699Z",
+          "event": "ingested",
+          "by": "dropfile"
+        }
+      ]
+    },
+    {
+      "id": "rq-20260909-002",
+      "url": "https://github.com/google/artemis",
+      "note": "li-20260908-052 — google/artemis Android NL automation MCP",
+      "title": "google/artemis — Android NL automation (MCP)",
+      "category": "agent-tooling",
+      "status": "inbox",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "li_id": "li-20260908-052",
+      "decision": null,
+      "constraints_ok": null,
+      "paid_or_signup": null,
+      "docker_required": null,
+      "baseline_ref": null,
+      "area": null,
+      "history": [
+        {
+          "ts": "2026-09-09T02:11:12.699Z",
+          "event": "ingested",
+          "by": "dropfile",
+          "li_id": "li-20260908-052"
+        }
+      ]
+    },
+    {
+      "id": "rq-20260909-003",
+      "url": "https://x.com/nickvasiles/status/2097392151953117355",
+      "note": "Human-authored spec (Eoj, 2026-09-09) — atomic Create Bot: Identity + Instructions + persistent Computer Cloud + Tools; closes the join Nick's Codex+Orgo demo exposed",
+      "title": "bot-identity-computer",
+      "category": "agent-tooling",
+      "status": "landed",
+      "spec": "Research/specs/bot-identity-computer.md",
+      "repo": "Gizziio/allternit-platform",
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-09T00:00:00Z",
+          "event": "ingested",
+          "by": "manual"
+        },
+        {
+          "ts": "2026-09-09T00:00:00Z",
+          "event": "researched",
+          "by": "manual",
+          "note": "research in Products/ComputerUsePackaging.md Gap 5 + Nick Vasile Codex/Orgo demo links"
+        },
+        {
+          "ts": "2026-09-09T00:00:00Z",
+          "event": "spec_ready",
+          "by": "manual",
+          "note": "spec authored directly at Research/specs/bot-identity-computer.md; queue item registered retroactively for gate tracking"
+        },
+        {
+          "ts": "2026-09-09T05:49:48.403Z",
+          "event": "approved",
+          "by": "kimi-code session (Eoj)",
+          "note": "Human gate approved (Eoj, 2026-09-09). Phase 1: atomic Create Bot (Identity + Instructions + persistent Computer Cloud + Tools), reusing vmOperator / provisionBotDesktop / /api/v1/computers. No Orgo. Constraints: no Orgo MCP, no Docker-required path, no paid deps, no pricing/billing, no fleet provisioning (Phase 2), brain updates drafts only, no confirm:true deploys. Outcome: PR + ledger attestation per AGENTS.md ritual."
+        },
+        {
+          "ts": "2026-09-09T01:30:00Z",
+          "event": "landed",
+          "by": "kimi-code session (Eoj)",
+          "note": "PR #190 merged (merge SHA d61530a3d); ledger attestation bdb42a476 on main; worktree session/50d4cec6 cleaned"
+        },
+        {
+          "ts": "2026-09-09T07:05:00Z",
+          "event": "landed",
+          "by": "kimi-code session (Eoj)",
+          "note": "Phase 2 follow-up PR #195 merged (merge SHA 95c1eafcf, commit 54731db8a); ledger attestation 9d82aa173 on main; worktree session/5c233b1c cleaned. Items: removed replaced bot-creation wizard + forge theater (CreateBotForm canonical), size presets (small/medium/large), fleet 'Provision computers' action, 'creating'-status crash fix + provisioning panel in watch/takeover."
+        }
+      ],
+      "li_id": null,
+      "decision": "thin_adapter",
+      "constraints_ok": true,
+      "paid_or_signup": false,
+      "docker_required": false,
+      "baseline_ref": "Research/baselines/agent-orchestration.md",
+      "area": "agent-orchestration"
+    },
+    {
+      "id": "rq-20260909-004",
+      "url": "https://github.com/HarnessRouter/harnessrouter",
+      "note": "Self-hosted multi-harness runner: one Docker container running Claude Code, Codex, Gemini CLI, etc. behind an OpenAI Responses-compatible API (Unified Harness Protocol) with a web console. Joe: \"must implement in Allternit — a layer above harnesses\" — candidate to sit above agent-orchestrator / brain selection / cross-harness session pickup.",
+      "title": "HarnessRouter CE / UHP harness router",
+      "category": "allternit",
+      "status": "researched",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "li_id": null,
+      "decision": "reverse_engineer",
+      "constraints_ok": true,
+      "paid_or_signup": false,
+      "docker_required": false,
+      "baseline_ref": "Research/baselines/agent-orchestration.md",
+      "area": "agent-orchestration",
+      "history": [
+        {
+          "ts": "2026-09-09T06:23:38.639Z",
+          "event": "ingested",
+          "by": "mcp",
+          "source": "kimi interactive session 2026-09-09"
+        },
+        {
+          "ts": "2026-09-09T06:45:00.000Z",
+          "event": "decided",
+          "by": "kimi-interactive",
+          "note": "reverse_engineer: adopt UHP (unifiedharnessprotocol.org, open versioned HTTP contract w/ OpenAPI 3.1 + conformance suite) as the canonical harness-router contract; implement natively in AllternitOS Layer-3 harness router + ao execution substrate. Upstream as-is is Docker-only (hard veto) so thin_adapter/fork of the container is out; fork_reskin conflicts with ao Rust direction (rq-20260908-028, decided 2026-09-08). Fills baseline gap: agent-native API surface (Responses-compatible turns, streaming, cancel, idempotency, session checkpoints). NOT ported: provider/key management — Allternit gateway + A:// tier policy already own routing. Complements ao (orchestration brain + interactive steering stays), Fabric (session pickup stays), Brain (knowledge plane stays)."
+        },
+        {
+          "ts": "2026-09-09T07:10:00.000Z",
+          "event": "redirected",
+          "by": "human-via-kimi-interactive",
+          "note": "reverse_engineer -> fork_reskin (human redirect 2026-09-09): fork HarnessRouter CE and strip the Docker packaging. Docker is only the appliance layer (bundling + per-session-user isolation); gateway+runner are plain Python loopback servers, UI is Next.js. New scope folded INLINE into the ao v3 plan as P6 (UHP execution layer, Docker-free fork supervised by the ao binary) + P7 (harness auto-install/onboarding from HR first-run installer). Not in the Rust binary (Python cannot embed); ao supervises gateway+runner as loopback child processes. Provider/key routing stays in the Allternit gateway — HR connection-policy machinery not ported. See Products/AgentOrchestratorRuntime.md §2.6, P6, P7."
+        },
+        {
+          "ts": "2026-09-09T08:05:00.000Z",
+          "event": "redirected",
+          "by": "human-via-kimi-interactive",
+          "note": "fork_reskin -> Rust native implementation (human, 2026-09-09): \"since it is python we must implement it in our rust language; the things that dont port over [drop]\". HR CE is demoted from fork base to REFERENCE IMPLEMENTATION: UHP spec + OpenAPI schemas + conformance suite + per-backend pytest suite are the parity oracle run against our Rust server. Vendored for reference/tests only, no shipped Python. P6 re-scoped: Rust UHP gateway+runner inside the ao binary (new workspace crate; home at P6 gate). Ports: Responses surface, sessions/turns/streaming/cancel/idempotency, SQLite backing, backend-driver LOGIC (subprocess CLIs), installer scripts. Drops: Next.js console, per-session-user sandbox, push-to-cloud/marketplace, Python/Node relay internals where a backend needs a re-implemented relay (Hermes license-undeclared -> gated anyway). Phasing: P6a core + the backends ao already drives headless; P6b remaining drivers against HR pytest behavior."
+        },
+        {
+          "ts": "2026-09-09T08:35:00.000Z",
+          "event": "scope-refined",
+          "by": "human-via-kimi-interactive",
+          "note": "UI + assets + credential-model refinements (human 2026-09-09): (1) HR console UX patterns PORT as design reference — system-harness catalog cards + per-harness live telemetry (turn stream, commands, files, tokens, cost) feed ao TUI face (P2) + visibility panel (P5); console code itself still dropped. (2) ui/public/logos/* (11 brain marks) harvested to \"Allternit Assets/Brand/Third-Party/harness-brains/\" with provenance README — these are the brains actual icons for choose-a-brain surfaces. (3) Credential model corrected: NOT \"no second key store\" — two legitimate homes per human: native authed CLI runtimes (user logins/subs) + Allternit cloud credentials on the platform plan (platform.allternit.com) via the Allternit gateway; UHP layer owns no keys, only HR per-backend broker machinery dropped."
+        },
+        {
+          "ts": "2026-09-09T07:45:00Z",
+          "event": "decisions",
+          "by": "Eoj via kimi-code",
+          "note": "Gate decisions applied to spec: (1) external dev API keys out of scope — ship with Allternit Cloud subscription product, internal-Orgo stays first-party; (2) local kind (Tart on Joe's Mac) committed to Phase 1; (3) workspaces = org + group label in Phase 2; (4) model-driving stays on ACU canonical gateway. Spec section 'Gate decisions' is binding for the executing agent."
+        }
+      ]
+    },
+    {
+      "id": "rq-20260909-004",
+      "url": "https://docs.orgo.ai/introduction",
+      "note": "Human-directed strategy (Eoj, 2026-09-09): absorb Orgo — reimplement its full cloud-computer capability matrix as our internal Cloud Computer on Incus/Tart; spec authored directly",
+      "title": "cloud-computer-orgo-parity",
+      "category": "agent-tooling",
+      "status": "landed",
+      "spec": "Research/specs/cloud-computer-orgo-parity.md",
+      "repo": "Gizziio/allternit-platform",
+      "worktree": null,
+      "branch": null,
+      "history": [
+        {
+          "ts": "2026-09-09T07:20:00Z",
+          "event": "ingested",
+          "by": "kimi-code session (Eoj)"
+        },
+        {
+          "ts": "2026-09-09T07:20:00Z",
+          "event": "researched",
+          "by": "kimi-code session (Eoj)",
+          "note": "Orgo docs (introduction/api-reference/migrate) + codebase capability audit: 30-row matrix, gaps = arbitrary-owner create, create-time specs, resize, clone, PTY/events/proxy, templates-as-code, MCP/CLI, warm pool"
+        },
+        {
+          "ts": "2026-09-09T07:20:00Z",
+          "event": "spec_ready",
+          "by": "kimi-code session (Eoj)",
+          "note": "spec authored directly at Research/specs/cloud-computer-orgo-parity.md; 5 phases, human gate each; awaiting approval"
+        },
+        {
+          "ts": "2026-09-09T08:35:00.000Z",
+          "event": "scope-refined",
+          "by": "human-via-kimi-interactive",
+          "note": "UI + assets + credential-model refinements (human 2026-09-09): (1) HR console UX patterns PORT as design reference — system-harness catalog cards + per-harness live telemetry (turn stream, commands, files, tokens, cost) feed ao TUI face (P2) + visibility panel (P5); console code itself still dropped. (2) ui/public/logos/* (11 brain marks) harvested to \"Allternit Assets/Brand/Third-Party/harness-brains/\" with provenance README — these are the brains actual icons for choose-a-brain surfaces. (3) Credential model corrected: NOT \"no second key store\" — two legitimate homes per human: native authed CLI runtimes (user logins/subs) + Allternit cloud credentials on the platform plan (platform.allternit.com) via the Allternit gateway; UHP layer owns no keys, only HR per-backend broker machinery dropped."
+        },
+        {
+          "ts": "2026-09-09T07:24:22.192Z",
+          "event": "approved",
+          "by": "kimi-code session",
+          "note": "Human approved execute in-session 2026-09-09: \"work on this spec /goal continue this until completion\" — all five phases, per-phase review."
+        },
+        {
+          "ts": "2026-09-09T08:15:00.000Z",
+          "event": "executing",
+          "by": "kimi-code orchestrator (goal mode)",
+          "note": "Phase 1 executed via ao/codex, orchestrator review passed, PR #201 merged (13668e995). Executor fell back from claude (OAuth expired) to codex; steering gate bypassed by orchestrator merge per repo escape; ledger dc032c217. Phases 2-5 pending."
+        },
+        {
+          "ts": "2026-09-09T08:50:00.000Z",
+          "event": "phase-landed",
+          "by": "kimi-code orchestrator (goal mode)",
+          "note": "Phase 2 (lifecycle: resize/clone/auto-stop/workspaces-lite) PR #204 merged (75aa78756). 28+100 tests. Executor gate hook hung + codex weekly quota <5% -> orchestrator commit/merge per repo escape. Live Incus smoke owed. Phases 3-5 pending."
+        },
+        {
+          "ts": "2026-09-09T09:15:00.000Z",
+          "event": "phase-landed",
+          "by": "kimi-code orchestrator (goal mode)",
+          "note": "Phase 3 (real-time plane: PTY ws, guest events, authenticated in-VM proxy) PR #206 merged (772c5c158). 41+102 tests. Executor kimi (codex quota <5%); gate hook stalled -> orchestrator push/merge. Phases 4-5 pending."
+        },
+        {
+          "ts": "2026-09-09T11:05:00.000Z",
+          "event": "phase-landed",
+          "by": "kimi-code orchestrator (goal mode)",
+          "note": "Phase 4 (templates as code: allternit.ai/v1 YAML docs → approval-gated golden build → stateful golden snapshot on role='golden' holder → clone_from_snapshot provisioning; system/… refs; import/export; vault://org secret refs, values never persisted) PR #216 merged (ab8638254). Orchestrator deep review found+fixed critical golden_snapshot_id persistence and clone-from-stored-snapshot before merge. 14/15/96 Rust tests, vitest/tsc clean; 4 pre-existing agent_cloud_routes control-plane failures unrelated. Live Incus smoke owed. Executor: kimi (claude OAuth expired, codex quota dead to Sep 16); two session deaths (quota outage, off-task) → orchestrator finished per repo escape. Phase 5 pending."
+        },
+        {
+          "ts": "2026-09-09T12:55:00.000Z",
+          "event": "phase-landed",
+          "by": "kimi-code orchestrator (goal mode)",
+          "note": "Phase 5 (distribution: standalone computers MCP server w/ 22 route-derived tools + lifecycle tools on /mcp/server catalog; allternit computers CLI; TS+Python SDK parity; embeddable widget — computer status endpoint, token-scoped VNC ws w/ read_only enforcement, 15-min embed tokens, self-contained noVNC viewer, CSP) PR #222 merged (eece02ed6). Pre-merge review found embed VNC ws unreachable for anonymous viewers (401 behind auth middleware) + unmintable full-control vnc tokens — both fixed (public token-only VNC router; read_only=false behind approval grant). No approval bypass. 64/64 computer_* tests, CLI 13/13, SDK 28/28+19 py, MCP smoke PASS."
+        },
+        {
+          "ts": "2026-09-09T13:00:00.000Z",
+          "event": "landed",
+          "by": "kimi-code orchestrator (goal mode)",
+          "note": "ALL 5 PHASES LANDED: P1 PR #201 (any-owner create, full specs, local kind, client parity, restart), P2 PR #204 (resize/clone/auto-stop/workspaces-lite), P3 PR #206 (PTY ws, guest events, in-VM proxy), P4 PR #216 (templates as code → golden snapshots), P5 PR #222 (MCP/CLI/SDK/embed). Deliberate non-goals held: no GPU/Android, no Orgo runtime dep, no approval un-gating (verified in every review). Owed: live Incus smokes (build/provision, embed iframe, vnc-token ACI handoff). Brain updates folded as drafts only."
+        }
+      ],
+      "li_id": null,
+      "decision": "reverse_engineer",
+      "constraints_ok": true,
+      "paid_or_signup": false,
+      "docker_required": false,
+      "baseline_ref": "Research/baselines/agent-orchestration.md"
+    },
+    {
+      "id": "rq-20260910-001",
+      "url": "https://github.com/CopilotKit/OpenBot",
+      "note": "CopilotKit OpenBot — AI coworkers with per-bot computers, policy gateway, audit trail. Research vs Allternit bot setup (bot-identity-computer / Computer Cloud) for port candidates. RESEARCH 2026-09-10: MIT, Bun+Hono+React/Vite, Postgres+pgvector, AG-UI protocol. Vetoes fire on ADOPTING the runtime (Docker + CopilotKit Intelligence signup) so fork/vendor is out; decision is reverse_engineer of patterns into Computer Cloud + bot-identity-computer. Port shortlist: (1) declarative CEL-style fail-closed policy layer over our action-hash grants; (2) gateway ordering guarantee (audit row written BEFORE action executes, no act-without-record path); (3) take-the-wheel state machine (help_requested/control_taken/control_released + bot actions refused while human drives); (4) routines = scheduled bot runs w/ 15-min floor, cap 20, 10-failure auto-off; (5) governed MCP catalogue read/write classification (unknown tools treated as writes); (6) coworkers-as-config agents.yaml template package. Already-have: per-bot persistent computers, credential vault w/ transcript redaction, watch/takeover UX, audit ledger, approvals/receipts, skills.",
+      "title": "CopilotKit OpenBot — AI coworkers with per-bot computers, CEL policy gateway, audit trail",
+      "category": "agent-tooling",
+      "status": "researched",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "li_id": null,
+      "decision": "reverse_engineer",
+      "constraints_ok": true,
+      "paid_or_signup": true,
+      "docker_required": true,
+      "baseline_ref": "Research/baselines/bot-computers.md",
+      "area": "bot-computers",
+      "history": [
+        {
+          "ts": "2026-09-10T21:04:30.657Z",
+          "event": "ingested",
+          "by": "mcp",
+          "source": "kimi session 2026-09-10"
+        },
+        {
+          "ts": "2026-09-10T21:04:57.299Z",
+          "event": "researched",
+          "by": "kimi session 2026-09-10",
+          "decision": "reverse_engineer",
+          "constraints_ok": true
+        }
+      ]
     }
-   ],
-   "li_id": "li-20260908-028",
-   "decision": "reverse_engineer",
-   "constraints_ok": true,
-   "paid_or_signup": false,
-   "docker_required": false,
-   "baseline_ref": "Research/baselines/division-sites.md",
-   "area": "division-sites"
-  },
-  {
-   "id": "rq-20260908-002",
-   "url": "https://github.com/s0xDk/refactoring-ui-skill",
-   "note": "Vendor as a skill for site/UI work",
-   "title": "refactoring-ui-skill",
-   "category": "agent-tooling",
-   "status": "spec_ready",
-   "spec": "Research/specs/vendor-refactoring-ui-skill.md",
-   "repo": null,
-   "worktree": null,
-   "branch": null,
-   "history": [
-    {
-     "ts": "2026-09-08T00:00:00Z",
-     "event": "ingested",
-     "by": "manual"
-    },
-    {
-     "ts": "2026-09-08T00:00:00Z",
-     "event": "researched",
-     "by": "manual"
-    },
-    {
-     "ts": "2026-09-08T20:19:02Z",
-     "event": "li_id_set",
-     "by": "desktop-pipeline-fix",
-     "li_id": "li-20260908-021",
-     "via": "url"
-    },
-    {
-     "ts": "2026-09-08T20:19:02Z",
-     "event": "spec_cleared_missing_file",
-     "by": "desktop-pipeline-fix",
-     "old_spec": "Research/specs/vendor-refactoring-ui-skill.md",
-     "note": "status left researched; INDEX has knowledge note; no invented spec file"
-    },
-    {
-     "ts": "2026-09-08T21:25:21Z",
-     "event": "baseline_set",
-     "by": "desktop-multi-harness-advance",
-     "baseline_ref": "Research/baselines/ui-skills.md"
-    },
-    {
-     "ts": "2026-09-08T21:25:21Z",
-     "event": "decision_set",
-     "by": "desktop-multi-harness-advance",
-     "decision": "vendor_skill"
-    },
-    {
-     "ts": "2026-09-08T21:25:21Z",
-     "event": "dual_drafts",
-     "by": "desktop-multi-harness-advance",
-     "drafts": [
-      "vendor-refactoring-ui-skill--grok.md",
-      "vendor-refactoring-ui-skill--kimi.md",
-      "vendor-refactoring-ui-skill--CHERRY.md"
-     ]
-    },
-    {
-     "ts": "2026-09-08T21:25:21Z",
-     "event": "spec_ready",
-     "by": "desktop-multi-harness-advance",
-     "spec": "Research/specs/vendor-refactoring-ui-skill.md",
-     "note": "executor dual-pass (CLI smoke skipped/flaky); human gate next"
-    }
-   ],
-   "li_id": "li-20260908-021",
-   "decision": "vendor_skill",
-   "constraints_ok": true,
-   "paid_or_signup": false,
-   "docker_required": false,
-   "baseline_ref": "Research/baselines/ui-skills.md",
-   "area": "ui-skills"
-  },
-  {
-   "id": "rq-20260908-003",
-   "url": "https://github.com/kajisho5/ffmpeg-skill",
-   "note": "Vendor as a skill next to gpt-image-2-style-library",
-   "title": "ffmpeg-skill",
-   "category": "marketing",
-   "status": "spec_ready",
-   "spec": "Research/specs/vendor-ffmpeg-skill.md",
-   "repo": null,
-   "worktree": null,
-   "branch": null,
-   "history": [
-    {
-     "ts": "2026-09-08T00:00:00Z",
-     "event": "ingested",
-     "by": "manual"
-    },
-    {
-     "ts": "2026-09-08T00:00:00Z",
-     "event": "researched",
-     "by": "manual"
-    },
-    {
-     "ts": "2026-09-08T20:19:02Z",
-     "event": "li_id_set",
-     "by": "desktop-pipeline-fix",
-     "li_id": "li-20260908-049",
-     "via": "url"
-    },
-    {
-     "ts": "2026-09-08T20:19:02Z",
-     "event": "spec_cleared_missing_file",
-     "by": "desktop-pipeline-fix",
-     "old_spec": "Research/specs/vendor-ffmpeg-skill.md",
-     "note": "status left researched; INDEX has knowledge note; no invented spec file"
-    },
-    {
-     "ts": "2026-09-08T21:25:21Z",
-     "event": "baseline_set",
-     "by": "desktop-multi-harness-advance",
-     "baseline_ref": "Research/baselines/media-skills.md"
-    },
-    {
-     "ts": "2026-09-08T21:25:21Z",
-     "event": "decision_set",
-     "by": "desktop-multi-harness-advance",
-     "decision": "vendor_skill"
-    },
-    {
-     "ts": "2026-09-08T21:25:21Z",
-     "event": "dual_drafts",
-     "by": "desktop-multi-harness-advance",
-     "drafts": [
-      "vendor-ffmpeg-skill--grok.md",
-      "vendor-ffmpeg-skill--kimi.md",
-      "vendor-ffmpeg-skill--CHERRY.md"
-     ]
-    },
-    {
-     "ts": "2026-09-08T21:25:21Z",
-     "event": "spec_ready",
-     "by": "desktop-multi-harness-advance",
-     "spec": "Research/specs/vendor-ffmpeg-skill.md",
-     "note": "executor dual-pass (CLI smoke skipped/flaky); human gate next"
-    }
-   ],
-   "li_id": "li-20260908-049",
-   "decision": "vendor_skill",
-   "constraints_ok": true,
-   "paid_or_signup": false,
-   "docker_required": false,
-   "baseline_ref": "Research/baselines/media-skills.md",
-   "area": "media-skills"
-  },
-  {
-   "id": "rq-20260908-004",
-   "url": "https://github.com/rorkai/App-Store-Connect-CLI",
-   "note": "Scriptable App Store Connect CLI; note/spec against Infra/deploy-runbook.md iOS pipeline",
-   "title": "App-Store-Connect-CLI",
-   "category": "devops",
-   "status": "spec_ready",
-   "spec": "Research/specs/app-store-connect-cli.md",
-   "repo": null,
-   "worktree": null,
-   "branch": null,
-   "history": [
-    {
-     "ts": "2026-09-08T00:00:00Z",
-     "event": "ingested",
-     "by": "manual"
-    },
-    {
-     "ts": "2026-09-08T00:00:00Z",
-     "event": "researched",
-     "by": "manual"
-    },
-    {
-     "ts": "2026-09-08T20:19:02Z",
-     "event": "li_id_set",
-     "by": "desktop-pipeline-fix",
-     "li_id": "li-20260908-036",
-     "via": "url"
-    },
-    {
-     "ts": "2026-09-08T20:19:02Z",
-     "event": "spec_cleared_missing_file",
-     "by": "desktop-pipeline-fix",
-     "old_spec": "Research/specs/app-store-connect-cli.md",
-     "note": "status left researched; INDEX has knowledge note; no invented spec file"
-    },
-    {
-     "ts": "2026-09-08T16:35:00Z",
-     "event": "spec_ready",
-     "by": "manual"
-    },
-    {
-     "ts": "2026-09-08T21:25:21Z",
-     "event": "fields_filled",
-     "by": "desktop-multi-harness-advance",
-     "note": "baseline/decision/spec wired to on-disk spec"
-    }
-   ],
-   "li_id": "li-20260908-036",
-   "decision": "thin_adapter",
-   "constraints_ok": true,
-   "paid_or_signup": true,
-   "docker_required": false,
-   "baseline_ref": "Research/baselines/ios-release.md",
-   "area": "ios-release"
-  },
-  {
-   "id": "rq-20260908-005",
-   "url": "https://github.com/aigorahub/herdr-lantern",
-   "note": "Evaluate against existing lead-intake-agent skill (merge or replace?)",
-   "title": "herdr-lantern",
-   "category": "marketing",
-   "status": "watch",
-   "spec": null,
-   "repo": null,
-   "worktree": null,
-   "branch": null,
-   "history": [
-    {
-     "ts": "2026-09-08T00:00:00Z",
-     "event": "ingested",
-     "by": "manual"
-    },
-    {
-     "ts": "2026-09-08T00:00:00Z",
-     "event": "researched",
-     "by": "manual"
-    },
-    {
-     "ts": "2026-09-08T20:19:02Z",
-     "event": "li_id_set",
-     "by": "desktop-pipeline-fix",
-     "li_id": "li-20260908-007",
-     "via": "url"
-    },
-    {
-     "ts": "2026-09-08T20:19:02Z",
-     "event": "spec_cleared_missing_file",
-     "by": "desktop-pipeline-fix",
-     "old_spec": "Research/specs/herdr-lead-intake-eval.md",
-     "note": "status left researched; INDEX has knowledge note; no invented spec file"
-    },
-    {
-     "ts": "2026-09-08T21:25:21Z",
-     "event": "baseline_set",
-     "by": "desktop-multi-harness-advance",
-     "baseline_ref": "Research/baselines/lead-intake.md"
-    },
-    {
-     "ts": "2026-09-08T21:25:21Z",
-     "event": "decision_set",
-     "by": "desktop-multi-harness-advance",
-     "decision": "watch"
-    },
-    {
-     "ts": "2026-09-08T21:25:21Z",
-     "event": "dual_drafts",
-     "by": "desktop-multi-harness-advance",
-     "drafts": [
-      "herdr-lead-intake-eval--grok.md",
-      "herdr-lead-intake-eval--kimi.md",
-      "herdr-lead-intake-eval--CHERRY.md"
-     ]
-    },
-    {
-     "ts": "2026-09-08T21:25:21Z",
-     "event": "spec_ready",
-     "by": "desktop-multi-harness-advance",
-     "spec": "Research/specs/herdr-lead-intake-eval.md",
-     "note": "executor dual-pass (CLI smoke skipped/flaky); human gate next"
-    },
-    {
-     "ts": "2026-09-08T21:27:24.824Z",
-     "event": "demoted_watch",
-     "by": "desktop-multi-harness-advance",
-     "note": "decision=watch must not carry execution spec per PIPELINE"
-    }
-   ],
-   "li_id": "li-20260908-007",
-   "decision": "watch",
-   "constraints_ok": true,
-   "paid_or_signup": false,
-   "docker_required": false,
-   "baseline_ref": "Research/baselines/lead-intake.md",
-   "area": "lead-intake"
-  },
-  {
-   "id": "rq-20260908-006",
-   "url": "https://grokbot.dev",
-   "note": "li-20260908-003 — Overwatch — Grok Bot VM cleanup & backup",
-   "title": "Overwatch (grokbot.dev)",
-   "category": "devops",
-   "status": "researched",
-   "spec": null,
-   "repo": null,
-   "worktree": null,
-   "branch": null,
-   "history": [
-    {
-     "ts": "2026-09-08T20:18:40.525Z",
-     "event": "ingested",
-     "by": "dropfile"
-    },
-    {
-     "ts": "2026-09-08T20:19:02Z",
-     "event": "li_id_set",
-     "by": "desktop-pipeline-fix",
-     "li_id": "li-20260908-003"
-    },
-    {
-     "ts": "2026-09-08T16:45:00Z",
-     "event": "researched",
-     "by": "manual",
-     "note": "research already in Research/INDEX.md"
-    }
-   ],
-   "li_id": "li-20260908-003",
-   "decision": null,
-   "constraints_ok": null,
-   "paid_or_signup": null,
-   "docker_required": null,
-   "baseline_ref": null,
-   "area": null
-  },
-  {
-   "id": "rq-20260908-007",
-   "url": "https://github.com/FlashML-org/FreeToken",
-   "note": "li-20260908-004 — FreeToken — local datacenter-scale model serving",
-   "title": "FreeToken",
-   "category": "local-ml",
-   "status": "researched",
-   "spec": null,
-   "repo": null,
-   "worktree": null,
-   "branch": null,
-   "history": [
-    {
-     "ts": "2026-09-08T20:18:40.525Z",
-     "event": "ingested",
-     "by": "dropfile"
-    },
-    {
-     "ts": "2026-09-08T20:19:02Z",
-     "event": "li_id_set",
-     "by": "desktop-pipeline-fix",
-     "li_id": "li-20260908-004"
-    },
-    {
-     "ts": "2026-09-08T16:45:00Z",
-     "event": "researched",
-     "by": "manual",
-     "note": "research already in Research/INDEX.md"
-    }
-   ],
-   "li_id": "li-20260908-004",
-   "decision": null,
-   "constraints_ok": null,
-   "paid_or_signup": null,
-   "docker_required": null,
-   "baseline_ref": null,
-   "area": null
-  },
-  {
-   "id": "rq-20260908-008",
-   "url": "https://github.com/moorcheh-ai/memanto",
-   "note": "li-20260908-005 — memanto — memory for AI agents",
-   "title": "memanto",
-   "category": "agent-tooling",
-   "status": "researched",
-   "spec": null,
-   "repo": null,
-   "worktree": null,
-   "branch": null,
-   "history": [
-    {
-     "ts": "2026-09-08T20:18:40.525Z",
-     "event": "ingested",
-     "by": "dropfile"
-    },
-    {
-     "ts": "2026-09-08T20:19:02Z",
-     "event": "li_id_set",
-     "by": "desktop-pipeline-fix",
-     "li_id": "li-20260908-005"
-    },
-    {
-     "ts": "2026-09-08T16:45:00Z",
-     "event": "researched",
-     "by": "manual",
-     "note": "research already in Research/INDEX.md"
-    }
-   ],
-   "li_id": "li-20260908-005",
-   "decision": null,
-   "constraints_ok": null,
-   "paid_or_signup": null,
-   "docker_required": null,
-   "baseline_ref": null,
-   "area": null
-  },
-  {
-   "id": "rq-20260908-009",
-   "url": "https://github.com/sandbox-quantum/switch",
-   "note": "li-20260908-009 — Switch — Slack/Teams/Discord agent connector",
-   "title": "switch",
-   "category": "agent-tooling",
-   "status": "watch",
-   "spec": null,
-   "repo": null,
-   "worktree": null,
-   "branch": null,
-   "history": [
-    {
-     "ts": "2026-09-08T20:18:40.525Z",
-     "event": "ingested",
-     "by": "dropfile"
-    },
-    {
-     "ts": "2026-09-08T20:19:02Z",
-     "event": "li_id_set",
-     "by": "desktop-pipeline-fix",
-     "li_id": "li-20260908-009"
-    },
-    {
-     "ts": "2026-09-08T16:45:00Z",
-     "event": "researched",
-     "by": "manual",
-     "note": "research already in Research/INDEX.md"
-    },
-    {
-     "ts": "2026-09-08T21:25:21Z",
-     "event": "baseline_set",
-     "by": "desktop-multi-harness-advance",
-     "baseline_ref": "Research/baselines/agent-connectors.md"
-    },
-    {
-     "ts": "2026-09-08T21:25:21Z",
-     "event": "decision_set",
-     "by": "desktop-multi-harness-advance",
-     "decision": "watch"
-    },
-    {
-     "ts": "2026-09-08T21:25:21Z",
-     "event": "dual_drafts",
-     "by": "desktop-multi-harness-advance",
-     "drafts": [
-      "switch-agent-connector--grok.md",
-      "switch-agent-connector--kimi.md",
-      "switch-agent-connector--CHERRY.md"
-     ]
-    },
-    {
-     "ts": "2026-09-08T21:25:21Z",
-     "event": "spec_ready",
-     "by": "desktop-multi-harness-advance",
-     "spec": "Research/specs/switch-agent-connector.md",
-     "note": "executor dual-pass (CLI smoke skipped/flaky); human gate next"
-    },
-    {
-     "ts": "2026-09-08T21:27:24.824Z",
-     "event": "demoted_watch",
-     "by": "desktop-multi-harness-advance",
-     "note": "decision=watch must not carry execution spec per PIPELINE"
-    }
-   ],
-   "li_id": "li-20260908-009",
-   "decision": "watch",
-   "constraints_ok": true,
-   "paid_or_signup": false,
-   "docker_required": false,
-   "baseline_ref": "Research/baselines/agent-connectors.md",
-   "area": "agent-connectors"
-  },
-  {
-   "id": "rq-20260908-010",
-   "url": "https://github.com/0xSero/local-ai-registry",
-   "note": "li-20260908-011 — local-ai-registry — hardware/models/recipes catalog",
-   "title": "local-ai-registry",
-   "category": "local-ml",
-   "status": "researched",
-   "spec": null,
-   "repo": null,
-   "worktree": null,
-   "branch": null,
-   "history": [
-    {
-     "ts": "2026-09-08T20:18:40.525Z",
-     "event": "ingested",
-     "by": "dropfile"
-    },
-    {
-     "ts": "2026-09-08T20:19:02Z",
-     "event": "li_id_set",
-     "by": "desktop-pipeline-fix",
-     "li_id": "li-20260908-011"
-    },
-    {
-     "ts": "2026-09-08T16:45:00Z",
-     "event": "researched",
-     "by": "manual",
-     "note": "research already in Research/INDEX.md"
-    }
-   ],
-   "li_id": "li-20260908-011",
-   "decision": null,
-   "constraints_ok": null,
-   "paid_or_signup": null,
-   "docker_required": null,
-   "baseline_ref": null,
-   "area": null
-  },
-  {
-   "id": "rq-20260908-011",
-   "url": "https://github.com/deeplethe/utopia",
-   "note": "li-20260908-014 — Utopia — open-source enterprise world model",
-   "title": "utopia",
-   "category": "agent-tooling",
-   "status": "researched",
-   "spec": null,
-   "repo": null,
-   "worktree": null,
-   "branch": null,
-   "history": [
-    {
-     "ts": "2026-09-08T20:18:40.525Z",
-     "event": "ingested",
-     "by": "dropfile"
-    },
-    {
-     "ts": "2026-09-08T20:19:02Z",
-     "event": "li_id_set",
-     "by": "desktop-pipeline-fix",
-     "li_id": "li-20260908-014"
-    },
-    {
-     "ts": "2026-09-08T16:45:00Z",
-     "event": "researched",
-     "by": "manual",
-     "note": "research already in Research/INDEX.md"
-    }
-   ],
-   "li_id": "li-20260908-014",
-   "decision": null,
-   "constraints_ok": null,
-   "paid_or_signup": null,
-   "docker_required": null,
-   "baseline_ref": null,
-   "area": null
-  },
-  {
-   "id": "rq-20260908-012",
-   "url": "https://github.com/vercel-labs/agent-browser",
-   "note": "li-20260908-015 — agent-browser — Vercel Labs browser CLI for agents",
-   "title": "agent-browser",
-   "category": "agent-tooling",
-   "status": "spec_ready",
-   "spec": "Research/specs/agent-browser-eval.md",
-   "repo": null,
-   "worktree": null,
-   "branch": null,
-   "history": [
-    {
-     "ts": "2026-09-08T20:18:40.525Z",
-     "event": "ingested",
-     "by": "dropfile"
-    },
-    {
-     "ts": "2026-09-08T20:19:02Z",
-     "event": "li_id_set",
-     "by": "desktop-pipeline-fix",
-     "li_id": "li-20260908-015"
-    },
-    {
-     "ts": "2026-09-08T16:45:00Z",
-     "event": "researched",
-     "by": "manual",
-     "note": "research already in Research/INDEX.md"
-    },
-    {
-     "ts": "2026-09-08T21:27:24.824Z",
-     "event": "baseline_set",
-     "by": "desktop-multi-harness-advance"
-    },
-    {
-     "ts": "2026-09-08T21:27:24.824Z",
-     "event": "decision_set",
-     "by": "desktop-multi-harness-advance",
-     "decision": "thin_adapter"
-    },
-    {
-     "ts": "2026-09-08T21:27:24.824Z",
-     "event": "dual_drafts",
-     "by": "desktop-multi-harness-advance"
-    },
-    {
-     "ts": "2026-09-08T21:27:24.824Z",
-     "event": "spec_ready",
-     "by": "desktop-multi-harness-advance",
-     "spec": "Research/specs/agent-browser-eval.md"
-    }
-   ],
-   "li_id": "li-20260908-015",
-   "decision": "thin_adapter",
-   "constraints_ok": true,
-   "paid_or_signup": false,
-   "docker_required": false,
-   "baseline_ref": "Research/baselines/browser-automation.md",
-   "area": "browser-automation"
-  },
-  {
-   "id": "rq-20260908-013",
-   "url": "https://github.com/iii-hq/iii",
-   "note": "li-20260908-017 — iii — compose, extend, observe services in real-time",
-   "title": "iii",
-   "category": "agent-tooling",
-   "status": "researched",
-   "spec": null,
-   "repo": null,
-   "worktree": null,
-   "branch": null,
-   "history": [
-    {
-     "ts": "2026-09-08T20:18:40.525Z",
-     "event": "ingested",
-     "by": "dropfile"
-    },
-    {
-     "ts": "2026-09-08T20:19:02Z",
-     "event": "li_id_set",
-     "by": "desktop-pipeline-fix",
-     "li_id": "li-20260908-017"
-    },
-    {
-     "ts": "2026-09-08T16:45:00Z",
-     "event": "researched",
-     "by": "manual",
-     "note": "research already in Research/INDEX.md"
-    }
-   ],
-   "li_id": "li-20260908-017",
-   "decision": null,
-   "constraints_ok": null,
-   "paid_or_signup": null,
-   "docker_required": null,
-   "baseline_ref": null,
-   "area": null
-  },
-  {
-   "id": "rq-20260908-014",
-   "url": "https://github.com/xhluca/open-agent-view",
-   "note": "li-20260908-019 — open-agent-view — open Agent View for any harness",
-   "title": "open-agent-view",
-   "category": "agent-tooling",
-   "status": "researched",
-   "spec": null,
-   "repo": null,
-   "worktree": null,
-   "branch": null,
-   "history": [
-    {
-     "ts": "2026-09-08T20:18:40.525Z",
-     "event": "ingested",
-     "by": "dropfile"
-    },
-    {
-     "ts": "2026-09-08T20:19:02Z",
-     "event": "li_id_set",
-     "by": "desktop-pipeline-fix",
-     "li_id": "li-20260908-019"
-    },
-    {
-     "ts": "2026-09-08T16:45:00Z",
-     "event": "researched",
-     "by": "manual",
-     "note": "research already in Research/INDEX.md"
-    }
-   ],
-   "li_id": "li-20260908-019",
-   "decision": null,
-   "constraints_ok": null,
-   "paid_or_signup": null,
-   "docker_required": null,
-   "baseline_ref": null,
-   "area": null
-  },
-  {
-   "id": "rq-20260908-015",
-   "url": "https://github.com/fayazara/cloudflare-computer-example",
-   "note": "li-20260908-024 — cloudflare-computer-example — agent computer demo",
-   "title": "cloudflare-computer-example",
-   "category": "agent-tooling",
-   "status": "researched",
-   "spec": null,
-   "repo": null,
-   "worktree": null,
-   "branch": null,
-   "history": [
-    {
-     "ts": "2026-09-08T20:18:40.525Z",
-     "event": "ingested",
-     "by": "dropfile"
-    },
-    {
-     "ts": "2026-09-08T20:19:02Z",
-     "event": "li_id_set",
-     "by": "desktop-pipeline-fix",
-     "li_id": "li-20260908-024"
-    },
-    {
-     "ts": "2026-09-08T16:45:00Z",
-     "event": "researched",
-     "by": "manual",
-     "note": "research already in Research/INDEX.md"
-    }
-   ],
-   "li_id": "li-20260908-024",
-   "decision": null,
-   "constraints_ok": null,
-   "paid_or_signup": null,
-   "docker_required": null,
-   "baseline_ref": null,
-   "area": null
-  },
-  {
-   "id": "rq-20260908-016",
-   "url": "https://blog.cloudflare.com",
-   "note": "li-20260908-025 — Cloudflare Computer — agent needs a computer, not a container",
-   "title": "Cloudflare blog — agent needs a computer",
-   "category": "agent-tooling",
-   "status": "researched",
-   "spec": null,
-   "repo": null,
-   "worktree": null,
-   "branch": null,
-   "history": [
-    {
-     "ts": "2026-09-08T20:18:40.525Z",
-     "event": "ingested",
-     "by": "dropfile"
-    },
-    {
-     "ts": "2026-09-08T20:19:02Z",
-     "event": "li_id_set",
-     "by": "desktop-pipeline-fix",
-     "li_id": "li-20260908-025"
-    },
-    {
-     "ts": "2026-09-08T16:45:00Z",
-     "event": "researched",
-     "by": "manual",
-     "note": "research already in Research/INDEX.md"
-    }
-   ],
-   "li_id": "li-20260908-025",
-   "decision": null,
-   "constraints_ok": null,
-   "paid_or_signup": null,
-   "docker_required": null,
-   "baseline_ref": null,
-   "area": null
-  },
-  {
-   "id": "rq-20260908-017",
-   "url": "https://github.com/garrytan/gstack",
-   "note": "li-20260908-026 — gstack — Garry Tan Claude Code multi-role toolkit",
-   "title": "gstack",
-   "category": "agent-tooling",
-   "status": "researched",
-   "spec": null,
-   "repo": null,
-   "worktree": null,
-   "branch": null,
-   "history": [
-    {
-     "ts": "2026-09-08T20:18:40.525Z",
-     "event": "ingested",
-     "by": "dropfile"
-    },
-    {
-     "ts": "2026-09-08T20:19:02Z",
-     "event": "li_id_set",
-     "by": "desktop-pipeline-fix",
-     "li_id": "li-20260908-026"
-    },
-    {
-     "ts": "2026-09-08T16:45:00Z",
-     "event": "researched",
-     "by": "manual",
-     "note": "research already in Research/INDEX.md"
-    }
-   ],
-   "li_id": "li-20260908-026",
-   "decision": null,
-   "constraints_ok": null,
-   "paid_or_signup": null,
-   "docker_required": null,
-   "baseline_ref": null,
-   "area": null
-  },
-  {
-   "id": "rq-20260908-018",
-   "url": "https://github.com/techjanitor/botmaker",
-   "note": "li-20260908-027 — botmaker — techjanitor bot construction",
-   "title": "botmaker",
-   "category": "agent-tooling",
-   "status": "researched",
-   "spec": null,
-   "repo": null,
-   "worktree": null,
-   "branch": null,
-   "history": [
-    {
-     "ts": "2026-09-08T20:18:40.525Z",
-     "event": "ingested",
-     "by": "dropfile"
-    },
-    {
-     "ts": "2026-09-08T20:19:02Z",
-     "event": "li_id_set",
-     "by": "desktop-pipeline-fix",
-     "li_id": "li-20260908-027"
-    },
-    {
-     "ts": "2026-09-08T16:45:00Z",
-     "event": "researched",
-     "by": "manual",
-     "note": "research already in Research/INDEX.md"
-    }
-   ],
-   "li_id": "li-20260908-027",
-   "decision": null,
-   "constraints_ok": null,
-   "paid_or_signup": null,
-   "docker_required": null,
-   "baseline_ref": null,
-   "area": null
-  },
-  {
-   "id": "rq-20260908-019",
-   "url": "https://github.com/sentrux/sentrux",
-   "note": "li-20260908-030 — sentrux — real-time architectural sensor for agents",
-   "title": "sentrux",
-   "category": "agent-tooling",
-   "status": "researched",
-   "spec": null,
-   "repo": null,
-   "worktree": null,
-   "branch": null,
-   "history": [
-    {
-     "ts": "2026-09-08T20:18:40.525Z",
-     "event": "ingested",
-     "by": "dropfile"
-    },
-    {
-     "ts": "2026-09-08T20:19:02Z",
-     "event": "li_id_set",
-     "by": "desktop-pipeline-fix",
-     "li_id": "li-20260908-030"
-    },
-    {
-     "ts": "2026-09-08T16:45:00Z",
-     "event": "researched",
-     "by": "manual",
-     "note": "research already in Research/INDEX.md"
-    }
-   ],
-   "li_id": "li-20260908-030",
-   "decision": null,
-   "constraints_ok": null,
-   "paid_or_signup": null,
-   "docker_required": null,
-   "baseline_ref": null,
-   "area": null
-  },
-  {
-   "id": "rq-20260908-020",
-   "url": "https://github.com/AgriciDaniel/claude-ads",
-   "note": "li-20260908-031 — claude-ads — Claude-first paid-media ops skill",
-   "title": "claude-ads",
-   "category": "marketing",
-   "status": "researched",
-   "spec": null,
-   "repo": null,
-   "worktree": null,
-   "branch": null,
-   "history": [
-    {
-     "ts": "2026-09-08T20:18:40.525Z",
-     "event": "ingested",
-     "by": "dropfile"
-    },
-    {
-     "ts": "2026-09-08T20:19:02Z",
-     "event": "li_id_set",
-     "by": "desktop-pipeline-fix",
-     "li_id": "li-20260908-031"
-    },
-    {
-     "ts": "2026-09-08T16:45:00Z",
-     "event": "researched",
-     "by": "manual",
-     "note": "research already in Research/INDEX.md"
-    }
-   ],
-   "li_id": "li-20260908-031",
-   "decision": null,
-   "constraints_ok": null,
-   "paid_or_signup": null,
-   "docker_required": null,
-   "baseline_ref": null,
-   "area": null
-  },
-  {
-   "id": "rq-20260908-021",
-   "url": "https://github.com/nowork-studio/notfair-plugin",
-   "note": "li-20260908-032 — notfair-plugin — SEO, GEO, marketing skills for agents",
-   "title": "notfair-plugin",
-   "category": "marketing",
-   "status": "researched",
-   "spec": null,
-   "repo": null,
-   "worktree": null,
-   "branch": null,
-   "history": [
-    {
-     "ts": "2026-09-08T20:18:40.525Z",
-     "event": "ingested",
-     "by": "dropfile"
-    },
-    {
-     "ts": "2026-09-08T20:19:02Z",
-     "event": "li_id_set",
-     "by": "desktop-pipeline-fix",
-     "li_id": "li-20260908-032"
-    },
-    {
-     "ts": "2026-09-08T16:45:00Z",
-     "event": "researched",
-     "by": "manual",
-     "note": "research already in Research/INDEX.md"
-    }
-   ],
-   "li_id": "li-20260908-032",
-   "decision": null,
-   "constraints_ok": null,
-   "paid_or_signup": null,
-   "docker_required": null,
-   "baseline_ref": null,
-   "area": null
-  },
-  {
-   "id": "rq-20260908-022",
-   "url": "https://github.com/mksglu/context-mode",
-   "note": "li-20260908-033 — context-mode — context window optimization for coding agents",
-   "title": "context-mode",
-   "category": "agent-tooling",
-   "status": "researched",
-   "spec": null,
-   "repo": null,
-   "worktree": null,
-   "branch": null,
-   "history": [
-    {
-     "ts": "2026-09-08T20:18:40.525Z",
-     "event": "ingested",
-     "by": "dropfile"
-    },
-    {
-     "ts": "2026-09-08T20:19:02Z",
-     "event": "li_id_set",
-     "by": "desktop-pipeline-fix",
-     "li_id": "li-20260908-033"
-    },
-    {
-     "ts": "2026-09-08T16:45:00Z",
-     "event": "researched",
-     "by": "manual",
-     "note": "research already in Research/INDEX.md"
-    }
-   ],
-   "li_id": "li-20260908-033",
-   "decision": null,
-   "constraints_ok": null,
-   "paid_or_signup": null,
-   "docker_required": null,
-   "baseline_ref": null,
-   "area": null
-  },
-  {
-   "id": "rq-20260908-023",
-   "url": "https://github.com/browser-act/skills",
-   "note": "li-20260908-035 — browser-act skills — agent browser automation CLI",
-   "title": "browser-act skills",
-   "category": "agent-tooling",
-   "status": "researched",
-   "spec": null,
-   "repo": null,
-   "worktree": null,
-   "branch": null,
-   "history": [
-    {
-     "ts": "2026-09-08T20:18:40.525Z",
-     "event": "ingested",
-     "by": "dropfile"
-    },
-    {
-     "ts": "2026-09-08T20:19:02Z",
-     "event": "li_id_set",
-     "by": "desktop-pipeline-fix",
-     "li_id": "li-20260908-035"
-    },
-    {
-     "ts": "2026-09-08T16:45:00Z",
-     "event": "researched",
-     "by": "manual",
-     "note": "research already in Research/INDEX.md"
-    }
-   ],
-   "li_id": "li-20260908-035",
-   "decision": null,
-   "constraints_ok": null,
-   "paid_or_signup": null,
-   "docker_required": null,
-   "baseline_ref": null,
-   "area": null
-  },
-  {
-   "id": "rq-20260908-024",
-   "url": "https://github.com/humanlayer/skills",
-   "note": "li-20260908-043 — humanlayer show-me skill",
-   "title": "humanlayer show-me skill",
-   "category": "agent-tooling",
-   "status": "researched",
-   "spec": null,
-   "repo": null,
-   "worktree": null,
-   "branch": null,
-   "history": [
-    {
-     "ts": "2026-09-08T20:18:40.525Z",
-     "event": "ingested",
-     "by": "dropfile"
-    },
-    {
-     "ts": "2026-09-08T20:19:02Z",
-     "event": "li_id_set",
-     "by": "desktop-pipeline-fix",
-     "li_id": "li-20260908-043"
-    },
-    {
-     "ts": "2026-09-08T16:45:00Z",
-     "event": "researched",
-     "by": "manual",
-     "note": "research already in Research/INDEX.md"
-    }
-   ],
-   "li_id": "li-20260908-043",
-   "decision": null,
-   "constraints_ok": null,
-   "paid_or_signup": null,
-   "docker_required": null,
-   "baseline_ref": null,
-   "area": null
-  },
-  {
-   "id": "rq-20260908-025",
-   "url": "https://github.com/headroomlabs-ai/headroom",
-   "note": "li-20260908-045 — headroom — headroomlabs-ai",
-   "title": "headroom",
-   "category": "agent-tooling",
-   "status": "researched",
-   "spec": null,
-   "repo": null,
-   "worktree": null,
-   "branch": null,
-   "history": [
-    {
-     "ts": "2026-09-08T20:18:40.525Z",
-     "event": "ingested",
-     "by": "dropfile"
-    },
-    {
-     "ts": "2026-09-08T20:19:02Z",
-     "event": "li_id_set",
-     "by": "desktop-pipeline-fix",
-     "li_id": "li-20260908-045"
-    },
-    {
-     "ts": "2026-09-08T16:45:00Z",
-     "event": "researched",
-     "by": "manual",
-     "note": "research already in Research/INDEX.md"
-    }
-   ],
-   "li_id": "li-20260908-045",
-   "decision": null,
-   "constraints_ok": null,
-   "paid_or_signup": null,
-   "docker_required": null,
-   "baseline_ref": null,
-   "area": null
-  },
-  {
-   "id": "rq-20260908-026",
-   "url": "https://github.com/sololabstr/uisight",
-   "note": "li-20260908-046 — uisight — UI insight tooling",
-   "title": "uisight",
-   "category": "agent-tooling",
-   "status": "researched",
-   "spec": null,
-   "repo": null,
-   "worktree": null,
-   "branch": null,
-   "history": [
-    {
-     "ts": "2026-09-08T20:18:40.525Z",
-     "event": "ingested",
-     "by": "dropfile"
-    },
-    {
-     "ts": "2026-09-08T20:19:02Z",
-     "event": "li_id_set",
-     "by": "desktop-pipeline-fix",
-     "li_id": "li-20260908-046"
-    },
-    {
-     "ts": "2026-09-08T16:45:00Z",
-     "event": "researched",
-     "by": "manual",
-     "note": "research already in Research/INDEX.md"
-    }
-   ],
-   "li_id": "li-20260908-046",
-   "decision": null,
-   "constraints_ok": null,
-   "paid_or_signup": null,
-   "docker_required": null,
-   "baseline_ref": null,
-   "area": null
-  },
-  {
-   "id": "rq-20260908-027",
-   "url": "https://github.com/microsoft/tgrep",
-   "note": "li-20260908-047 — tgrep — microsoft",
-   "title": "tgrep",
-   "category": "devops",
-   "status": "researched",
-   "spec": null,
-   "repo": null,
-   "worktree": null,
-   "branch": null,
-   "history": [
-    {
-     "ts": "2026-09-08T20:18:40.525Z",
-     "event": "ingested",
-     "by": "dropfile"
-    },
-    {
-     "ts": "2026-09-08T20:19:02Z",
-     "event": "li_id_set",
-     "by": "desktop-pipeline-fix",
-     "li_id": "li-20260908-047"
-    },
-    {
-     "ts": "2026-09-08T16:45:00Z",
-     "event": "researched",
-     "by": "manual",
-     "note": "research already in Research/INDEX.md"
-    }
-   ],
-   "li_id": "li-20260908-047",
-   "decision": null,
-   "constraints_ok": null,
-   "paid_or_signup": null,
-   "docker_required": null,
-   "baseline_ref": null,
-   "area": null
-  },
-  {
-   "id": "rq-20260908-028",
-   "url": "https://github.com/herdrdev/herdr/releases/tag/v0.9.0",
-   "note": "li-20260908-051 — Herdr v0.9.0 release",
-   "title": "herdr v0.9.0",
-   "category": "marketing",
-   "status": "landed",
-   "spec": "Research/specs/allternit-runtime-fork.md",
-   "repo": null,
-   "worktree": "/Users/joe/Desktop/allternit-workspace/allternit-ao-allternit-runtime-fork",
-   "branch": "ao/allternit-runtime-fork",
-   "history": [
-    {
-     "ts": "2026-09-08T20:18:40.525Z",
-     "event": "ingested",
-     "by": "dropfile"
-    },
-    {
-     "ts": "2026-09-08T20:19:02Z",
-     "event": "li_id_set",
-     "by": "desktop-pipeline-fix",
-     "li_id": "li-20260908-051"
-    },
-    {
-     "ts": "2026-09-08T16:45:00Z",
-     "event": "researched",
-     "by": "manual",
-     "note": "research already in Research/INDEX.md"
-    },
-    {
-     "ts": "2026-09-09T00:19:38.634336Z",
-     "event": "decision_set",
-     "by": "kimi-interactive",
-     "decision": "thin_adapter",
-     "note": "Apache-2.0 local Rust binary, no signup/Docker; ao stays orchestration brain, herdr 0.9.0 as optional pane/session transport (multi-machine SSH + state detection)"
-    },
-    {
-     "ts": "2026-09-09T00:20:56.279995Z",
-     "event": "spec_ready",
-     "by": "kimi-interactive",
-     "spec": "Research/specs/herdr-v090-adapter.md",
-     "note": "single kimi draft (dual review skipped in interactive run); human gate next"
-    },
-    {
-     "ts": "2026-09-09T00:33:32.722992Z",
-     "event": "decision_changed",
-     "by": "human-direction",
-     "decision": "fork_reskin",
-     "note": "human pivot: absorb+rebrand herdr into allternit-workspace as one Rust binary (ao + fabric transport + machine mgmt + harness sync + visibility); thin_adapter spec archived"
-    },
-    {
-     "ts": "2026-09-09T00:33:32.722992Z",
-     "event": "spec_ready",
-     "by": "kimi-interactive",
-     "spec": "Research/specs/allternit-runtime-fork.md",
-     "note": "product plan + Phase 1 handoff; phases 2-6 each get own named spec at gate; human gate next"
-    },
-    {
-     "ts": "2026-09-09T00:44:57.018221Z",
-     "event": "plan_deepened",
-     "by": "kimi-interactive",
-     "note": "human: keep ao name (no rebrand). Deep plan written Products/AgentOrchestratorRuntime.md: engine crate (internal name herdr) + one ao binary, contract parity mapped from ao scripts + herdr module map + fabric protocol + harness schema; phases P0-P5 each with own gate"
-    },
-    {
-     "ts": "2026-09-09T00:53:30.587407Z",
-     "event": "scope_update",
-     "by": "kimi-interactive",
-     "note": "native sessions (gizzi-code v2.0.7, shipped 2026-09-06) added to plan as session substrate component; docs gaps + production verification (gizzi-code CLI + Allternit Desktop) delegated to coder agent; feeds P3 fabric pickup and P5 visibility"
-    },
-    {
-     "ts": "2026-09-09T00:54:36.222514Z",
-     "event": "approved",
-     "by": "human",
-     "note": "explicit approval \"Approve allternit-runtime-fork\"; crate home decided: infrastructure/executor/ao-engine/; P0 execute via agent-orchestrator"
-    },
-    {
-     "ts": "2026-09-09T01:01:50.148159Z",
-     "event": "executing",
-     "by": "kimi-interactive",
-     "note": "claude executor blocked on expired login (human chose switch); respawned same worktree with kimi --yolo; task sent; ao-watch armed on P0 NOTES sentinel"
-    },
-    {
-     "ts": "2026-09-09T12:35:00Z",
-     "event": "landed",
-     "by": "orchestrator",
-     "detail": "P0 PR #198 merged (0e923fe3): herdr v0.9.0 vendored as infrastructure/executor/ao-engine, herdr.dev gutted, ao binary builds, review verified gut+notices+wiring only"
-    },
-    {
-     "ts": "2026-09-09T15:55:00Z",
-     "event": "landed",
-     "by": "orchestrator",
-     "detail": "P1 PR #205 merged (aa8a6a6993): ao-core six subcommands with golden side-by-side parity (59/62 stable on orchestrator reruns; 3 failures = one documented instant-exit timing race, follow-up pending). P0+P1 both landed on this queue item."
-    },
-    {
-     "ts": "2026-09-09T17:15:00Z",
-     "event": "landed",
-     "by": "orchestrator",
-     "detail": "P2 PR #215 merged (6c65b4ee0): ao TUI rebrand + machine connect + Allternit DEFAULT_CONFIG + real Mac/Linux pilot (vps: add, combined list, 22s reconnect, machine connect proof). P0+P1+P2 landed."
-    },
-    {
-     "ts": "2026-09-10T07:25:00Z",
-     "event": "landed",
-     "by": "ao-v3-p3-land-ritual",
-     "note": "PR #229 merged (503d99223e) — ao fabric pair|serve|status; live proof seed@ runtime rt_af9d675b04b2 picked up in PWA. Gate PARTIAL: 3 platform follow-ups filed (PWA /api base, proxy 401, agent-sessions sync caller)."
-    },
-    {
-     "ts": "2026-09-10T14:05:00Z",
-     "event": "p4_landed",
-     "by": "ao-v3-p4-land-ritual",
-     "note": "P4 harness sync port merged: PR #250 (847331b12f). ao harness status|sync|uninstall|describe, byte-parity 21/21 across all 16 manifest tools (orchestrator re-verified incl. live HOME smokes). harness-sync.js retired (docs/status only, files kept)."
-    },
-    {
-     "ts": "2026-09-10T15:15:00Z",
-     "event": "p3_enum_followup",
-     "by": "ao-orchestrator-main",
-     "note": "PR #220 merged — cloud-api accepts runtimeType \"ao\" in pairing enum (checks green; CF Pages failure pre-existing on main, Vercel rate-limit noise). Production cloud-api redeploy still pending (deploy gate = human go-ahead); until then pair with --runtime-type desktop."
-    },
-    {
-     "ts": "2026-09-10T15:45:00Z",
-     "event": "p3_e2e_clerk_test",
-     "by": "ao-orchestrator-main",
-     "note": "Full PWA e2e under dedicated test account: Clerk user clerk-test@news.allternit.com CREATED (iRedMail mailbox + hosted sign-up, org 'Clerk Test'); ao fabric pair approved in platform UI (rt_0955ea413f57475, runtime-type desktop until enum redeploy); serve+relay live; PWA renders node online 1/1 with capabilities. BLOCKER at last hop: POST /api/v1/runtime-devices/:id/proxy -> 405 (platform) — production cloud-api predates the P3 proxy route; needs deploy-contabo.sh redeploy (human gate). Evidence in ~/.agent-orchestrator/evidence/ao-fabric-verify/."
-    },
-    {
-     "ts": "2026-09-10T17:05:00Z",
-     "event": "p5_landed",
-     "by": "ao-v3-p5-land-ritual",
-     "note": "P5 visibility+peers merged: PR #256 (c197fba5ad5). Who-needs-you panel (prefix+shift+v): engine agents + native-session catalog port (27-harness table, 16 walkers, fingerprint parity) + Rails peers, waiting-on-you list, join-key correlation, ao visibility|peer list|send. Hard gate PASSED: two panes one server, blocked surfaced + cleared on approve; bare kimi external row no dup. Orchestrator review caught+fixed real regression: visibility default prefix+v collided with split_vertical (12 reload_config failures) -> prefix+shift+v. detect::manifest full-suite flake pre-existing (SIGPIPE env). Evidence ~/.agent-orchestrator/evidence/ao-visibility-peers/."
-    },
-    {
-     "ts": "2026-09-10T17:21:43Z",
-     "event": "p3_lasthop_landed",
-     "by": "kimi-interactive",
-     "note": "P3 fabric last hop closed: relay forwarded tunneled requests to default 8014 (Desktop open-connector sidecar) instead of the serve shim port; fix PR #258 merged a4bfbc527; live-verified 200 on /proxy relay end-to-end (evidence ~/.agent-orchestrator/evidence/ao-fabric-verify/proxy-fixed.json)"
-    },
-    {
-     "ts": "2026-09-10T20:03:42Z",
-     "event": "p7_landed",
-     "by": "kimi-interactive",
-     "note": "PR #260 merged 40e18cc5e — ao harness install: version-pinned license-gated installs (16-tool manifest license tags, --accept-terms gate with pin re-flag, managed dir ~/.ao/harness, doctor harness section exit 3); orchestrator re-verified on committed state (harness 50/50, ao:: 93/93, ao_parity 62/0, live claude gate refusal); evidence ~/.agent-orchestrator/evidence/ao-harness-install/"
-    }
-   ],
-   "li_id": "li-20260908-051",
-   "decision": "fork_reskin",
-   "constraints_ok": true,
-   "paid_or_signup": false,
-   "docker_required": false,
-   "baseline_ref": "Research/baselines/agent-orchestration.md",
-   "area": "agent-orchestration"
-  },
-  {
-   "id": "rq-20260909-001",
-   "url": "https://github.com/ai-sdlc-framework/ai-sdlc",
-   "note": "— AI-SDLC: spec-driven decision engine + autonomous orchestrator (DoR gate, worktree dispatch, cross-harness review w/ DSSE attestation, operator TUI). Apache-2.0, no Docker/signup for core path. Verdict at research time: watch + adopt ideas (reviewer-harness independence, decision-steward gate report, checkpoint/quarantine) rather than adopt/fork — repo-task-shaped, v1alpha1, heavy monorepo; our link→business pipeline keeps its own engine. Possible pilot: repo-native engineering tasks inside allternit-platform.",
-   "title": null,
-   "category": null,
-   "status": "inbox",
-   "spec": null,
-   "repo": null,
-   "worktree": null,
-   "branch": null,
-   "li_id": null,
-   "decision": null,
-   "constraints_ok": null,
-   "paid_or_signup": null,
-   "docker_required": null,
-   "baseline_ref": null,
-   "area": null,
-   "history": [
-    {
-     "ts": "2026-09-09T02:11:12.699Z",
-     "event": "ingested",
-     "by": "dropfile"
-    }
-   ]
-  },
-  {
-   "id": "rq-20260909-002",
-   "url": "https://github.com/google/artemis",
-   "note": "li-20260908-052 — google/artemis Android NL automation MCP",
-   "title": "google/artemis — Android NL automation (MCP)",
-   "category": "agent-tooling",
-   "status": "inbox",
-   "spec": null,
-   "repo": null,
-   "worktree": null,
-   "branch": null,
-   "li_id": "li-20260908-052",
-   "decision": null,
-   "constraints_ok": null,
-   "paid_or_signup": null,
-   "docker_required": null,
-   "baseline_ref": null,
-   "area": null,
-   "history": [
-    {
-     "ts": "2026-09-09T02:11:12.699Z",
-     "event": "ingested",
-     "by": "dropfile",
-     "li_id": "li-20260908-052"
-    }
-   ]
-  },
-  {
-   "id": "rq-20260909-003",
-   "url": "https://x.com/nickvasiles/status/2097392151953117355",
-   "note": "Human-authored spec (Eoj, 2026-09-09) — atomic Create Bot: Identity + Instructions + persistent Computer Cloud + Tools; closes the join Nick's Codex+Orgo demo exposed",
-   "title": "bot-identity-computer",
-   "category": "agent-tooling",
-   "status": "landed",
-   "spec": "Research/specs/bot-identity-computer.md",
-   "repo": "Gizziio/allternit-platform",
-   "worktree": null,
-   "branch": null,
-   "history": [
-    {
-     "ts": "2026-09-09T00:00:00Z",
-     "event": "ingested",
-     "by": "manual"
-    },
-    {
-     "ts": "2026-09-09T00:00:00Z",
-     "event": "researched",
-     "by": "manual",
-     "note": "research in Products/ComputerUsePackaging.md Gap 5 + Nick Vasile Codex/Orgo demo links"
-    },
-    {
-     "ts": "2026-09-09T00:00:00Z",
-     "event": "spec_ready",
-     "by": "manual",
-     "note": "spec authored directly at Research/specs/bot-identity-computer.md; queue item registered retroactively for gate tracking"
-    },
-    {
-     "ts": "2026-09-09T05:49:48.403Z",
-     "event": "approved",
-     "by": "kimi-code session (Eoj)",
-     "note": "Human gate approved (Eoj, 2026-09-09). Phase 1: atomic Create Bot (Identity + Instructions + persistent Computer Cloud + Tools), reusing vmOperator / provisionBotDesktop / /api/v1/computers. No Orgo. Constraints: no Orgo MCP, no Docker-required path, no paid deps, no pricing/billing, no fleet provisioning (Phase 2), brain updates drafts only, no confirm:true deploys. Outcome: PR + ledger attestation per AGENTS.md ritual."
-    },
-    {
-     "ts": "2026-09-09T01:30:00Z",
-     "event": "landed",
-     "by": "kimi-code session (Eoj)",
-     "note": "PR #190 merged (merge SHA d61530a3d); ledger attestation bdb42a476 on main; worktree session/50d4cec6 cleaned"
-    },
-    {
-     "ts": "2026-09-09T07:05:00Z",
-     "event": "landed",
-     "by": "kimi-code session (Eoj)",
-     "note": "Phase 2 follow-up PR #195 merged (merge SHA 95c1eafcf, commit 54731db8a); ledger attestation 9d82aa173 on main; worktree session/5c233b1c cleaned. Items: removed replaced bot-creation wizard + forge theater (CreateBotForm canonical), size presets (small/medium/large), fleet 'Provision computers' action, 'creating'-status crash fix + provisioning panel in watch/takeover."
-    }
-   ],
-   "li_id": null,
-   "decision": "thin_adapter",
-   "constraints_ok": true,
-   "paid_or_signup": false,
-   "docker_required": false,
-   "baseline_ref": "Research/baselines/agent-orchestration.md",
-   "area": "agent-orchestration"
-  },
-  {
-   "id": "rq-20260909-004",
-   "url": "https://github.com/HarnessRouter/harnessrouter",
-   "note": "Self-hosted multi-harness runner: one Docker container running Claude Code, Codex, Gemini CLI, etc. behind an OpenAI Responses-compatible API (Unified Harness Protocol) with a web console. Joe: \"must implement in Allternit — a layer above harnesses\" — candidate to sit above agent-orchestrator / brain selection / cross-harness session pickup.",
-   "title": "HarnessRouter CE / UHP harness router",
-   "category": "allternit",
-   "status": "researched",
-   "spec": null,
-   "repo": null,
-   "worktree": null,
-   "branch": null,
-   "li_id": null,
-   "decision": "reverse_engineer",
-   "constraints_ok": true,
-   "paid_or_signup": false,
-   "docker_required": false,
-   "baseline_ref": "Research/baselines/agent-orchestration.md",
-   "area": "agent-orchestration",
-   "history": [
-    {
-     "ts": "2026-09-09T06:23:38.639Z",
-     "event": "ingested",
-     "by": "mcp",
-     "source": "kimi interactive session 2026-09-09"
-    },
-    {
-     "ts": "2026-09-09T06:45:00.000Z",
-     "event": "decided",
-     "by": "kimi-interactive",
-     "note": "reverse_engineer: adopt UHP (unifiedharnessprotocol.org, open versioned HTTP contract w/ OpenAPI 3.1 + conformance suite) as the canonical harness-router contract; implement natively in AllternitOS Layer-3 harness router + ao execution substrate. Upstream as-is is Docker-only (hard veto) so thin_adapter/fork of the container is out; fork_reskin conflicts with ao Rust direction (rq-20260908-028, decided 2026-09-08). Fills baseline gap: agent-native API surface (Responses-compatible turns, streaming, cancel, idempotency, session checkpoints). NOT ported: provider/key management — Allternit gateway + A:// tier policy already own routing. Complements ao (orchestration brain + interactive steering stays), Fabric (session pickup stays), Brain (knowledge plane stays)."
-    },
-    {
-     "ts": "2026-09-09T07:10:00.000Z",
-     "event": "redirected",
-     "by": "human-via-kimi-interactive",
-     "note": "reverse_engineer -> fork_reskin (human redirect 2026-09-09): fork HarnessRouter CE and strip the Docker packaging. Docker is only the appliance layer (bundling + per-session-user isolation); gateway+runner are plain Python loopback servers, UI is Next.js. New scope folded INLINE into the ao v3 plan as P6 (UHP execution layer, Docker-free fork supervised by the ao binary) + P7 (harness auto-install/onboarding from HR first-run installer). Not in the Rust binary (Python cannot embed); ao supervises gateway+runner as loopback child processes. Provider/key routing stays in the Allternit gateway — HR connection-policy machinery not ported. See Products/AgentOrchestratorRuntime.md §2.6, P6, P7."
-    },
-    {
-     "ts": "2026-09-09T08:05:00.000Z",
-     "event": "redirected",
-     "by": "human-via-kimi-interactive",
-     "note": "fork_reskin -> Rust native implementation (human, 2026-09-09): \"since it is python we must implement it in our rust language; the things that dont port over [drop]\". HR CE is demoted from fork base to REFERENCE IMPLEMENTATION: UHP spec + OpenAPI schemas + conformance suite + per-backend pytest suite are the parity oracle run against our Rust server. Vendored for reference/tests only, no shipped Python. P6 re-scoped: Rust UHP gateway+runner inside the ao binary (new workspace crate; home at P6 gate). Ports: Responses surface, sessions/turns/streaming/cancel/idempotency, SQLite backing, backend-driver LOGIC (subprocess CLIs), installer scripts. Drops: Next.js console, per-session-user sandbox, push-to-cloud/marketplace, Python/Node relay internals where a backend needs a re-implemented relay (Hermes license-undeclared -> gated anyway). Phasing: P6a core + the backends ao already drives headless; P6b remaining drivers against HR pytest behavior."
-    },
-    {
-     "ts": "2026-09-09T08:35:00.000Z",
-     "event": "scope-refined",
-     "by": "human-via-kimi-interactive",
-     "note": "UI + assets + credential-model refinements (human 2026-09-09): (1) HR console UX patterns PORT as design reference — system-harness catalog cards + per-harness live telemetry (turn stream, commands, files, tokens, cost) feed ao TUI face (P2) + visibility panel (P5); console code itself still dropped. (2) ui/public/logos/* (11 brain marks) harvested to \"Allternit Assets/Brand/Third-Party/harness-brains/\" with provenance README — these are the brains actual icons for choose-a-brain surfaces. (3) Credential model corrected: NOT \"no second key store\" — two legitimate homes per human: native authed CLI runtimes (user logins/subs) + Allternit cloud credentials on the platform plan (platform.allternit.com) via the Allternit gateway; UHP layer owns no keys, only HR per-backend broker machinery dropped."
-    },
-    {
-     "ts": "2026-09-09T07:45:00Z",
-     "event": "decisions",
-     "by": "Eoj via kimi-code",
-     "note": "Gate decisions applied to spec: (1) external dev API keys out of scope — ship with Allternit Cloud subscription product, internal-Orgo stays first-party; (2) local kind (Tart on Joe's Mac) committed to Phase 1; (3) workspaces = org + group label in Phase 2; (4) model-driving stays on ACU canonical gateway. Spec section 'Gate decisions' is binding for the executing agent."
-    }
-   ]
-  },
-  {
-   "id": "rq-20260909-004",
-   "url": "https://docs.orgo.ai/introduction",
-   "note": "Human-directed strategy (Eoj, 2026-09-09): absorb Orgo — reimplement its full cloud-computer capability matrix as our internal Cloud Computer on Incus/Tart; spec authored directly",
-   "title": "cloud-computer-orgo-parity",
-   "category": "agent-tooling",
-   "status": "landed",
-   "spec": "Research/specs/cloud-computer-orgo-parity.md",
-   "repo": "Gizziio/allternit-platform",
-   "worktree": null,
-   "branch": null,
-   "history": [
-    {
-     "ts": "2026-09-09T07:20:00Z",
-     "event": "ingested",
-     "by": "kimi-code session (Eoj)"
-    },
-    {
-     "ts": "2026-09-09T07:20:00Z",
-     "event": "researched",
-     "by": "kimi-code session (Eoj)",
-     "note": "Orgo docs (introduction/api-reference/migrate) + codebase capability audit: 30-row matrix, gaps = arbitrary-owner create, create-time specs, resize, clone, PTY/events/proxy, templates-as-code, MCP/CLI, warm pool"
-    },
-    {
-     "ts": "2026-09-09T07:20:00Z",
-     "event": "spec_ready",
-     "by": "kimi-code session (Eoj)",
-     "note": "spec authored directly at Research/specs/cloud-computer-orgo-parity.md; 5 phases, human gate each; awaiting approval"
-    },
-    {
-     "ts": "2026-09-09T08:35:00.000Z",
-     "event": "scope-refined",
-     "by": "human-via-kimi-interactive",
-     "note": "UI + assets + credential-model refinements (human 2026-09-09): (1) HR console UX patterns PORT as design reference — system-harness catalog cards + per-harness live telemetry (turn stream, commands, files, tokens, cost) feed ao TUI face (P2) + visibility panel (P5); console code itself still dropped. (2) ui/public/logos/* (11 brain marks) harvested to \"Allternit Assets/Brand/Third-Party/harness-brains/\" with provenance README — these are the brains actual icons for choose-a-brain surfaces. (3) Credential model corrected: NOT \"no second key store\" — two legitimate homes per human: native authed CLI runtimes (user logins/subs) + Allternit cloud credentials on the platform plan (platform.allternit.com) via the Allternit gateway; UHP layer owns no keys, only HR per-backend broker machinery dropped."
-    },
-    {
-     "ts": "2026-09-09T07:24:22.192Z",
-     "event": "approved",
-     "by": "kimi-code session",
-     "note": "Human approved execute in-session 2026-09-09: \"work on this spec /goal continue this until completion\" — all five phases, per-phase review."
-    },
-    {
-     "ts": "2026-09-09T08:15:00.000Z",
-     "event": "executing",
-     "by": "kimi-code orchestrator (goal mode)",
-     "note": "Phase 1 executed via ao/codex, orchestrator review passed, PR #201 merged (13668e995). Executor fell back from claude (OAuth expired) to codex; steering gate bypassed by orchestrator merge per repo escape; ledger dc032c217. Phases 2-5 pending."
-    },
-    {
-     "ts": "2026-09-09T08:50:00.000Z",
-     "event": "phase-landed",
-     "by": "kimi-code orchestrator (goal mode)",
-     "note": "Phase 2 (lifecycle: resize/clone/auto-stop/workspaces-lite) PR #204 merged (75aa78756). 28+100 tests. Executor gate hook hung + codex weekly quota <5% -> orchestrator commit/merge per repo escape. Live Incus smoke owed. Phases 3-5 pending."
-    },
-    {
-     "ts": "2026-09-09T09:15:00.000Z",
-     "event": "phase-landed",
-     "by": "kimi-code orchestrator (goal mode)",
-     "note": "Phase 3 (real-time plane: PTY ws, guest events, authenticated in-VM proxy) PR #206 merged (772c5c158). 41+102 tests. Executor kimi (codex quota <5%); gate hook stalled -> orchestrator push/merge. Phases 4-5 pending."
-    },
-    {
-     "ts": "2026-09-09T11:05:00.000Z",
-     "event": "phase-landed",
-     "by": "kimi-code orchestrator (goal mode)",
-     "note": "Phase 4 (templates as code: allternit.ai/v1 YAML docs → approval-gated golden build → stateful golden snapshot on role='golden' holder → clone_from_snapshot provisioning; system/… refs; import/export; vault://org secret refs, values never persisted) PR #216 merged (ab8638254). Orchestrator deep review found+fixed critical golden_snapshot_id persistence and clone-from-stored-snapshot before merge. 14/15/96 Rust tests, vitest/tsc clean; 4 pre-existing agent_cloud_routes control-plane failures unrelated. Live Incus smoke owed. Executor: kimi (claude OAuth expired, codex quota dead to Sep 16); two session deaths (quota outage, off-task) → orchestrator finished per repo escape. Phase 5 pending."
-    },
-    {
-     "ts": "2026-09-09T12:55:00.000Z",
-     "event": "phase-landed",
-     "by": "kimi-code orchestrator (goal mode)",
-     "note": "Phase 5 (distribution: standalone computers MCP server w/ 22 route-derived tools + lifecycle tools on /mcp/server catalog; allternit computers CLI; TS+Python SDK parity; embeddable widget — computer status endpoint, token-scoped VNC ws w/ read_only enforcement, 15-min embed tokens, self-contained noVNC viewer, CSP) PR #222 merged (eece02ed6). Pre-merge review found embed VNC ws unreachable for anonymous viewers (401 behind auth middleware) + unmintable full-control vnc tokens — both fixed (public token-only VNC router; read_only=false behind approval grant). No approval bypass. 64/64 computer_* tests, CLI 13/13, SDK 28/28+19 py, MCP smoke PASS."
-    },
-    {
-     "ts": "2026-09-09T13:00:00.000Z",
-     "event": "landed",
-     "by": "kimi-code orchestrator (goal mode)",
-     "note": "ALL 5 PHASES LANDED: P1 PR #201 (any-owner create, full specs, local kind, client parity, restart), P2 PR #204 (resize/clone/auto-stop/workspaces-lite), P3 PR #206 (PTY ws, guest events, in-VM proxy), P4 PR #216 (templates as code → golden snapshots), P5 PR #222 (MCP/CLI/SDK/embed). Deliberate non-goals held: no GPU/Android, no Orgo runtime dep, no approval un-gating (verified in every review). Owed: live Incus smokes (build/provision, embed iframe, vnc-token ACI handoff). Brain updates folded as drafts only."
-    }
-   ],
-   "li_id": null,
-   "decision": "reverse_engineer",
-   "constraints_ok": true,
-   "paid_or_signup": false,
-   "docker_required": false,
-   "baseline_ref": "Research/baselines/agent-orchestration.md"
-  }
- ]
+  ]
 }

@@ -36,6 +36,7 @@ Inputs to the Allternit platform, ACI/Hermes, gizzi-code, and the agent-orchestr
 | [gstack](https://github.com/garrytan/gstack) | Garry Tan's 23-tool Claude Code setup (CEO/EM/QA roles) → reference for agent-orchestrator tool roster |
 | [Assembly Instructions Are a Programming Language](https://www.tnkr.ai/blog/assembly-instructions-are-a-programming-language) | Essay on agent-computing → reading, thesis behind agent-needs-a-computer |
 | [Claude Managed Agents](https://claude.com/blog/claude-managed-agents) | Anthropic's managed agent product → competitive reference for Agent Hub |
+| [OpenBot](https://github.com/CopilotKit/OpenBot) | CopilotKit's MIT "AI coworker" platform — per-bot computers, CEL policy gateway, audit trail, routines → **reverse_engineer** (`rq-20260910-001`): port policy/handoff/routines patterns into Computer Cloud + bot-identity-computer; runtime itself vetoed (Docker + Intelligence signup) |
 
 ## Provider & routing research
 
