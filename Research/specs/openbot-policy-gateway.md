@@ -75,7 +75,13 @@ Allternit Computer Use gains the governance properties OpenBot has and we lack �
 ## Phased scope
 
 - **Phase 1 (this handoff):** policy document loading + fail-closed evaluation in the Rust ACI gateway on all action routes; audit-before-act reordering with the no-act-without-record guarantee; refusal audit rows carrying rule id; startup refusal on malformed policy; audit-list read API; bot-mode UI: verdict chips, audit list, policy editor (all bot-mode-only, zero new tabs); tests incl. forced-failure ordering test; safety + operator docs updated.
-- **Phase 2+ (out of scope):** herald-style subagent telemetry, computer screen streaming in chat, per-bot policy overrides, CEL-grade expression language, take-the-wheel state machine, routines/scheduling, MCP read/write classification, coworkers-as-config, policy conformance metrics in the system card.
+- **Phase 2+ (out of scope):** the bot-mode UX cluster below (each gets its own spec when Phase 1 lands), plus per-bot policy overrides, CEL-grade expression language, take-the-wheel state machine, routines/scheduling, MCP read/write classification, coworkers-as-config, policy conformance metrics in the system card.
+
+**Bot-mode UX cluster (Eoj additions 2026-09-10, reference: herald recordings 2026-09-10 + OpenBot) — Phase 2, spec separately:**
+- **Bot avatars / identity visuals** — every bot gets a real visual identity, not a default icon: emoji, uploaded photo, or a generated companion/pet-style avatar (herald's Teknium pattern). Renders consistently everywhere the bot appears: roster, chat header, message rows, typing indicators, verdict chips, subagent tree. Extends the identity field from `bot-identity-computer` (emoji/accent) — avatar becomes a first-class identity property.
+- **@mention routing** — typing `@BotName` in a session assigns that turn to that bot; the bot picks up the task in its own context. Requires mention parsing + turn routing to the right bot's durable session.
+- **Multi-bot group chat** — a conversation with several bots as members (herald's "Teknium, Fixer, Rev, Synth" group): bots address each other by @handle, respond in-thread, show per-member typing presence. Requires group-thread model + inter-bot addressing + per-member presence.
+- **Long-running session model** — the bot session is durable and long-lived (weeks), so the view must stay legible over time: conversation separated from activity/telemetry (actions and verdicts never pollute the dialogue), resumable timeline with old stretches compacted/summarized, clear status line (running / done / pending / waiting-on-you), per-thread notify settings. Herald's pattern: threads persist across days/weeks and reopen exactly where they left off.
 
 ## Gate checklist
 
@@ -142,7 +148,7 @@ Acceptance:
 - PR + ledger attestation
 
 Non-goals:
-- Herald-style subagent telemetry + computer screen streaming in chat (Phase 2, own patterns in spec)
+- Entire bot-mode UX cluster (Phase 2, patterns in spec): herald-style subagent telemetry, computer screen streaming in chat, bot avatars/identity visuals, @mention routing, multi-bot group chat, long-running session model
 - Per-bot policy overrides, CEL expressions, take-the-wheel state machine, routines/scheduling, MCP read/write classification, coworkers-as-config
 - Monitor model work
 

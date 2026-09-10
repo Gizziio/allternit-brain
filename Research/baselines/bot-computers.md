@@ -27,6 +27,7 @@ Source of truth for the area: [Products/ComputerUse.md](../../Products/ComputerU
 - **No routines**: OpenBot bots run on schedules (15-min floor, 20-routine cap, 10-failure auto-off); we have no scheduled bot runs in-product
 - **MCP governance**: OpenBot classifies catalogue tools read/write (unknown = write, advertised-unnamed = read); our connector catalog has no equivalent classification
 - **Coworkers-as-config**: OpenBot ships example coworkers as `agents.yaml` (config, not code); our bot templates are code-side
+- **Bot social layer** (herald patterns, Eoj 2026-09-10): no avatar/identity visuals beyond emoji/accent, no @mention routing, no multi-bot group chat, no long-running session model (activity pollutes dialogue; threads not resumable with status line)
 
 ## Delta log
 
