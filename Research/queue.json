@@ -1386,6 +1386,12 @@
      "event": "p3_lasthop_landed",
      "by": "kimi-interactive",
      "note": "P3 fabric last hop closed: relay forwarded tunneled requests to default 8014 (Desktop open-connector sidecar) instead of the serve shim port; fix PR #258 merged a4bfbc527; live-verified 200 on /proxy relay end-to-end (evidence ~/.agent-orchestrator/evidence/ao-fabric-verify/proxy-fixed.json)"
+    },
+    {
+     "ts": "2026-09-10T20:03:42Z",
+     "event": "p7_landed",
+     "by": "kimi-interactive",
+     "note": "PR #260 merged 40e18cc5e — ao harness install: version-pinned license-gated installs (16-tool manifest license tags, --accept-terms gate with pin re-flag, managed dir ~/.ao/harness, doctor harness section exit 3); orchestrator re-verified on committed state (harness 50/50, ao:: 93/93, ao_parity 62/0, live claude gate refusal); evidence ~/.agent-orchestrator/evidence/ao-harness-install/"
     }
    ],
    "li_id": "li-20260908-051",
