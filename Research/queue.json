@@ -1258,7 +1258,7 @@
       "note": "li-20260908-051 \u2014 Herdr v0.9.0 release",
       "title": "herdr v0.9.0",
       "category": "marketing",
-      "status": "executing",
+      "status": "landed",
       "spec": "Research/specs/allternit-runtime-fork.md",
       "repo": null,
       "worktree": "/Users/joe/Desktop/allternit-workspace/allternit-ao-allternit-runtime-fork",
@@ -1332,6 +1332,30 @@
           "event": "executing",
           "by": "kimi-interactive",
           "note": "claude executor blocked on expired login (human chose switch); respawned same worktree with kimi --yolo; task sent; ao-watch armed on P0 NOTES sentinel"
+        },
+        {
+          "ts": "2026-09-09T12:35:00Z",
+          "event": "landed",
+          "by": "orchestrator",
+          "detail": "P0 PR #198 merged (0e923fe3): herdr v0.9.0 vendored as infrastructure/executor/ao-engine, herdr.dev gutted, ao binary builds, review verified gut+notices+wiring only"
+        },
+        {
+          "ts": "2026-09-09T15:55:00Z",
+          "event": "landed",
+          "by": "orchestrator",
+          "detail": "P1 PR #205 merged (aa8a6a6993): ao-core six subcommands with golden side-by-side parity (59/62 stable on orchestrator reruns; 3 failures = one documented instant-exit timing race, follow-up pending). P0+P1 both landed on this queue item."
+        },
+        {
+          "ts": "2026-09-09T17:15:00Z",
+          "event": "landed",
+          "by": "orchestrator",
+          "detail": "P2 PR #215 merged (6c65b4ee0): ao TUI rebrand + machine connect + Allternit DEFAULT_CONFIG + real Mac/Linux pilot (vps: add, combined list, 22s reconnect, machine connect proof). P0+P1+P2 landed."
+        },
+        {
+          "ts": "2026-09-10T07:25:00Z",
+          "event": "landed",
+          "by": "ao-v3-p3-land-ritual",
+          "note": "PR #229 merged (503d99223e) \u2014 ao fabric pair|serve|status; live proof seed@ runtime rt_af9d675b04b2 picked up in PWA. Gate PARTIAL: 3 platform follow-ups filed (PWA /api base, proxy 401, agent-sessions sync caller)."
         }
       ],
       "li_id": "li-20260908-051",
@@ -1499,6 +1523,12 @@
           "event": "scope-refined",
           "by": "human-via-kimi-interactive",
           "note": "UI + assets + credential-model refinements (human 2026-09-09): (1) HR console UX patterns PORT as design reference \u2014 system-harness catalog cards + per-harness live telemetry (turn stream, commands, files, tokens, cost) feed ao TUI face (P2) + visibility panel (P5); console code itself still dropped. (2) ui/public/logos/* (11 brain marks) harvested to \"Allternit Assets/Brand/Third-Party/harness-brains/\" with provenance README \u2014 these are the brains actual icons for choose-a-brain surfaces. (3) Credential model corrected: NOT \"no second key store\" \u2014 two legitimate homes per human: native authed CLI runtimes (user logins/subs) + Allternit cloud credentials on the platform plan (platform.allternit.com) via the Allternit gateway; UHP layer owns no keys, only HR per-backend broker machinery dropped."
+        },
+        {
+          "ts": "2026-09-09T07:45:00Z",
+          "event": "decisions",
+          "by": "Eoj via kimi-code",
+          "note": "Gate decisions applied to spec: (1) external dev API keys out of scope \u2014 ship with Allternit Cloud subscription product, internal-Orgo stays first-party; (2) local kind (Tart on Joe's Mac) committed to Phase 1; (3) workspaces = org + group label in Phase 2; (4) model-driving stays on ACU canonical gateway. Spec section 'Gate decisions' is binding for the executing agent."
         }
       ]
     },
@@ -1508,7 +1538,7 @@
       "note": "Human-directed strategy (Eoj, 2026-09-09): absorb Orgo \u2014 reimplement its full cloud-computer capability matrix as our internal Cloud Computer on Incus/Tart; spec authored directly",
       "title": "cloud-computer-orgo-parity",
       "category": "agent-tooling",
-      "status": "spec_ready",
+      "status": "landed",
       "spec": "Research/specs/cloud-computer-orgo-parity.md",
       "repo": "Gizziio/allternit-platform",
       "worktree": null,
@@ -1536,6 +1566,48 @@
           "event": "scope-refined",
           "by": "human-via-kimi-interactive",
           "note": "UI + assets + credential-model refinements (human 2026-09-09): (1) HR console UX patterns PORT as design reference \u2014 system-harness catalog cards + per-harness live telemetry (turn stream, commands, files, tokens, cost) feed ao TUI face (P2) + visibility panel (P5); console code itself still dropped. (2) ui/public/logos/* (11 brain marks) harvested to \"Allternit Assets/Brand/Third-Party/harness-brains/\" with provenance README \u2014 these are the brains actual icons for choose-a-brain surfaces. (3) Credential model corrected: NOT \"no second key store\" \u2014 two legitimate homes per human: native authed CLI runtimes (user logins/subs) + Allternit cloud credentials on the platform plan (platform.allternit.com) via the Allternit gateway; UHP layer owns no keys, only HR per-backend broker machinery dropped."
+        },
+        {
+          "ts": "2026-09-09T07:24:22.192Z",
+          "event": "approved",
+          "by": "kimi-code session",
+          "note": "Human approved execute in-session 2026-09-09: \"work on this spec /goal continue this until completion\" \u2014 all five phases, per-phase review."
+        },
+        {
+          "ts": "2026-09-09T08:15:00.000Z",
+          "event": "executing",
+          "by": "kimi-code orchestrator (goal mode)",
+          "note": "Phase 1 executed via ao/codex, orchestrator review passed, PR #201 merged (13668e995). Executor fell back from claude (OAuth expired) to codex; steering gate bypassed by orchestrator merge per repo escape; ledger dc032c217. Phases 2-5 pending."
+        },
+        {
+          "ts": "2026-09-09T08:50:00.000Z",
+          "event": "phase-landed",
+          "by": "kimi-code orchestrator (goal mode)",
+          "note": "Phase 2 (lifecycle: resize/clone/auto-stop/workspaces-lite) PR #204 merged (75aa78756). 28+100 tests. Executor gate hook hung + codex weekly quota <5% -> orchestrator commit/merge per repo escape. Live Incus smoke owed. Phases 3-5 pending."
+        },
+        {
+          "ts": "2026-09-09T09:15:00.000Z",
+          "event": "phase-landed",
+          "by": "kimi-code orchestrator (goal mode)",
+          "note": "Phase 3 (real-time plane: PTY ws, guest events, authenticated in-VM proxy) PR #206 merged (772c5c158). 41+102 tests. Executor kimi (codex quota <5%); gate hook stalled -> orchestrator push/merge. Phases 4-5 pending."
+        },
+        {
+          "ts": "2026-09-09T11:05:00.000Z",
+          "event": "phase-landed",
+          "by": "kimi-code orchestrator (goal mode)",
+          "note": "Phase 4 (templates as code: allternit.ai/v1 YAML docs \u2192 approval-gated golden build \u2192 stateful golden snapshot on role='golden' holder \u2192 clone_from_snapshot provisioning; system/\u2026 refs; import/export; vault://org secret refs, values never persisted) PR #216 merged (ab8638254). Orchestrator deep review found+fixed critical golden_snapshot_id persistence and clone-from-stored-snapshot before merge. 14/15/96 Rust tests, vitest/tsc clean; 4 pre-existing agent_cloud_routes control-plane failures unrelated. Live Incus smoke owed. Executor: kimi (claude OAuth expired, codex quota dead to Sep 16); two session deaths (quota outage, off-task) \u2192 orchestrator finished per repo escape. Phase 5 pending."
+        },
+        {
+          "ts": "2026-09-09T12:55:00.000Z",
+          "event": "phase-landed",
+          "by": "kimi-code orchestrator (goal mode)",
+          "note": "Phase 5 (distribution: standalone computers MCP server w/ 22 route-derived tools + lifecycle tools on /mcp/server catalog; allternit computers CLI; TS+Python SDK parity; embeddable widget \u2014 computer status endpoint, token-scoped VNC ws w/ read_only enforcement, 15-min embed tokens, self-contained noVNC viewer, CSP) PR #222 merged (eece02ed6). Pre-merge review found embed VNC ws unreachable for anonymous viewers (401 behind auth middleware) + unmintable full-control vnc tokens \u2014 both fixed (public token-only VNC router; read_only=false behind approval grant). No approval bypass. 64/64 computer_* tests, CLI 13/13, SDK 28/28+19 py, MCP smoke PASS."
+        },
+        {
+          "ts": "2026-09-09T13:00:00.000Z",
+          "event": "landed",
+          "by": "kimi-code orchestrator (goal mode)",
+          "note": "ALL 5 PHASES LANDED: P1 PR #201 (any-owner create, full specs, local kind, client parity, restart), P2 PR #204 (resize/clone/auto-stop/workspaces-lite), P3 PR #206 (PTY ws, guest events, in-VM proxy), P4 PR #216 (templates as code \u2192 golden snapshots), P5 PR #222 (MCP/CLI/SDK/embed). Deliberate non-goals held: no GPU/Android, no Orgo runtime dep, no approval un-gating (verified in every review). Owed: live Incus smokes (build/provision, embed iframe, vnc-token ACI handoff). Brain updates folded as drafts only."
         }
       ],
       "li_id": null,
