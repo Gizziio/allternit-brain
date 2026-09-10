@@ -1374,6 +1374,12 @@
           "event": "p3_e2e_clerk_test",
           "by": "ao-orchestrator-main",
           "note": "Full PWA e2e under dedicated test account: Clerk user clerk-test@news.allternit.com CREATED (iRedMail mailbox + hosted sign-up, org 'Clerk Test'); ao fabric pair approved in platform UI (rt_0955ea413f57475, runtime-type desktop until enum redeploy); serve+relay live; PWA renders node online 1/1 with capabilities. BLOCKER at last hop: POST /api/v1/runtime-devices/:id/proxy -> 405 (platform) — production cloud-api predates the P3 proxy route; needs deploy-contabo.sh redeploy (human gate). Evidence in ~/.agent-orchestrator/evidence/ao-fabric-verify/."
+        },
+        {
+          "ts": "2026-09-10T17:05:00Z",
+          "event": "p5_landed",
+          "by": "ao-v3-p5-land-ritual",
+          "note": "P5 visibility+peers merged: PR #256 (c197fba5ad5). Who-needs-you panel (prefix+shift+v): engine agents + native-session catalog port (27-harness table, 16 walkers, fingerprint parity) + Rails peers, waiting-on-you list, join-key correlation, ao visibility|peer list|send. Hard gate PASSED: two panes one server, blocked surfaced + cleared on approve; bare kimi external row no dup. Orchestrator review caught+fixed real regression: visibility default prefix+v collided with split_vertical (12 reload_config failures) -> prefix+shift+v. detect::manifest full-suite flake pre-existing (SIGPIPE env). Evidence ~/.agent-orchestrator/evidence/ao-visibility-peers/."
         }
       ],
       "li_id": "li-20260908-051",
