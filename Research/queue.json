@@ -1659,8 +1659,8 @@
       "note": "CopilotKit OpenBot — AI coworkers with per-bot computers, policy gateway, audit trail. Research vs Allternit bot setup (bot-identity-computer / Computer Cloud) for port candidates. RESEARCH 2026-09-10: MIT, Bun+Hono+React/Vite, Postgres+pgvector, AG-UI protocol. Vetoes fire on ADOPTING the runtime (Docker + CopilotKit Intelligence signup) so fork/vendor is out; decision is reverse_engineer of patterns into Computer Cloud + bot-identity-computer. Port shortlist: (1) declarative CEL-style fail-closed policy layer over our action-hash grants; (2) gateway ordering guarantee (audit row written BEFORE action executes, no act-without-record path); (3) take-the-wheel state machine (help_requested/control_taken/control_released + bot actions refused while human drives); (4) routines = scheduled bot runs w/ 15-min floor, cap 20, 10-failure auto-off; (5) governed MCP catalogue read/write classification (unknown tools treated as writes); (6) coworkers-as-config agents.yaml template package. Already-have: per-bot persistent computers, credential vault w/ transcript redaction, watch/takeover UX, audit ledger, approvals/receipts, skills.",
       "title": "CopilotKit OpenBot — AI coworkers with per-bot computers, CEL policy gateway, audit trail",
       "category": "agent-tooling",
-      "status": "researched",
-      "spec": null,
+      "status": "spec_ready",
+      "spec": "Research/specs/openbot-policy-gateway.md",
       "repo": null,
       "worktree": null,
       "branch": null,
@@ -1684,6 +1684,88 @@
           "by": "kimi session 2026-09-10",
           "decision": "reverse_engineer",
           "constraints_ok": true
+        },
+        {
+          "ts": "2026-09-10T21:27:30.682Z",
+          "event": "spec_ready",
+          "by": "kimi session 2026-09-10",
+          "spec": "Research/specs/openbot-policy-gateway.md"
+        }
+      ]
+    },
+    {
+      "id": "rq-20260910-002",
+      "url": "https://openai.com/index/introducing-the-agents-api/",
+      "note": "OpenAI Agents API public beta 2026-09-10; 1:1 Allternit port candidate. See Research/drafts/openai-agents-api-port.md",
+      "title": "OpenAI Agents API",
+      "category": "agent-tooling",
+      "status": "researched",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "li_id": null,
+      "decision": null,
+      "constraints_ok": null,
+      "paid_or_signup": false,
+      "docker_required": false,
+      "baseline_ref": "Research/baselines/openai-agents-api.md",
+      "area": "openai-agents-api",
+      "history": [
+        {
+          "ts": "2026-09-10T21:14:13.927Z",
+          "event": "ingested",
+          "by": "dropfile"
+        },
+        {
+          "ts": "2026-09-10T21:16:00.000Z",
+          "event": "baseline_set",
+          "by": "grok-session",
+          "baseline_ref": "Research/baselines/openai-agents-api.md"
+        },
+        {
+          "ts": "2026-09-10T21:16:00.000Z",
+          "event": "researched",
+          "by": "grok-session",
+          "note": "1:1 port map in Research/drafts/openai-agents-api-port.md; recommended reverse_engineer of the wire contract onto /beta/sessions + gizzi + hosted-runtime. Decision not set — integrate-decision still required."
+        }
+      ]
+    },
+    {
+      "id": "rq-20260910-003",
+      "url": "https://developers.openai.com/api/docs/guides/agents-api/overview",
+      "note": "Official Agents API overview (sessions/environments/events). Companion to rq-20260910-002.",
+      "title": "OpenAI Agents API overview",
+      "category": "agent-tooling",
+      "status": "researched",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "li_id": null,
+      "decision": null,
+      "constraints_ok": null,
+      "paid_or_signup": false,
+      "docker_required": false,
+      "baseline_ref": "Research/baselines/openai-agents-api.md",
+      "area": "openai-agents-api",
+      "history": [
+        {
+          "ts": "2026-09-10T21:14:13.927Z",
+          "event": "ingested",
+          "by": "dropfile"
+        },
+        {
+          "ts": "2026-09-10T21:16:00.000Z",
+          "event": "baseline_set",
+          "by": "grok-session",
+          "baseline_ref": "Research/baselines/openai-agents-api.md"
+        },
+        {
+          "ts": "2026-09-10T21:16:00.000Z",
+          "event": "researched",
+          "by": "grok-session",
+          "note": "Companion docs for rq-20260910-002. Same port map."
         }
       ]
     }
