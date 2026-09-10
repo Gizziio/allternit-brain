@@ -1,6 +1,6 @@
 ---
 doc: index
-updated: 2026-09-08
+updated: 2026-09-10
 status: active
 ---
 
@@ -35,8 +35,10 @@ Inputs to the Allternit platform, ACI/Hermes, gizzi-code, and the agent-orchestr
 | [refactoring-ui-skill](https://github.com/s0xDk/refactoring-ui-skill) | Refactoring UI design rules as a Claude Code skill → vendor candidate for site/UI work |
 | [gstack](https://github.com/garrytan/gstack) | Garry Tan's 23-tool Claude Code setup (CEO/EM/QA roles) → reference for agent-orchestrator tool roster |
 | [Assembly Instructions Are a Programming Language](https://www.tnkr.ai/blog/assembly-instructions-are-a-programming-language) | Essay on agent-computing → reading, thesis behind agent-needs-a-computer |
-| [Claude Managed Agents](https://claude.com/blog/claude-managed-agents) | Anthropic's managed agent product → competitive reference for Agent Hub |
+| [Claude Managed Agents](https://claude.com/blog/claude-managed-agents) | Anthropic hosted agent API (2026-04-08, `managed-agents-2026-04-01`) — Agent/Environment/Session + events, vaults, memory, cron, budgets, self-hosted worker queue. Compare memo: `Research/drafts/openai-anthropic-managed-agents-compare.md`. Queue companion to `rq-20260910-002`. |
+| [OpenAI Agents API](https://openai.com/index/introducing-the-agents-api/) | Hosted Codex harness as REST+SSE public beta 2026-09-10 → **reverse_engineer** into Allternit Runtime (own names, no paid wrap). Spec `Research/specs/allternit-runtime-api.md`, product `Products/Runtime.md`, queue `rq-20260910-002` **spec_ready**. |
 | [OpenBot](https://github.com/CopilotKit/OpenBot) | CopilotKit's MIT "AI coworker" platform — per-bot computers, CEL policy gateway, audit trail, routines → **reverse_engineer** (`rq-20260910-001`): port policy/handoff/routines patterns into Computer Cloud + bot-identity-computer; runtime itself vetoed (Docker + Intelligence signup) |
+| [OpenMausBot](https://github.com/milind-soni/OpenMausBot) | Apache-2.0 mobile bot-mode UI reference (iOS SwiftUI companion + React desktop over one SSE stream): streaming bubble, folded tool runs, island approvals, phone composer → **reverse_engineer** (`rq-20260910-007`): clean-room port into Fabric Transport PWA bot mode + ACI, shared components synced to web bot views. Spec `Research/specs/fabric-pwa-bot-mode-ui.md` **spec_ready** |
 
 ## Provider & routing research
 

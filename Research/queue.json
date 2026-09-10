@@ -362,7 +362,7 @@
     {
       "id": "rq-20260908-006",
       "url": "https://grokbot.dev",
-      "note": "li-20260908-003 \u2014 Overwatch \u2014 Grok Bot VM cleanup & backup",
+      "note": "li-20260908-003 — Overwatch — Grok Bot VM cleanup & backup",
       "title": "Overwatch (grokbot.dev)",
       "category": "devops",
       "status": "researched",
@@ -400,7 +400,7 @@
     {
       "id": "rq-20260908-007",
       "url": "https://github.com/FlashML-org/FreeToken",
-      "note": "li-20260908-004 \u2014 FreeToken \u2014 local datacenter-scale model serving",
+      "note": "li-20260908-004 — FreeToken — local datacenter-scale model serving",
       "title": "FreeToken",
       "category": "local-ml",
       "status": "researched",
@@ -438,7 +438,7 @@
     {
       "id": "rq-20260908-008",
       "url": "https://github.com/moorcheh-ai/memanto",
-      "note": "li-20260908-005 \u2014 memanto \u2014 memory for AI agents",
+      "note": "li-20260908-005 — memanto — memory for AI agents",
       "title": "memanto",
       "category": "agent-tooling",
       "status": "researched",
@@ -476,7 +476,7 @@
     {
       "id": "rq-20260908-009",
       "url": "https://github.com/sandbox-quantum/switch",
-      "note": "li-20260908-009 \u2014 Switch \u2014 Slack/Teams/Discord agent connector",
+      "note": "li-20260908-009 — Switch — Slack/Teams/Discord agent connector",
       "title": "switch",
       "category": "agent-tooling",
       "status": "watch",
@@ -549,7 +549,7 @@
     {
       "id": "rq-20260908-010",
       "url": "https://github.com/0xSero/local-ai-registry",
-      "note": "li-20260908-011 \u2014 local-ai-registry \u2014 hardware/models/recipes catalog",
+      "note": "li-20260908-011 — local-ai-registry — hardware/models/recipes catalog",
       "title": "local-ai-registry",
       "category": "local-ml",
       "status": "researched",
@@ -587,7 +587,7 @@
     {
       "id": "rq-20260908-011",
       "url": "https://github.com/deeplethe/utopia",
-      "note": "li-20260908-014 \u2014 Utopia \u2014 open-source enterprise world model",
+      "note": "li-20260908-014 — Utopia — open-source enterprise world model",
       "title": "utopia",
       "category": "agent-tooling",
       "status": "researched",
@@ -625,7 +625,7 @@
     {
       "id": "rq-20260908-012",
       "url": "https://github.com/vercel-labs/agent-browser",
-      "note": "li-20260908-015 \u2014 agent-browser \u2014 Vercel Labs browser CLI for agents",
+      "note": "li-20260908-015 — agent-browser — Vercel Labs browser CLI for agents",
       "title": "agent-browser",
       "category": "agent-tooling",
       "status": "spec_ready",
@@ -685,7 +685,7 @@
     {
       "id": "rq-20260908-013",
       "url": "https://github.com/iii-hq/iii",
-      "note": "li-20260908-017 \u2014 iii \u2014 compose, extend, observe services in real-time",
+      "note": "li-20260908-017 — iii — compose, extend, observe services in real-time",
       "title": "iii",
       "category": "agent-tooling",
       "status": "researched",
@@ -723,7 +723,7 @@
     {
       "id": "rq-20260908-014",
       "url": "https://github.com/xhluca/open-agent-view",
-      "note": "li-20260908-019 \u2014 open-agent-view \u2014 open Agent View for any harness",
+      "note": "li-20260908-019 — open-agent-view — open Agent View for any harness",
       "title": "open-agent-view",
       "category": "agent-tooling",
       "status": "researched",
@@ -761,7 +761,7 @@
     {
       "id": "rq-20260908-015",
       "url": "https://github.com/fayazara/cloudflare-computer-example",
-      "note": "li-20260908-024 \u2014 cloudflare-computer-example \u2014 agent computer demo",
+      "note": "li-20260908-024 — cloudflare-computer-example — agent computer demo",
       "title": "cloudflare-computer-example",
       "category": "agent-tooling",
       "status": "researched",
@@ -799,8 +799,8 @@
     {
       "id": "rq-20260908-016",
       "url": "https://blog.cloudflare.com",
-      "note": "li-20260908-025 \u2014 Cloudflare Computer \u2014 agent needs a computer, not a container",
-      "title": "Cloudflare blog \u2014 agent needs a computer",
+      "note": "li-20260908-025 — Cloudflare Computer — agent needs a computer, not a container",
+      "title": "Cloudflare blog — agent needs a computer",
       "category": "agent-tooling",
       "status": "researched",
       "spec": null,
@@ -837,7 +837,7 @@
     {
       "id": "rq-20260908-017",
       "url": "https://github.com/garrytan/gstack",
-      "note": "li-20260908-026 \u2014 gstack \u2014 Garry Tan Claude Code multi-role toolkit",
+      "note": "li-20260908-026 — gstack — Garry Tan Claude Code multi-role toolkit",
       "title": "gstack",
       "category": "agent-tooling",
       "status": "researched",
@@ -875,7 +875,7 @@
     {
       "id": "rq-20260908-018",
       "url": "https://github.com/techjanitor/botmaker",
-      "note": "li-20260908-027 \u2014 botmaker \u2014 techjanitor bot construction",
+      "note": "li-20260908-027 — botmaker — techjanitor bot construction",
       "title": "botmaker",
       "category": "agent-tooling",
       "status": "researched",
@@ -913,7 +913,7 @@
     {
       "id": "rq-20260908-019",
       "url": "https://github.com/sentrux/sentrux",
-      "note": "li-20260908-030 \u2014 sentrux \u2014 real-time architectural sensor for agents",
+      "note": "li-20260908-030 — sentrux — real-time architectural sensor for agents",
       "title": "sentrux",
       "category": "agent-tooling",
       "status": "researched",
@@ -951,7 +951,7 @@
     {
       "id": "rq-20260908-020",
       "url": "https://github.com/AgriciDaniel/claude-ads",
-      "note": "li-20260908-031 \u2014 claude-ads \u2014 Claude-first paid-media ops skill",
+      "note": "li-20260908-031 — claude-ads — Claude-first paid-media ops skill",
       "title": "claude-ads",
       "category": "marketing",
       "status": "researched",
@@ -989,7 +989,7 @@
     {
       "id": "rq-20260908-021",
       "url": "https://github.com/nowork-studio/notfair-plugin",
-      "note": "li-20260908-032 \u2014 notfair-plugin \u2014 SEO, GEO, marketing skills for agents",
+      "note": "li-20260908-032 — notfair-plugin — SEO, GEO, marketing skills for agents",
       "title": "notfair-plugin",
       "category": "marketing",
       "status": "researched",
@@ -1027,7 +1027,7 @@
     {
       "id": "rq-20260908-022",
       "url": "https://github.com/mksglu/context-mode",
-      "note": "li-20260908-033 \u2014 context-mode \u2014 context window optimization for coding agents",
+      "note": "li-20260908-033 — context-mode — context window optimization for coding agents",
       "title": "context-mode",
       "category": "agent-tooling",
       "status": "researched",
@@ -1065,7 +1065,7 @@
     {
       "id": "rq-20260908-023",
       "url": "https://github.com/browser-act/skills",
-      "note": "li-20260908-035 \u2014 browser-act skills \u2014 agent browser automation CLI",
+      "note": "li-20260908-035 — browser-act skills — agent browser automation CLI",
       "title": "browser-act skills",
       "category": "agent-tooling",
       "status": "researched",
@@ -1103,7 +1103,7 @@
     {
       "id": "rq-20260908-024",
       "url": "https://github.com/humanlayer/skills",
-      "note": "li-20260908-043 \u2014 humanlayer show-me skill",
+      "note": "li-20260908-043 — humanlayer show-me skill",
       "title": "humanlayer show-me skill",
       "category": "agent-tooling",
       "status": "researched",
@@ -1141,7 +1141,7 @@
     {
       "id": "rq-20260908-025",
       "url": "https://github.com/headroomlabs-ai/headroom",
-      "note": "li-20260908-045 \u2014 headroom \u2014 headroomlabs-ai",
+      "note": "li-20260908-045 — headroom — headroomlabs-ai",
       "title": "headroom",
       "category": "agent-tooling",
       "status": "researched",
@@ -1179,7 +1179,7 @@
     {
       "id": "rq-20260908-026",
       "url": "https://github.com/sololabstr/uisight",
-      "note": "li-20260908-046 \u2014 uisight \u2014 UI insight tooling",
+      "note": "li-20260908-046 — uisight — UI insight tooling",
       "title": "uisight",
       "category": "agent-tooling",
       "status": "researched",
@@ -1217,7 +1217,7 @@
     {
       "id": "rq-20260908-027",
       "url": "https://github.com/microsoft/tgrep",
-      "note": "li-20260908-047 \u2014 tgrep \u2014 microsoft",
+      "note": "li-20260908-047 — tgrep — microsoft",
       "title": "tgrep",
       "category": "devops",
       "status": "researched",
@@ -1255,7 +1255,7 @@
     {
       "id": "rq-20260908-028",
       "url": "https://github.com/herdrdev/herdr/releases/tag/v0.9.0",
-      "note": "li-20260908-051 \u2014 Herdr v0.9.0 release",
+      "note": "li-20260908-051 — Herdr v0.9.0 release",
       "title": "herdr v0.9.0",
       "category": "marketing",
       "status": "landed",
@@ -1355,7 +1355,7 @@
           "ts": "2026-09-10T07:25:00Z",
           "event": "landed",
           "by": "ao-v3-p3-land-ritual",
-          "note": "PR #229 merged (503d99223e) \u2014 ao fabric pair|serve|status; live proof seed@ runtime rt_af9d675b04b2 picked up in PWA. Gate PARTIAL: 3 platform follow-ups filed (PWA /api base, proxy 401, agent-sessions sync caller)."
+          "note": "PR #229 merged (503d99223e) — ao fabric pair|serve|status; live proof seed@ runtime rt_af9d675b04b2 picked up in PWA. Gate PARTIAL: 3 platform follow-ups filed (PWA /api base, proxy 401, agent-sessions sync caller)."
         },
         {
           "ts": "2026-09-10T14:05:00Z",
@@ -1367,13 +1367,13 @@
           "ts": "2026-09-10T15:15:00Z",
           "event": "p3_enum_followup",
           "by": "ao-orchestrator-main",
-          "note": "PR #220 merged \u2014 cloud-api accepts runtimeType \"ao\" in pairing enum (checks green; CF Pages failure pre-existing on main, Vercel rate-limit noise). Production cloud-api redeploy still pending (deploy gate = human go-ahead); until then pair with --runtime-type desktop."
+          "note": "PR #220 merged — cloud-api accepts runtimeType \"ao\" in pairing enum (checks green; CF Pages failure pre-existing on main, Vercel rate-limit noise). Production cloud-api redeploy still pending (deploy gate = human go-ahead); until then pair with --runtime-type desktop."
         },
         {
           "ts": "2026-09-10T15:45:00Z",
           "event": "p3_e2e_clerk_test",
           "by": "ao-orchestrator-main",
-          "note": "Full PWA e2e under dedicated test account: Clerk user clerk-test@news.allternit.com CREATED (iRedMail mailbox + hosted sign-up, org 'Clerk Test'); ao fabric pair approved in platform UI (rt_0955ea413f57475, runtime-type desktop until enum redeploy); serve+relay live; PWA renders node online 1/1 with capabilities. BLOCKER at last hop: POST /api/v1/runtime-devices/:id/proxy -> 405 (platform) \u2014 production cloud-api predates the P3 proxy route; needs deploy-contabo.sh redeploy (human gate). Evidence in ~/.agent-orchestrator/evidence/ao-fabric-verify/."
+          "note": "Full PWA e2e under dedicated test account: Clerk user clerk-test@news.allternit.com CREATED (iRedMail mailbox + hosted sign-up, org 'Clerk Test'); ao fabric pair approved in platform UI (rt_0955ea413f57475, runtime-type desktop until enum redeploy); serve+relay live; PWA renders node online 1/1 with capabilities. BLOCKER at last hop: POST /api/v1/runtime-devices/:id/proxy -> 405 (platform) — production cloud-api predates the P3 proxy route; needs deploy-contabo.sh redeploy (human gate). Evidence in ~/.agent-orchestrator/evidence/ao-fabric-verify/."
         },
         {
           "ts": "2026-09-10T17:05:00Z",
@@ -1391,13 +1391,13 @@
           "ts": "2026-09-10T20:03:42Z",
           "event": "p7_landed",
           "by": "kimi-interactive",
-          "note": "PR #260 merged 40e18cc5e \u2014 ao harness install: version-pinned license-gated installs (16-tool manifest license tags, --accept-terms gate with pin re-flag, managed dir ~/.ao/harness, doctor harness section exit 3); orchestrator re-verified on committed state (harness 50/50, ao:: 93/93, ao_parity 62/0, live claude gate refusal); evidence ~/.agent-orchestrator/evidence/ao-harness-install/"
+          "note": "PR #260 merged 40e18cc5e — ao harness install: version-pinned license-gated installs (16-tool manifest license tags, --accept-terms gate with pin re-flag, managed dir ~/.ao/harness, doctor harness section exit 3); orchestrator re-verified on committed state (harness 50/50, ao:: 93/93, ao_parity 62/0, live claude gate refusal); evidence ~/.agent-orchestrator/evidence/ao-harness-install/"
         },
         {
           "ts": "2026-09-10T22:07:46Z",
           "event": "p6a_landed",
           "by": "kimi-interactive",
-          "note": "PR #265 merged 6b21256cb \u2014 UHP 2026-08-11 core gateway crate + ao serve; conformance 40/40; gate2 kimi green, claude/codex environmental (OAuth/limit Sep 16); evidence ~/.agent-orchestrator/evidence/ao-uhp-gateway/"
+          "note": "PR #265 merged 6b21256cb — UHP 2026-08-11 core gateway crate + ao serve; conformance 40/40; gate2 kimi green, claude/codex environmental (OAuth/limit Sep 16); evidence ~/.agent-orchestrator/evidence/ao-uhp-gateway/"
         }
       ],
       "li_id": "li-20260908-051",
@@ -1411,7 +1411,7 @@
     {
       "id": "rq-20260909-001",
       "url": "https://github.com/ai-sdlc-framework/ai-sdlc",
-      "note": "\u2014 AI-SDLC: spec-driven decision engine + autonomous orchestrator (DoR gate, worktree dispatch, cross-harness review w/ DSSE attestation, operator TUI). Apache-2.0, no Docker/signup for core path. Verdict at research time: watch + adopt ideas (reviewer-harness independence, decision-steward gate report, checkpoint/quarantine) rather than adopt/fork \u2014 repo-task-shaped, v1alpha1, heavy monorepo; our link\u2192business pipeline keeps its own engine. Possible pilot: repo-native engineering tasks inside allternit-platform.",
+      "note": "— AI-SDLC: spec-driven decision engine + autonomous orchestrator (DoR gate, worktree dispatch, cross-harness review w/ DSSE attestation, operator TUI). Apache-2.0, no Docker/signup for core path. Verdict at research time: watch + adopt ideas (reviewer-harness independence, decision-steward gate report, checkpoint/quarantine) rather than adopt/fork — repo-task-shaped, v1alpha1, heavy monorepo; our link→business pipeline keeps its own engine. Possible pilot: repo-native engineering tasks inside allternit-platform.",
       "title": null,
       "category": null,
       "status": "inbox",
@@ -1437,8 +1437,8 @@
     {
       "id": "rq-20260909-002",
       "url": "https://github.com/google/artemis",
-      "note": "li-20260908-052 \u2014 google/artemis Android NL automation MCP",
-      "title": "google/artemis \u2014 Android NL automation (MCP)",
+      "note": "li-20260908-052 — google/artemis Android NL automation MCP",
+      "title": "google/artemis — Android NL automation (MCP)",
       "category": "agent-tooling",
       "status": "inbox",
       "spec": null,
@@ -1464,7 +1464,7 @@
     {
       "id": "rq-20260909-003",
       "url": "https://x.com/nickvasiles/status/2097392151953117355",
-      "note": "Human-authored spec (Eoj, 2026-09-09) \u2014 atomic Create Bot: Identity + Instructions + persistent Computer Cloud + Tools; closes the join Nick's Codex+Orgo demo exposed",
+      "note": "Human-authored spec (Eoj, 2026-09-09) — atomic Create Bot: Identity + Instructions + persistent Computer Cloud + Tools; closes the join Nick's Codex+Orgo demo exposed",
       "title": "bot-identity-computer",
       "category": "agent-tooling",
       "status": "landed",
@@ -1520,7 +1520,7 @@
     {
       "id": "rq-20260909-004",
       "url": "https://github.com/HarnessRouter/harnessrouter",
-      "note": "Self-hosted multi-harness runner: one Docker container running Claude Code, Codex, Gemini CLI, etc. behind an OpenAI Responses-compatible API (Unified Harness Protocol) with a web console. Joe: \"must implement in Allternit \u2014 a layer above harnesses\" \u2014 candidate to sit above agent-orchestrator / brain selection / cross-harness session pickup.",
+      "note": "Self-hosted multi-harness runner: one Docker container running Claude Code, Codex, Gemini CLI, etc. behind an OpenAI Responses-compatible API (Unified Harness Protocol) with a web console. Joe: \"must implement in Allternit — a layer above harnesses\" — candidate to sit above agent-orchestrator / brain selection / cross-harness session pickup.",
       "title": "HarnessRouter CE / UHP harness router",
       "category": "allternit",
       "status": "researched",
@@ -1546,13 +1546,13 @@
           "ts": "2026-09-09T06:45:00.000Z",
           "event": "decided",
           "by": "kimi-interactive",
-          "note": "reverse_engineer: adopt UHP (unifiedharnessprotocol.org, open versioned HTTP contract w/ OpenAPI 3.1 + conformance suite) as the canonical harness-router contract; implement natively in AllternitOS Layer-3 harness router + ao execution substrate. Upstream as-is is Docker-only (hard veto) so thin_adapter/fork of the container is out; fork_reskin conflicts with ao Rust direction (rq-20260908-028, decided 2026-09-08). Fills baseline gap: agent-native API surface (Responses-compatible turns, streaming, cancel, idempotency, session checkpoints). NOT ported: provider/key management \u2014 Allternit gateway + A:// tier policy already own routing. Complements ao (orchestration brain + interactive steering stays), Fabric (session pickup stays), Brain (knowledge plane stays)."
+          "note": "reverse_engineer: adopt UHP (unifiedharnessprotocol.org, open versioned HTTP contract w/ OpenAPI 3.1 + conformance suite) as the canonical harness-router contract; implement natively in AllternitOS Layer-3 harness router + ao execution substrate. Upstream as-is is Docker-only (hard veto) so thin_adapter/fork of the container is out; fork_reskin conflicts with ao Rust direction (rq-20260908-028, decided 2026-09-08). Fills baseline gap: agent-native API surface (Responses-compatible turns, streaming, cancel, idempotency, session checkpoints). NOT ported: provider/key management — Allternit gateway + A:// tier policy already own routing. Complements ao (orchestration brain + interactive steering stays), Fabric (session pickup stays), Brain (knowledge plane stays)."
         },
         {
           "ts": "2026-09-09T07:10:00.000Z",
           "event": "redirected",
           "by": "human-via-kimi-interactive",
-          "note": "reverse_engineer -> fork_reskin (human redirect 2026-09-09): fork HarnessRouter CE and strip the Docker packaging. Docker is only the appliance layer (bundling + per-session-user isolation); gateway+runner are plain Python loopback servers, UI is Next.js. New scope folded INLINE into the ao v3 plan as P6 (UHP execution layer, Docker-free fork supervised by the ao binary) + P7 (harness auto-install/onboarding from HR first-run installer). Not in the Rust binary (Python cannot embed); ao supervises gateway+runner as loopback child processes. Provider/key routing stays in the Allternit gateway \u2014 HR connection-policy machinery not ported. See Products/AgentOrchestratorRuntime.md \u00a72.6, P6, P7."
+          "note": "reverse_engineer -> fork_reskin (human redirect 2026-09-09): fork HarnessRouter CE and strip the Docker packaging. Docker is only the appliance layer (bundling + per-session-user isolation); gateway+runner are plain Python loopback servers, UI is Next.js. New scope folded INLINE into the ao v3 plan as P6 (UHP execution layer, Docker-free fork supervised by the ao binary) + P7 (harness auto-install/onboarding from HR first-run installer). Not in the Rust binary (Python cannot embed); ao supervises gateway+runner as loopback child processes. Provider/key routing stays in the Allternit gateway — HR connection-policy machinery not ported. See Products/AgentOrchestratorRuntime.md §2.6, P6, P7."
         },
         {
           "ts": "2026-09-09T08:05:00.000Z",
@@ -1564,20 +1564,20 @@
           "ts": "2026-09-09T08:35:00.000Z",
           "event": "scope-refined",
           "by": "human-via-kimi-interactive",
-          "note": "UI + assets + credential-model refinements (human 2026-09-09): (1) HR console UX patterns PORT as design reference \u2014 system-harness catalog cards + per-harness live telemetry (turn stream, commands, files, tokens, cost) feed ao TUI face (P2) + visibility panel (P5); console code itself still dropped. (2) ui/public/logos/* (11 brain marks) harvested to \"Allternit Assets/Brand/Third-Party/harness-brains/\" with provenance README \u2014 these are the brains actual icons for choose-a-brain surfaces. (3) Credential model corrected: NOT \"no second key store\" \u2014 two legitimate homes per human: native authed CLI runtimes (user logins/subs) + Allternit cloud credentials on the platform plan (platform.allternit.com) via the Allternit gateway; UHP layer owns no keys, only HR per-backend broker machinery dropped."
+          "note": "UI + assets + credential-model refinements (human 2026-09-09): (1) HR console UX patterns PORT as design reference — system-harness catalog cards + per-harness live telemetry (turn stream, commands, files, tokens, cost) feed ao TUI face (P2) + visibility panel (P5); console code itself still dropped. (2) ui/public/logos/* (11 brain marks) harvested to \"Allternit Assets/Brand/Third-Party/harness-brains/\" with provenance README — these are the brains actual icons for choose-a-brain surfaces. (3) Credential model corrected: NOT \"no second key store\" — two legitimate homes per human: native authed CLI runtimes (user logins/subs) + Allternit cloud credentials on the platform plan (platform.allternit.com) via the Allternit gateway; UHP layer owns no keys, only HR per-backend broker machinery dropped."
         },
         {
           "ts": "2026-09-09T07:45:00Z",
           "event": "decisions",
           "by": "Eoj via kimi-code",
-          "note": "Gate decisions applied to spec: (1) external dev API keys out of scope \u2014 ship with Allternit Cloud subscription product, internal-Orgo stays first-party; (2) local kind (Tart on Joe's Mac) committed to Phase 1; (3) workspaces = org + group label in Phase 2; (4) model-driving stays on ACU canonical gateway. Spec section 'Gate decisions' is binding for the executing agent."
+          "note": "Gate decisions applied to spec: (1) external dev API keys out of scope — ship with Allternit Cloud subscription product, internal-Orgo stays first-party; (2) local kind (Tart on Joe's Mac) committed to Phase 1; (3) workspaces = org + group label in Phase 2; (4) model-driving stays on ACU canonical gateway. Spec section 'Gate decisions' is binding for the executing agent."
         }
       ]
     },
     {
       "id": "rq-20260909-004",
       "url": "https://docs.orgo.ai/introduction",
-      "note": "Human-directed strategy (Eoj, 2026-09-09): absorb Orgo \u2014 reimplement its full cloud-computer capability matrix as our internal Cloud Computer on Incus/Tart; spec authored directly",
+      "note": "Human-directed strategy (Eoj, 2026-09-09): absorb Orgo — reimplement its full cloud-computer capability matrix as our internal Cloud Computer on Incus/Tart; spec authored directly",
       "title": "cloud-computer-orgo-parity",
       "category": "agent-tooling",
       "status": "landed",
@@ -1607,13 +1607,13 @@
           "ts": "2026-09-09T08:35:00.000Z",
           "event": "scope-refined",
           "by": "human-via-kimi-interactive",
-          "note": "UI + assets + credential-model refinements (human 2026-09-09): (1) HR console UX patterns PORT as design reference \u2014 system-harness catalog cards + per-harness live telemetry (turn stream, commands, files, tokens, cost) feed ao TUI face (P2) + visibility panel (P5); console code itself still dropped. (2) ui/public/logos/* (11 brain marks) harvested to \"Allternit Assets/Brand/Third-Party/harness-brains/\" with provenance README \u2014 these are the brains actual icons for choose-a-brain surfaces. (3) Credential model corrected: NOT \"no second key store\" \u2014 two legitimate homes per human: native authed CLI runtimes (user logins/subs) + Allternit cloud credentials on the platform plan (platform.allternit.com) via the Allternit gateway; UHP layer owns no keys, only HR per-backend broker machinery dropped."
+          "note": "UI + assets + credential-model refinements (human 2026-09-09): (1) HR console UX patterns PORT as design reference — system-harness catalog cards + per-harness live telemetry (turn stream, commands, files, tokens, cost) feed ao TUI face (P2) + visibility panel (P5); console code itself still dropped. (2) ui/public/logos/* (11 brain marks) harvested to \"Allternit Assets/Brand/Third-Party/harness-brains/\" with provenance README — these are the brains actual icons for choose-a-brain surfaces. (3) Credential model corrected: NOT \"no second key store\" — two legitimate homes per human: native authed CLI runtimes (user logins/subs) + Allternit cloud credentials on the platform plan (platform.allternit.com) via the Allternit gateway; UHP layer owns no keys, only HR per-backend broker machinery dropped."
         },
         {
           "ts": "2026-09-09T07:24:22.192Z",
           "event": "approved",
           "by": "kimi-code session",
-          "note": "Human approved execute in-session 2026-09-09: \"work on this spec /goal continue this until completion\" \u2014 all five phases, per-phase review."
+          "note": "Human approved execute in-session 2026-09-09: \"work on this spec /goal continue this until completion\" — all five phases, per-phase review."
         },
         {
           "ts": "2026-09-09T08:15:00.000Z",
@@ -1637,19 +1637,19 @@
           "ts": "2026-09-09T11:05:00.000Z",
           "event": "phase-landed",
           "by": "kimi-code orchestrator (goal mode)",
-          "note": "Phase 4 (templates as code: allternit.ai/v1 YAML docs \u2192 approval-gated golden build \u2192 stateful golden snapshot on role='golden' holder \u2192 clone_from_snapshot provisioning; system/\u2026 refs; import/export; vault://org secret refs, values never persisted) PR #216 merged (ab8638254). Orchestrator deep review found+fixed critical golden_snapshot_id persistence and clone-from-stored-snapshot before merge. 14/15/96 Rust tests, vitest/tsc clean; 4 pre-existing agent_cloud_routes control-plane failures unrelated. Live Incus smoke owed. Executor: kimi (claude OAuth expired, codex quota dead to Sep 16); two session deaths (quota outage, off-task) \u2192 orchestrator finished per repo escape. Phase 5 pending."
+          "note": "Phase 4 (templates as code: allternit.ai/v1 YAML docs → approval-gated golden build → stateful golden snapshot on role='golden' holder → clone_from_snapshot provisioning; system/… refs; import/export; vault://org secret refs, values never persisted) PR #216 merged (ab8638254). Orchestrator deep review found+fixed critical golden_snapshot_id persistence and clone-from-stored-snapshot before merge. 14/15/96 Rust tests, vitest/tsc clean; 4 pre-existing agent_cloud_routes control-plane failures unrelated. Live Incus smoke owed. Executor: kimi (claude OAuth expired, codex quota dead to Sep 16); two session deaths (quota outage, off-task) → orchestrator finished per repo escape. Phase 5 pending."
         },
         {
           "ts": "2026-09-09T12:55:00.000Z",
           "event": "phase-landed",
           "by": "kimi-code orchestrator (goal mode)",
-          "note": "Phase 5 (distribution: standalone computers MCP server w/ 22 route-derived tools + lifecycle tools on /mcp/server catalog; allternit computers CLI; TS+Python SDK parity; embeddable widget \u2014 computer status endpoint, token-scoped VNC ws w/ read_only enforcement, 15-min embed tokens, self-contained noVNC viewer, CSP) PR #222 merged (eece02ed6). Pre-merge review found embed VNC ws unreachable for anonymous viewers (401 behind auth middleware) + unmintable full-control vnc tokens \u2014 both fixed (public token-only VNC router; read_only=false behind approval grant). No approval bypass. 64/64 computer_* tests, CLI 13/13, SDK 28/28+19 py, MCP smoke PASS."
+          "note": "Phase 5 (distribution: standalone computers MCP server w/ 22 route-derived tools + lifecycle tools on /mcp/server catalog; allternit computers CLI; TS+Python SDK parity; embeddable widget — computer status endpoint, token-scoped VNC ws w/ read_only enforcement, 15-min embed tokens, self-contained noVNC viewer, CSP) PR #222 merged (eece02ed6). Pre-merge review found embed VNC ws unreachable for anonymous viewers (401 behind auth middleware) + unmintable full-control vnc tokens — both fixed (public token-only VNC router; read_only=false behind approval grant). No approval bypass. 64/64 computer_* tests, CLI 13/13, SDK 28/28+19 py, MCP smoke PASS."
         },
         {
           "ts": "2026-09-09T13:00:00.000Z",
           "event": "landed",
           "by": "kimi-code orchestrator (goal mode)",
-          "note": "ALL 5 PHASES LANDED: P1 PR #201 (any-owner create, full specs, local kind, client parity, restart), P2 PR #204 (resize/clone/auto-stop/workspaces-lite), P3 PR #206 (PTY ws, guest events, in-VM proxy), P4 PR #216 (templates as code \u2192 golden snapshots), P5 PR #222 (MCP/CLI/SDK/embed). Deliberate non-goals held: no GPU/Android, no Orgo runtime dep, no approval un-gating (verified in every review). Owed: live Incus smokes (build/provision, embed iframe, vnc-token ACI handoff). Brain updates folded as drafts only."
+          "note": "ALL 5 PHASES LANDED: P1 PR #201 (any-owner create, full specs, local kind, client parity, restart), P2 PR #204 (resize/clone/auto-stop/workspaces-lite), P3 PR #206 (PTY ws, guest events, in-VM proxy), P4 PR #216 (templates as code → golden snapshots), P5 PR #222 (MCP/CLI/SDK/embed). Deliberate non-goals held: no GPU/Android, no Orgo runtime dep, no approval un-gating (verified in every review). Owed: live Incus smokes (build/provision, embed iframe, vnc-token ACI handoff). Brain updates folded as drafts only."
         }
       ],
       "li_id": null,
@@ -1662,8 +1662,8 @@
     {
       "id": "rq-20260910-001",
       "url": "https://github.com/CopilotKit/OpenBot",
-      "note": "CopilotKit OpenBot \u2014 AI coworkers with per-bot computers, policy gateway, audit trail. Research vs Allternit bot setup (bot-identity-computer / Computer Cloud) for port candidates. RESEARCH 2026-09-10: MIT, Bun+Hono+React/Vite, Postgres+pgvector, AG-UI protocol. Vetoes fire on ADOPTING the runtime (Docker + CopilotKit Intelligence signup) so fork/vendor is out; decision is reverse_engineer of patterns into Computer Cloud + bot-identity-computer. Port shortlist: (1) declarative CEL-style fail-closed policy layer over our action-hash grants; (2) gateway ordering guarantee (audit row written BEFORE action executes, no act-without-record path); (3) take-the-wheel state machine (help_requested/control_taken/control_released + bot actions refused while human drives); (4) routines = scheduled bot runs w/ 15-min floor, cap 20, 10-failure auto-off; (5) governed MCP catalogue read/write classification (unknown tools treated as writes); (6) coworkers-as-config agents.yaml template package. Already-have: per-bot persistent computers, credential vault w/ transcript redaction, watch/takeover UX, audit ledger, approvals/receipts, skills. SPEC REV 2026-09-10 (Eoj): UI scope added \u2014 verdict chips + audit list + policy editor, all bot-mode-only (no new tabs); Phase 2 flagged for herald subagent telemetry + computer screen streaming in chat (ref: herald recordings 2026-09-10). SPEC REV2: bot social layer added to Phase 2 cluster \u2014 avatars/identity visuals (herald pet-style), @mention routing, multi-bot group chat, long-running session model.",
-      "title": "CopilotKit OpenBot \u2014 AI coworkers with per-bot computers, CEL policy gateway, audit trail",
+      "note": "CopilotKit OpenBot — AI coworkers with per-bot computers, policy gateway, audit trail. Research vs Allternit bot setup (bot-identity-computer / Computer Cloud) for port candidates. RESEARCH 2026-09-10: MIT, Bun+Hono+React/Vite, Postgres+pgvector, AG-UI protocol. Vetoes fire on ADOPTING the runtime (Docker + CopilotKit Intelligence signup) so fork/vendor is out; decision is reverse_engineer of patterns into Computer Cloud + bot-identity-computer. Port shortlist: (1) declarative CEL-style fail-closed policy layer over our action-hash grants; (2) gateway ordering guarantee (audit row written BEFORE action executes, no act-without-record path); (3) take-the-wheel state machine (help_requested/control_taken/control_released + bot actions refused while human drives); (4) routines = scheduled bot runs w/ 15-min floor, cap 20, 10-failure auto-off; (5) governed MCP catalogue read/write classification (unknown tools treated as writes); (6) coworkers-as-config agents.yaml template package. Already-have: per-bot persistent computers, credential vault w/ transcript redaction, watch/takeover UX, audit ledger, approvals/receipts, skills. SPEC REV 2026-09-10 (Eoj): UI scope added — verdict chips + audit list + policy editor, all bot-mode-only (no new tabs); Phase 2 flagged for herald subagent telemetry + computer screen streaming in chat (ref: herald recordings 2026-09-10). SPEC REV2: bot social layer added to Phase 2 cluster — avatars/identity visuals (herald pet-style), @mention routing, multi-bot group chat, long-running session model.",
+      "title": "CopilotKit OpenBot — AI coworkers with per-bot computers, CEL policy gateway, audit trail",
       "category": "agent-tooling",
       "status": "approved",
       "spec": "Research/specs/openbot-policy-gateway.md",
@@ -1713,7 +1713,7 @@
           "ts": "2026-09-10T22:00:34.364Z",
           "event": "approved",
           "by": "kimi session 2026-09-10",
-          "note": "Eoj go-ahead 2026-09-10: \"spawn subagents to get this work done faster and don't stop until the finished features land\" \u2014 interactive approval to execute Phase 1 (policy engine + audit-before-act + bot-mode UI)."
+          "note": "Eoj go-ahead 2026-09-10: \"spawn subagents to get this work done faster and don't stop until the finished features land\" — interactive approval to execute Phase 1 (policy engine + audit-before-act + bot-mode UI)."
         }
       ]
     },
@@ -1751,7 +1751,7 @@
           "ts": "2026-09-10T21:16:00.000Z",
           "event": "researched",
           "by": "grok-session",
-          "note": "1:1 port map in Research/drafts/openai-agents-api-port.md; recommended reverse_engineer of the wire contract onto /beta/sessions + gizzi + hosted-runtime. Decision not set \u2014 integrate-decision still required."
+          "note": "1:1 port map in Research/drafts/openai-agents-api-port.md; recommended reverse_engineer of the wire contract onto /beta/sessions + gizzi + hosted-runtime. Decision not set — integrate-decision still required."
         },
         {
           "ts": "2026-09-10T22:20:00.000Z",
@@ -1865,7 +1865,7 @@
     {
       "id": "rq-20260910-006",
       "url": "https://github.com/makecindy/cindy/pull/4207",
-      "note": "Cindy (makecindy/cindy) \u2014 open-source multi-harness AI agent client (Claude Code/Codex/Pi harnesses, Electron desktop + Expo mobile, Apache-2.0). PR 4207 merged 2026-09-10: remote-desktop phone\u2192Mac control with optional auto-unlock (native credential vault, Face ID, TOFU key pinning) and lock-on-exit. Compare against our local computer-use/phone-control rig (.cua-driver, agent-orchestrator). Relevant capabilities: Orca multi-agent orchestration docs, device-link protocol, harness-agnostic memory/skills, scheduling/automation, MCP + plugin marketplace.",
+      "note": "Cindy (makecindy/cindy) — open-source multi-harness AI agent client (Claude Code/Codex/Pi harnesses, Electron desktop + Expo mobile, Apache-2.0). PR 4207 merged 2026-09-10: remote-desktop phone→Mac control with optional auto-unlock (native credential vault, Face ID, TOFU key pinning) and lock-on-exit. Compare against our local computer-use/phone-control rig (.cua-driver, agent-orchestrator). Relevant capabilities: Orca multi-agent orchestration docs, device-link protocol, harness-agnostic memory/skills, scheduling/automation, MCP + plugin marketplace.",
       "title": null,
       "category": null,
       "status": "inbox",
@@ -1886,6 +1886,59 @@
           "event": "ingested",
           "by": "mcp",
           "source": "kimi-code interactive session 2026-09-10"
+        }
+      ]
+    },
+    {
+      "id": "rq-20260910-007",
+      "url": "https://github.com/milind-soni/OpenMausBot",
+      "note": "OpenMausBot (Apache-2.0) — mobile bot-mode UI reference: iOS SwiftUI companion + React desktop app for a remote-agent SSE stream. Port UI patterns (streaming bubble, folded tool runs, approval cards/island, composer, battery discipline) into Fabric Transport PWA bot mode + ACI, sync across Allternit surfaces.",
+      "title": "OpenMausBot — mobile bot-mode UI patterns → Fabric Transport PWA",
+      "category": "surfaces",
+      "status": "spec_ready",
+      "spec": "Research/specs/fabric-pwa-bot-mode-ui.md",
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "li_id": null,
+      "decision": "reverse_engineer",
+      "constraints_ok": true,
+      "paid_or_signup": false,
+      "docker_required": false,
+      "baseline_ref": "Research/baselines/fabric-pwa-bot-mode.md",
+      "area": "fabric-pwa-bot-mode",
+      "history": [
+        {
+          "ts": "2026-09-10T22:11:50.229Z",
+          "event": "ingested",
+          "by": "mcp",
+          "source": "kimi interactive session 2026-09-10"
+        },
+        {
+          "ts": "2026-09-10T22:15:00Z",
+          "event": "researched",
+          "by": "kimi session 2026-09-10",
+          "note": "UI teardown of ios/App + ios/README: three-rung streaming, tool-run folding, approval cards/island, composer (chips/slash HUD/dictation), screens=off, SSE-only state. License Apache-2.0 (enterprise/ excluded). Local fabric-session exploration: PWA has zero bot UI + zero touch engineering; bot mode proved on CLI/web/desktop only (botmode-0910). Human clarified: no Clerk blocker."
+        },
+        {
+          "ts": "2026-09-10T22:15:00Z",
+          "event": "baseline_set",
+          "by": "kimi session 2026-09-10",
+          "baseline_ref": "Research/baselines/fabric-pwa-bot-mode.md"
+        },
+        {
+          "ts": "2026-09-10T22:15:00Z",
+          "event": "decision_set",
+          "by": "kimi session 2026-09-10",
+          "decision": "reverse_engineer",
+          "note": "clean-room TS/CSS port of UI patterns into src/components/bot-chat/ + fabric-session PWA; no OpenMausBot code/runtime; ideas unencumbered"
+        },
+        {
+          "ts": "2026-09-10T22:15:00Z",
+          "event": "spec_ready",
+          "by": "kimi session 2026-09-10",
+          "spec": "Research/specs/fabric-pwa-bot-mode-ui.md",
+          "note": "single kimi draft (dual review skipped in interactive run, herdr-v090 precedent); human gate next. Slug: fabric-pwa-bot-mode-ui"
         }
       ]
     }
