@@ -1368,6 +1368,12 @@
           "event": "p3_enum_followup",
           "by": "ao-orchestrator-main",
           "note": "PR #220 merged — cloud-api accepts runtimeType \"ao\" in pairing enum (checks green; CF Pages failure pre-existing on main, Vercel rate-limit noise). Production cloud-api redeploy still pending (deploy gate = human go-ahead); until then pair with --runtime-type desktop."
+        },
+        {
+          "ts": "2026-09-10T15:45:00Z",
+          "event": "p3_e2e_clerk_test",
+          "by": "ao-orchestrator-main",
+          "note": "Full PWA e2e under dedicated test account: Clerk user clerk-test@news.allternit.com CREATED (iRedMail mailbox + hosted sign-up, org 'Clerk Test'); ao fabric pair approved in platform UI (rt_0955ea413f57475, runtime-type desktop until enum redeploy); serve+relay live; PWA renders node online 1/1 with capabilities. BLOCKER at last hop: POST /api/v1/runtime-devices/:id/proxy -> 405 (platform) — production cloud-api predates the P3 proxy route; needs deploy-contabo.sh redeploy (human gate). Evidence in ~/.agent-orchestrator/evidence/ao-fabric-verify/."
         }
       ],
       "li_id": "li-20260908-051",
