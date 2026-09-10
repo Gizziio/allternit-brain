@@ -1656,7 +1656,7 @@
     {
       "id": "rq-20260910-001",
       "url": "https://github.com/CopilotKit/OpenBot",
-      "note": "CopilotKit OpenBot — AI coworkers with per-bot computers, policy gateway, audit trail. Research vs Allternit bot setup (bot-identity-computer / Computer Cloud) for port candidates. RESEARCH 2026-09-10: MIT, Bun+Hono+React/Vite, Postgres+pgvector, AG-UI protocol. Vetoes fire on ADOPTING the runtime (Docker + CopilotKit Intelligence signup) so fork/vendor is out; decision is reverse_engineer of patterns into Computer Cloud + bot-identity-computer. Port shortlist: (1) declarative CEL-style fail-closed policy layer over our action-hash grants; (2) gateway ordering guarantee (audit row written BEFORE action executes, no act-without-record path); (3) take-the-wheel state machine (help_requested/control_taken/control_released + bot actions refused while human drives); (4) routines = scheduled bot runs w/ 15-min floor, cap 20, 10-failure auto-off; (5) governed MCP catalogue read/write classification (unknown tools treated as writes); (6) coworkers-as-config agents.yaml template package. Already-have: per-bot persistent computers, credential vault w/ transcript redaction, watch/takeover UX, audit ledger, approvals/receipts, skills.",
+      "note": "CopilotKit OpenBot — AI coworkers with per-bot computers, policy gateway, audit trail. Research vs Allternit bot setup (bot-identity-computer / Computer Cloud) for port candidates. RESEARCH 2026-09-10: MIT, Bun+Hono+React/Vite, Postgres+pgvector, AG-UI protocol. Vetoes fire on ADOPTING the runtime (Docker + CopilotKit Intelligence signup) so fork/vendor is out; decision is reverse_engineer of patterns into Computer Cloud + bot-identity-computer. Port shortlist: (1) declarative CEL-style fail-closed policy layer over our action-hash grants; (2) gateway ordering guarantee (audit row written BEFORE action executes, no act-without-record path); (3) take-the-wheel state machine (help_requested/control_taken/control_released + bot actions refused while human drives); (4) routines = scheduled bot runs w/ 15-min floor, cap 20, 10-failure auto-off; (5) governed MCP catalogue read/write classification (unknown tools treated as writes); (6) coworkers-as-config agents.yaml template package. Already-have: per-bot persistent computers, credential vault w/ transcript redaction, watch/takeover UX, audit ledger, approvals/receipts, skills. SPEC REV 2026-09-10 (Eoj): UI scope added — verdict chips + audit list + policy editor, all bot-mode-only (no new tabs); Phase 2 flagged for herald subagent telemetry + computer screen streaming in chat (ref: herald recordings 2026-09-10).",
       "title": "CopilotKit OpenBot — AI coworkers with per-bot computers, CEL policy gateway, audit trail",
       "category": "agent-tooling",
       "status": "spec_ready",
@@ -1690,6 +1690,12 @@
           "event": "spec_ready",
           "by": "kimi session 2026-09-10",
           "spec": "Research/specs/openbot-policy-gateway.md"
+        },
+        {
+          "ts": "2026-09-10T21:50:38.091Z",
+          "event": "spec_revised",
+          "by": "kimi session 2026-09-10",
+          "detail": "bot-mode UI slice added; herald telemetry + screen streaming scoped Phase 2"
         }
       ]
     },
@@ -1766,6 +1772,85 @@
           "event": "researched",
           "by": "grok-session",
           "note": "Companion docs for rq-20260910-002. Same port map."
+        }
+      ]
+    },
+    {
+      "id": "rq-20260910-004",
+      "url": "https://claude.com/blog/claude-managed-agents",
+      "note": "Anthropic Claude Managed Agents hosted API (2026-04-08). Compare memo: Research/drafts/openai-anthropic-managed-agents-compare.md",
+      "title": null,
+      "category": null,
+      "status": "inbox",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "li_id": null,
+      "decision": null,
+      "constraints_ok": null,
+      "paid_or_signup": null,
+      "docker_required": null,
+      "baseline_ref": null,
+      "area": null,
+      "history": [
+        {
+          "ts": "2026-09-10T21:35:01.850Z",
+          "event": "ingested",
+          "by": "dropfile"
+        }
+      ]
+    },
+    {
+      "id": "rq-20260910-005",
+      "url": "https://platform.claude.com/docs/en/managed-agents/overview",
+      "note": "Official Managed Agents overview (Agent/Environment/Session, beta managed-agents-2026-04-01)",
+      "title": null,
+      "category": null,
+      "status": "inbox",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "li_id": null,
+      "decision": null,
+      "constraints_ok": null,
+      "paid_or_signup": null,
+      "docker_required": null,
+      "baseline_ref": null,
+      "area": null,
+      "history": [
+        {
+          "ts": "2026-09-10T21:35:01.850Z",
+          "event": "ingested",
+          "by": "dropfile"
+        }
+      ]
+    },
+    {
+      "id": "rq-20260910-006",
+      "url": "https://github.com/makecindy/cindy/pull/4207",
+      "note": "Cindy (makecindy/cindy) — open-source multi-harness AI agent client (Claude Code/Codex/Pi harnesses, Electron desktop + Expo mobile, Apache-2.0). PR 4207 merged 2026-09-10: remote-desktop phone→Mac control with optional auto-unlock (native credential vault, Face ID, TOFU key pinning) and lock-on-exit. Compare against our local computer-use/phone-control rig (.cua-driver, agent-orchestrator). Relevant capabilities: Orca multi-agent orchestration docs, device-link protocol, harness-agnostic memory/skills, scheduling/automation, MCP + plugin marketplace.",
+      "title": null,
+      "category": null,
+      "status": "inbox",
+      "spec": null,
+      "repo": null,
+      "worktree": null,
+      "branch": null,
+      "li_id": null,
+      "decision": null,
+      "constraints_ok": null,
+      "paid_or_signup": null,
+      "docker_required": null,
+      "baseline_ref": null,
+      "area": null,
+      "history": [
+        {
+          "ts": "2026-09-10T21:35:01.850Z",
+          "event": "ingested",
+          "by": "mcp",
+          "source": "kimi-code interactive session 2026-09-10"
         }
       ]
     }
