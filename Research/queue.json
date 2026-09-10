@@ -1356,6 +1356,12 @@
           "event": "landed",
           "by": "ao-v3-p3-land-ritual",
           "note": "PR #229 merged (503d99223e) \u2014 ao fabric pair|serve|status; live proof seed@ runtime rt_af9d675b04b2 picked up in PWA. Gate PARTIAL: 3 platform follow-ups filed (PWA /api base, proxy 401, agent-sessions sync caller)."
+        },
+        {
+          "ts": "2026-09-10T14:05:00Z",
+          "event": "p4_landed",
+          "by": "ao-v3-p4-land-ritual",
+          "note": "P4 harness sync port merged: PR #250 (847331b12f). ao harness status|sync|uninstall|describe, byte-parity 21/21 across all 16 manifest tools (orchestrator re-verified incl. live HOME smokes). harness-sync.js retired (docs/status only, files kept)."
         }
       ],
       "li_id": "li-20260908-051",
