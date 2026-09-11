@@ -50,11 +50,12 @@ import workbuddyDriver from './harness-sync/drivers/workbuddy.js'
 import openclawDriver from './harness-sync/drivers/openclaw.js'
 import hermesDriver from './harness-sync/drivers/hermes.js'
 import dshDriver from './harness-sync/drivers/dsh.js'
+import piDriver from './harness-sync/drivers/pi.js'
 import qoderDriver from './harness-sync/drivers/qoder.js'
 
 const OPS_DIR = path.dirname(fileURLToPath(import.meta.url))
 const manifest = JSON.parse(fs.readFileSync(path.join(OPS_DIR, 'harness.json'), 'utf8'))
-const drivers = [claudeDriver, codexDriver, kimiDriver, grokDriver, cursorDriver, gizziDriver, agyDriver, opencodeDriver, antigravityDriver, qwenDriver, codebuddyDriver, workbuddyDriver, openclawDriver, hermesDriver, dshDriver, qoderDriver]
+const drivers = [claudeDriver, codexDriver, kimiDriver, grokDriver, cursorDriver, gizziDriver, agyDriver, opencodeDriver, antigravityDriver, qwenDriver, codebuddyDriver, workbuddyDriver, openclawDriver, hermesDriver, dshDriver, piDriver, qoderDriver]
 const server = manifest.source.mcpServer
 
 const args = process.argv.slice(2)
