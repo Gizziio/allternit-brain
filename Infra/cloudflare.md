@@ -1,6 +1,6 @@
 ---
 doc: infra/cloudflare
-updated: 2026-09-05
+updated: 2026-09-11
 status: active
 ---
 
@@ -28,7 +28,8 @@ status: active
 | `allternit-3dfacility` | **3dfacility.allternit.com** (canonical, Pages domain **active**) | `Allternit Websites/projects/3dfacility.allternit.com/source/app` |
 | `allternit-series` | **series.allternit.com** | `Allternit Websites/projects/series.allternit.com/source/app` |
 | `allternit-compute` | compute.allternit.com | `Allternit Websites/projects/compute.allternit.com/source/app` |
-| `ai-allternit` | **ai.allternit.com** | `allternit-workspace/allternit/surfaces/ai.allternit.com/dist` (not Allternit Websites). Deploy: `pnpm exec wrangler pages deploy dist --project-name=ai-allternit --branch=main --commit-dirty=true` from that surface. MCP `cloudflare_deploy_pages` cwd is Allternit Websites, so it cannot see this dist. |
+| `ai-allternit` | **ai.allternit.com** | `allternit-workspace/allternit/surfaces/ai.allternit.com/dist` (not Allternit Websites). Deploy: CI `deploy-cloudflare-pages.yml` on push to main (manual: `pnpm exec wrangler pages deploy dist --project-name=ai-allternit --branch=main --commit-dirty=true`). MCP `cloudflare_deploy_pages` cwd is Allternit Websites, so it cannot see this dist. Icon: cream-squircle A (`icon-candidates-v7/01-a-only-cream-squircle.png`) since 2026-09-11 (PR #320); `favicon.svg` retired, all icons `favicon.png`/`icons/icon-*.png`/`brand/a-only-cream-squircle.png`. Header mark renders the squircle PNG via `AProtocolWordmark`. |
+| `allternit-remote-control` | **fabrictransport.allternit.com** only | Fabric Session PWA. Build: `pnpm exec vite build --config vite.fabric-session.config.ts` then `node scripts/prepare-fabric-session-pwa.mjs` in `surfaces/ai.allternit.com`, deploy `tmp/fabric-session-pwa` with `wrangler pages deploy --project-name=allternit-remote-control --branch=main`. Not in the MCP known-projects enum — wrangler CLI. Last deploy 2026-09-11 (Eoj-approved, icon-swap session logo0911): new cream-squircle icons, SW **v30**, replaced the dead remote-control dashboard build. **remotecontrol.allternit.com surface retired 2026-09-11** (PR #320): domain stays unbound, `remote-control.html`/webmanifest/SW/icons deleted from the surface, `deploy-remote-control-cloudflare.yml` removed. Push worker (`services/remote-control-push/`, `push.fabrictransport.allternit.com`) unchanged. |
 | `allternit-platform` | — | — |
 | `allternit-docs` | — | — |
 | `gizziio` | — | — |
@@ -94,3 +95,11 @@ Related: [[stripe.md]], [[deploy-runbook.md]].
 - Push worker `allternit-remote-control-push` custom domains: `push.fabrictransport.allternit.com` (new, Worker DNS/cert may lag) and `push.remotecontrol.allternit.com` (active). Do **not** turn the push hostname into a Pages CNAME — it is Type **Worker**, target `allternit-remote-control-push`. App fallbacks now use `https://push.fabrictransport.allternit.com`.
 
 - 2026-09-01: added Email Routing custom address `info@allternit.com` → forwards to `allternitpbc@gmail.com` (rule id `a0200761170946ae9a79ba382b3c001a`, created via API). Note: wrangler 4.x now stores its OAuth config in `~/.wrangler/config/default.toml` (not `~/Library/Preferences/.wrangler/...`); refreshed 2026-09-01 and its scopes include `email_routing:write`, so Email Routing changes can be done via API.
+
+### 2026-09-11 — Cream-squircle icon swap + remote-control surface retirement
+
+- Every AI-product web surface now uses the cream-squircle A master icon (`icon-candidates-v7/01-a-only-cream-squircle.png`): ai.allternit.com (favicon, PWA icons 192/512, fabric-session icons + splash recreated — they were referenced but missing on main, fabric-session SW CACHE_NAME now v30, in-app header mark via `AProtocolWordmark` renders `brand/a-only-cream-squircle.png`), platform.allternit.com console favicon (wordmark kept), office.allternit.com favicon (header untouched), phone-remote icons, computer-embed inline favicon, desktop `build/icon.{png,icns,ico}` regenerated. All `favicon.svg` files repo-wide deleted. Merged PR #320 (`4a5c96218`); live verified byte-identical on ai/platform/office; fabrictransport manually redeployed same day (SW v30).
+- `remotecontrol.allternit.com` web surface removed (PR #320): html/webmanifest/SW/icons/splash, `vite.remote-control.config.ts`, deploy workflow, legacy desktop refs. Kept: Pages project `allternit-remote-control` (serves fabrictransport), push worker, `shell:open-remote-control` IPC (still the fabric-session opener used by the ai renderer).
+- platform.allternit.com/shell: dead — `sync-platform-export.yml` retired on main (d5ae72dce) before this session; console dist (`surfaces/platform.allternit.com`) is the only platform deploy source now.
+- Deferred per Eoj: docs.allternit.com gets a different icon later.
+
