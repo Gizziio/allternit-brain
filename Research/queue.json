@@ -1404,6 +1404,12 @@
           "event": "p6b_landed",
           "by": "grok-land-ritual",
           "note": "PR #280 merged db516a1b1 — UHP remaining drivers (gemini/qwen/opencode/cline/pi/dsh) + full-class conformance 63/64 CONFORMANT WITH SKIPS (X-07). pi added to 17-tool auto-install list. Live: qwen protocol-green/401 model; opencode direct ok, UHP engine pane error; pi installed but engine PATH miss; dsh pin missing on PyPI. Evidence ~/.agent-orchestrator/evidence/ao-uhp-p6b/. Ledger 2026-09-10-1912-p6b-uhp-full-grok.md."
+        },
+        {
+          "ts": "2026-09-11T02:26:04Z",
+          "event": "harness_install_channels_landed",
+          "by": "grok-land-ritual",
+          "note": "PR #291 merged d363492c0 — folded agy/antigravity; 16 tools all have install recipes (npm + script). dsh PyPI pin still missing."
         }
       ],
       "li_id": "li-20260908-051",
@@ -1732,6 +1738,24 @@
           "event": "landed",
           "by": "grok-session",
           "note": "PR #275 merged 8b64e18051c225de5c86a8ac92ec68fc5a319b42. Ledger attestation PR #278 (85a5b9d3d). GitHub Actions green; Vercel + CF Pages Git previews ignored (leftover integrations). Phase 2 UX cluster still out of scope."
+        },
+        {
+          "ts": "2026-09-11T00:27:43Z",
+          "event": "landed",
+          "by": "grok-session",
+          "note": "Phase 2 UX slice PR #279 merged 232102ee223a9da0148b78d096e622aaf598c7aa (pet avatars, long-running session chrome, group typing). @mention/group routing already in tree. Herald telemetry + screen-in-chat still deferred."
+        },
+        {
+          "ts": "2026-09-11T01:51:12Z",
+          "event": "landed",
+          "by": "grok-session",
+          "note": "Watch-strip PR #283 merged 0fa6782db32101c64d8ce91c6b4801a47147baec (screen-in-chat, action rows, thread mute). Herald subagent tree still deferred."
+        },
+        {
+          "ts": "2026-09-11T02:24:23Z",
+          "event": "landed",
+          "by": "grok-session",
+          "note": "Remaining UX PR #290 merged 18ed1019bac5a84ce0d7b8275a69eee9ee2b4c14 (bot_id seat, live watch, summaries, notify modes). Spawned-child subagent tree still deferred."
         }
       ],
       "pr": "https://github.com/Gizziio/allternit-platform/pull/275"
@@ -1742,7 +1766,7 @@
       "note": "OpenAI Agents API public beta 2026-09-10. Allternit Runtime product: reverse_engineer patterns, own names. Spec Research/specs/allternit-runtime-api.md. Not a paid wrap.",
       "title": "Allternit Agents / Cloud Agents",
       "category": "agent-tooling",
-      "status": "executing",
+      "status": "landed",
       "spec": "Research/specs/allternit-runtime-api.md",
       "repo": "allternit-platform",
       "worktree": "/Users/joe/Desktop/allternit-workspace/allternit-ao-allternit-runtime-api",
@@ -1854,9 +1878,45 @@
           "event": "phase-landed",
           "by": "grok-session",
           "note": "Cloud Agents Phase 1 merged PR #274 (20b101ebb). Ritual: merge commit, shared main ff-only, ledger attestation, brain_update_draft without confirm. Phase 2 still executing in worktree allternit-ao-allternit-runtime-api / ao-allternit-runtime-api-p2. Worktree+branch kept. No desktop rebuild (API/SDK/docs). No confirm:true."
+        },
+        {
+          "ts": "2026-09-11T01:49:04Z",
+          "event": "pr_open",
+          "by": "grok-session",
+          "note": "Cloud Agents Phase 2 PR #286 (54376bd51). CLI executors quota-blocked; implemented in grok session. cargo test cloud_agents_routes+beta_work_routes 13/13. Not merged. Not Bot Agents. Not dollar-budget."
+        },
+        {
+          "ts": "2026-09-11T01:55:20Z",
+          "event": "landed",
+          "by": "grok-session",
+          "note": "Cloud Agents Phase 2 merged PR #286 (de9a497f1). Phase 1 was #274 (20b101ebb). Ritual: merge commit, shared main ff-only, ledger attestation, brain_update_draft without confirm. Leftovers (sandbox, vaults, brains, schedules, tool_search) need a new named approve. Dollar budget parked. Bot Agents BA-* separate. Worktree kept. No desktop rebuild. No confirm:true."
+        },
+        {
+          "ts": "2026-09-11T02:07:22Z",
+          "event": "approved",
+          "by": "grok-session",
+          "note": "Eoj 2026-09-10: \"yes continue\". Cloud Agents Phase 3: brain attach + vaults alias. Not sandbox, not dollar budget, not Bot Agents."
+        },
+        {
+          "ts": "2026-09-11T02:07:22Z",
+          "event": "executing",
+          "by": "grok-session",
+          "note": "Phase 3 in grok session (CLI executors still quota-blocked). Worktree ao/allternit-runtime-api after merge of main."
+        },
+        {
+          "ts": "2026-09-11T02:10:29Z",
+          "event": "pr_open",
+          "by": "grok-session",
+          "note": "Cloud Agents Phase 3 PR #289 (68dd2e5d5). Brain attach + vaults alias. cargo test cloud_agents_routes 12/12, beta_session_routes 17/17. Not merged."
+        },
+        {
+          "ts": "2026-09-11T02:23:45Z",
+          "event": "landed",
+          "by": "grok-session",
+          "note": "Cloud Agents Phase 3 merged PR #289 (44c9c8589). P1 #274, P2 #286. Ritual: merge commit, shared main ff-only, ledger, brain_update_draft without confirm. Leftovers: sandbox, fabric/desktop, outputs, schedules, tool_search. Dollar budget parked. Bot Agents BA-* separate. Worktree kept. No desktop rebuild. No confirm:true."
         }
       ],
-      "pr": "https://github.com/Gizziio/allternit-platform/pull/274"
+      "pr": "https://github.com/Gizziio/allternit-platform/pull/289"
     },
     {
       "id": "rq-20260910-003",
@@ -1994,11 +2054,11 @@
       "note": "OpenMausBot (Apache-2.0) — mobile bot-mode UI reference: iOS SwiftUI companion + React desktop app for a remote-agent SSE stream. Port UI patterns (streaming bubble, folded tool runs, approval cards/island, composer, battery discipline) into Fabric Transport PWA bot mode + ACI, sync across Allternit surfaces.",
       "title": "OpenMausBot — mobile bot-mode UI patterns → Fabric Transport PWA",
       "category": "surfaces",
-      "status": "approved",
+      "status": "landed",
       "spec": "Research/specs/fabric-pwa-bot-mode-ui.md",
-      "repo": null,
+      "repo": "Gizziio/allternit-platform",
       "worktree": null,
-      "branch": null,
+      "branch": "ao/fabric-pwa-bot-mode-ui",
       "li_id": null,
       "decision": "reverse_engineer",
       "constraints_ok": true,
@@ -2044,6 +2104,27 @@
           "event": "approved",
           "by": "kimi interactive session 2026-09-10",
           "note": "Human approved 2026-09-10 in kimi interactive session by slug. Single kimi draft accepted (dual skipped). Execute Phase 1 via agent-orchestrator; worktree ~/Desktop/allternit-workspace/allternit; surfaces/ai.allternit.com."
+        },
+        {
+          "ts": "2026-09-10T22:24:30.000Z",
+          "event": "executing",
+          "by": "grok session (picked up kimi orchestrator)",
+          "note": "Phases 1A–1C in worktree allternit-ao-fabric-pwa-bot-mode-ui. 1A 63e9cb96e, 1B 875d8ed1f, 1C fb54110a2. Independent review: vitest/tsc green."
+        },
+        {
+          "ts": "2026-09-11T01:45:36.000Z",
+          "event": "pr_open",
+          "by": "grok session",
+          "note": "PR https://github.com/Gizziio/allternit-platform/pull/285 after merging origin/main (6a109ad7f). Leftovers: live 390x844 smoke (no Clerk keys), approval answers local-fold only, watch-from-chat does not stream until machine drive is mounted.",
+          "pr": "https://github.com/Gizziio/allternit-platform/pull/285"
+        },
+        {
+          "ts": "2026-09-11T02:18:59.000Z",
+          "event": "landed",
+          "by": "grok session",
+          "note": "PR #285 merged ae36c67b3 (Gizziio AI at 2026-09-11T02:06:13Z). Ledger already on main: 4b8ed0f3e (combined with #284). Worktree gone. Leftovers: 390x844 Clerk smoke, approval answers local-fold only, watch-from-chat does not stream until machine drive is open, desktop DMG not rebuilt.",
+          "pr": "https://github.com/Gizziio/allternit-platform/pull/285",
+          "merge": "ae36c67b3edf9ec8c4ebd50a9444badd33353a5d"
         }
       ]
     },
@@ -2053,7 +2134,7 @@
       "note": "Cindy-inspired (no Orca naming): durable dispatch registry in ~/.agent-orchestrator/state.json, queue-not-drop messaging via comm rails Bus with settle/rollback, fail-closed lead ownership, ao recover restart pass, docs + symlink repair.",
       "title": "Dispatch semantics for ao-engine (registry, Bus mailbox, ownership, recover)",
       "category": "infrastructure",
-      "status": "pr_open",
+      "status": "landed",
       "spec": "Research/specs/dispatch-semantics.md",
       "repo": "Gizziio/allternit-platform",
       "worktree": "/Users/joe/Desktop/allternit-workspace/allternit-session-dispatch-0910",
@@ -2090,6 +2171,12 @@
           "event": "pr_open",
           "by": "grok pickup of kimi session_f2e12560",
           "note": "Pushed session/dispatch-0910; PR #277. dispatch_demo 23/23, 7 unit tests, ao doctor green. Human iPhone N/A. No merge yet."
+        },
+        {
+          "ts": "2026-09-11T02:25:44.000Z",
+          "event": "landed",
+          "by": "Eoj via grok merge",
+          "note": "https://github.com/Gizziio/allternit-platform/pull/277 merged 29c699484"
         }
       ]
     },
@@ -2099,7 +2186,7 @@
       "note": "Cindy PR 4207-inspired but no iOS app and no unlock/Face ID features: Node server + PWA in surfaces/phone-remote/, ScreenCaptureKit capture, Python AX/Quartz input, tailnet-only + token auth. Long-term home: axum module in allternit-api.",
       "title": "phone-remote: view + control this Mac from iPhone PWA over Tailscale",
       "category": "infrastructure",
-      "status": "pr_open",
+      "status": "landed",
       "spec": "Research/specs/phone-remote.md",
       "repo": "Gizziio/allternit-platform",
       "worktree": "/Users/joe/Desktop/allternit-workspace/allternit-session-phoneremote-0910",
@@ -2142,6 +2229,12 @@
           "event": "human_accept",
           "by": "Eoj",
           "note": "Physical iPhone over Tailscale: live desktop visible, typed from the phone into this Mac. Server log: viewer connected, sckit 960x540@10fps. PR #276 still open."
+        },
+        {
+          "ts": "2026-09-11T02:25:44.000Z",
+          "event": "landed",
+          "by": "Eoj via grok merge",
+          "note": "https://github.com/Gizziio/allternit-platform/pull/276 merged 5b344cfc5"
         }
       ]
     }
