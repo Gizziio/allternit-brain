@@ -1398,6 +1398,12 @@
           "event": "p6a_landed",
           "by": "kimi-interactive",
           "note": "PR #265 merged 6b21256cb — UHP 2026-08-11 core gateway crate + ao serve; conformance 40/40; gate2 kimi green, claude/codex environmental (OAuth/limit Sep 16); evidence ~/.agent-orchestrator/evidence/ao-uhp-gateway/"
+        },
+        {
+          "ts": "2026-09-11T00:15:17Z",
+          "event": "p6b_landed",
+          "by": "grok-land-ritual",
+          "note": "PR #280 merged db516a1b1 — UHP remaining drivers (gemini/qwen/opencode/cline/pi/dsh) + full-class conformance 63/64 CONFORMANT WITH SKIPS (X-07). pi added to 17-tool auto-install list. Live: qwen protocol-green/401 model; opencode direct ok, UHP engine pane error; pi installed but engine PATH miss; dsh pin missing on PyPI. Evidence ~/.agent-orchestrator/evidence/ao-uhp-p6b/. Ledger 2026-09-10-1912-p6b-uhp-full-grok.md."
         }
       ],
       "li_id": "li-20260908-051",
@@ -1665,11 +1671,11 @@
       "note": "CopilotKit OpenBot — AI coworkers with per-bot computers, policy gateway, audit trail. Research vs Allternit bot setup (bot-identity-computer / Computer Cloud) for port candidates. RESEARCH 2026-09-10: MIT, Bun+Hono+React/Vite, Postgres+pgvector, AG-UI protocol. Vetoes fire on ADOPTING the runtime (Docker + CopilotKit Intelligence signup) so fork/vendor is out; decision is reverse_engineer of patterns into Computer Cloud + bot-identity-computer. Port shortlist: (1) declarative CEL-style fail-closed policy layer over our action-hash grants; (2) gateway ordering guarantee (audit row written BEFORE action executes, no act-without-record path); (3) take-the-wheel state machine (help_requested/control_taken/control_released + bot actions refused while human drives); (4) routines = scheduled bot runs w/ 15-min floor, cap 20, 10-failure auto-off; (5) governed MCP catalogue read/write classification (unknown tools treated as writes); (6) coworkers-as-config agents.yaml template package. Already-have: per-bot persistent computers, credential vault w/ transcript redaction, watch/takeover UX, audit ledger, approvals/receipts, skills. SPEC REV 2026-09-10 (Eoj): UI scope added — verdict chips + audit list + policy editor, all bot-mode-only (no new tabs); Phase 2 flagged for herald subagent telemetry + computer screen streaming in chat (ref: herald recordings 2026-09-10). SPEC REV2: bot social layer added to Phase 2 cluster — avatars/identity visuals (herald pet-style), @mention routing, multi-bot group chat, long-running session model.",
       "title": "CopilotKit OpenBot — AI coworkers with per-bot computers, CEL policy gateway, audit trail",
       "category": "agent-tooling",
-      "status": "approved",
+      "status": "landed",
       "spec": "Research/specs/openbot-policy-gateway.md",
-      "repo": null,
-      "worktree": null,
-      "branch": null,
+      "repo": "Gizziio/allternit-platform",
+      "worktree": "/Users/joe/Desktop/allternit-workspace/allternit-ao-openbot-policy-gateway",
+      "branch": "ao/openbot-policy-gateway",
       "li_id": null,
       "decision": "reverse_engineer",
       "constraints_ok": true,
@@ -1714,20 +1720,33 @@
           "event": "approved",
           "by": "kimi session 2026-09-10",
           "note": "Eoj go-ahead 2026-09-10: \"spawn subagents to get this work done faster and don't stop until the finished features land\" — interactive approval to execute Phase 1 (policy engine + audit-before-act + bot-mode UI)."
+        },
+        {
+          "ts": "2026-09-10T23:45:46Z",
+          "event": "pr_open",
+          "by": "grok-session (pickup from kimi session_497f0582)",
+          "note": "PR #275 feat(aci) policy gateway + bot-mode audit UI. Task A 51 policy tests + release build; Task B vitest 11/11. Kimi 5h quota / Claude logged out / Codex limit until 2026-09-16 — remaining UI finished in grok. Phase 2 UX cluster still out of scope."
+        },
+        {
+          "ts": "2026-09-10T23:54:13Z",
+          "event": "landed",
+          "by": "grok-session",
+          "note": "PR #275 merged 8b64e18051c225de5c86a8ac92ec68fc5a319b42. Ledger attestation PR #278 (85a5b9d3d). GitHub Actions green; Vercel + CF Pages Git previews ignored (leftover integrations). Phase 2 UX cluster still out of scope."
         }
-      ]
+      ],
+      "pr": "https://github.com/Gizziio/allternit-platform/pull/275"
     },
     {
       "id": "rq-20260910-002",
       "url": "https://openai.com/index/introducing-the-agents-api/",
       "note": "OpenAI Agents API public beta 2026-09-10. Allternit Runtime product: reverse_engineer patterns, own names. Spec Research/specs/allternit-runtime-api.md. Not a paid wrap.",
-      "title": "Allternit Runtime API",
+      "title": "Allternit Agents / Cloud Agents",
       "category": "agent-tooling",
-      "status": "spec_ready",
+      "status": "executing",
       "spec": "Research/specs/allternit-runtime-api.md",
       "repo": "allternit-platform",
-      "worktree": null,
-      "branch": null,
+      "worktree": "/Users/joe/Desktop/allternit-workspace/allternit-ao-allternit-runtime-api",
+      "branch": "ao/allternit-runtime-api",
       "li_id": null,
       "decision": "reverse_engineer",
       "constraints_ok": true,
@@ -1769,8 +1788,75 @@
           "by": "grok-session",
           "spec": "Research/specs/allternit-runtime-api.md",
           "note": "Phase 1 facade over existing agents + beta/sessions + hosted-runtime. Human gate next. Slug: allternit-runtime-api"
+        },
+        {
+          "ts": "2026-09-10T22:35:16.805Z",
+          "event": "approved",
+          "by": "grok-session",
+          "note": "Eoj explicit approval 2026-09-10: \"approve allternit-runtime-api\""
+        },
+        {
+          "ts": "2026-09-10T22:42:45Z",
+          "event": "executing",
+          "by": "grok-session",
+          "note": "Named-slug approval already recorded. Stage 8: kimi --yolo in worktree allternit-ao-allternit-runtime-api on branch ao/allternit-runtime-api; session ao-allternit-runtime-api; ao-watch armed on docs/CLOUD_AGENTS_PHASE_1_NOTES.md."
+        },
+        {
+          "ts": "2026-09-10T23:30:00Z",
+          "event": "spec_revised",
+          "by": "grok-session",
+          "note": "Bot Agents specialty added to the same spec: CommRails + ao + Bot Mode combine here. Crate rename to allternit-commrails (BA-0b). Cloud Agents Phase 1 executor unchanged. BA-0b+ need named approve Bot Agents / allternit-runtime-api BA-* before a new executor."
+        },
+        {
+          "ts": "2026-09-10T23:45:00Z",
+          "event": "approved",
+          "by": "grok-session",
+          "note": "Eoj explicit approval 2026-09-10: \"approve Bot Agents / allternit-runtime-api BA-0b\". Cloud Agents Phase 1 stays on ao/allternit-runtime-api. New worktree ao/ba-0b-commrails for crate rename only."
+        },
+        {
+          "ts": "2026-09-10T18:14:00Z",
+          "event": "executing",
+          "by": "grok-session",
+          "note": "BA-0b: kimi --yolo in worktree allternit-ao-ba-0b-commrails on branch ao/ba-0b-commrails; session ao-ba-0b-commrails. Claude CLI login expired; model_route was A://C claude-sonnet-5. ao-watch armed on docs/BA_0B_COMMRAILS_NOTES.md."
+        },
+        {
+          "ts": "2026-09-10T18:25:00Z",
+          "event": "reviewed",
+          "by": "grok-session",
+          "note": "BA-0b NOTES present; orchestrator review passed (HTTP dual-nest, crate/bin shims, compat alias, TS rename, seed data preserved). Uncommitted on ao/ba-0b-commrails. No PR yet. leftover: scripts/maintenance/cleanup.sh rails/target."
+        },
+        {
+          "ts": "2026-09-10T18:55:00Z",
+          "event": "reviewed",
+          "by": "grok-session",
+          "note": "Cloud Agents Phase 1 orchestrator verify: cargo test -p allternit-api cloud_agents — 7/7 passed (inline none+input, sandbox 400, local pending, archive blocks send, beta alias, event translate, interrupt to idle). Commit 5438d9239."
+        },
+        {
+          "ts": "2026-09-10T23:34:19Z",
+          "event": "pr_open",
+          "by": "grok-session",
+          "note": "Phase 1 review passed. PR #274 (5438d9239) ao/allternit-runtime-api. cargo test cloud_agents_routes 7/7. Orchestrator fixed computer event projection, SDK path, two rust move errors. Land via repo-ritual-land only; no merge, no confirm:true, no Phase 2."
+        },
+        {
+          "ts": "2026-09-10T23:41:25Z",
+          "event": "approved",
+          "by": "grok-session",
+          "note": "Eoj explicit approval 2026-09-10: \"approve continue working on it\". Cloud Agents Phase 2 (turn lifecycle + GET /turns). Not Bot Agents BA-*. Not land. Not dollar-budget. Phase 1 PR #274 stays open; more commits on ao/allternit-runtime-api."
+        },
+        {
+          "ts": "2026-09-10T23:41:25Z",
+          "event": "executing",
+          "by": "grok-session",
+          "note": "Phase 2: codex in existing worktree allternit-ao-allternit-runtime-api (kimi 5h quota, claude loggedIn=false). Session ao-allternit-runtime-api-p2. Sentinel docs/CLOUD_AGENTS_PHASE_2_NOTES.md. Executor fallback: kimi 5h quota + codex weekly limit until 2026-09-16; agy Claude Sonnet 4.6 (A://C). Session ao-allternit-runtime-api-p2."
+        },
+        {
+          "ts": "2026-09-11T00:00:08Z",
+          "event": "phase-landed",
+          "by": "grok-session",
+          "note": "Cloud Agents Phase 1 merged PR #274 (20b101ebb). Ritual: merge commit, shared main ff-only, ledger attestation, brain_update_draft without confirm. Phase 2 still executing in worktree allternit-ao-allternit-runtime-api / ao-allternit-runtime-api-p2. Worktree+branch kept. No desktop rebuild (API/SDK/docs). No confirm:true."
         }
-      ]
+      ],
+      "pr": "https://github.com/Gizziio/allternit-platform/pull/274"
     },
     {
       "id": "rq-20260910-003",
@@ -1868,13 +1954,13 @@
       "note": "Cindy (makecindy/cindy) — open-source multi-harness AI agent client (Claude Code/Codex/Pi harnesses, Electron desktop + Expo mobile, Apache-2.0). PR 4207 merged 2026-09-10: remote-desktop phone→Mac control with optional auto-unlock (native credential vault, Face ID, TOFU key pinning) and lock-on-exit. Compare against our local computer-use/phone-control rig (.cua-driver, agent-orchestrator). Relevant capabilities: Orca multi-agent orchestration docs, device-link protocol, harness-agnostic memory/skills, scheduling/automation, MCP + plugin marketplace.",
       "title": null,
       "category": null,
-      "status": "inbox",
+      "status": "researched",
       "spec": null,
       "repo": null,
       "worktree": null,
       "branch": null,
       "li_id": null,
-      "decision": null,
+      "decision": "reverse_engineer",
       "constraints_ok": null,
       "paid_or_signup": null,
       "docker_required": null,
@@ -1886,6 +1972,19 @@
           "event": "ingested",
           "by": "mcp",
           "source": "kimi-code interactive session 2026-09-10"
+        },
+        {
+          "ts": "2026-09-10T22:21:47Z",
+          "event": "researched",
+          "by": "kimi session 2026-09-10",
+          "note": "Deep research in interactive session: Cindy = Apache-2.0 multi-harness agent client (Electron+Expo, Claude Code/Codex/Pi harnesses, Orca lead/worker orchestration, device-link WebRTC remote desktop, native credential vault). PR 4207 merged 2026-09-10. Spawned execution specs rq-20260910-008 (dispatch semantics) and rq-20260910-009 (phone-remote PWA). Backend closed-source -> phone control not self-hostable from Cindy; build our own."
+        },
+        {
+          "ts": "2026-09-10T22:21:47Z",
+          "event": "decision_set",
+          "by": "kimi session 2026-09-10",
+          "decision": "reverse_engineer",
+          "note": "patterns only; human constraint: no Orca/Cindy naming in codebase"
         }
       ]
     },
@@ -1895,7 +1994,7 @@
       "note": "OpenMausBot (Apache-2.0) — mobile bot-mode UI reference: iOS SwiftUI companion + React desktop app for a remote-agent SSE stream. Port UI patterns (streaming bubble, folded tool runs, approval cards/island, composer, battery discipline) into Fabric Transport PWA bot mode + ACI, sync across Allternit surfaces.",
       "title": "OpenMausBot — mobile bot-mode UI patterns → Fabric Transport PWA",
       "category": "surfaces",
-      "status": "spec_ready",
+      "status": "approved",
       "spec": "Research/specs/fabric-pwa-bot-mode-ui.md",
       "repo": null,
       "worktree": null,
@@ -1939,6 +2038,110 @@
           "by": "kimi session 2026-09-10",
           "spec": "Research/specs/fabric-pwa-bot-mode-ui.md",
           "note": "single kimi draft (dual review skipped in interactive run, herdr-v090 precedent); human gate next. Slug: fabric-pwa-bot-mode-ui"
+        },
+        {
+          "ts": "2026-09-10T22:24:26.277Z",
+          "event": "approved",
+          "by": "kimi interactive session 2026-09-10",
+          "note": "Human approved 2026-09-10 in kimi interactive session by slug. Single kimi draft accepted (dual skipped). Execute Phase 1 via agent-orchestrator; worktree ~/Desktop/allternit-workspace/allternit; surfaces/ai.allternit.com."
+        }
+      ]
+    },
+    {
+      "id": "rq-20260910-008",
+      "url": "https://github.com/makecindy/cindy/pull/4207",
+      "note": "Cindy-inspired (no Orca naming): durable dispatch registry in ~/.agent-orchestrator/state.json, queue-not-drop messaging via comm rails Bus with settle/rollback, fail-closed lead ownership, ao recover restart pass, docs + symlink repair.",
+      "title": "Dispatch semantics for ao-engine (registry, Bus mailbox, ownership, recover)",
+      "category": "infrastructure",
+      "status": "pr_open",
+      "spec": "Research/specs/dispatch-semantics.md",
+      "repo": "Gizziio/allternit-platform",
+      "worktree": "/Users/joe/Desktop/allternit-workspace/allternit-session-dispatch-0910",
+      "branch": "session/dispatch-0910",
+      "li_id": null,
+      "decision": "reverse_engineer",
+      "constraints_ok": true,
+      "paid_or_signup": false,
+      "docker_required": false,
+      "baseline_ref": null,
+      "area": "dispatch-semantics",
+      "history": [
+        {
+          "ts": "2026-09-10T22:21:47Z",
+          "event": "ingested",
+          "by": "kimi session 2026-09-10",
+          "source": "spawned from rq-20260910-006 deep research"
+        },
+        {
+          "ts": "2026-09-10T22:21:47Z",
+          "event": "decision_set",
+          "by": "kimi session 2026-09-10",
+          "decision": "reverse_engineer",
+          "note": "port architecture patterns only; no Cindy code, no Orca naming in the codebase (explicit human constraint)"
+        },
+        {
+          "ts": "2026-09-10T22:21:47Z",
+          "event": "spec_cleared",
+          "by": "kimi session 2026-09-10",
+          "note": "human approved plan in interactive session; spec written"
+        },
+        {
+          "ts": "2026-09-10T23:50:28.000Z",
+          "event": "pr_open",
+          "by": "grok pickup of kimi session_f2e12560",
+          "note": "Pushed session/dispatch-0910; PR #277. dispatch_demo 23/23, 7 unit tests, ao doctor green. Human iPhone N/A. No merge yet."
+        }
+      ]
+    },
+    {
+      "id": "rq-20260910-009",
+      "url": "https://github.com/makecindy/cindy/pull/4207",
+      "note": "Cindy PR 4207-inspired but no iOS app and no unlock/Face ID features: Node server + PWA in surfaces/phone-remote/, ScreenCaptureKit capture, Python AX/Quartz input, tailnet-only + token auth. Long-term home: axum module in allternit-api.",
+      "title": "phone-remote: view + control this Mac from iPhone PWA over Tailscale",
+      "category": "infrastructure",
+      "status": "pr_open",
+      "spec": "Research/specs/phone-remote.md",
+      "repo": "Gizziio/allternit-platform",
+      "worktree": "/Users/joe/Desktop/allternit-workspace/allternit-session-phoneremote-0910",
+      "branch": "session/phoneremote-0910",
+      "li_id": null,
+      "decision": "reverse_engineer",
+      "constraints_ok": true,
+      "paid_or_signup": false,
+      "docker_required": false,
+      "baseline_ref": null,
+      "area": "phone-remote",
+      "history": [
+        {
+          "ts": "2026-09-10T22:21:47Z",
+          "event": "ingested",
+          "by": "kimi session 2026-09-10",
+          "source": "spawned from rq-20260910-006 deep research"
+        },
+        {
+          "ts": "2026-09-10T22:21:47Z",
+          "event": "decision_set",
+          "by": "kimi session 2026-09-10",
+          "decision": "reverse_engineer",
+          "note": "port architecture patterns only; no Cindy code, no Orca naming in the codebase (explicit human constraint)"
+        },
+        {
+          "ts": "2026-09-10T22:21:47Z",
+          "event": "spec_cleared",
+          "by": "kimi session 2026-09-10",
+          "note": "human approved plan in interactive session; spec written"
+        },
+        {
+          "ts": "2026-09-10T23:50:28.000Z",
+          "event": "pr_open",
+          "by": "grok pickup of kimi session_f2e12560",
+          "note": "Pushed session/phoneremote-0910; PR #276. ws.test 20/20, smoke 9.3 fps. Physical iPhone acceptance still owed (Eoj)."
+        },
+        {
+          "ts": "2026-09-11T00:09:02.000Z",
+          "event": "human_accept",
+          "by": "Eoj",
+          "note": "Physical iPhone over Tailscale: live desktop visible, typed from the phone into this Mac. Server log: viewer connected, sckit 960x540@10fps. PR #276 still open."
         }
       ]
     }
