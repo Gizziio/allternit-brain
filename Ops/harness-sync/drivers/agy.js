@@ -2,9 +2,9 @@ import { exists, which } from '../lib.js'
 
 export default {
   key: 'agy',
-  label: 'agy',
-  installed: () => which('agy') || exists('~/.local/bin/agy'),
-  skillsDir: null,
+  label: 'Antigravity CLI',
+  installed: () => which('agy') || exists('~/.local/bin/agy') || exists('~/.gemini/antigravity-cli'),
+  skillsDir: '~/.gemini/antigravity/skills',
   rulesFile: null,
   mcp: {
     kind: 'cli',

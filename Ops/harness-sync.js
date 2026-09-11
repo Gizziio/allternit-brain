@@ -43,7 +43,6 @@ import cursorDriver from './harness-sync/drivers/cursor.js'
 import gizziDriver from './harness-sync/drivers/gizzi.js'
 import agyDriver from './harness-sync/drivers/agy.js'
 import opencodeDriver from './harness-sync/drivers/opencode.js'
-import antigravityDriver from './harness-sync/drivers/antigravity.js'
 import qwenDriver from './harness-sync/drivers/qwen.js'
 import codebuddyDriver from './harness-sync/drivers/codebuddy.js'
 import workbuddyDriver from './harness-sync/drivers/workbuddy.js'
@@ -55,7 +54,7 @@ import qoderDriver from './harness-sync/drivers/qoder.js'
 
 const OPS_DIR = path.dirname(fileURLToPath(import.meta.url))
 const manifest = JSON.parse(fs.readFileSync(path.join(OPS_DIR, 'harness.json'), 'utf8'))
-const drivers = [claudeDriver, codexDriver, kimiDriver, grokDriver, cursorDriver, gizziDriver, agyDriver, opencodeDriver, antigravityDriver, qwenDriver, codebuddyDriver, workbuddyDriver, openclawDriver, hermesDriver, dshDriver, piDriver, qoderDriver]
+const drivers = [claudeDriver, codexDriver, kimiDriver, grokDriver, cursorDriver, gizziDriver, agyDriver, opencodeDriver, qwenDriver, codebuddyDriver, workbuddyDriver, openclawDriver, hermesDriver, dshDriver, piDriver, qoderDriver]
 const server = manifest.source.mcpServer
 
 const args = process.argv.slice(2)
